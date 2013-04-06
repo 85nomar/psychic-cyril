@@ -5,20 +5,20 @@
 
  @font-face {
   font-family: 'MetaOTBold';
-  src:  url('//www.ricardo.ch/contents/ch/assets/fonts/MetaWeb-Bold.eot');
-  src:  url('//www.ricardo.ch/contents/ch/assets/fonts/MetaWeb-Bold.eot?#iefix') format('embedded-opentype'),
-        url("//www.ricardo.ch/contents/ch/assets/fonts/MetaWeb-Bold.woff") format("woff"),
-        url("//www.ricardo.ch/contents/ch/assets/fonts/MetaWeb-Bold.ttf") format("truetype");
+  src:  url('../fonts/MetaWeb-Bold.eot');
+  src:  url('../fonts/MetaWeb-Bold.eot?#iefix') format('embedded-opentype'),
+        url("../fonts/MetaWeb-Bold.woff") format("woff"),
+        url("../fonts/MetaWeb-Bold.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'MetaOTBook';
-    src: url('//www.ricardo.ch/contents/ch/assets/fonts/MetaWeb-Book.eot');
-    src: url('//www.ricardo.ch/contents/ch/assets/fonts/MetaWeb-Book.eot?#iefix') format('embedded-opentype'),
-         url('//www.ricardo.ch/contents/ch/assets/fonts/MetaWeb-Book.woff') format('woff'),
-         url('//www.ricardo.ch/contents/ch/assets/fonts/MetaWeb-Book.ttf') format('truetype');
+    src: url('../fonts/MetaWeb-Book.eot');
+    src: url('../fonts/MetaWeb-Book.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/MetaWeb-Book.woff') format('woff'),
+         url('../fonts/MetaWeb-Book.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
