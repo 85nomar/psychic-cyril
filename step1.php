@@ -6,55 +6,56 @@ $Layout->start();
 
 <h2>Choose in which category to sell your product</h2>
 
-<form class="form-search">
-    <div id="categoryFinder">
-    <div class="input-append">
-        <input class="span4" id="appendedInputButton" type="text">
-        <button class="btn" type="button">
-            Help me find a category!
-        </button>
-    </div>
-    </div>
-</form>
+<div class="row-fluid">
+    <form class="form-search">
+        <div id="categoryFinder">
+            <div class="input-append">
+                <input class="span12" id="appendedInputButton" type="text">
+                <button class="btn" type="button">
+                    Help me find a category!
+                </button>
+            </div>
+        </div>
+    </form>
 
-<div class="controls controls-row">
-    <select multiple="multiple" class="span2">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-    </select>
-    <select multiple="multiple" class="span2">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-    </select>
-    <select multiple="multiple" class="span2">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-    </select>
-    <select multiple="multiple" class="span2">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-    </select>
-    <select multiple="multiple" class="span2">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-    </select>
+    <div class="controls controls-row">
+        <select multiple="multiple" class="span2">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+        <select multiple="multiple" class="span2">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+        <select multiple="multiple" class="span2">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+        <select multiple="multiple" class="span2">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+        <select multiple="multiple" class="span2">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+    </div>
 </div>
-
 <hr>
 <div id="savedForLater">
     <h4>Previous listings you've started to work on</h4>
@@ -86,6 +87,9 @@ $Layout->start();
     </div>
 </div>
 
-<a href="#" class="btn btn-primary">Forward to describe your product</a><span class="separator muted"> 
+<div class="form-actions">
+<a href="#" class="btn btn-primary">Forward to describe your product</a><span class="separator muted">
+</div>
 
-<?php $Layout->end(); ?>
+<?php $Layout->end();
+?>

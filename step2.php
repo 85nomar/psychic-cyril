@@ -71,27 +71,31 @@ $Layout->start();
             </div>
             <div id="collapseTwo" class="accordion-body collapse">
                 <div class="accordion-inner">
-                    <label for="inputProductCondition">Product condition</label>
-                    <select id="productCondition">
-                        <option>New</option>
-                        <option>Original</option>
-                        <option>Used</option>
-                        <option>Broken</option>
-                    </select>
-                    <label for="inputNumber">Number of Products</label>
-                    <input class="span1" type="number" id="inputNumber" placeholder="1">
-                    <label for="inputUPCnumber">UPC, ISBN or your own product number</label>
-                    <input class="span4" type="text" id="inputUPCnumber" placeholder="UPC, ISBN or other product number">
-                    <label for="inputWarranty">Warranty description</label>
-                    <select id="warranty">
-                        <option>No warranty</option>
-                        <option>As described</option>
-                    </select>
+                    <div class="row-fluid">
+                        <label for="inputProductCondition">Product condition</label>
+                        <select id="productCondition">
+                            <option>New</option>
+                            <option>Original</option>
+                            <option>Used</option>
+                            <option>Broken</option>
+                        </select>
+                        <label for="inputNumber">Number of Products</label>
+                        <input class="span1" type="number" id="inputNumber" placeholder="1">
+                        <label for="inputUPCnumber">UPC, ISBN or your own product number</label>
+                        <input class="span4" type="text" id="inputUPCnumber" placeholder="UPC, ISBN or other product number">
+                        <label for="inputWarranty">Warranty description</label>
+                        <select id="warranty">
+                            <option>No warranty</option>
+                            <option>As described</option>
+                        </select>
+                    </div>
                 </div>
             </div>
         </div>
     </form>
 </div>
-<a href="#" class="btn btn-primary">Forward to set Pricing & Duration</a><span class="separator muted"> | </span><a href="#" class="btn btn-link">Back to choose category</a>
 
+<div class="form-actions">
+<a href="step3.php" class="btn btn-primary">Forward to set Pricing & Duration</a><span class="separator muted"> | </span><a href="#" class="btn btn-link">Back to choose category</a>
+</div>
 <?php $Layout->end(); ?>
