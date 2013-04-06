@@ -6,23 +6,23 @@ class Layout
     // Main Navigation
     public $formNav=array(
         array(
-            'url'=>'#',
+            'url'=>'step1',
             'title'=>'Step1',
         ),
         array(
-            'url'=>'#',
+            'url'=>'step2',
             'title'=>'Step2',
         ),
         array(
-            'url'=>'#',
+            'url'=>'step3',
             'title'=>'Step3',
         ),
         array(
-            'url'=>'#',
+            'url'=>'step4',
             'title'=>'Step4',
         ),
         array(
-            'url'=>'#',
+            'url'=>'step5',
             'title'=>'Step5',
         )
     );

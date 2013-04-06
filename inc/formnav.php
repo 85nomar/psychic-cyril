@@ -1,18 +1,18 @@
 <nav id="nav-Form">
-    <ul>
+    <ol class="nav nav-pills">
         <?php 
         $thisNav = $this->formNav;
 
         foreach($thisNav as $page) :
 
         $thisURL = $page['url'];
-        $isActive = $this->formNav == $thisURL;
+        $isActive = $this->navTitle === $thisURL;
         ?>
 
-        <li>
-            <a<?php echo $isActive ? ' class="active"' : '' ?> href="<?php echo $thisURL?>.html"><?php echo $page['title'] ?></a>
+        <li class="<?php echo $isActive ? 'active' : '' ?>">
+            <a href="<?php echo $thisURL?>.html"><?php echo $page['title'] ?></a>
         </li>
 
         <?php endforeach ?>
-    </ul>
+    </ol>
 </nav>
