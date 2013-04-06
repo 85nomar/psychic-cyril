@@ -6,9 +6,9 @@ $Layout->start(); ?>
     <div class="span12">
         <form class="form-search">
             <div class="input-append">
-                <input class="span4" id="appendedInputButton" type="text">
+                <input id="appendedInputButton" type="text">
                 <button class="btn" type="button">
-                    Find category!
+                    Help me find a category!
                 </button>
             </div>
         </form>
@@ -55,5 +55,5 @@ $Layout->start(); ?>
         </div>
     </div>
 </div>
-
+<a href="#" class="btn btn-primary">Forward to describe your product</a><span class="separator muted">
 <?php $Layout->end(); ?>
