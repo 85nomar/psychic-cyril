@@ -86,7 +86,7 @@ $Layout->start();
                 </label>
             </div>
         </fieldset>
-        <a href="#" class="btn btn-link">Add additional payment notes</a>
+        <a href="#" class="btn btn-link">Add additional payment notes</a><small class="muted">(optional)</small>
     </section>
     <section class="section">
         <fieldset class="row-fluid section" id="listingStartTimeAndDuration">
