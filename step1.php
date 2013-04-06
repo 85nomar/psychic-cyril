@@ -1,3 +1,7 @@
+<?php require('inc/layout.php');
+$Layout->title = 'Selling';
+$Layout->start(); ?>
+
 <div class="row-fluid">
     <div class="span12">
         <form class="form-search">
@@ -51,3 +55,5 @@
         </div>
     </div>
 </div>
+
+<?php $Layout->end(); ?>

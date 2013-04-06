@@ -1,3 +1,7 @@
+<?php require('inc/layout.php');
+$Layout->title = 'Selling';
+$Layout->start(); ?>
+
 <div class="row-fluid">
     <div class="span10">
         <ul class="breadcrumb">
@@ -90,3 +94,4 @@
     </form>
 </div>
 
+<?php $Layout->end(); ?>
