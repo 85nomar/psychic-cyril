@@ -10,7 +10,7 @@
         ?>
 
         <li class="<?php echo $isActive ? 'active' : '' ?>">
-            <a href="<?php echo $thisURL?>.html"><?php echo $page['title'] ?></a>
+            <a href="<?php echo $thisURL?>.php"><?php echo $page['title'] ?></a>
         </li>
 
         <?php endforeach ?>

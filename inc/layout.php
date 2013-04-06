@@ -7,23 +7,23 @@ class Layout
     public $formNav=array(
         array(
             'url'=>'step1',
-            'title'=>'Step1',
+            'title'=>'Choose Category',
         ),
         array(
             'url'=>'step2',
-            'title'=>'Step2',
+            'title'=>'Describe your product',
         ),
         array(
             'url'=>'step3',
-            'title'=>'Step3',
+            'title'=>'Set pricing and duration',
         ),
         array(
             'url'=>'step4',
-            'title'=>'Step4',
+            'title'=>'Define shipping',
         ),
         array(
             'url'=>'step5',
-            'title'=>'Step5',
+            'title'=>'Review before publishing',
         )
     );
     public $navTitle='';
