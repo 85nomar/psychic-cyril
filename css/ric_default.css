@@ -1,24 +1,24 @@
-/*! x_default.css V. 2.205 - 23.01.2013 16:00; */
+/*! x_default.css V. 2.206 - 04.02.2013 12:00; */
 /*! Based on Bootsrap 2.2.0 */
 
  /* -------------------------------------------------------------------------------- FONTFACES -------------------------------------------------------------------------------- */
 
  @font-face {
   font-family: 'MetaOTBold';
-  src:  url('//www.ch.devqxl.com/contents/ch/assets/fonts/MetaWeb-Bold.eot');
-  src:  url('//www.ch.devqxl.com/contents/ch/assets/fonts/MetaWeb-Bold.eot?#iefix') format('embedded-opentype'),
-        url("//www.ch.devqxl.com/contents/ch/assets/fonts/MetaWeb-Bold.woff") format("woff"),
-        url("//www.ch.devqxl.com/contents/ch/assets/fonts/MetaWeb-Bold.ttf") format("truetype");
+  src:  url('//www.ricardo.ch/contents/ch/assets/fonts/MetaWeb-Bold.eot');
+  src:  url('//www.ricardo.ch/contents/ch/assets/fonts/MetaWeb-Bold.eot?#iefix') format('embedded-opentype'),
+        url("//www.ricardo.ch/contents/ch/assets/fonts/MetaWeb-Bold.woff") format("woff"),
+        url("//www.ricardo.ch/contents/ch/assets/fonts/MetaWeb-Bold.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'MetaOTBook';
-    src: url('//www.ch.devqxl.com/contents/ch/assets/fonts/MetaWeb-Book.eot');
-    src: url('//www.ch.devqxl.com/contents/ch/assets/fonts/MetaWeb-Book.eot?#iefix') format('embedded-opentype'),
-         url('//www.ch.devqxl.com/contents/ch/assets/fonts/MetaWeb-Book.woff') format('woff'),
-         url('//www.ch.devqxl.com/contents/ch/assets/fonts/MetaWeb-Book.ttf') format('truetype');
+    src: url('//www.ricardo.ch/contents/ch/assets/fonts/MetaWeb-Book.eot');
+    src: url('//www.ricardo.ch/contents/ch/assets/fonts/MetaWeb-Book.eot?#iefix') format('embedded-opentype'),
+         url('//www.ricardo.ch/contents/ch/assets/fonts/MetaWeb-Book.woff') format('woff'),
+         url('//www.ricardo.ch/contents/ch/assets/fonts/MetaWeb-Book.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -85,8 +85,6 @@ sub {
 }
 
 img {
-  width: auto\9;
-  height: auto;
   max-width: 100%;
   vertical-align: middle;
   border: 0;
@@ -1905,7 +1903,6 @@ legend + .control-group {
 
 table {
   max-width: 100%;
-  background-color: transparent;
   border-collapse: collapse;
   border-spacing: 0;
 }
@@ -2291,6 +2288,12 @@ table th[class*="span"],
 
 .icon-envelope {
   background-position: -72px 0;
+}
+.icon-remove {
+  background-position: -312px 0px;
+}
+.icon-plus {
+  background-position: -48px -72px; 
 }
 
 .dropup,
@@ -2774,7 +2777,7 @@ input[type="button"].btn-block {
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   background-color: #1946a0;
   *background-color: #1946a0;
-  background-image: -moz-linear-gradient(top, #2382c8, #);
+  background-image: -moz-linear-gradient(top, #2382c8, #1946a0);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#2382c8), to(#1946a0));
   background-image: -webkit-linear-gradient(top, #2382c8, #1946a0);
   background-image: -o-linear-gradient(top, #2382c8, #1946a0);
@@ -5284,7 +5287,7 @@ a.n_advsearch {
     padding: 0 0 0 22px;
 }
 #LastUpdate{
-	display: none;
+  display: none;
 }
 #autosuggestionBox ol {
   background-color:#fff;
@@ -5370,7 +5373,7 @@ footer {
   clear:both;
 }
 
-footer h2 {
+footer h5 {
   color: #FFFFFF;
   font-size: 14px;
   line-height: 16px;
@@ -5422,6 +5425,43 @@ footer #footer_mobile {
   text-align:center;
 }
 /* -------------------------------------------------------------------------------- FOOTER END -------------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------------- SINGLE PAGE FIXES ------------------------------------------------------------------------- */
+
+/* SellerActivate.asp */
+.it_tabNav {
+  overflow: hidden;
+}
+
+.it_tabNav li {
+  float: left;
+  font-size: 13px;
+  padding: 6px 20px 15px 0;
+}
+
+.navText {
+  color: #999999;
+}
+
+.activeStep .navText {
+  color: #1946A0;
+  font-weight: bold;
+}
+
+.activeStep .navIcon {
+  background-color: #1946A0;
+}
+
+.navIcon {
+  background-color: #B3B3B3;
+  border-radius: 6px;
+  color: #FFFFFF;
+  font-weight: bold;
+  padding: 8px 12px;
+}
+/* SellerActivate.asp END */
+
+/* -------------------------------------------------------------------------------- SINGLE PAGE FIXES END --------------------------------------------------------------------- */
 
 /* -------------------------------------------------------------------------------- OLD ICONS & SPRITES -------------------------------------------------------------------------------- */
 
@@ -5852,6 +5892,66 @@ section#purchase input.button {
   padding: 10px;
   background: #000;
   background: rgba(0, 0, 0, .8);
+}
+
+#fancybox-thumbs {
+  position: fixed;
+  left: 0px;
+  width: 100%;
+  overflow: hidden;
+  z-index: 10000;
+}
+
+#fancybox-thumbs.bottom {
+  background: #000;
+  background: rgba(0, 0, 0, 0.6);
+  border-top: 1px solid gray;
+  bottom: 2px;
+  opacity: 0.8;
+}
+
+#fancybox-thumbs.top {
+  top: 2px;
+}
+
+#fancybox-thumbs ul {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#fancybox-thumbs ul li {
+  border: 3px solid;
+  float: left;
+  margin: 10px 2px;
+  opacity: 0.5;
+}
+
+#fancybox-thumbs ul li.active {
+  opacity: 0.75;
+  padding: 0;
+  border: 3px solid #F6921C;
+}
+
+#fancybox-thumbs ul li:hover {
+  opacity: 1;
+}
+
+#fancybox-thumbs ul li a {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #222;
+  background: #111;
+  outline: none;
+}
+
+#fancybox-thumbs ul li img {
+  display: block;
+  position: relative;
+  border: 0;
+  padding: 0;
 }
 /* -------------------------------------------------------------------------------- FANCYBOX END -------------------------------------------------------------------------------- */
 
@@ -6302,3 +6402,194 @@ div.content select[name=ResellTickets]{
 }
 
 /* fixes in sellingform END*/
+
+.tableAdminMenu{width:100%;padding:0 20px 0 20px;}
+.tableAdminMenu td{padding:0 20px 0 20px;vertical-align:top;}
+
+/*PROMOTION SELLERAOUND WIDGET*/
+.rWidget {
+    background-color: #1B5BA8;
+    border-radius: 4px 5px 5px 4px;
+    clear: both;
+    color: #FFFFFF;
+    height: 46px;
+    margin: 20px 0 30px;
+}
+.rWidget h2, .rWidget p {
+    color: #FFFFFF;
+    float: left;
+}
+.rWidget h2 {
+    font-size: 16px;
+    padding: 5px 0 0 20px;
+    margin:0px;
+}
+.rWidgetRow .rWidget p {
+    padding: 3px 0 3px 5px;
+}
+.rWidgetFrame, .rSortWidgetFrame {
+    background-color: #C4DFFF;
+    border-radius: 0 4px 4px 0;
+    float: right;
+    height: 100%;
+    position: relative;
+}
+.rWidgetFrame div {
+    background-color: #1258AA;
+    background-image: url("/ImgWeb/2/v6/widget/SellWidget_ConfirmArrow.png");
+    background-position: right center;
+    float: left;
+    height: 100% !important;
+    width: 15px;
+}
+.rWidgetFrame iframe {
+    margin-top: 6px;
+}
+.rWidgetFrame iframe, .rSortWidgetFrame iframe {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    height: 34px;
+    overflow: hidden;
+    width: 120px;
+}
+
+.n_MyFunction {
+    float: left;
+}
+
+.rSortWidgetFrame {
+  height: 110px;
+  margin: 10px 0;
+  padding: 10px;
+  width: 450px;
+}
+
+.n_MySellingWidget {
+width: 100%;
+height: 150px;
+}
+
+.n_MySellingWidgetinfo {
+background-color:#F6E5D0;
+border-radius:4px 4px 4px 4px;
+line-height:16px;
+margin:10px 0;
+padding:10px;
+width: 435px;
+height: 110px;
+float: left;
+}
+
+.rSortWidgetFrame {
+    background-image: url("/ImgWeb/2/v6/widget/SellWidget_MySellBtn.jpg");
+  width:450px;
+  float:right;
+}
+.rSortWidgetFrame iframe {
+    bottom: 5px;
+    position: absolute;
+}
+.rSortWidgetFrame .infoicon {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none; 
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #990000;
+    border-color: #FFFFFF;
+    border-radius: 10px 0 0 0;
+    border-style: solid;
+    border-width: 2px 0 0 2px;
+    bottom: 0;
+    color: #FFFFFF;
+    display: block;
+    font-weight: bold;
+    padding: 2px 5px;
+    position: absolute;
+    right: 0;
+}
+.n_ListTable {
+    margin-bottom: 10px;
+}
+.rWidgetRow .rWidget {/*
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #FFFFFF;
+    border-radius: 4px 6px 0 0;
+    border-style: solid;
+    border-width: 2px 2px 0;*/
+    background:none;
+    height: 5px;
+    margin-right: 10px;
+    margin-top: -28px;
+    position: relative;
+    right: 0;
+}
+.rWidgetRow .rWidgetFrame {/*
+    border-radius: 0 4px 0 0;*/
+    float: left;
+    background:none;
+}
+.rWidgetRow .rWidgetFrame iframe {
+    height: 20px;
+    margin: 3px 0;
+    width: 75px;
+}
+
+.rWidgetRow .rWidgetFrame div {
+  background:none;
+}
+
+.widgetLink {
+  color: #999;
+  text-decoration: none;
+}
+/* View Item Bug */
+.it_bigImgBox img {
+max-width: none;
+}
+/* View Item Bug End */
+
+/* New Category TAG cloud */
+section#it_tagcloudouter {
+  background-color: #F5F5F5;
+  border-radius: 4px;
+  padding: 10px;
+  margin-top:10px;
+  float:left;
+}
+
+section#it_tagcloudouter span {
+  color: #F6921C;
+  font-weight: bold;
+  margin: 0 0 10px;
+}
+
+section#it_tagcloudouter li {
+  float: left;
+  margin-right: 5px;
+  display:block;
+}
+
+.n_tagincloudranking1 {
+  font-size:1.1em;
+  font-weight:bold;
+}
+
+.n_tagincloudranking2 {
+  font-size:1em;
+}
+
+.n_tagincloudranking3 {
+  font-size:0.9em;
+}
+
+.cl_article{
+  width:244px !important
+}
+footer #ftInternational .span5 h5 {
+color: #999;
+}
