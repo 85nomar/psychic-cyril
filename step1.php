@@ -10,7 +10,7 @@ $Layout->start();
     <form class="form-search">
         <div id="categoryFinder">
             <div class="input-append">
-                <input class="span12" id="appendedInputButton" type="text">
+                <input class="span12" id="appendedInputButton" type="text" placeholder="z.B i-Phone 3 GS">
                 <button class="btn" type="button">
                     Help me find a category!
                 </button>
