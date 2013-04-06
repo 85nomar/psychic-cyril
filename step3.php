@@ -39,10 +39,6 @@ $Layout->start();
                         <a href="#" class="btn btn-link">Add a buy now option</a><small class="label label-warning">+ CHF 1.00</small>
                     </div>
                 </div>
-            </div>
-        </fieldset>
-        <fieldset class="row-fluid section" id="listingIncrementPrice">
-            <div class="span12">
                 <label for="auctionIncrementPrice">
                     Increment price
                 </label>
@@ -57,15 +53,15 @@ $Layout->start();
                 <label for="paymentConditions">
                     Accepted Payment Conditions
                 </label>
-                <label class="checkbox inline">
-                    <input type="checkbox">
+                <label class="checkbox inline checkbox-label-btn btn">
+                    <input type="checkbox" checked>
                     In Advance
                 </label>
-                <label class="checkbox inline">
+                <label class="checkbox inline checkbox-label-btn btn">
                     <input type="checkbox">
                     At Pickup
                 </label>
-                <label class="checkbox inline">
+                <label class="checkbox inline checkbox-label-btn btn">
                     <input type="checkbox">
                     After Receipt
                 </label>
@@ -76,15 +72,15 @@ $Layout->start();
                 <label for="paymentConditions">
                     Accepted Payment Methods
                 </label>
-                <label class="checkbox inline">
-                    <input type="checkbox">
+                <label class="checkbox inline checkbox-label-btn btn-ricardoPay btn">
+                    <input type="checkbox" checked>
                     RicardoPay
                 </label>
-                <label class="checkbox inline">
+                <label class="checkbox inline checkbox-label-btn btn btn-small">
                     <input type="checkbox">
                     Bank / Post
                 </label>
-                <label class="checkbox inline">
+                <label class="checkbox inline checkbox-label-btn btn btn-small">
                     <input type="checkbox">
                     Cash
                 </label>

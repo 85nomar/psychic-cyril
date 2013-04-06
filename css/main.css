@@ -13,6 +13,33 @@
     
 }
 
+.checkbox.inline.checkbox-label-btn {
+    position: relative;
+    padding: 20px;
+}
+
+.checkbox-label-btn > input {
+    position: absolute;
+    right: 5px;
+    top: 0;
+}
+
+.checkbox.inline.btn-ricardoPay {
+    background-color: #F09600;
+    background-image: linear-gradient(to bottom, #FAAF4B, #F09600);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    color: #FFFFFF;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.checkbox.inline.checkbox-label-btn.btn-small {
+    padding: 10px 25px;
+}
+
 .section {
     margin: 20px 0;
 }
