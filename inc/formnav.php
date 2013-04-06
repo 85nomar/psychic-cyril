@@ -1,5 +1,5 @@
 <nav id="nav-Form">
-    <ol class="nav nav-pills">
+    <ol class="followSteps nav nav-pills">
         <?php 
         $thisNav = $this->formNav;
 

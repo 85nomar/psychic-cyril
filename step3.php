@@ -7,8 +7,8 @@ $Layout->start();
 <h2>Set pricing and time for your listing</h2>
 
 <form>
-    <fieldset>
-        <div class="row-fluid">
+    <section class="section">
+        <fieldset class="row-fluid section" id="listingType">
             <div class="span12">
                 <label for="auctionType">
                     Type of Auction
@@ -22,8 +22,8 @@ $Layout->start();
                     List as a fixed price offer - People can buy it, or not
                 </label>
             </div>
-        </div>
-        <div class="row-fluid">
+        </fieldset>
+        <fieldset class="row-fluid section" id="listingStartPrice">
             <div class="span12">
                 <label for="auctionStartPrice">
                     Auction start price
@@ -32,7 +32,7 @@ $Layout->start();
                     <div class="span3">
                         <div class="input-prepend">
                             <span class="add-on">CHF</span>
-                            <input class="span10" id="inputStartPrice" type="text" placeholder="50.00">
+                            <input class="span10" id="inputStartPrice" type="text" placeholder="Set a price">
                         </div>
                     </div>
                     <div class="span9">
@@ -40,19 +40,19 @@ $Layout->start();
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row-fluid">
+        </fieldset>
+        <fieldset class="row-fluid section" id="listingIncrementPrice">
             <div class="span12">
                 <label for="auctionIncrementPrice">
                     Increment price
                 </label>
                 <div class="input-prepend">
                     <span class="add-on">CHF</span>
-                    <input class="span10" id="inputIncrementPrice" type="text" placeholder="1.00">
+                    <input class="span10" id="inputIncrementPrice" type="text" value="0.05">
                 </div>
             </div>
-        </div>
-        <div class="row-fluid">
+        </fieldset>
+        <fieldset class="row-fluid section" id="listingPaymentConditions">
             <div class="span12">
                 <label for="paymentConditions">
                     Accepted Payment Conditions
@@ -70,8 +70,8 @@ $Layout->start();
                     After Receipt
                 </label>
             </div>
-        </div>
-        <div class="row-fluid">
+        </fieldset>
+        <fieldset class="row-fluid section" id="listingPaymentMethods">
             <div class="span12">
                 <label for="paymentConditions">
                     Accepted Payment Methods
@@ -89,11 +89,11 @@ $Layout->start();
                     Cash
                 </label>
             </div>
-        </div>
+        </fieldset>
         <a href="#" class="btn btn-link">Add additional payment notes</a>
-    </fieldset>
-    <fieldset>
-        <div class="row-fluid">
+    </section>
+    <section class="section">
+        <fieldset class="row-fluid section" id="listingStartTimeAndDuration">
             <div class="span12">
                 <label for="StartTimeAndDuration">
                     Listing start time and duration
@@ -103,7 +103,7 @@ $Layout->start();
                         <input class="span6" id="appendedDropdownButton" type="text" value="immediately">
                         <div class="btn-group">
                             <button class="btn dropdown-toggle" data-toggle="dropdown">
-                                <i class="icon-calendar"></i> <span class="caret"></span>
+                                <i class="icon-calendar"></i><span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu">
                                 ...
@@ -112,8 +112,8 @@ $Layout->start();
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row-fluid">
+        </fieldset>
+        <fieldset class="row-fluid section" id="listingsReactivation">
             <div class="span12">
                 <label for="reactivationOption">
                     Reactivation
@@ -131,8 +131,8 @@ $Layout->start();
                 </select>
                 <span class="help-inline">reactivate</span>
             </div>
-        </div>
-    </fieldset>
+        </fieldset>
+    </section>
 </form>
 
 <div class="form-actions">

@@ -1,4 +1,6 @@
-/* Selling-Form Step 1 */
+/**********************************************************************
+ * Selling-Form Step 1 
+ **********************************************************************/
 #categoryFinder {
     margin: 40px 0;
 }
@@ -7,7 +9,17 @@
     margin-bottom: 30px;
 }
 
-/* overriding bootstrap.css default styles*/
+.followSteps {
+    
+}
+
+.section {
+    margin: 20px 0;
+}
+
+/*********************************************************************
+ * overriding bootstrap.css default styles
+ *********************************************************************/
 .btn-link {
     padding-left: 0;
 }
