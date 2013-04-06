@@ -53,10 +53,10 @@
             <div class="control-group">
                 <label class="control-label" for="inputPictures">Pictures</label>
                 <div class="controls">
-                    <img src="#" class="img-polaroid" style="width:140px;height:140px;>
-                    <img src="#" class="img-polaroid" style="width:90px;height:90px;>
-                    <img src="#" class="img-polaroid" style="width:90px;height:90px;>
-                    <img src="#" class="img-polaroid" style="width:90px;height:90px;>
+                    <img src="#" class="img-polaroid" style="width:140px;height:140px;">
+                    <img src="#" class="img-polaroid" style="width:90px;height:90px;">
+                    <img src="#" class="img-polaroid" style="width:90px;height:90px;">
+                    <img src="#" class="img-polaroid" style="width:90px;height:90px;">
                 </div>
             </div>
         </form>
