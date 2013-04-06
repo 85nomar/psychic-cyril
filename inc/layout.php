@@ -7,19 +7,19 @@
 
 		// Main Navigation
 		public $formNav = array(
-			'ricardoPay' => array(
+			'Form step 1' => array(
 				'url' => '#'
 			),
-			'Buying' => array(
+			'Form step 2' => array(
 				'url' => '#'
 			),
-			'Selling' => array(
+			'Form step 3' => array(
 				'url' => '#'
 			),
-			'My ricardo' => array(
+			'Form step 4' => array(
 				'url' => '#'
 			),
-			'Help' => array(
+			'Form step 5' => array(
 				'url' => '#'
 			)
 
