@@ -4,6 +4,8 @@ $Layout->title='Selling';
 $Layout->start();
 ?>
 
+<h2>Describe what you want to sell</h2>
+
 <div class="row-fluid">
     <div class="span10">
         <ul class="breadcrumb">
@@ -36,26 +38,26 @@ $Layout->start();
                                 <input type="checkbox">
                                 Setup your listing in two languages </label>
                             <label for="inputTitle">Title</label>
-                            <input class="span6" type="text" id="inputTitle" placeholder="Insert the name of your product here">
+                            <input class="span5" type="text" id="inputTitle" placeholder="Insert the name of your product here">
                             <label for="inputSubtitle">Sub-Title</label>
-                            <input class="span6" type="text" id="inputSubtitle" placeholder="Tease your product here">
+                            <input class="span7" type="text" id="inputSubtitle" placeholder="Tease your product here">
                             <label for="inputDescription">Description</label>
                             <textarea class="span12" rows="4" placeholder="Describe your product here"></textarea>
                             <label for="inputPictures">Pictures</label>
                             <div class="row-fluid">
                                 <div class="span3">
-                                    <img src="img/img_placeholder_140.jpg" class="img-polaroid" style="width:140px;height:140px;">
+                                    <img src="img/img_placeholder_140.jpg" class="img-polaroid">
                                 </div>
                                 <div class="span9">
-                                    <img src="img/img_placeholder_90.jpg" class="img-polaroid" style="width:90px;height:90px;">
-                                    <img src="img/img_placeholder_90.jpg" class="img-polaroid" style="width:90px;height:90px;">
-                                    <img src="img/img_placeholder_90.jpg" class="img-polaroid" style="width:90px;height:90px;">
-                                    <img src="img/img_placeholder_90.jpg" class="img-polaroid" style="width:90px;height:90px;">
-                                    <img src="img/img_placeholder_90.jpg" class="img-polaroid" style="width:90px;height:90px;">
-                                    <img src="img/img_placeholder_90.jpg" class="img-polaroid" style="width:90px;height:90px;">
-                                    <img src="img/img_placeholder_90.jpg" class="img-polaroid" style="width:90px;height:90px;">
-                                    <img src="img/img_placeholder_90.jpg" class="img-polaroid" style="width:90px;height:90px;">
-                                    <img src="img/img_placeholder_90.jpg" class="img-polaroid" style="width:90px;height:90px;">
+                                    <img src="img/img_placeholder_90.jpg" class="img-polaroid">
+                                    <img src="img/img_placeholder_90.jpg" class="img-polaroid">
+                                    <img src="img/img_placeholder_90.jpg" class="img-polaroid">
+                                    <img src="img/img_placeholder_90.jpg" class="img-polaroid">
+                                    <img src="img/img_placeholder_90.jpg" class="img-polaroid">
+                                    <img src="img/img_placeholder_90.jpg" class="img-polaroid">
+                                    <img src="img/img_placeholder_90.jpg" class="img-polaroid">
+                                    <img src="img/img_placeholder_90.jpg" class="img-polaroid">
+                                    <img src="img/img_placeholder_90.jpg" class="img-polaroid">
                                 </div>
                             </div>
                         </div>
@@ -69,12 +71,22 @@ $Layout->start();
             </div>
             <div id="collapseTwo" class="accordion-body collapse">
                 <div class="accordion-inner">
-                    <div class="row-fluid">
-                        <div class="span12">
-                            <label for="inputNumber">Number of Products</label>
-                            <input class="span1" type="number" id="inputNumber" placeholder="1">
-                        </div>
-                    </div>
+                    <label for="inputProductCondition">Product condition</label>
+                    <select id="productCondition">
+                        <option>New</option>
+                        <option>Original</option>
+                        <option>Used</option>
+                        <option>Broken</option>
+                    </select>
+                    <label for="inputNumber">Number of Products</label>
+                    <input class="span1" type="number" id="inputNumber" placeholder="1">
+                    <label for="inputUPCnumber">UPC, ISBN or your own product number</label>
+                    <input class="span4" type="text" id="inputUPCnumber" placeholder="UPC, ISBN or other product number">
+                    <label for="inputWarranty">Warranty description</label>
+                    <select id="warranty">
+                        <option>No warranty</option>
+                        <option>As described</option>
+                    </select>
                 </div>
             </div>
         </div>
