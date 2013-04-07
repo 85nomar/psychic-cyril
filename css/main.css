@@ -51,6 +51,18 @@
     border-radius: 50% 50% 50% 50%;
 }
 
+/*http://stackoverflow.com/questions/5523735/how-to-make-a-radio-button-look-like-a-toggle-button */
+input[type="radio"].toggle {
+    display: none;
+}
+
+input[type="radio"].toggle:checked + label {
+    background-color: #F09600;
+    background-image: linear-gradient(to bottom, #FAAF4B, #F09600);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+}
+
 /*********************************************************************
  * overriding bootstrap.css default styles
  *********************************************************************/
@@ -68,4 +80,8 @@
 
 .icon-calendar {
     background-position: -313px -49px;
+}
+
+.icon-time {
+    background-position: -96px 0;
 }

@@ -1,30 +1,28 @@
 <?php
 require ('inc/layout.php');
-$Layout->title='Selling';
-$Layout->start();
+$Layout -> title = 'Selling';
+$Layout -> start();
 ?>
 
 <h2>Set pricing and time for your listing</h2>
 
 <form>
     <section class="section">
-        <fieldset class="row-fluid section" id="listingType">
-            <div class="span12">
+        <fieldset class="row-fluid" id="listingType">
+            <div class="span12 well">
                 <label for="auctionType">
                     Type of Auction
                 </label>
-                <label class="radio">
-                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                    List as an auction - Allows people to bid on your product
-                </label>
-                <label class="radio">
-                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                    List as a fixed price offer - People can buy it, or not
-                </label>
+                <div class="btn-group">
+                    <input class="toggle" type="radio" name="toggle" id="toggle-auction" value="option1" checked>
+                    <label class="btn" for="toggle-auction">Auction</label>
+                    <input class="toggle" type="radio" name="toggle" id="toggle-fixedPriceOffer" value="option2">
+                    <label class="btn" for="toggle-fixedPriceOffer">Fixed Price</label>
+                </div>
             </div>
         </fieldset>
-        <fieldset class="row-fluid section" id="listingStartPrice">
-            <div class="span12">
+        <fieldset class="row-fluid" id="listingStartPrice">
+            <div class="span12 well">
                 <label for="auctionStartPrice">
                     Auction start price
                 </label>
@@ -48,8 +46,8 @@ $Layout->start();
                 </div>
             </div>
         </fieldset>
-        <fieldset class="row-fluid section" id="listingPaymentConditions">
-            <div class="span12">
+        <fieldset class="row-fluid" id="listingPaymentConditions">
+            <div class="span12 well">
                 <label for="paymentConditions">
                     Accepted Payment Conditions
                 </label>
@@ -67,50 +65,49 @@ $Layout->start();
                 </label>
             </div>
         </fieldset>
-        <fieldset class="row-fluid section" id="listingPaymentMethods">
-            <div class="span12">
-                <label for="paymentConditions">
-                    Accepted Payment Methods
-                </label>
-                <label class="checkbox inline checkbox-label-btn btn-ricardoPay btn">
-                    <input type="checkbox" checked>
-                    RicardoPay
-                </label>
-                <label class="checkbox inline checkbox-label-btn btn btn-small">
-                    <input type="checkbox">
-                    Bank / Post
-                </label>
-                <label class="checkbox inline checkbox-label-btn btn btn-small">
-                    <input type="checkbox">
-                    Cash
-                </label>
+        <fieldset id="listingPaymentMethods" class="well">
+            <div class="row-fluid">
+                <div class="span12">
+                    <label for="paymentConditions">
+                        Accepted Payment Methods
+                    </label>
+                    <label class="checkbox inline checkbox-label-btn btn-ricardoPay btn">
+                        <input type="checkbox" checked>
+                        RicardoPay
+                    </label>
+                    <label class="checkbox inline checkbox-label-btn btn btn-small">
+                        <input type="checkbox">
+                        Bank / Post
+                    </label>
+                    <label class="checkbox inline checkbox-label-btn btn btn-small">
+                        <input type="checkbox">
+                        Cash
+                    </label>
+                </div>
+            </div>
+            <div class="row-fluid section">
+                <div class="span12">
+                    <a href="#" class="btn btn-link">Add additional payment notes</a><small class="muted">(optional)</small>
+                </div>
             </div>
         </fieldset>
-        <a href="#" class="btn btn-link">Add additional payment notes</a><small class="muted">(optional)</small>
     </section>
     <section class="section">
-        <fieldset class="row-fluid section" id="listingStartTimeAndDuration">
-            <div class="span12">
+        <fieldset class="row-fluid" id="listingStartTimeAndDuration">
+            <div class="span12 well">
                 <label for="StartTimeAndDuration">
                     Listing start time and duration
                 </label>
                 <div class="row-fluid">
-                    <div class="input-append">
-                        <input class="span6" id="appendedDropdownButton" type="text" value="immediately">
-                        <div class="btn-group">
-                            <button class="btn dropdown-toggle" data-toggle="dropdown">
-                                <i class="icon-calendar"></i><span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu">
-                                ...
-                            </ul>
-                        </div>
+                    <div id="datetimepicker" class="input-append date">
+                        <input data-format="dd.MM.yyyy hh:mm" type="text">
+                        <span class="add-on"> <i class="icon-calendar" data-time-icon="icon-time" data-date-icon="icon-calendar"> </i> </span>
                     </div>
                 </div>
             </div>
         </fieldset>
-        <fieldset class="row-fluid section" id="listingsReactivation">
-            <div class="span12">
+        <fieldset class="row-fluid" id="listingsReactivation">
+            <div class="span12 well">
                 <label for="reactivationOption">
                     Reactivation
                 </label>
@@ -134,4 +131,4 @@ $Layout->start();
 <div class="form-actions">
     <a href="step4.php" class="btn btn-primary">Forward to set Shipping Conditions</a><span class="separator muted"> | </span><a href="#" class="btn btn-link">Back to describe your product</a>
 </div>
-<?php $Layout->end(); ?>
+<?php $Layout -> end(); ?>

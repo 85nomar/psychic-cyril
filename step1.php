@@ -7,18 +7,19 @@ $Layout->start();
 <h2>Choose in which category to sell your product</h2>
 
 <div class="row-fluid">
-    <form class="form-search">
-        <div id="categoryFinder">
+    <form class="form-search span12">
+        <fieldset id="categoryFinder" class="well">
             <div class="input-append">
                 <input class="span12" id="appendedInputButton" type="text" placeholder="z.B i-Phone 3 GS">
                 <button class="btn" type="button">
                     Help me find a category!
                 </button>
             </div>
-        </div>
+        </fieldset>
     </form>
-
-    <div class="controls controls-row">
+</div>
+<div class="row-fluid">
+    <div class="controls controls-row span12">
         <select multiple="multiple" class="span2">
             <option>1</option>
             <option>2</option>

@@ -7,7 +7,7 @@ $Layout -> start();
 <h2>Describe your shipping options</h2>
 
 <form>
-    <fieldset class="section">
+    <fieldset class="section well">
         <label for="shippingOptions">
             Shipping options
         </label>
@@ -41,7 +41,7 @@ $Layout -> start();
             </div>
         </div>
     </fieldset>
-    <fieldset class="section">
+    <fieldset class="section well">
         <div class="row-fluid">
             <div class="span12">
                 <label for="productAvailability">
