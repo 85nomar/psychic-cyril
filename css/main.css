@@ -63,6 +63,21 @@ input[type="radio"].toggle:checked + label {
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 }
 
+.table-sum tbody tr td:last-child {
+    text-align: right;
+}
+
+.table-sum tbody tr:last-child td {
+    background-color: #FAA732;
+    background-image: linear-gradient(to bottom, #FBB450, #F89406);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+
+    font-weight: bold;
+    color: #FFFFFF;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
 /*********************************************************************
  * overriding bootstrap.css default styles
  *********************************************************************/
