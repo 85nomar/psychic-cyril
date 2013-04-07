@@ -53,7 +53,7 @@ $Layout->start();
                 <label for="paymentConditions">
                     Accepted Payment Conditions
                 </label>
-                <label class="checkbox inline checkbox-label-btn btn">
+                <label class="checkbox inline checkbox-label-btn btn btn-success">
                     <input type="checkbox" checked>
                     In Advance
                 </label>

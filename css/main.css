@@ -44,6 +44,13 @@
     margin: 20px 0;
 }
 
+.btn-rounded {
+    width: 27px;
+    height: 27px;
+    margin-top: 1px;
+    border-radius: 50% 50% 50% 50%;
+}
+
 /*********************************************************************
  * overriding bootstrap.css default styles
  *********************************************************************/
