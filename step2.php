@@ -4,26 +4,6 @@ $Layout -> title = 'Selling';
 $Layout -> start();
 ?>
 
-<h2>Describe what you want to sell</h2>
-
-<div class="row-fluid">
-    <div class="span10">
-        <ul class="breadcrumb">
-            <li>
-                <a href="#">Art</a><span class="divider">/</span>
-            </li>
-            <li>
-                <a href="#">Stamps</a><span class="divider">/</span>
-            </li>
-            <li class="active">
-                Antique
-            </li>
-        </ul>
-    </div>
-    <div class="span2">
-        <a href="#" class="btn btn-small">Change Category</a>
-    </div>
-</div>
 <form>
     <div class="row-fluid">
         <div class="span12 well">
