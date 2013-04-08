@@ -1,5 +1,5 @@
 /**********************************************************************
- * Selling-Form Step 1 
+ * Selling-Form Step 1
  **********************************************************************/
 #categoryFinder {
     margin: 40px 0;
@@ -10,7 +10,7 @@
 }
 
 .followSteps {
-    
+
 }
 
 .checkbox.inline.checkbox-label-btn {
@@ -31,7 +31,6 @@
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
     color: #FFFFFF;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-
     padding-left: 50px;
     padding-right: 50px;
 }
@@ -72,10 +71,17 @@ input[type="radio"].toggle:checked + label {
     background-image: linear-gradient(to bottom, #FBB450, #F89406);
     background-repeat: repeat-x;
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-
     font-weight: bold;
     color: #FFFFFF;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.table-first-column-title tr td:first-child {
+    color: #999999;
+}
+
+.editmode {
+    border-color: #FAA732;
 }
 
 /*********************************************************************
@@ -99,4 +105,25 @@ input[type="radio"].toggle:checked + label {
 
 .icon-time {
     background-position: -96px 0;
+}
+
+.well > legend {
+    display: inline;
+    width: auto;
+    padding: 0 7px;
+    margin-bottom: 0;
+    background: #FAA732;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    border-width: 1px;
+    border-style: solid;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 25px;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.well .table {
+    margin-bottom: 0;
 }

@@ -10,9 +10,7 @@ $Layout -> start();
     <section class="section">
         <fieldset class="row-fluid" id="listingType">
             <div class="span12 well">
-                <label for="auctionType">
-                    Type of Auction
-                </label>
+                <label for="auctionType"> Type of Auction </label>
                 <div class="btn-group">
                     <input class="toggle" type="radio" name="toggle" id="toggle-auction" value="option1" checked>
                     <label class="btn" for="toggle-auction">Auction</label>
@@ -23,9 +21,7 @@ $Layout -> start();
         </fieldset>
         <fieldset class="row-fluid" id="listingStartPrice">
             <div class="span12 well">
-                <label for="auctionStartPrice">
-                    Auction start price
-                </label>
+                <label for="auctionStartPrice"> Auction start price </label>
                 <div class="row-fluid">
                     <div class="span3">
                         <div class="input-prepend">
@@ -37,9 +33,7 @@ $Layout -> start();
                         <a href="#" class="btn btn-link">Add a buy now option</a><small class="label label-warning">+ CHF 1.00</small>
                     </div>
                 </div>
-                <label for="auctionIncrementPrice">
-                    Increment price
-                </label>
+                <label for="auctionIncrementPrice"> Increment price </label>
                 <div class="input-prepend">
                     <span class="add-on">CHF</span>
                     <input class="span10" id="inputIncrementPrice" type="text" value="0.05">
@@ -48,41 +42,31 @@ $Layout -> start();
         </fieldset>
         <fieldset class="row-fluid" id="listingPaymentConditions">
             <div class="span12 well">
-                <label for="paymentConditions">
-                    Accepted Payment Conditions
-                </label>
+                <label for="paymentConditions"> Accepted Payment Conditions </label>
                 <label class="checkbox inline checkbox-label-btn btn btn-success">
                     <input type="checkbox" checked>
-                    In Advance
-                </label>
+                    In Advance </label>
                 <label class="checkbox inline checkbox-label-btn btn">
                     <input type="checkbox">
-                    At Pickup
-                </label>
+                    At Pickup </label>
                 <label class="checkbox inline checkbox-label-btn btn">
                     <input type="checkbox">
-                    After Receipt
-                </label>
+                    After Receipt </label>
             </div>
         </fieldset>
         <fieldset id="listingPaymentMethods" class="well">
             <div class="row-fluid">
                 <div class="span12">
-                    <label for="paymentConditions">
-                        Accepted Payment Methods
-                    </label>
+                    <label for="paymentConditions"> Accepted Payment Methods </label>
                     <label class="checkbox inline checkbox-label-btn btn-ricardoPay btn">
                         <input type="checkbox" checked>
-                        RicardoPay
-                    </label>
+                        RicardoPay </label>
                     <label class="checkbox inline checkbox-label-btn btn btn-small">
                         <input type="checkbox">
-                        Bank / Post
-                    </label>
+                        Bank / Post </label>
                     <label class="checkbox inline checkbox-label-btn btn btn-small">
                         <input type="checkbox">
-                        Cash
-                    </label>
+                        Cash </label>
                 </div>
             </div>
             <div class="row-fluid section">
@@ -93,24 +77,26 @@ $Layout -> start();
         </fieldset>
     </section>
     <section class="section">
-        <fieldset class="row-fluid" id="listingStartTimeAndDuration">
-            <div class="span12 well">
-                <label for="StartTimeAndDuration">
-                    Listing start time and duration
-                </label>
-                <div class="row-fluid">
-                    <div id="datetimepicker" class="input-append date">
-                        <input data-format="dd.MM.yyyy hh:mm" type="text">
-                        <span class="add-on"> <i class="icon-calendar" data-time-icon="icon-time" data-date-icon="icon-calendar"> </i> </span>
+        <fieldset class="well" id="listingStartTimeAndDuration">
+            <div class="row-fluid">
+                <div class="span4">
+                    <label for="startTime"> Listing start time </label>
+                    <div class="row-fluid">
+                        <div id="datetimepicker" class="input-append date">
+                            <input id="startTime" data-format="dd.MM.yyyy hh:mm" type="text">
+                            <span class="add-on"> <i class="icon-calendar" data-time-icon="icon-time" data-date-icon="icon-calendar"> </i> </span>
+                        </div>
                     </div>
+                </div>
+                <div class="span8">
+                    <label for="duration">Duration</label>
+                    <input id="duration" type="text">
                 </div>
             </div>
         </fieldset>
         <fieldset class="row-fluid" id="listingsReactivation">
             <div class="span12 well">
-                <label for="reactivationOption">
-                    Reactivation
-                </label>
+                <label for="reactivationOption"> Reactivation </label>
                 <select class="span1">
                     <option>1</option>
                     <option>2</option>
