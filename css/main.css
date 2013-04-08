@@ -84,6 +84,10 @@ input[type="radio"].toggle:checked + label {
     border-color: #FAA732;
 }
 
+.noUiSlider {
+    margin-top: 35px;
+}
+
 /*********************************************************************
  * overriding bootstrap.css default styles
  *********************************************************************/

@@ -83,14 +83,17 @@ $Layout -> start();
                     <label for="startTime"> Listing start time </label>
                     <div class="row-fluid">
                         <div id="datetimepicker" class="input-append date">
-                            <input id="startTime" data-format="dd.MM.yyyy hh:mm" type="text">
+                            <input id="startTime" data-format="dd.MM.yyyy hh:mm" type="text" placeholder="immediately">
                             <span class="add-on"> <i class="icon-calendar" data-time-icon="icon-time" data-date-icon="icon-calendar"> </i> </span>
                         </div>
                     </div>
                 </div>
-                <div class="span8">
+                <div class="span2">
                     <label for="duration">Duration</label>
-                    <input id="duration" type="text">
+                    <input id="duration" type="text" class="input-small">
+                </div>
+                <div class="span6">
+                    <div class="noUiSlider"></div>
                 </div>
             </div>
         </fieldset>
