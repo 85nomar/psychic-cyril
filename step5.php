@@ -54,24 +54,24 @@ $Layout -> start();
                                     <tr>
                                         <td class="span5">Language</td>
                                         <td class="span7">
-                                            <input class="input-block-level" type="text" value="German">
+                                        <input class="input-block-level" type="text" value="German">
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Title</td>
                                         <td>
-                                            <input class="input-block-level" type="text" value="i-Phone 3 GS 16GB black">
+                                        <input class="input-block-level" type="text" value="i-Phone 3 GS 16GB black">
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Sub-Title</td>
                                         <td>
-                                            <input class="input-block-level" type="text" value="Brand new i-Phone 3 GS the one and only">
+                                        <input class="input-block-level" type="text" value="Brand new i-Phone 3 GS the one and only">
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Description</td>
-                                        <td><textarea class="input-block-level">Lorum ipsum dolores Lorum ipsum dolores Lorum ipsum dolores Lorum ipsum doloresLorum ipsum dolores Lorum ipsum dolores</textarea></td>
+                                        <td>                                        <textarea class="input-block-level">Lorum ipsum dolores Lorum ipsum dolores Lorum ipsum dolores Lorum ipsum doloresLorum ipsum dolores Lorum ipsum dolores</textarea></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -156,35 +156,89 @@ $Layout -> start();
                     </div>
                 </div>
             </fieldset>
+            <fieldset>
+                <div class="row-fluid">
+                    <div class="span4">
+                        <label class="btn checkbox-label-btn-promoFeature">
+                            <h6>Top-Offer Frontpage</h6>
+                            <span class="promoFeature-subTeaser">200x more visitors</span>
+                            <div class="row-fluid">
+                                <p class="span8">
+                                    Your offer appears on ricardo.ch Frontpage
+                                </p>
+                                <img class="promo-img span4" src="img/crowd_5x.png">
+                            </div>
+                            <input type="checkbox">
+                            <span class="promoFeature-costs">CHF 40.00</span>
+                        </label>
+                    </div>
+                    <div class="span4">
+                        <label class="btn checkbox-label-btn-promoFeature">
+                            <h6>Category-Booster basic</h6>
+                            <span class="promoFeature-subTeaser">10x more visitors</span>
+                            <div class="row-fluid">
+                                <p class="span8">
+                                    Your offer appears on category pages in a slideshow
+                                </p>
+                                <img class="promo-img span4" src="img/crowd_5x.png">
+                            </div>
+                            <input type="checkbox">
+                            <span class="promoFeature-costs">CHF 5.00</span>
+                        </label>
+                    </div>
+                    <div class="span4">
+                        <label class="btn checkbox-label-btn-promoFeature">
+                            <h6>Category-Booster elite</h6>
+                            <span class="promoFeature-subTeaser">20x more visitors</span>
+                            <div class="row-fluid">
+                                <p class="span8">
+                                    Your offer appears on category pages in a slideshow
+                                </p>
+                                <img class="promo-img span4" src="img/crowd_5x.png">
+                            </div>
+                            <input type="checkbox">
+                            <span class="promoFeature-costs">CHF 20.00</span>
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
             <h3>Fees</h3>
             <table class="table table-condensed table-striped">
                 <tbody>
 
                     <tr>
-                        <td><label for="categoryFeatureBronze" class="checkbox">
+                        <td>
+                        <label for="categoryFeatureBronze" class="checkbox">
                             <input type="checkbox" id="categoryFeatureBronze">
-                            Category Feature bronze</label></td>
+                            Category Feature bronze
+                        </label></td>
                         <td><span class="label label-info">Up to 5x visitors</span> | only CHF 5.00</td>
                         <td>-</td>
                     </tr>
                     <tr>
-                        <td><label for="categoryFeatureSilver" class="checkbox">
+                        <td>
+                        <label for="categoryFeatureSilver" class="checkbox">
                             <input type="checkbox" id="categoryFeatureSilver">
-                            Category Feature silver</label></td>
+                            Category Feature silver
+                        </label></td>
                         <td><span class="label label-info">Up to 15x visitors</span> | only CHF 15.00</td>
                         <td>-</td>
                     </tr>
                     <tr>
-                        <td><label for="categoryFeatureGold" class="checkbox">
+                        <td>
+                        <label for="categoryFeatureGold" class="checkbox">
                             <input type="checkbox" id="categoryFeatureGold">
-                            Category Feature gold</label></td>
+                            Category Feature gold
+                        </label></td>
                         <td><span class="label label-info">Up to 20x visitors</span> | only CHF 20.00</td>
                         <td>-</td>
                     </tr>
                     <tr>
-                        <td><label for="frontpageTopOffer" class="checkbox">
+                        <td>
+                        <label for="frontpageTopOffer" class="checkbox">
                             <input type="checkbox" id="frontpageTopOffer">
-                            Frontpage Top-Offer</label></td>
+                            Frontpage Top-Offer
+                        </label></td>
                         <td><span class="label label-info">Up to 200x visitors</span> | only CHF 40.00</td>
                         <td>-</td>
                     </tr>
@@ -218,5 +272,4 @@ $Layout -> start();
     <a href="#" class="btn btn-link">Back to set Shipping Options</a>
 </div>
 
-<?php $Layout -> end();
-?>
+<?php $Layout -> end(); ?>

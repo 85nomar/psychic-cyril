@@ -30,9 +30,14 @@ $Layout -> start();
                 </div>
             </div>
             <div class="span6">
+                <label class="checkbox checkbox-label-btn-wide inline btn btn-small btn-success">
+                    <input type="checkbox">
+                    Offer for free
+                </label>
                 <button class="btn btn-small btn-rounded">
                     <i class="icon-plus"></i>
                 </button>
+
             </div>
         </div>
         <div class="row-fluid">
@@ -52,7 +57,7 @@ $Layout -> start();
                     on Stock
                 </label>
                 <label class="radio">
-                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"> 
+                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
                     <select>
                         <option>within 1 - 5 days</option>
                         <option>within 6 - 10 days</option>
@@ -69,5 +74,4 @@ $Layout -> start();
 <div class="form-actions">
     <a href="step5.php" class="btn btn-primary">Proceed to the last step</a><span class="separator muted"> | </span><a href="#" class="btn btn-link">Back to set Pricing and Duration</a>
 </div>
-<?php $Layout -> end();
-?>
+<?php $Layout -> end(); ?>
