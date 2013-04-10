@@ -20,40 +20,35 @@ $Layout->start();
 </div>
 <div class="row-fluid">
     <div class="controls controls-row span12">
-        <select multiple="multiple" class="span2">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+        <select size="6" multiple="multiple" class="span2">
+            <option>Antiquitäten &amp; Kunst</option>
+            <option>Computer & Netzwerk</option>
+            <option>Auto &amp; Motorrad</option>
+            <option>Briefmarken</option>
+            <option>Bücher &amp; Comics</option>
         </select>
-        <select multiple="multiple" class="span2">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+        <select size="6" multiple="multiple" class="span2">
+            <option>Notebooks & Zubehör</option>
+            <option>Grafikkarten</option>
+            <option>Gehäuse</option>
+            <option>Mainboards</option>
+            <option>Soundkarten</option>
         </select>
-        <select multiple="multiple" class="span2">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+        <select size="6" multiple="multiple" class="span2">
+            <option>AMD</option>
+            <option>Intel</option>
+            <option>Zubehör</option>
         </select>
-        <select multiple="multiple" class="span2">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+        <select size="6" multiple="multiple" class="span2">
+            <option>Core</option>
+            <option>Pentium</option>
+            <option>Sonstige</option>
         </select>
-        <select multiple="multiple" class="span2">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+        <select size="6" multiple="multiple" class="span2">
+            <option>Core i5</option>
+            <option>Core i7</option>
+            <option>core i3</option>
+            <option>Dual Core</option>
         </select>
     </div>
 </div>
