@@ -96,11 +96,12 @@
     text-align: center;
 }
 
-#step1 {
+#step1, #step2, #step3, #step4, #step5 {
 padding: 10px;
 border: 1px solid #ddd;
 background: #eee;
 border-radius: 8px;
+margin:10px 0;
 }
 
 legend {
@@ -119,3 +120,22 @@ select[multiple], select[size] {
   margin-top:70px;
 }
 
+#textarea { height:200px;}
+
+.thumbnail {
+  background:#fff;
+}
+.thumbnails li:first-child {
+  padding-right:35px;
+  position: relative;
+}
+
+.thumbnails li:first-child:after {
+  content: "·";
+  font-weight: bold;
+  font-size: 60px;
+  color: #999;
+  position: absolute;
+  top: 54px;
+  right: 0px;
+}

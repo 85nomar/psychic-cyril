@@ -32,11 +32,12 @@
           <option>Option 1</option>
           <option>Option 2</option>
         </select>
-      </div>
 
+<!--
         <select id="selectmultiple" name="selectmultiple" class="input-large" multiple="multiple">
           <option>Option 1</option>
           <option>Option 2</option>
         </select>
+-->
 
-    </div>
+</div>
