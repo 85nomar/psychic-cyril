@@ -71,8 +71,11 @@ $Layout -> start();
             </div>
             <div class="row-fluid section">
                 <div class="span12">
-                    <a href="#" class="btn btn-link">Add additional payment notes</a><small class="muted">(optional)</small>
+                    <a id="add-additional-payment-notes" data-toggle="collapse" data-target="#additional-payment-notes" class="btn btn-link">Add additional payment notes</a><small class="muted">(optional)</small>
                 </div>
+            </div>
+            <div class="row-fluid collapse" id="additional-payment-notes">
+                <textarea class="span6" rows="3" placeholder="Insert payment notes here"></textarea>
             </div>
         </fieldset>
     </section>

@@ -203,9 +203,8 @@ $Layout -> start();
                 </div>
             </fieldset>
             <h3>Fees</h3>
-            <table class="table table-condensed table-striped">
+            <table class="table table-condensed table-striped" style="display:none;">
                 <tbody>
-
                     <tr>
                         <td>
                         <label for="categoryFeatureBronze" class="checkbox">
