@@ -142,6 +142,22 @@ input[type="radio"].toggle:checked + label {
     background-position: -96px 0;
 }
 
+.icon-bold, .icon-italic, .icon-list {
+    background-image: url("../lib/img/glyphicons-halflings.png");
+}
+
+.icon-bold {
+    background-position: -167px -48px;
+}
+
+.icon-italic {
+    background-position: -192px -48px;
+}
+
+.icon-list {
+    background-position: -360px -48px;
+}
+
 .well > legend {
     display: inline;
     width: auto;
