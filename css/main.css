@@ -1,12 +1,90 @@
 /**********************************************************************
- * Selling-Form Step 1
+ * Selling-Form
  **********************************************************************/
-#categoryFinder {
+
+/* color orange: #f29106 */
+/* color blue: #213c90 */
+
+#formNav {
     margin: 40px 0;
 }
 
+.stepIndicator > li > a {
+    position: relative;
+    width: 120px;
+    height: 30px;
+    padding: 12px;
+    background: #f29106;
+    border-radius: 0px;
+    color: #ffffff;
+}
+
+.stepIndicator > li > a:after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: -27px;
+    border-style: solid;
+    border-width: 27px 0 27px 27px;
+    border-color: transparent #f29106;
+    display: block;
+    width: 0;
+    z-index: 2;
+}
+
+.stepIndicator > li > a:before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: 146px;
+    border-style: solid;
+    border-width: 31px 0 31px 31px;
+    border-color: transparent #ffffff;
+    display: block;
+    width: 0;
+    z-index: 1;
+}
+
+.stepIndicator > li.done > a {
+    background-color: #A5B937;
+}
+
+.stepIndicator > li.done > a:after {
+    border-color: transparent #A5B937;
+}
+
+.stepIndicator > li.todo > a {
+    background-color: #e5e5e5;
+    color: #1946a0;
+}
+
+.stepIndicator > li.todo > a:after {
+    border-color: transparent #e5e5e5;
+}
+
+.stepIndicator > li.active > a {
+    background-color: #f29106;
+}
+
+.stepIndicator > li.active > a:after {
+    border-color: transparent #f29106;
+}
+
+.stepIndicator > li.active > a:hover {
+    background-color: #f29106;
+}
+
+.stepIndicator > li > a > span {
+    margin-left: 25px;
+}
+
+
 #savedForLater {
     margin-bottom: 30px;
+}
+
+#savedForLater h5 {
+    margin-top: 0;
 }
 
 .followSteps {
@@ -62,7 +140,7 @@
 }
 
 .promo-img {
-    
+
 }
 
 .section {

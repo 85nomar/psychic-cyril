@@ -7,23 +7,27 @@ class Layout
     public $formNav=array(
         array(
             'url'=>'step1',
-            'title'=>'1. Choose Category',
+            'title'=>'1. Kategorisieren',
         ),
         array(
             'url'=>'step2',
-            'title'=>'2. Describe your product',
+            'title'=>'2. Beschreiben',
         ),
         array(
             'url'=>'step3',
-            'title'=>'3. Set pricing and duration',
+            'title'=>'3. Preis und Dauer',
         ),
         array(
             'url'=>'step4',
-            'title'=>'4. Define shipping',
+            'title'=>'4. Versand-Optionen',
         ),
         array(
             'url'=>'step5',
-            'title'=>'5. Review before publishing',
+            'title'=>'5. Promotions-Optionen',
+        ),
+        array(
+            'url'=>'step6',
+            'title'=>'Zusammenfassung',
         )
     );
     public $navTitle='';

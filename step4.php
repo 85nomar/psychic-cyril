@@ -4,20 +4,20 @@ $Layout -> title = 'Selling';
 $Layout -> start();
 ?>
 
-<h2>Describe your shipping options</h2>
+<h2>Versand-Optionen bestimmen</h2>
 
 <form>
     <fieldset class="section well">
-        <label for="shippingOptions"> Shipping options </label>
+        <label for="shippingOptions"> Versand-Optionen </label>
         <div class="row-fluid shipping-element">
             <div class="span3">
                 <select name="inputShippingMethod[]">
-                    <option selected="selected">Pick-up</option>
-                    <option>Letter A-Post</option>
-                    <option>Letter B-Post</option>
-                    <option>Package A-Post</option>
-                    <option>Package B-Post</option>
-                    <option>Courier</option>
+                    <option selected="selected">Abholung</option>
+                    <option>Brief A-Post</option>
+                    <option>Brief B-Post</option>
+                    <option>Packet A-Post</option>
+                    <option>Packet B-Post</option>
+                    <option>Kurier</option>
                 </select>
             </div>
             <div class="span3">
@@ -29,7 +29,7 @@ $Layout -> start();
             <div class="span6">
                 <label class="checkbox checkbox-label-btn-wide inline btn btn-small">
                     <input type="checkbox">
-                    Offer for free </label>
+                    Gratis anbieten </label>
                 <button class="btn btn-small btn-rounded add-additional-shipping">
                     <i class="icon-plus"></i>
                 </button>
@@ -38,35 +38,32 @@ $Layout -> start();
         </div>
         <div class="row-fluid">
             <div class="span12">
-                <a class="btn btn-link" data-toggle="collapse" data-target="#additional-shipping-notes">Add additional shipping infos</a>
+                <a class="btn btn-link" data-toggle="collapse" data-target="#additional-shipping-notes">Zusätzliche Bemerkungen zum Versand</a>
             </div>
         </div>
         <div class="row-fluid collapse" id="additional-shipping-notes">
-            <textarea class="span8" rows="3" placeholder="Insert shipping notes here"></textarea>
+            <textarea class="span8" rows="3" placeholder="Notieren Sie Bemerkungen zum Versand"></textarea>
         </div>
     </fieldset>
     <fieldset class="section well">
         <div class="row-fluid">
             <div class="span12">
-                <label for="productAvailability"> Availability </label>
-                <label class="radio">
-                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                    on Stock </label>
-                <label class="radio">
-                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                <label for="productAvailability"> Verfügbarkeit des Artikels </label>
+
                     <select>
-                        <option>within 1 - 5 days</option>
-                        <option>within 6 - 10 days</option>
-                        <option>within 11 - 14 days</option>
-                        <option>within 15 - 20 days</option>
-                        <option>within 60 days</option>
-                    </select> </label>
+                        <option>sofort lieferbar</option>
+                        <option>lieferbar in 1 - 5 days</option>
+                        <option>lieferbar in 6 - 10 days</option>
+                        <option>lieferbar in 11 - 14 days</option>
+                        <option>lieferbar in 15 - 20 days</option>
+                        <option>lieferbar in 60 days</option>
+                    </select> 
             </div>
         </div>
     </fieldset>
 </form>
 
 <div class="form-actions">
-    <a href="step5.php" class="btn btn-primary">Proceed to the last step</a><span class="separator muted"> | </span><a href="#" class="btn btn-link">Back to set Pricing and Duration</a>
+    <a href="step5.php" class="btn btn-primary">Weiter zu "Promotions Optionen"</a>
 </div>
 <?php $Layout -> end(); ?>

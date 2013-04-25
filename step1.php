@@ -1,10 +1,10 @@
 <?php
 require ('inc/layout.php');
-$Layout->title='Selling';
-$Layout->start();
+$Layout -> title = 'Selling';
+$Layout -> start();
 ?>
 
-<h2>Choose in which category to sell your product</h2>
+<h2>Kategorie für das einzustellende Produkt bestimmen</h2>
 
 <div class="row-fluid">
     <form class="form-search span12">
@@ -12,7 +12,7 @@ $Layout->start();
             <div class="input-append">
                 <input class="span12" id="appendedInputButton" type="text" placeholder="z.B i-Phone 3 GS">
                 <button class="btn" type="button">
-                    Help me find a category!
+                    Kategorie vorschlagen lassen!
                 </button>
             </div>
         </fieldset>
@@ -20,72 +20,51 @@ $Layout->start();
 </div>
 <div class="row-fluid">
     <div class="controls controls-row span12">
-        <select size="6" multiple="multiple" class="span2">
+        <select size="26" multiple="multiple" class="span2">
             <option>Antiquitäten &amp; Kunst</option>
-            <option>Computer & Netzwerk</option>
+            <option>Audio, TV & Video</option>
             <option>Auto &amp; Motorrad</option>
             <option>Briefmarken</option>
             <option>Bücher &amp; Comics</option>
+            <option>Büro & gewerbe</option>
+            <option>Computer & Netzwerk</option>
+            <option>Filme & DVD</option>
+            <option>Foto & Optik</option>
+            <option>Games & Spielkonsolen</option>
+            <option>Handwerk & Garten</option>
+            <option>Handy, Festnetz, Funk</option>
+            <option>Haushalt & Wohnen</option>
+            <option>Kind & Baby</option>
+            <option>Kleidung & Accessoires</option>
+            <option>Kosmetik & Pflege</option>
+            <option>Modellbau & Hobby</option>
+            <option>Münzen</option>
+            <option>Musik & Instrumente</option>
+            <option>Sammeln & Seltenes</option>
+            <option>Spielzeug & Basteln</option>
+            <option>Sport</option>
+            <option>Tickets & Gutscheine</option>
+            <option>Tierzubehör</option>
+            <option>Uhren & Schmuck</option>
+            <option>Wein & Genuss</option>
         </select>
-        <select size="6" multiple="multiple" class="span2">
-            <option>Notebooks & Zubehör</option>
-            <option>Grafikkarten</option>
-            <option>Gehäuse</option>
-            <option>Mainboards</option>
-            <option>Soundkarten</option>
+        <select size="26" multiple="multiple" class="span2">
+
         </select>
-        <select size="6" multiple="multiple" class="span2">
-            <option>AMD</option>
-            <option>Intel</option>
-            <option>Zubehör</option>
+        <select size="26" multiple="multiple" class="span2">
+
         </select>
-        <select size="6" multiple="multiple" class="span2">
-            <option>Core</option>
-            <option>Pentium</option>
-            <option>Sonstige</option>
+        <select size="26" multiple="multiple" class="span2">
+
         </select>
-        <select size="6" multiple="multiple" class="span2">
-            <option>Core i5</option>
-            <option>Core i7</option>
-            <option>core i3</option>
-            <option>Dual Core</option>
+        <select size="26" multiple="multiple" class="span2">
+
         </select>
-    </div>
-</div>
-<hr>
-<div id="savedForLater">
-    <h4>Previous listings you've started to work on</h4>
-    <div class="row-fluid">
-        <div class="span4">
-            <div class="row-fluid">
-                <div class="span5">
-                    <img src="img/img_placeholder_90.jpg" class="img-polaroid">
-                </div>
-                <div class="span7">
-                    <h5>I-Phone 4 GS</h5>
-                    <small class="muted">Started at 02.04.2012</small>
-                    <a href="#" class="btn btn-mini">Finish your listing</a>
-                </div>
-            </div>
-        </div>
-        <div class="span4">
-            <div class="row-fluid">
-                <div class="span5">
-                    <img src="img/img_placeholder_90.jpg" class="img-polaroid">
-                </div>
-                <div class="span7">
-                    <h5>Chocolate bunny</h5>
-                    <small class="muted">Started at 02.04.2012</small>
-                    <a href="#" class="btn btn-mini">Finish your listing</a>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 
 <div class="form-actions">
-<a href="#" class="btn btn-primary">Forward to describe your product</a><span class="separator muted">
+    <a href="#" class="btn btn-primary">Weiter um das Produkt zu beschreiben</a>
 </div>
 
-<?php $Layout->end();
-?>
+<?php $Layout -> end(); ?>

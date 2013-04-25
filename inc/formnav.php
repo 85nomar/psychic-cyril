@@ -1,18 +1,29 @@
-<nav id="nav-Form">
-    <ol class="followSteps nav nav-pills">
+<nav id="formNav">
+    <ol class="stepIndicator nav nav-pills">
         <?php 
-        $thisNav = $this->formNav;
+            $thisNav = $this->formNav;
+            $activeStepPos;
 
-        foreach($thisNav as $page) :
+            foreach($thisNav as $index => $val) {
+                if($val['url'] === $this->navTitle) {
+                    $activeStepPos = $index;
+                    break;
+                }
+            }
 
-        $thisURL = $page['url'];
-        $isActive = $this->navTitle === $thisURL;
+            foreach($thisNav as $index => $val) :
+
+            $thisURL = $val['url'];
+            $isActive = $index == $activeStepPos;
+            $isDone = $index < $activeStepPos;
         ?>
 
-        <li class="<?php echo $isActive ? 'active' : '' ?>">
-            <a href="<?php echo $thisURL?>.php"><?php echo $page['title'] ?></a>
+        <li class="<?php echo $isActive ? 'active' : '' ?> <?php if ($isDone) echo 'done'; else if (!$isActive) echo 'todo'; ?>">
+            <a href="<?php echo $thisURL?>.php"><span><?php echo $val['title'] ?></span></a>
         </li>
 
-        <?php endforeach ?>
+        <?php
+            endforeach
+        ?>
     </ol>
 </nav>
