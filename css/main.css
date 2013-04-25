@@ -78,6 +78,9 @@
     margin-left: 25px;
 }
 
+.stepIndicator > li:last-child > a:after {
+    border: 0;
+}
 
 #savedForLater {
     margin-bottom: 30px;
