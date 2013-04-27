@@ -4,6 +4,12 @@
 
 /* color orange: #f29106 */
 /* color blue: #213c90 */
+/* color btn-blue: #1946A0 */
+/* clor green: #A5B937 */
+
+#logo {
+    margin-top: 5px;
+}
 
 #formNav {
     margin: 40px 0;
@@ -167,8 +173,9 @@ input[type="radio"].toggle {
 }
 
 input[type="radio"].toggle:checked + label {
-    background-color: #F09600;
-    background-image: linear-gradient(to bottom, #FAAF4B, #F09600);
+    color: #ffffff;
+    background-color: #1946A0;
+    background-image: linear-gradient(to bottom, #2382C8, #1946A0);
     background-repeat: repeat-x;
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 }

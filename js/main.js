@@ -36,9 +36,18 @@ $(document).ready(function() {
             }
         }
     });
-    
+
     $(".add-additional-shipping").on("click", function(event) {
         event.preventDefault();
         $(this).parents(".shipping-element").clone(true).insertAfter(".shipping-element:last");
+    });
+
+    $("#listingType .toggle").on("click", function(e) {
+        var $this = $(this), target = $this.attr('data-target');
+
+        if ($(target).hasClass('in'))
+            return;
+        $(".in").removeClass('in');
+        $(target).addClass('in');
     });
 });
