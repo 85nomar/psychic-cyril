@@ -137,20 +137,28 @@ $Layout -> start();
                         Startzeit
                     </label>
                     <div class="row-fluid">
-                        <div id="datetimepicker" class="input-append date">
+                        <div id="dateStartTimePicker" class="input-append date">
                             <input id="startTime" data-format="dd.MM.yyyy hh:mm" type="text" placeholder="sofort">
                             <span class="add-on"> <i class="icon-calendar" data-time-icon="icon-time" data-date-icon="icon-calendar"> </i> </span>
                         </div>
                     </div>
                 </div>
-                <div class="span2">
-                    <label for="duration">
+                <div class="span4">
+                    <label>
                         Dauer
                     </label>
-                    <input id="duration" type="text" class="input-small">
-                </div>
-                <div class="span6">
                     <div class="noUiSlider"></div>
+                </div>
+                <div class="span4">
+                    <label for="endDate">
+                        End-Datum
+                    </label>
+                    <div class="row-fluid">
+                        <div id="dateEndTimePicker" class="input-append date">
+                            <input id="endTime" data-format="dd.MM.yyyy hh:mm" type="text">
+                            <span class="add-on"> <i class="icon-calendar" data-time-icon="icon-time" data-date-icon="icon-calendar"> </i> </span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </fieldset>
@@ -180,5 +188,4 @@ $Layout -> start();
 <div class="form-actions">
     <a href="step4.php" class="btn btn-primary">Weiter zu "Versandoptionen"</a><span class="separator muted">
 </div>
-<?php $Layout -> end();
-?>
+<?php $Layout -> end(); ?>

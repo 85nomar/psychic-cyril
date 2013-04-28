@@ -204,7 +204,7 @@ input[type="radio"].toggle:checked + label {
 }
 
 .noUiSlider {
-    margin-top: 35px;
+    margin-top: 15px;
 }
 
 /*********************************************************************
@@ -265,4 +265,12 @@ input[type="radio"].toggle:checked + label {
 
 .well .table {
     margin-bottom: 0;
+}
+
+/*********************************************************************
+ * overriding noUIslider default styles
+ *********************************************************************/
+
+.noUiSlider.horizontal {
+    width: 80%;
 }

@@ -1,26 +1,44 @@
 $(document).ready(function() {
-    $('#datetimepicker').datetimepicker({
+    var now = new Date();
+    $('#dateStartTimePicker').datetimepicker({
         language : 'de',
         pickSeconds : false,
+        startDate: now,
+        endDate: now + 2592000000 , // max. 3 months in advance of 10 days
+    });
+
+    $('#dateEndTimePicker').datetimepicker({
+        language : 'de',
+        pickSeconds : false,
+        startDate: now + 86400000, // set +1 day as default end date. Changes dynamically according to StartTimePicker
+        endDate: now + 864000000, // max. 10 days duration. changes dynamically
     });
 
     $(".noUiSlider").noUiSlider({
         range : [0, 14400],
-        start : 10080,
+        start : 14400,
         handles : 1,
         connect : "lower",
         orientation : "horizontal",
         serialization : {
-            to : $("#duration"),
+            to : $("#endTime"),
             resolution : 1
         },
         step : 30,
         slide : function(e) {
-            var d, h, m;
-            d = Math.floor(e.val / 60 / 24);
-            h = Math.floor(e.val / 60 % 24);
-            m = e.val % 60;
-            $("#duration").val(d + "d " + h + "h " + m + "min");
+            // var d, h, m;
+            // d = Math.floor(e.val / 60 / 24);
+            // h = Math.floor(e.val / 60 % 24);
+            // m = e.val % 60;
+            var future = new Date(now.getTime() + (e.val * 60 * 1000));
+            var y,m,d,h,i;
+            y = future.getFullYear();
+            m = future.getMonth();
+            d = future.getDate();
+            h = future.getHours();
+            i = future.getMinutes();
+            
+            $("#endTime").val(d + "." + m + "." + y + " " + h + ":" + i);
         },
     });
 
@@ -39,7 +57,13 @@ $(document).ready(function() {
 
     $(".add-additional-shipping").on("click", function(event) {
         event.preventDefault();
-        $(this).parents(".shipping-element").clone(true).insertAfter(".shipping-element:last");
+        $(".shipping-element:first").clone(true).insertAfter(".shipping-element:last");
+    });
+
+    $(".inputShippingMethod > option").on("click", function(e) {
+        var $this = $(this), v;
+        if (!(v = $this.attr("data-value"))) v = "0.00";
+        $this.parents(".shipping-element").find(".inputShippingCosts").val(v);
     });
 
     $("#listingType .toggle").on("click", function(e) {
