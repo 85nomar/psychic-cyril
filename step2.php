@@ -32,18 +32,43 @@ $Layout -> start();
             </div>
             <textarea class="span12" rows="4" placeholder="Beschreiben Sie ihr Produkt hier"></textarea>
             <label for="inputPictures">
-                Bilder
+                Bilder hinzufügen <small>(bis zu 10 Bilder)</small>
             </label>
-            <div class="row-fluid">
+            <div class="row-fluid section">
+                <!-- <div class="span3">
+                <div class="productImageMain productImage img-polaroid">
+                <div class="addProductImagesOverlay">
+                <a href="#" class="addProductImageLink btn btn-link">
+                <img src="img/camera.png">
+                Fotos hochladen
+                </a>
+                </div>
+                </div>
+                <span>Haupt-Bild</span>
+                </div> -->
                 <div class="span3">
-                    <img src="img/img_placeholder_140.jpg" class="img-polaroid">
+                    <div class="productImageMain img-polaroid">
+                        <div class="addProductImagesOverlay">
+                            <a href="#" class="addProductImageLink btn btn-link"> <img src="img/camera.png"> Fotos hochladen </a>
+                        </div>
+                    </div>
                 </div>
                 <div class="span9">
-                    <img src="img/img_placeholder_90.jpg" class="img-polaroid">
-                    <img src="img/img_placeholder_90.jpg" class="img-polaroid">
-                    <img src="img/img_placeholder_90.jpg" class="img-polaroid">
-                    <img src="img/img_placeholder_90.jpg" class="img-polaroid">
-                    <img src="img/img_placeholder_90.jpg" class="img-polaroid">
+                    <div class="productImage img-polaroid">
+                        <img src="img/img_placeholder_90.jpg">
+                    </div>
+                    <div class="productImage img-polaroid">
+                        <img src="img/img_placeholder_90.jpg">
+                    </div>
+                    <div class="productImage img-polaroid">
+                        <img src="img/img_placeholder_90.jpg">
+                    </div>
+                    <div class="productImage img-polaroid">
+                        <img src="img/img_placeholder_90.jpg">
+                    </div>
+                    <div class="productImage img-polaroid">
+                        <img src="img/img_placeholder_90.jpg">
+                    </div>
                 </div>
             </div>
         </div>
