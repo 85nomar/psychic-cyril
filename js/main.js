@@ -4,14 +4,14 @@ $(document).ready(function() {
         language : 'de',
         pickSeconds : false,
         startDate: now,
-        endDate: now + 2592000000 , // max. 3 months in advance of 10 days
+        endDate: new Date(now.getTime() + 2592000000) , // max. 3 months in advance of 10 days
     });
 
     $('#dateEndTimePicker').datetimepicker({
         language : 'de',
         pickSeconds : false,
-        startDate: now + 86400000, // set +1 day as default end date. Changes dynamically according to StartTimePicker
-        endDate: now + 864000000, // max. 10 days duration. changes dynamically
+        startDate: new Date(now.getTime() + 86400000), // set +1 day as default end date. Changes dynamically according to StartTimePicker
+        endDate: new Date(now.getTime() + 864000000), // max. 10 days duration. changes dynamically
     });
 
     $(".noUiSlider").noUiSlider({
