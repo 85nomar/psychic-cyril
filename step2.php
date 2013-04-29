@@ -4,6 +4,8 @@ $Layout -> title = 'Selling';
 $Layout -> start();
 ?>
 
+<h2>Produkt beschreiben</h2>
+
 <form>
     <div class="row-fluid">
         <div class="span12 well">
