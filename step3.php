@@ -12,18 +12,18 @@ $Layout -> start();
             <div class="row-fluid">
                 <div class="span12">
                     <label for="auctionType">
-                        Auktionsart
+                        Wählen Sie, wie Sie Ihr Produkt anbieten möchten
                     </label>
-                    <div class="btn-group">
                         <input class="toggle" type="radio" name="toggle" id="toggle-auction" value="option1" data-target="#auctionPricing" checked>
                         <label class="btn" for="toggle-auction">
                             Auktion
                         </label>
+                         oder 
                         <input class="toggle" type="radio" name="toggle" id="toggle-fixedPriceOffer" data-target="#fixedPricePricing" value="option2">
                         <label class="btn" for="toggle-fixedPriceOffer">
-                            Fixpreis
+                            Fixpreis-Angebot
                         </label>
-                    </div>
+
                 </div>
             </div>
             <div id="auctionPricing" class="section collapse in">
@@ -186,6 +186,6 @@ $Layout -> start();
 </form>
 
 <div class="form-actions">
-    <a href="step4.php" class="btn btn-primary">Weiter zu "Versandoptionen"</a><span class="separator muted">
+    <a href="step4.php" class="btn btn-primary pull-right">Weiter zu "Versandoptionen"</a>
 </div>
 <?php $Layout -> end(); ?>

@@ -64,7 +64,7 @@ $Layout -> start();
 </div>
 
 <div class="form-actions">
-    <a href="#" class="btn btn-primary">Weiter um das Produkt zu beschreiben</a>
+    <a href="step2.php" class="btn btn-primary pull-right">Weiter um das Produkt zu beschreiben</a>
 </div>
 
 <?php $Layout -> end(); ?>

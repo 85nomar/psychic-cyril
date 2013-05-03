@@ -62,6 +62,6 @@ $Layout -> start();
 </form>
 
 <div class="form-actions">
-    <a href="step6.php" class="btn btn-primary">Weiter zu "Zusammenfassung"</a>
+    <a href="step6.php" class="btn btn-primary pull-right">Weiter zu "Zusammenfassung"</a>
 </div>
 <?php $Layout -> end(); ?>

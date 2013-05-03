@@ -68,6 +68,6 @@ $Layout -> start();
 </form>
 
 <div class="form-actions">
-    <a href="step5.php" class="btn btn-primary">Weiter zu "Promotions Optionen"</a>
+    <a href="step5.php" class="btn btn-primary pull-right">Weiter zu "Promotions Optionen"</a>
 </div>
 <?php $Layout -> end(); ?>

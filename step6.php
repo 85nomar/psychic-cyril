@@ -218,10 +218,10 @@ $Layout -> start();
 </div>
 
 <div class="form-actions">
-    <a href="#" class="btn btn-success">List your item</a>
-    <span class="separator muted"> | </span>
-    <label class="checkbox inline"><input type="checkbox"> Ich akzeptiere die AGBs von ricardo.ch</label>
-    <a href="#" class="btn pull-right">Live-Vorschau</a>
+    <a href="#" class="btn btn-success pull-right">List your item</a>
+    <span class="separator muted pull-right separatorFloated"> | </span>
+    <label class="checkbox inline pull-right"><input type="checkbox"> Ich akzeptiere die AGBs von ricardo.ch</label>
+    <a href="#" class="btn">Live-Vorschau</a>
 </div>
 
 <?php $Layout -> end(); ?>

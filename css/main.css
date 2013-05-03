@@ -96,19 +96,69 @@
     margin-top: 0;
 }
 
+.uploadProgressOverlay {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.uploadProgressSpinner {
+	position: absolute;
+	background: url("../img/loading.gif") no-repeat scroll 50% 50% rgba(255,255,255,0.7);
+    height: 100%;
+    width: 100%;
+}
+
+.uploadCancelBtn {
+	z-index: 2;
+	display: none;
+}
+
+.uploadProgressBar {
+	position: absolute;
+	bottom: 0;
+	display: none;
+	background: #213c90;
+	width: 100%;
+	height: 20px;
+}
+
+/* File-Upload */
+
+.fileinput-button {
+  overflow: hidden;
+  height: 100%;
+}
+.fileinput-button input {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: 0;
+  margin: 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  font-size: 23px;
+  direction: ltr;
+  cursor: pointer;
+}
+
+/* end file-upload */
+
 .productImage {
+	position: relative;
     float: left;
     width: 90px;
     height: 90px;
     margin-right: 20px;
 }
 
-.productImageMain {
-    width: 140px;
-    height: 140px;
-}
-
 .addProductImagesOverlay {
+	position: absolute;
+	top: 0;
+	left: 0;
     background-color: #dfdfdf;
     height: 100%;
     text-align: center;
@@ -122,6 +172,11 @@
 .addProductImageLink img {
     display: block;
     margin: 0 auto;
+}
+
+.separatorFloated {
+	margin: 0 5px;
+	padding-top: 3px;
 }
 
 .checkbox.inline.checkbox-label-btn {
@@ -234,6 +289,10 @@ input[type="radio"].toggle:checked + label {
 /*********************************************************************
  * overriding bootstrap.css default styles
  *********************************************************************/
+label {
+	margin-bottom: 10px;
+}
+
 .btn-link {
     padding-left: 0;
 }
