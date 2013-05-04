@@ -126,6 +126,10 @@
     display: none;
 }
 
+.mainProductImageTitle {
+    clear: left;
+}
+
 .productImage .progress {
     position: absolute;
     bottom: 0;

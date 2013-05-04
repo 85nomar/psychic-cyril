@@ -59,7 +59,8 @@ $Layout->start();
                         </div>
                         <img src="img/img_placeholder_90.jpg">
                     </div>
-                    <span>Haupt-Bild</span>
+                    <h6 class="pull-left mainProductImageTitle">Haupt-Bild</h6>
+                    
                 </div>
                 <div class="span9 files">
                     <div class="productImage img-polaroid">

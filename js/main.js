@@ -46,7 +46,7 @@ $(document).ready(function() {
             // progress bar stays at 99% after image has been uploaded while it is beeing processed on server side
             // so we tell that to the user
             if (progress > 98) {
-                node.text("processing...");
+                node.text("zuschneiden...");
             }
         });
     });
