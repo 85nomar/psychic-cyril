@@ -1,6 +1,5 @@
 $(document).ready(function() {
-	/*jslint unparam: true */
-	$(function() {'use strict';
+
 		$('#fileupload').fileupload({
 			url : "fileupload.php",
 			dataType : 'json',
@@ -18,37 +17,47 @@ $(document).ready(function() {
 				action : 'save'
 			}],
 		});
-	});
 
 	$("#fileupload").on("fileuploadadd", function(e, data) {
-		if (1 === data.files.length) {
-			var firstIsUploading = (0 < $(".productImage:first.isUploading").length) ? true : false;
-			if (firstIsUploading) {
-				$(".uploadProgressOverlay:first")
-				.clone()
-				.prependTo(".productImage:not(:has(.uploadProgressOverlay)):first")
-				.parent()
-				.addClass("isUploading");
-			} else {
-				$(".productImage:first").addClass("isUploading");
-			}
+		// find node to attach uploaded element to
+		var node = $(".productImage:not(.isUploading):not(.uploadCompleted):first"),
+			progressOverlay = $(".uploadProgressOverlay:first");
+		// create and save a reference to the node for later callbacks
+		data.context = node;
+		// copy uploadProgressOverlay html from first element if it doesn't exist yet
+		if (node.find(progressOverlay).length < 1) {
+			progressOverlay.clone()
+			.prependTo(node)
+			.find(".bar").css("width", 0 + "%"); // reset progress bar css
 		}
-	});
-
-	$("#fileupload").on("fileuploadstart", function(e, data) {
+		// add css class that tells us later that this node is occupied
+		node.addClass("isUploading");
+		// disable possibility to add new images
 		$(".addProductImagesOverlay").hide();
-		$(".uploadProgressOverlay").show();
+		// display progress overlay
+		node.find(".uploadProgressOverlay").show();
 	});
 
 	$("#fileupload").on("fileuploadprogress", function(e, data) {
-
+		var node = data.context.find(".bar"),
+			progress = parseInt(data.loaded / data.total * 100, 10);
+		console.log(progress);
+		// update progress bar
+		node.animate({width: progress + "%"},1000,function(){
+			// progress bar stays at 99% after image has been uploaded while it is beeing processed on server side
+			// so we tell that to the user
+			if (progress > 98) {
+				node.text("processing...");
+			}
+		});
 	});
 
 	$("#fileupload").on("fileuploadprogressall", function(e, data) {
 		var progress = parseInt(data.loaded / data.total * 100, 10);
-		// if (progress >= 100) {
-			// $(".addProductImagesOverlay");
-		// }
+		// add image upload button to next remaining placeholder after all uploads have finished
+		if (progress >= 100) {
+			$(".addProductImagesOverlay").prependTo(".productImage:not(.uploadCompleted):not(.isUploading):first").show();
+		}
 	});
 
 	$("#fileupload").on("fileuploadstop", function(e, data) {
@@ -56,13 +65,44 @@ $(document).ready(function() {
 	});
 
 	$("#fileupload").on("fileuploaddone", function(e, data) {
-		$this = $(".isUploading:first");
-		$this.removeClass("isUploading").addClass("uploaded");
-		$this.find(".uploadProgressOverlay").hide();
-		// the following this in each is actually wrong, needs to be refactored
-		$.each(data.result.files, function(index, file) {
-			$this.find("img").attr("src", file.thumbnail_url);
-		});
+		var node = data.context,
+			removeOverlay = $(".removeImageOverlay:first"),
+			file = data.result.files[0];
+		// mark as complete
+		node.removeClass("isUploading").addClass("uploadCompleted");
+		// remove progress overlay
+		node.find(".uploadProgressOverlay").hide();
+		// attach uploaded image to placeholder
+		node.find("img:not(.productImagePlaceholder)").attr("src", file.thumbnail_url);
+		// copy the remove link from the first image and insert it for the new image
+		if (node.find(removeOverlay).length < 1) {
+			removeOverlay.clone(true)
+			.prependTo(node);
+		}
+	});
+
+	// add event listener to display delete link on an image when hovering
+	$(".productImages").delegate(".uploadCompleted", {
+		"mouseenter" : function(e) {
+			$(this).find(".removeImageOverlay").show();
+		},
+		"mouseleave" : function(e) {
+			$(this).find(".removeImageOverlay").hide();
+		}
+	});
+	
+	// click handler to remove an image from the collection
+	$(".productImages").delegate(".removeImageOverlay a", "click", function(e) {
+		e.preventDefault();
+		// get productImageNode from DOM
+		var node = $(this).closest(".productImage");
+		// ajax request to fileserver
+		
+		// cleanup
+		node.find("img:not(.productImagePlaceholder)").attr("src", "img/img_placeholder_90.jpg");
+		node.removeClass("uploadCompleted");
+		// move add images overlay to this one
+		$(".addProductImagesOverlay").appendTo(node);
 	});
 
 	var now = new Date();

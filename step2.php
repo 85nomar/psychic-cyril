@@ -27,32 +27,25 @@ $Layout -> start();
 			</div>
 			<textarea class="span12" rows="4" placeholder="Beschreiben Sie ihr Produkt hier"></textarea>
 			<label for="inputPictures"> Bilder hinzufügen <small>(bis zu 10 Bilder)</small> </label>
-			<div class="row-fluid section">
-				<!-- <div class="span3">
-				<div class="productImageMain productImage img-polaroid">
-				<div class="addProductImagesOverlay">
-				<a href="#" class="addProductImageLink btn btn-link">
-				<img src="img/camera.png">
-				Fotos hochladen
-				</a>
-				</div>
-				</div>
-
-				</div> -->
+			<div class="row-fluid section productImages">
 				<div class="span3">
 					<div class="productImage img-polaroid">
 						<div class="uploadProgressOverlay">
-								<button class="uploadCancelBtn btn btn-mini">
-									Cancel Upload
-								</button>
-								<div class="uploadProgressBar"></div>
-								<div class="uploadProgressSpinner"></div>
-
+							<button class="uploadCancelBtn btn btn-mini">
+								Cancel Upload
+							</button>
+							<div class="uploadProgressSpinner"></div>
+							<div class="progress progress-striped">
+								<div class="bar"></div>
+							</div>
+						</div>
+						<div class="removeImageOverlay">
+							<a href="#" class="text-error"><small>Löschen &times;</small></a>
 						</div>
 						<div class="addProductImagesOverlay">
 							<label for="fileupload" class="fileinput-button">
 								<input id="fileupload" type="file" name="files[]" multiple>
-								<a href="#" class="addProductImageLink btn btn-link"> <img src="img/camera.png"> Fotos hochladen </a> </label>
+								<a href="#" class="addProductImageLink btn btn-link"> <img class="productImagePlaceholder" src="img/camera.png"> hochladen </a> </label>
 						</div>
 						<img src="img/img_placeholder_90.jpg">
 					</div>
