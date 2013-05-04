@@ -16,6 +16,10 @@
         <!-- http://refreshless.com/nouislider/ -->
         <script type="text/javascript" src="lib/js/jquery.nouislider.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
+        <!-- Jquery Fileupload Plugin -->
+        <script src="lib/js/fileupload/vendor/jquery.ui.widget.js"></script>
+        <script src="lib/js/fileupload/jquery.iframe-transport.js"></script>
+        <script src="lib/js/fileupload/jquery.fileupload.js"></script>
         <!-- Stylesheets -->
         <link rel="stylesheet" type="text/css" href="css/main.css">
     </head>
