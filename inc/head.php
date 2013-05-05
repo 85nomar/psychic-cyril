@@ -20,6 +20,7 @@
         <script src="lib/js/fileupload/vendor/jquery.ui.widget.js"></script>
         <script src="lib/js/fileupload/jquery.iframe-transport.js"></script>
         <script src="lib/js/fileupload/jquery.fileupload.js"></script>
+        <script src="js/ricardoImageUpload.js"></script>
         <!-- Stylesheets -->
         <link rel="stylesheet" type="text/css" href="css/main.css">
     </head>
