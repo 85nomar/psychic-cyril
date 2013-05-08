@@ -24,7 +24,12 @@
         <script src="lib/js/tinymce/js/tinymce/tinymce.min.js"></script>
         <script type="text/javascript">
         tinymce.init({
-            selector: ".tinymce"
+            selector: ".tinymce",
+            language : "de",
+            plugins: "code,link,image,emoticons",
+            toolbar: "undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | code | emoticons",
+            menu: "none"
+
          });
         </script>
         <!-- Stylesheets -->
