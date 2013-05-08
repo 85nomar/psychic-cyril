@@ -1,4 +1,26 @@
 $(document).ready(function() {
+	
+		// init Cat-Selection
+		$('.navCat:first ul').show();// show first nav
+		
+		$('.navCat a').bind('mousedown',function(){ // add click-functions
+			
+			allCatNo = $('.navCat').size(); // numbers of navs
+			thisCatNo = parseInt($(this).parents('nav').attr('id').match(/[0-9.]+/g)); // number of this nav
+			
+			
+			$('.navCat:eq('+thisCatNo+')').find('.active').removeClass('active');// remove active from next nav
+			$(this).parents('nav').find('li').removeClass('active'); // remove all actives in this category				
+			$(this).parent().addClass('active'); // set this as active
+			
+			for ( var i=thisCatNo+1 ; i<allCatNo ; i++ ){ // hide other navs and actives in other navs
+				$('.navCat:eq('+i+') ul').hide().find('.active').removeClass('active');
+			}							
+			$(this).parents('nav').next().find('ul').show(); // show nex nav	
+					
+		});
+	
+	
     // initialize upload img section
     ricardoImageUpload.init();
 

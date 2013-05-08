@@ -2191,15 +2191,15 @@ table th[class*="span"],
 .dropdown-menu > .active > a > [class*=" icon-"],
 .dropdown-submenu:hover > a > [class^="icon-"],
 .dropdown-submenu:hover > a > [class*=" icon-"] {
-  background-image: url("/contents/ch/assets/images/ricardo_icons_white.png");
+  background-image: url("https://pics.ricardostatic.ch/contents/ch/assets/images/ricardo_icons_white.png");
 }
 
 .icon-orange {
-  background-image: url("/contents/ch/assets/images/ricardo_icons_orange.png");
+  background-image: url("https://pics.ricardostatic.ch/contents/ch/assets/images/ricardo_icons_orange.png");
 }
 
 .icon-green {
-  background-image: url("/contents/ch/assets/images/ricardo_icons_green.png");
+  background-image: url("https://pics.ricardostatic.ch/contents/ch/assets/images/ricardo_icons_green.png");
 }
 
 .icon-favorite {
