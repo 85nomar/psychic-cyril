@@ -32,7 +32,7 @@ $Layout->start();
                 <a href="#">mehr</a>
                 <i class="icon-bold"></i><i class="icon-italic"></i><i class="icon-list"></i>
             </div>
-            <textarea class="span12" rows="4" placeholder="Beschreiben Sie ihr Produkt hier"></textarea>
+            <textarea class="span12 tinymce" rows="4" placeholder="Beschreiben Sie ihr Produkt hier"></textarea>
             <label for="inputPictures">
                 Bilder hinzufügen <small>(bis zu 10 Bilder)</small>
             </label>

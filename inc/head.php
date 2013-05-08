@@ -21,6 +21,12 @@
         <script src="lib/js/fileupload/jquery.iframe-transport.js"></script>
         <script src="lib/js/fileupload/jquery.fileupload.js"></script>
         <script src="js/ricardoImageUpload.js"></script>
+        <script src="lib/js/tinymce/js/tinymce/tinymce.min.js"></script>
+        <script type="text/javascript">
+        tinymce.init({
+            selector: ".tinymce"
+         });
+        </script>
         <!-- Stylesheets -->
         <link rel="stylesheet" type="text/css" href="css/main.css">
     </head>
