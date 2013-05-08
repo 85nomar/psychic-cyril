@@ -26,8 +26,8 @@
         tinymce.init({
             selector: ".tinymce",
             language : "de",
-            plugins: "code,link,image,emoticons",
-            toolbar: "undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | code | emoticons",
+            plugins: "code,link,image,textcolor",
+            toolbar: "undo redo | bold italic underline | styleselect | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | code",
             menu: "none"
 
          });
