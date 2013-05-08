@@ -78,6 +78,19 @@ $Layout->start();
                     <div class="productImage img-polaroid">
                         <img src="img/img_placeholder_90.jpg">
                     </div>
+                    <div class="productImage img-polaroid">
+                        <img src="img/img_placeholder_90.jpg">
+                    </div>
+                    <div class="productImage img-polaroid">
+                        <img src="img/img_placeholder_90.jpg">
+                    </div>
+                    <div class="productImage img-polaroid">
+                        <img src="img/img_placeholder_90.jpg">
+                    </div>
+                    <div class="productImage img-polaroid">
+                        <img src="img/img_placeholder_90.jpg">
+                    </div>
+
                 </div>
             </div>
         </div>
