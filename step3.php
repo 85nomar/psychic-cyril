@@ -1,7 +1,7 @@
 <?php
 require ('inc/layout.php');
-$Layout -> title = 'Selling';
-$Layout -> start();
+$Layout->title='Selling';
+$Layout->start();
 ?>
 
 <h2>Preis und Dauer des Angebots einstellen</h2>
@@ -11,25 +11,17 @@ $Layout -> start();
         <fieldset id="listingType" class="well">
             <div class="row-fluid">
                 <div class="span12">
-                    <label for="auctionType">
-                        Wählen Sie, wie Sie Ihr Produkt anbieten möchten
-                    </label>
-                        <input class="toggle" type="radio" name="toggle" id="toggle-auction" value="option1" data-target="#auctionPricing" checked>
-                        <label class="btn" for="toggle-auction">
-                            Auktion
-                        </label>
-                         oder 
-                        <input class="toggle" type="radio" name="toggle" id="toggle-fixedPriceOffer" data-target="#fixedPricePricing" value="option2">
-                        <label class="btn" for="toggle-fixedPriceOffer">
-                            Fixpreis-Angebot
-                        </label>
+                    <label for="auctionType"> Wählen Sie, wie Sie Ihr Produkt anbieten möchten </label>
+                    <input class="toggle" type="radio" name="toggle" id="toggle-auction" value="option1" data-target="#auctionPricing" checked>
+                    <label class="btn" for="toggle-auction"> Auktion </label>
+                    oder
+                    <input class="toggle" type="radio" name="toggle" id="toggle-fixedPriceOffer" data-target="#fixedPricePricing" value="option2">
+                    <label class="btn" for="toggle-fixedPriceOffer"> Fixpreis-Angebot </label>
 
                 </div>
             </div>
             <div id="auctionPricing" class="section collapse in">
-                <label for="auctionStartPrice">
-                    Startpreis
-                </label>
+                <label for="auctionStartPrice"> Startpreis </label>
                 <div class="row-fluid">
                     <div class="span3">
                         <div class="input-prepend">
@@ -43,9 +35,7 @@ $Layout -> start();
                 </div>
                 <div class="row-fluid">
                     <div class="span3">
-                        <label for="auctionIncrementPrice">
-                            Erhöhungsschritt
-                        </label>
+                        <label for="auctionIncrementPrice"> Erhöhungsschritt </label>
                         <div class="input-prepend">
                             <span class="add-on">CHF</span>
                             <input class="span10" id="inputIncrementPrice" type="text" value="0.05">
@@ -53,9 +43,7 @@ $Layout -> start();
                     </div>
                     <div class="span9">
                         <div class="collapse" id="buyNowSection">
-                            <label for="buyNowPrice">
-                                Sofort-Kaufen-Preis
-                            </label>
+                            <label for="buyNowPrice"> Sofort-Kaufen-Preis </label>
                             <div class="input-prepend">
                                 <span class="add-on">CHF</span>
                                 <input class="span10" id="buyNowPrice" type="text" placeholder="Sofort-Kaufen-Preis">
@@ -66,9 +54,7 @@ $Layout -> start();
             </div>
             <div id="fixedPricePricing" class="row-fluid section collapse">
                 <div class="span12">
-                    <label for="fixedPrice">
-                        Sofort-Kaufen-Preis
-                    </label>
+                    <label for="fixedPrice"> Sofort-Kaufen-Preis </label>
                     <div class="row-fluid">
                         <div class="span12">
                             <div class="input-prepend">
@@ -82,41 +68,31 @@ $Layout -> start();
         </fieldset>
         <fieldset class="row-fluid" id="listingPaymentConditions">
             <div class="span12 well">
-                <label for="paymentConditions">
-                    Akzeptierte Zahlungsbedingungen
-                </label>
+                <label for="paymentConditions"> Akzeptierte Zahlungsbedingungen </label>
                 <label class="checkbox inline checkbox-label-btn btn">
                     <input type="checkbox" checked>
-                    Zahlung im Voraus
-                </label>
+                    Zahlung im Voraus </label>
                 <label class="checkbox inline checkbox-label-btn btn">
                     <input type="checkbox">
-                    Zahlung bei Abholung
-                </label>
+                    Zahlung bei Abholung </label>
                 <label class="checkbox inline checkbox-label-btn btn">
                     <input type="checkbox">
-                    Zahlung auf Rechnung
-                </label>
+                    Zahlung auf Rechnung </label>
             </div>
         </fieldset>
         <fieldset id="listingPaymentMethods" class="well">
             <div class="row-fluid">
                 <div class="span12">
-                    <label for="paymentConditions">
-                        Akzeptierte Zahlungsmittel
-                    </label>
+                    <label for="paymentConditions"> Akzeptierte Zahlungsmittel </label>
                     <label class="checkbox inline checkbox-label-btn btn">
                         <input type="checkbox" checked>
-                        RicardoPay
-                    </label>
+                        RicardoPay </label>
                     <label class="checkbox inline checkbox-label-btn btn">
                         <input type="checkbox">
-                        Bank / Post
-                    </label>
+                        Bank / Post </label>
                     <label class="checkbox inline checkbox-label-btn btn">
                         <input type="checkbox">
-                        Bar
-                    </label>
+                        Bar </label>
                 </div>
             </div>
             <div class="row-fluid section">
@@ -133,9 +109,7 @@ $Layout -> start();
         <fieldset class="well" id="listingStartTimeAndDuration">
             <div class="row-fluid">
                 <div class="span4">
-                    <label for="startTime">
-                        Startzeit
-                    </label>
+                    <label for="startTime"> Startzeit </label>
                     <div class="row-fluid">
                         <div id="dateStartTimePicker" class="input-append date">
                             <input id="startTime" data-format="dd.MM.yyyy hh:mm" type="text" placeholder="sofort">
@@ -144,15 +118,16 @@ $Layout -> start();
                     </div>
                 </div>
                 <div class="span4">
-                    <label>
-                        Dauer
-                    </label>
+                    <label for="Dauer"> Dauer </label>
                     <div class="noUiSlider"></div>
+                    <div class="stepLabels">
+                        <span>1d</span>
+                        <span>5d</span>
+                        <span>10d</span>
+                    </div>
                 </div>
                 <div class="span4">
-                    <label for="endDate">
-                        End-Datum
-                    </label>
+                    <label for="endDate"> End-Datum </label>
                     <div class="row-fluid">
                         <div id="dateEndTimePicker" class="input-append date">
                             <input id="endTime" data-format="dd.MM.yyyy hh:mm" type="text">
@@ -164,9 +139,7 @@ $Layout -> start();
         </fieldset>
         <fieldset class="row-fluid" id="listingsReactivation">
             <div class="span12 well">
-                <label for="reactivationOption">
-                    Wie oft soll ihr Angebot bei Enden ohne Gebot reaktiviert werden?
-                </label>
+                <label for="reactivationOption"> Wie oft soll ihr Angebot bei Enden ohne Gebot reaktiviert werden? </label>
                 <select class="span1">
                     <option selected>0</option>
                     <option>1</option>
@@ -188,4 +161,4 @@ $Layout -> start();
 <div class="form-actions">
     <a href="step4.php" class="btn btn-primary pull-right">Weiter zu "Versandoptionen"</a>
 </div>
-<?php $Layout -> end(); ?>
+<?php $Layout->end(); ?>
