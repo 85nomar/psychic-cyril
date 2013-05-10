@@ -24,48 +24,68 @@ $(document).ready(function() {
     // initialize upload img section
     ricardoImageUpload.init();
 
-    var now = new Date();
-    $('#dateStartTimePicker').datetimepicker({
-        language : 'de',
-        pickSeconds : false,
-        startDate : now,
-        endDate : new Date(now.getTime() + 2592000000) , // max. 3 months in advance of 10 days
-    });
+    // Step3 - Date & Time functions
+    (function($) {
+        var now = new Date(), in10days = new Date(now.getTime() + 864000000), in20days = new Date(in10days.getTime() + 864000000), tenDays = 864000000, oneDay = 86400000;
 
-    $('#dateEndTimePicker').datetimepicker({
-        language : 'de',
-        pickSeconds : false,
-        startDate : new Date(now.getTime() + 86400000), // set +1 day as default end date. Changes dynamically according to StartTimePicker
-        endDate : new Date(now.getTime() + 864000000), // max. 10 days duration. changes dynamically
-    });
+        $('#dateStartTimePicker').datetimepicker({
+            language : 'de',
+            pickSeconds : false,
+            startDate : now,
+            endDate : new Date(now.getTime() + 2592000000) , // max. 3 months in advance of 10 days
+        });
 
-    $(".noUiSlider").noUiSlider({
-        range : [0, 14400],
-        start : 14400,
-        handles : 1,
-        connect : "lower",
-        orientation : "horizontal",
-        serialization : {
-            to : $("#endTime"),
-            resolution : 1
-        },
-        step : 30,
-        slide : function(e) {
-            // var d, h, m;
-            // d = Math.floor(e.val / 60 / 24);
-            // h = Math.floor(e.val / 60 % 24);
-            // m = e.val % 60;
-            var future = new Date(now.getTime() + (e.val * 60 * 1000));
-            var y, m, d, h, i;
-            y = future.getFullYear();
-            m = future.getMonth();
-            d = future.getDate();
-            h = future.getHours();
-            i = future.getMinutes();
+        $('#dateEndTimePicker').datetimepicker({
+            language : 'de',
+            pickSeconds : false,
+            startDate : in10days, // set +10 days as default end date. Changes dynamically according to StartTimePicker
+            endDate : in20days, // max. 10 days duration. changes dynamically
+        });
 
-            $("#endTime").val(d + "." + m + "." + y + " " + h + ":" + i);
-        },
-    });
+        // update endDatePicker when startDatePicker changes
+        var startDatePicker = $('#dateStartTimePicker').data('datetimepicker');
+        var endDatePicker = $('#dateEndTimePicker').data('datetimepicker');
+
+        // set start dates
+        if (typeof(startDatePicker) !== undefined && typeof(endDatePicker) !== undefined) {
+            startDatePicker.setLocalDate(new Date(now.getTime()));
+            endDatePicker.setLocalDate(new Date(now.getTime() + tenDays));
+        }
+
+        $('#dateStartTimePicker').on("changeDate", function(e) {
+            endDatePicker.setStartDate(new Date(e.date.getTime() + oneDay));
+            endDatePicker.setEndDate(new Date(e.date.getTime() + tenDays));
+            endDatePicker.setLocalDate(new Date(e.date.getTime() + tenDays));
+            // update Slider
+            $(".noUiSlider").noUiSlider("disabled", false);
+            $(".noUiSlider").val(2);
+        })
+
+        $('#dateEndTimePicker').on("changeDate", function(e) {
+            $(".noUiSlider").noUiSlider("disabled", true);
+        })
+        // Day-Slider
+        // define possible duration in days as an array
+        // maps to the range: and step: parameters above
+        var mapDays = [1, 5, 10], labelCount = mapDays.length;
+
+        $(".noUiSlider").noUiSlider({
+            range : [0, 2],
+            start : 2,
+            handles : 1,
+            connect : "lower",
+            orientation : "horizontal",
+            step : 1,
+            slide : function(e) {
+                var sliderVal = $(this).val(), daysInMs = mapDays[sliderVal] * 24 * 60 * 60 * 1000, startDate = startDatePicker.getDate();
+
+                // update EndDatePicker with duration choosen via slider
+                endDatePicker.setStartDate(new Date(startDate.getTime() + oneDay));
+                endDatePicker.setEndDate(new Date(startDate.getTime() + tenDays));
+                endDatePicker.setLocalDate(new Date(startDate.getTime() + daysInMs));
+            },
+        });
+    })(window.jQuery);
 
     $("#inputStartPrice").on("focusout", function(event) {
         var a = [[10, 100, 1000, 10000], [0.05, 5.00, 10.00, 100.00]];
