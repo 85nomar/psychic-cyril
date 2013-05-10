@@ -45,9 +45,9 @@ $(document).ready(function() {
         // update endDatePicker when startDatePicker changes
         var startDatePicker = $('#dateStartTimePicker').data('datetimepicker');
         var endDatePicker = $('#dateEndTimePicker').data('datetimepicker');
-
+console.log(startDatePicker);
         // set start dates
-        if (typeof(startDatePicker) !== undefined && typeof(endDatePicker) !== undefined) {
+        if (startDatePicker != null && endDatePicker != null) {
             startDatePicker.setLocalDate(new Date(now.getTime()));
             endDatePicker.setLocalDate(new Date(now.getTime() + tenDays));
         }
