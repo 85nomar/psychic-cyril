@@ -1,26 +1,47 @@
 $(document).ready(function() {
-	
-		// init Cat-Selection
-		$('.navCat:first ul').show();// show first nav
-		
-		$('.navCat a').bind('mousedown',function(){ // add click-functions
-			
-			allCatNo = $('.navCat').size(); // numbers of navs
-			thisCatNo = parseInt($(this).parents('nav').attr('id').match(/[0-9.]+/g)); // number of this nav
-			
-			
-			$('.navCat:eq('+thisCatNo+')').find('.active').removeClass('active');// remove active from next nav
-			$(this).parents('nav').find('li').removeClass('active'); // remove all actives in this category				
-			$(this).parent().addClass('active'); // set this as active
-			
-			for ( var i=thisCatNo+1 ; i<allCatNo ; i++ ){ // hide other navs and actives in other navs
-				$('.navCat:eq('+i+') ul').hide().find('.active').removeClass('active');
-			}							
-			$(this).parents('nav').next().find('ul').show(); // show nex nav	
-					
-		});
-	
-	
+
+    // init Cat-Selection
+    $('.navCat:first ul').show();
+    // show first nav
+
+    $('.navCat a').click(function(event) {// add click-functions
+        event.preventDefault();
+
+        allCatNo = $('.navCat').size();
+        // numbers of navs
+        thisCatNo = parseInt($(this).parents('nav').attr('id').match(/[0-9.]+/g));
+        // number of this nav
+
+        $('.navCat:eq(' + thisCatNo + ')').find('.active').removeClass('active');
+        // remove active from next nav
+        $(this).parents('nav').find('li').removeClass('active');
+        // remove all actives in this category
+        $(this).parent().addClass('active');
+        // set this as active
+
+        for (var i = thisCatNo + 1; i < allCatNo; i++) {// hide other navs and actives in other navs
+            $('.navCat:eq(' + i + ') ul').hide().find('.active').removeClass('active');
+        }
+        $(this).parents('nav').next().find('ul').fadeIn();
+        // show nex nav
+
+    });
+
+    $('.navCat:first a').click(function() {
+        if ($(this).parent().hasClass('has5Lvl') == true) {
+            $('.navCat').addClass('expandLvl');
+        } else {
+            $('.navCat').removeClass('expandLvl');
+        }
+    });
+
+    $('#categoryFinder .btn').click(function() {
+        $('.navCat ul').each(function(index) {
+            $(this).delay(400 * index - 1).fadeIn(300).addClass('catSuggest').find('.demo').addClass('active');
+
+        });
+    });
+
     // initialize upload img section
     ricardoImageUpload.init();
 
@@ -122,9 +143,9 @@ $(document).ready(function() {
     });
 
     // function to move images in ImageUploader
-    function imageMovers(){
+    function imageMovers() {
 
-        var assets = { 
+        var assets = {
             home : '.productImages',
             prodImage : '.productImage',
             homeMain : '.span3',
@@ -132,70 +153,66 @@ $(document).ready(function() {
             overlay : '.removeImageOverlay',
             btnGroup : '.image-movers',
             moveLeft : '.move-left',
-            moveRight : '.move-right',                  
+            moveRight : '.move-right',
+        };
+
+        $(assets.overlay + ' .btn').on('click', function() {
+
+            var that = $(this);
+
+            var ObjID = {
+                // rootBox => .span3 or .span9
+                rootBox : that.parents(assets.prodImage).parents('div').attr('class'),
+                // buttonDirection => right or left
+                buttonDirection : that.attr('class').replace('btn move-', ''),
+                // get class attribute to check if exists next element
+                nextSiblingClass : that.parents(assets.prodImage).next(assets.prodImage).attr('class'),
+                // get class attribute to check if exists previous element
+                prevSiblingClass : that.parents(assets.prodImage).prev(assets.prodImage).attr('class'),
+
+                camaraImagePath : 'img/img_placeholder_90.jpg'
             };
-
-        $(assets.overlay+' .btn').on('click', function(){
-        
-        var that = $(this);
-
-        var ObjID = {
-            // rootBox => .span3 or .span9
-            rootBox : that.parents(assets.prodImage).parents('div').attr('class'),
-            // buttonDirection => right or left 
-            buttonDirection : that.attr('class').replace('btn move-', ''),
-            // get class attribute to check if exists next element 
-            nextSiblingClass : that.parents(assets.prodImage).next(assets.prodImage).attr('class'),
-            // get class attribute to check if exists previous element 
-            prevSiblingClass : that.parents(assets.prodImage).prev(assets.prodImage).attr('class'),
-
-            camaraImagePath : 'img/img_placeholder_90.jpg'
-                        };
-        // Case 1 => Main Image onclick "arrow right"
-        if (ObjID.rootBox == assets.homeMain.replace('.',''))
-            {
+            // Case 1 => Main Image onclick "arrow right"
+            if (ObjID.rootBox == assets.homeMain.replace('.', '')) {
                 var MainPicSrc = that.parents(assets.prodImage).children('img').attr('src');
-                var FirstPicSrc = $(assets.home+' '+assets.homeElse+' '+assets.prodImage+':first').children('img').attr('src');
-                if (FirstPicSrc != ObjID.camaraImagePath){
+                var FirstPicSrc = $(assets.home + ' ' + assets.homeElse + ' ' + assets.prodImage + ':first').children('img').attr('src');
+                if (FirstPicSrc != ObjID.camaraImagePath) {
                     that.parents(assets.prodImage).children('img').attr('src', FirstPicSrc);
-                    $(assets.home+' '+assets.homeElse+' '+assets.prodImage+':first').children('img').attr('src', MainPicSrc);
-                }else{
+                    $(assets.home + ' ' + assets.homeElse + ' ' + assets.prodImage + ':first').children('img').attr('src', MainPicSrc);
+                } else {
                     alert('fügen sie bitte ein weiteres Bild hinzu');
                 }
             }
-        // Case 2 => First Image of the 9 others onclick "arrow left"
-        else if (ObjID.rootBox == assets.homeElse.replace('.','') && ObjID.buttonDirection == 'left' && ObjID.prevSiblingClass == undefined )
-            {
-                var MainPicSrc = $(assets.home+' '+assets.homeMain+' '+assets.prodImage).children('img').attr('src');
-                var FirstPicSrc = $(assets.home+' '+assets.homeElse+' '+assets.prodImage+':first').children('img').attr('src');
-                $(assets.home+' '+assets.homeMain+' '+assets.prodImage).children('img').attr('src', FirstPicSrc);
-                $(assets.home+' '+assets.homeElse+' '+assets.prodImage+':first').children('img').attr('src', MainPicSrc);
+            // Case 2 => First Image of the 9 others onclick "arrow left"
+            else if (ObjID.rootBox == assets.homeElse.replace('.', '') && ObjID.buttonDirection == 'left' && ObjID.prevSiblingClass == undefined) {
+                var MainPicSrc = $(assets.home + ' ' + assets.homeMain + ' ' + assets.prodImage).children('img').attr('src');
+                var FirstPicSrc = $(assets.home + ' ' + assets.homeElse + ' ' + assets.prodImage + ':first').children('img').attr('src');
+                $(assets.home + ' ' + assets.homeMain + ' ' + assets.prodImage).children('img').attr('src', FirstPicSrc);
+                $(assets.home + ' ' + assets.homeElse + ' ' + assets.prodImage + ':first').children('img').attr('src', MainPicSrc);
 
             }
-        // Case 3 => All other Images onclick "arrow left"
-        else if (ObjID.rootBox == assets.homeElse.replace('.','') && ObjID.buttonDirection == 'left' && ObjID.prevSiblingClass != undefined)
-            {
+            // Case 3 => All other Images onclick "arrow left"
+            else if (ObjID.rootBox == assets.homeElse.replace('.', '') && ObjID.buttonDirection == 'left' && ObjID.prevSiblingClass != undefined) {
                 var Actual1Src = that.parents(assets.prodImage).children('img').attr('src');
                 var LastSrc = that.parents(assets.prodImage).prev().find('img').attr('src');
                 that.parents(assets.prodImage).find('img').attr('src', LastSrc);
                 that.parents(assets.prodImage).prev().find('img').attr('src', Actual1Src);
             }
-        // Case 4 => All other Images + first Image onclick "arrow right"
-        else if (ObjID.rootBox == assets.homeElse.replace('.','') && ObjID.buttonDirection == 'right' && ObjID.nextSiblingClass != undefined)
-            {
+            // Case 4 => All other Images + first Image onclick "arrow right"
+            else if (ObjID.rootBox == assets.homeElse.replace('.', '') && ObjID.buttonDirection == 'right' && ObjID.nextSiblingClass != undefined) {
                 var Actual2Src = that.parents(assets.prodImage).children('img').attr('src');
                 var NextSrc = that.parents(assets.prodImage).next().children('img').attr('src');
-                if (NextSrc != ObjID.camaraImagePath){
+                if (NextSrc != ObjID.camaraImagePath) {
                     that.parents(assets.prodImage).find('img').attr('src', NextSrc);
                     that.parents(assets.prodImage).next().find('img').attr('src', Actual2Src);
-                }else{
+                } else {
                     alert('fügen sie bitte ein weiteres Bild hinzu');
                 }
             }
 
-         });     
+        });
     }
-imageMovers();
 
+    imageMovers();
 
 });
