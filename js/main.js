@@ -1,43 +1,50 @@
 $(document).ready(function() {
-	
-		// init Cat-Selection
-		$('.navCat:first ul').show();// show first nav
-		
-		$('.navCat a').click(function(event){ // add click-functions 
-			event.preventDefault();
-			
-			allCatNo = $('.navCat').size(); // numbers of navs
-			thisCatNo = parseInt($(this).parents('nav').attr('id').match(/[0-9.]+/g)); // number of this nav
-			
-			
-			$('.navCat:eq('+thisCatNo+')').find('.active').removeClass('active');// remove active from next nav
-			$(this).parents('nav').find('li').removeClass('active'); // remove all actives in this category				
-			$(this).parent().addClass('active'); // set this as active
-			
-			for ( var i=thisCatNo+1 ; i<allCatNo ; i++ ){ // hide other navs and actives in other navs
-				$('.navCat:eq('+i+') ul').hide().find('.active').removeClass('active');
-			}							
-			$(this).parents('nav').next().find('ul').fadeIn(); // show nex nav
-			
-					
-		});
-		
-		$('.navCat:first a').click(function(){
-			console.log($(this).parent().hasClass('has5Lvl'));
-			if ($(this).parent().hasClass('has5Lvl')==true){
-				$('.navCat').addClass('expandLvl');
-			} else{
-				$('.navCat').removeClass('expandLvl');
-			}
-		});
-		
-		$('#categoryFinder .btn').click(function(){
-			$('.navCat ul').each(function(index){
-				$(this).delay(400*index-1).fadeIn(300).addClass('catSuggest').find('.demo').addClass('active');
-				
-				});
-		});
-	
+
+    // current step?
+    var currentStep = 
+
+    // init Cat-Selection
+    $('.navCat:first ul').show();
+    // show first nav
+
+    $('.navCat a').click(function(event) {// add click-functions
+        event.preventDefault();
+
+        allCatNo = $('.navCat').size();
+        // numbers of navs
+        thisCatNo = parseInt($(this).parents('nav').attr('id').match(/[0-9.]+/g));
+        // number of this nav
+
+        $('.navCat:eq(' + thisCatNo + ')').find('.active').removeClass('active');
+        // remove active from next nav
+        $(this).parents('nav').find('li').removeClass('active');
+        // remove all actives in this category
+        $(this).parent().addClass('active');
+        // set this as active
+
+        for (var i = thisCatNo + 1; i < allCatNo; i++) {// hide other navs and actives in other navs
+            $('.navCat:eq(' + i + ') ul').hide().find('.active').removeClass('active');
+        }
+        $(this).parents('nav').next().find('ul').fadeIn();
+        // show nex nav
+
+    });
+
+    $('.navCat:first a').click(function() {
+        if ($(this).parent().hasClass('has5Lvl') == true) {
+            $('.navCat').addClass('expandLvl');
+        } else {
+            $('.navCat').removeClass('expandLvl');
+        }
+    });
+
+    $('#categoryFinder .btn').click(function() {
+        $('.navCat ul').each(function(index) {
+            $(this).delay(400 * index - 1).fadeIn(300).addClass('catSuggest').find('.demo').addClass('active');
+
+        });
+    });
+
     // initialize upload img section
     ricardoImageUpload.init();
 
@@ -64,8 +71,10 @@ $(document).ready(function() {
         var endDatePicker = $('#dateEndTimePicker').data('datetimepicker');
 
         // set start dates
-        startDatePicker.setLocalDate(new Date(now.getTime()));
-        endDatePicker.setLocalDate(new Date(now.getTime() + tenDays));
+        if (typeof(startDatePicker) == undefined || typeof(endDatePicker) == undefined) {
+            startDatePicker.setLocalDate(new Date(now.getTime()));
+            endDatePicker.setLocalDate(new Date(now.getTime() + tenDays));
+        }
 
         $('#dateStartTimePicker').on("changeDate", function(e) {
             endDatePicker.setStartDate(new Date(e.date.getTime() + oneDay));
@@ -82,8 +91,7 @@ $(document).ready(function() {
         // Day-Slider
         // define possible duration in days as an array
         // maps to the range: and step: parameters above
-        var mapDays = [1, 5, 10],
-        labelCount = mapDays.length;
+        var mapDays = [1, 5, 10], labelCount = mapDays.length;
 
         $(".noUiSlider").noUiSlider({
             range : [0, 2],
