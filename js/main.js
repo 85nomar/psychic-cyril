@@ -45,7 +45,7 @@ $(document).ready(function() {
         // update endDatePicker when startDatePicker changes
         var startDatePicker = $('#dateStartTimePicker').data('datetimepicker');
         var endDatePicker = $('#dateEndTimePicker').data('datetimepicker');
-console.log(startDatePicker);
+
         // set start dates
         if (startDatePicker != null && endDatePicker != null) {
             startDatePicker.setLocalDate(new Date(now.getTime()));
