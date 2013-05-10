@@ -50,6 +50,10 @@ $Layout->start();
                         </div>
                         <div class="removeImageOverlay">
                             <a href="#" class="text-error"><small>Löschen &times;</small></a>
+                            <div class="image-movers">
+                                <div class="btn move-left"></div>
+                                <div class="btn move-right"></div>
+                            </div>
                         </div>
                         <div class="addProductImagesOverlay">
                             <label for="fileupload" class="fileinput-button">
