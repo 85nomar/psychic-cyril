@@ -1,8 +1,5 @@
 $(document).ready(function() {
 
-    // current step?
-    var currentStep = 
-
     // init Cat-Selection
     $('.navCat:first ul').show();
     // show first nav
