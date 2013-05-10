@@ -494,3 +494,23 @@ label {
     margin-top: 5px;
  }
  
+ .accordion-toggle {
+    border-radius: 4px 4px 0 0;
+    background: #f29106;
+    color: white;
+ }
+
+ .accordion-toggle:hover{
+    color: white;
+ }
+
+ .accordion-body{
+    background-color: rgb(245, 245, 245);
+ }
+
+ .accordion-heading a small{
+    color: white;
+ }
+
+
+

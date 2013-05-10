@@ -22,9 +22,22 @@ $Layout->start();
             </label>
             <input class="span5" type="text" id="inputTitle" placeholder="Tragen Sie hier die Produktbezeichnung ein">
             <label for="inputSubtitle">
-                Untertitel
+                Untertitel <span style="color:rgb(0, 153, 255);">(Kostenlos)</span>
             </label>
             <input class="span7" type="text" id="inputSubtitle" placeholder="Bewerben Sie ihr Produkt mit einem kurzen Satz">
+            <label for="inputNumber">
+            Anzahl zu verkaufende Exemplare insgesamt
+            </label>
+            <input class="span1" type="number" id="inputNumber" placeholder="1">
+            <label for="inputProductCondition">
+                            Zustand des Produkts
+            </label>
+            <select id="productCondition">
+                <option>Neu</option>
+                <option>Original</option>
+                <option selected>Gebraucht</option>
+                <option>Defekt</option>
+            </select>
             <label for="inputDescription">
                 Beschreibung
             </label>
@@ -107,15 +120,6 @@ $Layout->start();
             <div id="collapseTwo" class="accordion-body collapse">
                 <div class="accordion-inner">
                     <div class="row-fluid">
-                        <label for="inputProductCondition">
-                            Zustand des Produkts
-                        </label>
-                        <select id="productCondition">
-                            <option>Neu</option>
-                            <option>Original</option>
-                            <option selected>Gebraucht</option>
-                            <option>Defekt</option>
-                        </select>
                         <label for="inputWarranty">
                             Garantie
                         </label>
@@ -123,10 +127,6 @@ $Layout->start();
                             <option>Keine Garantie</option>
                             <option>Gemäss Beschreibung</option>
                         </select>
-                        <label for="inputNumber">
-                            Anzahl zu verkaufende Exemplare insgesamt
-                        </label>
-                        <input class="span1" type="number" id="inputNumber" placeholder="1">
                         <label for="inputUPCnumber">
                             Persönliche Referenznummer
                         </label>
