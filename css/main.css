@@ -99,6 +99,9 @@
 					.navCat.span2 {
 						margin-left: 0 !important;
 						margin-right: 2.12766%;
+						width:22.8%;
+						}
+					.navCat.expandLvl {
 						width:18.2%;
 						}
 					.navCat.span2:last-child {
@@ -115,8 +118,25 @@
 						border-bottom: 1px solid #CCCCCC;
 						}
 						
+					.navCat .catSuggest a {
+						color: #999;
+						}
+					.navCat .catSuggest .catAlternativ a {
+						color: #fc9013;
+						}
+						
+					.navCat .catSuggest .catAlternativ i {
+						background-image: url("https://pics.ricardostatic.ch/contents/ch/assets/images/ricardo_icons_orange.png");
+    
+						}
+						
 					.navCat li.active a {
+						color: #fff !important;
 						background-color:#fc9013;
+						}
+						
+					.navCat li.active i {
+						background-image: url("https://pics.ricardostatic.ch/contents/ch/assets/images/ricardo_icons_white.png") !important;
 						}
 						
 					.navCat li i {

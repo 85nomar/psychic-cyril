@@ -3,7 +3,8 @@ $(document).ready(function() {
 		// init Cat-Selection
 		$('.navCat:first ul').show();// show first nav
 		
-		$('.navCat a').bind('mousedown',function(){ // add click-functions
+		$('.navCat a').click(function(event){ // add click-functions 
+			event.preventDefault();
 			
 			allCatNo = $('.navCat').size(); // numbers of navs
 			thisCatNo = parseInt($(this).parents('nav').attr('id').match(/[0-9.]+/g)); // number of this nav
@@ -16,10 +17,26 @@ $(document).ready(function() {
 			for ( var i=thisCatNo+1 ; i<allCatNo ; i++ ){ // hide other navs and actives in other navs
 				$('.navCat:eq('+i+') ul').hide().find('.active').removeClass('active');
 			}							
-			$(this).parents('nav').next().find('ul').show(); // show nex nav	
+			$(this).parents('nav').next().find('ul').fadeIn(); // show nex nav
+			
 					
 		});
-	
+		
+		$('.navCat:first a').click(function(){
+			console.log($(this).parent().hasClass('has5Lvl'));
+			if ($(this).parent().hasClass('has5Lvl')==true){
+				$('.navCat').addClass('expandLvl');
+			} else{
+				$('.navCat').removeClass('expandLvl');
+			}
+		});
+		
+		$('#categoryFinder .btn').click(function(){
+			$('.navCat ul').each(function(index){
+				$(this).delay(400*index-1).fadeIn(300).addClass('catSuggest').find('.demo').addClass('active');
+				
+				});
+		});
 	
     // initialize upload img section
     ricardoImageUpload.init();
