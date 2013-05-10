@@ -7,47 +7,7 @@ $Layout -> start();
 <h2>Kategorie für das einzustellende Produkt bestimmen</h2>
 
 <div class="row-fluid">
-    <form class="form-search span12">
-        <fieldset id="categoryFinder" class="well">
-            <div class="input-append">
-                <input class="span12" id="appendedInputButton" type="text" placeholder="z.B i-Phone 3 GS">
-                <button class="btn" type="button">
-                    Kategorie vorschlagen lassen!
-                </button>
-            </div>
-        </fieldset>
-    </form>
-</div>
-<div class="row-fluid">
     <div class="controls controls-row span12 well">
-        <!--<select size="26" multiple="multiple" class="span2">
-            <option>Antiquitäten &amp; Kunst</option>
-            <option>Audio, TV & Video</option>
-            <option>Auto &amp; Motorrad</option>
-            <option>Briefmarken</option>
-            <option>Bücher &amp; Comics</option>
-            <option>Büro & gewerbe</option>
-            <option>Computer & Netzwerk</option>
-            <option>Filme & DVD</option>
-            <option>Foto & Optik</option>
-            <option>Games & Spielkonsolen</option>
-            <option>Handwerk & Garten</option>
-            <option>Handy, Festnetz, Funk</option>
-            <option>Haushalt & Wohnen</option>
-            <option>Kind & Baby</option>
-            <option>Kleidung & Accessoires</option>
-            <option>Kosmetik & Pflege</option>
-            <option>Modellbau & Hobby</option>
-            <option>Münzen</option>
-            <option>Musik & Instrumente</option>
-            <option>Sammeln & Seltenes</option>
-            <option>Spielzeug & Basteln</option>
-            <option>Sport</option>
-            <option>Tickets & Gutscheine</option>
-            <option>Tierzubehör</option>
-            <option>Uhren & Schmuck</option>
-            <option>Wein & Genuss</option>
-        </select>-->
 				<style>
 				</style>
 				<script type="text/javascript">
@@ -68,10 +28,10 @@ $Layout -> start();
             <li class="hasSub"><a href="#">Foto & Optik<i class="icon-chevron-right"></i></a></li>
             <li class="hasSub"><a href="#">Games & Spielkonsolen<i class="icon-chevron-right"></i></a></li>
             <li class="hasSub"><a href="#">Handwerk & Garten<i class="icon-chevron-right"></i></a></li>
-            <li class="hasSub"><a href="#">Handy, Festnetz, Funk<i class="icon-chevron-right"></i></a></li>
+            <li class="hasSub catAlternativ demo"><a href="#">Handy, Festnetz, Funk<i class="icon-chevron-right"></i></a></li>
             <li class="hasSub"><a href="#">Haushalt & Wohnen<i class="icon-chevron-right"></i></a></li>
             <li class="hasSub"><a href="#">Kind & Baby<i class="icon-chevron-right"></i></a></li>
-            <li class="hasSub"><a href="#">Kleidung & Accessoires<i class="icon-chevron-right"></i></a></li>
+            <li class="hasSub has5Lvl"><a href="#">Kleidung & Accessoires<i class="icon-chevron-right"></i></a></li>
             <li class="hasSub"><a href="#">Kosmetik & Pflege<i class="icon-chevron-right"></i></a></li>
             <li class=""><a href="#">Modellbau & Hobby<i class="icon-chevron-right"></i></a></li>
             <li class="hasSub"><a href="#">Münzen<i class="icon-chevron-right"></i></a></li>
@@ -87,60 +47,71 @@ $Layout -> start();
         </nav>
 				<nav class="span2 navCat" id="navCatLvl2">
 					<ul class="nav nav-list">
-            <li class="hasSub"><a href="#">Computer & Netzwerk<i class="icon-chevron-right"></i></a></li>
-            <li class=""><a href="#">Filme & DVD<i class="icon-chevron-right"></i></a></li>
-            <li class="hasSub"><a href="#">Foto & Optik<i class="icon-chevron-right"></i></a></li>
-            <li class="hasSub"><a href="#">Games & Spielkonsolen<i class="icon-chevron-right"></i></a></li>
-            <li class="hasSub"><a href="#">Handwerk & Garten<i class="icon-chevron-right"></i></a></li>
-            <li class="hasSub"><a href="#">Handy, Festnetz, Funk<i class="icon-chevron-right"></i></a></li>
-            <li class="hasSub"><a href="#">Haushalt & Wohnen<i class="icon-chevron-right"></i></a></li>
-            <li class="hasSub"><a href="#">Kind & Baby<i class="icon-chevron-right"></i></a></li>
-            <li class="hasSub"><a href="#">Kleidung & Accessoires<i class="icon-chevron-right"></i></a></li>
-					</ul>				
+						<li class="hasSub"><a href="#">Funktechnik<i class="icon-chevron-right"></i></a></li>
+						<li class="hasSub catAlternativ"><a href="#">Handyzubehör<i class="icon-chevron-right"></i></a></li>
+						<li class="hasSub catAlternativ"><a href="#">Handys mit SIM-Lock<i class="icon-chevron-right"></i></a></li>
+						<li class="hasSub catAlternativ demo"><a href="#">Handys ohne SIM-Lock<i class="icon-chevron-right"></i></a></li>
+						<li class="hasSub"><a href="#">PrePaid-Karten<i class="icon-chevron-right"></i></a></li>
+						<li class="hasSub"><a href="#">Sonstige Handys &amp; Zubehör<i class="icon-chevron-right"></i></a></li>
+						<li class="hasSub"><a href="#">Telefone &amp; Telefaxe<i class="icon-chevron-right"></i></a></li>
+					</ul>
         </nav>
 				<nav class="span2 navCat" id="navCatLvl3">
 					<ul class="nav nav-list">
-            <li class="hasSub"><a href="#">Kosmetik & Pflege<i class="icon-chevron-right"></i></a></li>
-            <li class=""><a href="#">Modellbau & Hobby<i class="icon-chevron-right"></i></a></li>
-            <li class="hasSub"><a href="#">Münzen<i class="icon-chevron-right"></i></a></li>
-            <li class="hasSub"><a href="#">Spielzeug & Basteln<i class="icon-chevron-right"></i></a></li>
-            <li class="hasSub"><a href="#">Sport<i class="icon-chevron-right"></i></a></li>
-            <li class="hasSub"><a href="#">Tickets & Gutscheine<i class="icon-chevron-right"></i></a></li>
+						<li class="hasSub catAlternativ demo"><a href="#">Apple iPhone<i class="icon-chevron-right"></i></a></li>
+						<li class=""><a href="#">Blackberry<i class="icon-chevron-right"></i></a></li>
+						<li class=""><a href="#">HTC<i class="icon-chevron-right"></i></a></li>
+						<li class=""><a href="#">LG<i class="icon-chevron-right"></i></a></li>
+						<li class="hasSub"><a href="#">Motorola<i class="icon-chevron-right"></i></a></li>
+						<li class="hasSub"><a href="#">Nokia<i class="icon-chevron-right"></i></a></li>
+						<li class="hasSub"><a href="#">Nokia N-Gage<i class="icon-chevron-right"></i></a></li>
+						<li class=""><a href="#">Panasonic<i class="icon-chevron-right"></i></a></li>
+						<li class=""><a href="#">Palm Treo<i class="icon-chevron-right"></i></a></li>
+						<li class=""><a href="#">Qtek<i class="icon-chevron-right"></i></a></li>
+						<li class="hasSub"><a href="#">Samsung<i class="icon-chevron-right"></i></a></li>
+						<li class=""><a href="#">Sharp<i class="icon-chevron-right"></i></a></li>
+						<li class="hasSub"><a href="#">Siemens<i class="icon-chevron-right"></i></a></li>
+						<li class="hasSub"><a href="#">Sony Ericsson<i class="icon-chevron-right"></i></a></li>
+						<li class=""><a href="#">Sonstige Handys ohne SIM-Lock<i class="icon-chevron-right"></i></a></li>
 					</ul>				
         </nav>
 				<nav class="span2 navCat" id="navCatLvl4">
 					<ul class="nav nav-list">
-            <li class="hasSub"><a href="#">Kosmetik & Pflege<i class="icon-chevron-right"></i></a></li>
-            <li class=""><a href="#">Modellbau & Hobby<i class="icon-chevron-right"></i></a></li>
-            <li class="hasSub"><a href="#">Tickets & Gutscheine<i class="icon-chevron-right"></i></a></li>
+						<li class="catAlternativ"><a href="#">iPhone<i class="icon-chevron-right"></i></a></li>
+						<li class="catAlternativ"><a href="#">iPhone 3G<i class="icon-chevron-right"></i></a></li>
+						<li class="catAlternativ"><a href="#">iPhone 3G S<i class="icon-chevron-right"></i></a></li>
+						<li class="catAlternativ"><a href="#">iPhone 4<i class="icon-chevron-right"></i></a></li>
+						<li class="catAlternativ"><a href="#">iPhone 4S<i class="icon-chevron-right"></i></a></li>
+						<li class="catAlternativ"><a href="#">iPhone 5<i class="icon-chevron-right"></i></a></li>
 					</ul>				
         </nav>
 				<nav class="span2 navCat" id="navCatLvl5">
 					<ul class="nav nav-list">
-            <li class="hasSub"><a href="#">Kosmetik & Pflege<i class="icon-chevron-right"></i></a></li>
-            <li class=""><a href="#">Modellbau & Hobby<i class="icon-chevron-right"></i></a></li>
-            <li class="hasSub"><a href="#">Münzen<i class="icon-chevron-right"></i></a></li>
-            <li class="hasSub"><a href="#">Musik & Instrumente<i class="icon-chevron-right"></i></a></li>
-            <li class="hasSub"><a href="#">Sammeln & Seltenes<i class="icon-chevron-right"></i></a></li>
-            <li class="hasSub"><a href="#">Spielzeug & Basteln<i class="icon-chevron-right"></i></a></li>
-            <li class="hasSub"><a href="#">Sport<i class="icon-chevron-right"></i></a></li>
-            <li class="hasSub"><a href="#">Tickets & Gutscheine<i class="icon-chevron-right"></i></a></li>
 					</ul>				
         </nav>
-				
-        <!--<select size="26" multiple="multiple" class="span2">
-
-        </select>
-        <select size="26" multiple="multiple" class="span2">
-
-        </select>
-        <select size="26" multiple="multiple" class="span2">
-
-        </select>
-        <select size="26" multiple="multiple" class="span2">
-
-        </select>-->
     </div>
+</div>
+
+<div class="row-fluid">
+    <form class="form-search span12">
+        <fieldset id="categoryFinder" class="well">
+            <div class="input-append">
+                <input class="span12" id="appendedInputButton" autocomplete="off" type="text" placeholder="z.B iPhone Tisch Computer Lego" />
+                <button class="btn" type="button">
+                    Kategorie vorschlagen lassen!
+                </button>
+            </div>
+        </fieldset>
+    </form>
+	<script type="text/javascript">
+		$(document).ready(function(e) {
+			$('#categoryFinder input').typeahead({
+				minLength: 2,
+				items: 8,
+				source: ['iPhone','iPhone 3G','iPhone 3G S','iPhone 4','iPhone 4S','iPhone 5','iPhone Cover','iPhone Etui','iPhone Akku','iPhone Kabel','iPhone Headset']										
+			});
+		});
+	</script>
 </div>
 
 <div class="form-actions">
