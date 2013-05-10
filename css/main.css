@@ -10,6 +10,7 @@
 }
 #formNav {
     margin: 40px 0;
+    padding-left: 20px;
 }
 .stepIndicator > li > a {
     position: relative;
@@ -70,7 +71,7 @@
     margin-left: 25px;
 }
 .stepIndicator > li:last-child > a:after {
-    border: 0;
+    background-color:white;
 }
 /* Category-Selection Step1 */
 
@@ -415,6 +416,12 @@ label {
 /*********************************************************************
  * overriding noUIslider default styles
  *********************************************************************/
+
+
+
+ /*********************************************************************
+ * styles for ImageMover in ImageUploader
+ *********************************************************************/
 .noUiSlider.horizontal {
     width: 80%;
 }
@@ -460,3 +467,30 @@ label {
 .productImages .span9 .productImage:last-child .move-right{
     visibility: hidden;
 }
+
+ /*********************************************************************
+ * styles for topBar
+ *********************************************************************/
+
+ .stepIndicator li a div{
+    float: left;
+    max-width: 70px;
+ }
+
+  .stepIndicator li a div:first-child{
+    font-family: 'MetaOTBold';
+    font-size: 40px;
+    margin-left: 25px;
+    margin-top: 10px;
+ }
+   .stepIndicator li a div:last-child{
+    margin-left: 5px;
+    position: absolute;
+    margin-left: 55px;
+    z-index: 9999;
+ }
+
+   .stepIndicator li:last-child a div:last-child{
+    margin-top: 5px;
+ }
+ 
