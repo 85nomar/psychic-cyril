@@ -4,7 +4,7 @@ $Layout -> title = 'Selling';
 $Layout -> start();
 ?>
 
-<h2>Zusammenfassung Ihrer Angaben und Optionen</h2>
+<h2>Und so wird es aussehen. Sind Sie damit einverstanden?</h2>
 
 <div class="row-fluid">
     <div class="span10">
@@ -21,13 +21,19 @@ $Layout -> start();
         </ul>
     </div>
     <div class="span2">
-        <a href="#" class="btn btn-small">Kategorie ändern</a>
+        <a href="step1.php" class="btn btn-small">Kategorie ändern</a>
     </div>
 </div>
 
 <div class="row-fluid">
     <div class="span3">
-        <div class="row-fluid section">
+        <div id="articlePreview" class="row-fluid section">
+            <div class="span12">
+                <img src="img/articlePreview_tmb.png">
+                <a href="#" class="btn"><i class="icon-share icon-blue"></i> Vorschau anzeigen</a>
+            </div>
+        </div>
+       <!-- <div class="row-fluid section">
             <div class="span12 text-center">
                 <img src="img/img_placeholder_140.jpg" class="img-polaroid">
             </div>
@@ -38,14 +44,14 @@ $Layout -> start();
                 <img src="img/img_placeholder_90.jpg" class="img-polaroid">
                 <a href="#" class"btn btn-link">Weiteres Foto hinzufügen</a>
             </div>
-        </div>
+        </div>-->
     </div>
     <div class="span9">
         <form class="form-horizontal">
             <fieldset class="well">
-                <legend>
+                <h3>
                     Produkt-Details
-                </legend>
+                </h3>
                 <div class="row-fluid">
                     <div class="span10">
                         <div class="row-fluid">
@@ -78,16 +84,16 @@ $Layout -> start();
                         </div>
                     </div>
                     <div class="span2 text-right">
-                        <button class="btn">
+                        <a href="step2.php" class="btn">
                             Bearbeiten
-                        </button>
+                        </a>
                     </div>
                 </div>
             </fieldset>
             <fieldset class="well">
-                <legend>
+                <h3>
                     Preis & Dauer des Angebots
-                </legend>
+                </h3>
                 <div class="row-fluid">
                     <div class="span10">
                         <div class="row-fluid">
@@ -126,16 +132,16 @@ $Layout -> start();
                         </div>
                     </div>
                     <div class="span2 text-right">
-                        <button class="btn">
+                        <a href="step3.php" class="btn">
                             Bearbeiten
-                        </button>
+                        </a>
                     </div>
                 </div>
             </fieldset>
             <fieldset class="well">
-                <legend>
+                <h3>
                     Versand-Optionen
-                </legend>
+                </h3>
                 <div class="row-fluid">
                     <div class="span10">
                         <div class="row-fluid">
@@ -154,9 +160,9 @@ $Layout -> start();
                         </div>
                     </div>
                     <div class="span2 text-right">
-                        <button class="btn">
+                        <a href="step1.php" class="btn">
                             Bearbeiten
-                        </button>
+                        </a>
                     </div>
                 </div>
             </fieldset>
@@ -221,7 +227,25 @@ $Layout -> start();
     <a href="#" class="btn btn-success pull-right">List your item</a>
     <span class="separator muted pull-right separatorFloated"> | </span>
     <label class="checkbox inline pull-right"><input type="checkbox"> Ich akzeptiere die AGBs von ricardo.ch</label>
-    <a href="#" class="btn">Live-Vorschau</a>
+</div>
+
+<div id="modalPreview" class="modal hide fade">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		<h3>Artikel-Vorschau</h3>
+	</div>
+	<div class="modal-body">
+	<!-- Modal-Body Start-->  
+  	
+    <img src="img/articlePreview.png"> 
+	
+	<!-- Modal-Body End-->
+	<span class="clear"></span>
+	</div>
+	<!--<div class="modal-footer">
+		<a href="#" class="btn">Close</a>
+		<a href="#" class="btn btn-primary">Save changes</a>
+	</div>-->
 </div>
 
 <?php $Layout -> end(); ?>

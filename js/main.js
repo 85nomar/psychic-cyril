@@ -144,5 +144,55 @@ $(document).ready(function() {
         $(".in").removeClass('in');
         $(target).addClass('in');
     });
+		
+	// Overall Calculate maximum Modal-Body-Height
+
+	function getClientHeight() {
+		var myHeight = 0;
+		if (typeof (window.innerWidth) == 'number') {
+			//Non-IE
+			myHeight = window.innerHeight;
+		} else if (document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)) {
+			//IE 6+ in ′standards compliant mode′
+			myHeight = document.documentElement.clientHeight;
+		} else if (document.body && (document.body.clientWidth || document.body.clientHeight)) {
+			//IE 4 compatible
+			myHeight = document.body.clientHeight;
+		}
+		return myHeight;
+	}
+		
+	clientHeight = getClientHeight();
+	modalMargin = clientHeight / 5;
+	modelHeader = 49;
+	modelFooter = 56;
+	modalBodyNoFoot = clientHeight - modalMargin - modelHeader;
+	modalBodyWithFoot = clientHeight - modalMargin - modelHeader - modelFooter;
+
+	$('.modal').each(function () {
+
+		if ($(this).find('.modal-footer').size() != 1) {
+			// modals without a footer
+			$(this).find('.modal-body').css('max-height', modalBodyNoFoot);
+		} else {
+			// modals with a footer
+			$(this).find('.modal-body').css('max-height', modalBodyWithFoot);
+		}
+
+	});
+		
+	// Step 5 - Login Modal
+		   
+	$('#prelogin').click(function(event){
+			event.preventDefault();
+			$('#modalLogin').modal('show');				
+	});
+		
+	// Step 6 - Login Modal
+		
+	$('#articlePreview img, #articlePreview a').click(function(event){
+			event.preventDefault();
+			$('#modalPreview').modal('show');				
+	});
 
 });
