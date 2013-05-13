@@ -73,7 +73,7 @@
 .stepIndicator > li:last-child > a:after {
     background-color:white;
 }
-/* Category-Selection Step1 */
+/* Step1 Category-Selection */
 
 					.navCat ul {
 						display:none;
@@ -332,6 +332,55 @@ input[type="radio"].toggle:checked + label {
     margin-left: 36%;
 }
 
+/* Step5 Promotion & Login */
+
+#it_LoginSection, #it_RegisterSection {
+    float: left;
+    width: 425px;
+    padding: 15px;
+		margin:0;
+}
+#it_LoginSection {
+    background-color: #eee;
+    border-radius: 10px;
+}
+#modalLogin dl, #modalLogin ul {
+    margin-bottom: 10px;
+}
+#it_LoginSection dt {
+    width: 150px;
+		float:left;
+}
+#it_LoginSection dd {
+    margin-left: 150px;
+}
+#it_LoginSection dd input {
+    width: 200px;
+}
+#it_LoginSection input[type='checkbox'] {
+		width:auto;
+    float: left;
+}
+
+/* Step6 Overview and Preview */
+
+#articlePreview {
+	margin-top: 0;
+	}
+#articlePreview img {
+	border: 1px solid #FFFFFF;
+	border-radius: 5px 5px 5px 5px;
+	box-shadow: 1px 1px 3px #999999;
+	cursor: pointer;
+	margin-bottom: 15px;
+	}
+#articlePreview .btn {
+	}
+fieldset h3 {
+	line-height: 30px;
+	margin-top: 0;
+	}
+
 /*********************************************************************
  * Overriding noUiSlider default css
  ********************************************************************/
@@ -412,6 +461,10 @@ label {
 }
 .well .table {
     margin-bottom: 0;
+}
+.modal {
+    width: 960px;
+		margin-left: -480px;
 }
 /*********************************************************************
  * overriding noUIslider default styles

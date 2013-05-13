@@ -4,7 +4,7 @@ $Layout -> title = 'Selling';
 $Layout -> start();
 ?>
 
-<h2>Promotions-Optionen auswählen</h2>
+<h2>Wie möchten Sie Ihren Artikel bewerben?</h2>
 
 <form>
     <fieldset class="well">
@@ -62,6 +62,48 @@ $Layout -> start();
 </form>
 
 <div class="form-actions">
-    <a href="step6.php" class="btn btn-primary pull-right">Weiter zu "Zusammenfassung"</a>
+    <a href="step6.php" class="btn btn-primary pull-right" id="prelogin">Weiter zu "Zusammenfassung"</a>
 </div>
+
+<div id="modalLogin" class="modal hide fade">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		<h3>Auf ricardo.ch einloggen</h3>
+	</div>
+	<div class="modal-body">
+	<!-- Modal-Body Start-->
+  	<p>Um den nächsten Schritt abschliessen zu können müssen Sie angemeldet sein. Logen Sie sich dazu ein oder erstellen Sie ein neues Benutzerkonto.</p>
+	
+		<section id="it_LoginSection" class="it_logForm">
+    	<form action="step6.php">
+        <dl>
+          <dt><label for="uxNickName">Benutzername</label></dt>
+          <dd><input type="text" class="it_inputField" tabindex="10" id="uxNickName" name="ctl00$ctl00$SiteContent$MasterContent$LoginForm1$uxNickName"></dd>
+          <dt><label for="uxPassword">Passwort</label></dt>
+          <dd><input type="password" class="it_inputField" tabindex="11" id="uxPassword" name="ctl00$ctl00$SiteContent$MasterContent$LoginForm1$uxPassword"></dd>
+          <dt></dt>
+          <dd><input type="checkbox" tabindex="12" checked="checked" id="it_checkboxInp" class="it_inputField"><label for="it_checkboxInp" class="it_txtRemember">Benutzername speichern</label></dd>
+          <dt></dt>
+          <dd><input type="submit" class="validButton btn btn-primary" id="uxSendLogin" value="Login"></dd>
+        </dl>
+      </form>
+			<a href="http://auto.ch.betaqxl.com/form/lostpassword.asp">Benutzername und/oder Passwort vergessen?</a>
+		</section>
+		<section id="it_RegisterSection">
+			<h4>Noch keinen Account?<br>Jetzt anmelden.</h4>
+      <p>Ihr Artikel wird in Ihrem neuen Benutzer-Profil unter</p>
+      <p align="center" class="well"><strong>MyRicardo <i class="icon-chevron-right"></i> Mein verkaufen <i class="icon-chevron-right"></i> geplante Angebote</span></strong></p>
+      <p>gespeichert.</p>
+			<a href="https://www.ricardo.ch/registration/" class="hpcButton hpcBlue btn btn-darkblue">Jetzt registrieren</a><!--11888-->
+		</section>
+	
+	<!-- Modal-Body End-->
+	<span class="clear"></span>
+	</div>
+	<!--<div class="modal-footer">
+		<a href="#" class="btn">Close</a>
+		<a href="#" class="btn btn-primary">Save changes</a>
+	</div>-->
+</div>
+
 <?php $Layout -> end(); ?>
