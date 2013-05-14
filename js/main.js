@@ -45,6 +45,23 @@ $(document).ready(function() {
     // initialize upload img section
     ricardoImageUpload.init();
 
+    // Step3 - Payment-Conditions-Selection
+						
+		$('#listingPaymentConditions button')
+		.click(function(event){
+			event.preventDefault();
+		})
+		.mousedown(function(event){
+			$(this).toggleClass('active');
+		})
+		.mouseup(function(event){
+			 if($(this).parent().find('.active').size() > 0){
+				$(this).parents('.option-group').addClass('selected');
+			 } else {
+				$(this).parents('.option-group').removeClass('selected');
+			 }
+		});		
+
     // Step3 - Date & Time functions
     (function($) {
         var now = new Date(), in10days = new Date(now.getTime() + 864000000), in20days = new Date(in10days.getTime() + 864000000), tenDays = 864000000, oneDay = 86400000;
