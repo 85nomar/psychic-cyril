@@ -5,6 +5,11 @@
 /* color blue: #213c90 */
 /* color btn-blue: #1946A0 */
 /* clor green: #A5B937 */
+
+h1, h2, h3, h4 {
+    color: #333;
+}
+
 #logo {
     margin-top: 5px;
 }
@@ -286,17 +291,107 @@
     margin-top: 1px;
     border-radius: 50% 50% 50% 50%;
 }
+
+/* Step3 - Listing-Type */
+
+#listingType label.btn {    
+	display: inline-block;
+	float: none;
+	margin: 0;
+	height:120px;
+	position:relative;
+	font-size:12px;
+	}
+	
+#listingType label.btn i {
+	background-image:none;
+	position:absolute;
+	border: 1px solid #999;
+	border-radius: 4px;
+	right:7px;
+	top:7px;
+	}
+	
+#listingType label.btn li{
+	text-align:left;
+	list-style: disc inside none;
+	padding-left: 5px;
+	text-align: left;
+	}
+
+input.toggle[type="radio"]:checked + label i{
+	background-image: url("https://pics.ricardostatic.ch/contents/ch/assets/images/ricardo_icons_white.png") !important;
+	background-position:-288px 0;
+	border-color:#a6b825 !important;
+	background-color:#a6b825 !important;
+}
+
+#listingType .seperator {
+	padding: 5px;
+	}
+
 /*http://stackoverflow.com/questions/5523735/how-to-make-a-radio-button-look-like-a-toggle-button */
 input[type="radio"].toggle {
     display: none;
 }
 input[type="radio"].toggle:checked + label {
+    border-color: #bcd229;
+}
+/*input[type="radio"].toggle:checked + label {
     color: #ffffff;
     background-color: #1946A0;
     background-image: linear-gradient(to bottom, #2382C8, #1946A0);
     background-repeat: repeat-x;
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-}
+}*/
+
+/* Step3 - Paymentcondition */
+
+        	#listingPaymentConditions .option-group {
+						margin: 0 2.12766% 0 0;
+						height:120px;
+						
+						border-radius: 5px;
+    				border: 1px solid rgba(0, 0, 0, 0.1);
+    				box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+						display: inline-block;
+						font-family: 'MetaOTBook',Verdana,sans-serif;
+						font-size: 14px;
+     				line-height: 20px;
+    				padding: 4px 12px;
+    				text-align: center;
+    				text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+						background-color:#eee;
+						}
+        	#listingPaymentConditions .option-group.selected {
+						border-color:#bcd229;
+						}
+        	#listingPaymentConditions button{
+						color:#999;
+						margin-bottom: 5px;
+						width:100%;
+						position:relative;
+						}
+        	#listingPaymentConditions button.active {
+						color:#fff;
+						background-color:#bcd229;    
+						text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+						}
+        	#listingPaymentConditions button i {
+						background-image:none;
+						
+						margin: 0 5px 0 0;
+						position:absolute;
+						right:5px;
+						top:7px;
+						}
+        	#listingPaymentConditions button.active i {
+						background-position:-288px 0;    
+						background-image: url("https://pics.ricardostatic.ch/contents/ch/assets/images/ricardo_icons_white.png");
+						}
+
+/* -?- */
+
 .table-sum tbody tr td:last-child {
     text-align: right;
 }

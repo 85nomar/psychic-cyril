@@ -11,12 +11,31 @@ $Layout->start();
         <fieldset id="listingType" class="well">
             <div class="row-fluid">
                 <div class="span12">
-                    <label for="auctionType"> Wählen Sie, wie Sie Ihr Produkt anbieten möchten </label>
+                    <label for="auctionType">Wie möchten Sie Ihr Produkt verkaufen?</label>
+                    
                     <input class="toggle" type="radio" name="toggle" id="toggle-auction" value="option1" data-target="#auctionPricing" checked>
-                    <label class="btn" for="toggle-auction"> Auktion </label>
-                    oder
+                    <label class="btn span3" for="toggle-auction">
+                    	<i class="icon-remove"></i>
+                      <h4>Auktion</h4>
+                      <ul>
+                        <li>Der Markt bestimmt den Preis</li>
+                        <li>Mitreissendes Kauferlebnis</li>
+                        <li>Höhere Verkaufschancen </li>
+                      </ul>
+                    </label>
+                    
+                    <span class="seperator"> oder </span>
+                    
                     <input class="toggle" type="radio" name="toggle" id="toggle-fixedPriceOffer" data-target="#fixedPricePricing" value="option2">
-                    <label class="btn" for="toggle-fixedPriceOffer"> Fixpreis-Angebot </label>
+                    <label class="btn span3" for="toggle-fixedPriceOffer">
+                    	<i class="icon-remove"></i>
+                      <h4>Fixpreis-Angebot</h4>
+                      <ul>
+                        <li>Sie bestimmen den Preis</li>
+                        <li>Konventionelles Kauferlebnis</li>
+                        <li>Geringere Verkaufschancen</li>
+                      </ul>
+                    </label>
 
                 </div>
             </div>
@@ -30,7 +49,7 @@ $Layout->start();
                         </div>
                     </div>
                     <div class="span9">
-                        <a href="#" class="btn btn-link" data-toggle="collapse" data-target="#buyNowSection">Fügen Sie eine Sofortkaufen-Option hinzu</a><small class="label label-warning">+ CHF 1.00</small>
+                        <a href="#" class="btn btn-link" data-toggle="collapse" data-target="#buyNowSection">Sofortkaufen-Option hinzu</a><small class="label label-warning">+ CHF 1.00</small>
                     </div>
                 </div>
                 <div class="row-fluid">
@@ -54,7 +73,7 @@ $Layout->start();
             </div>
             <div id="fixedPricePricing" class="row-fluid section collapse">
                 <div class="span12">
-                    <label for="fixedPrice"> Sofort-Kaufen-Preis </label>
+                    <label for="fixedPrice"> Preis </label>
                     <div class="row-fluid">
                         <div class="span12">
                             <div class="input-prepend">
@@ -66,34 +85,31 @@ $Layout->start();
                 </div>
             </div>
         </fieldset>
-        <fieldset class="row-fluid" id="listingPaymentConditions">
-            <div class="span12 well">
-                <label for="paymentConditions"> Akzeptierte Zahlungsbedingungen </label>
-                <label class="checkbox inline checkbox-label-btn btn">
-                    <input type="checkbox" checked>
-                    Zahlung im Voraus </label>
-                <label class="checkbox inline checkbox-label-btn btn">
-                    <input type="checkbox">
-                    Zahlung bei Abholung </label>
-                <label class="checkbox inline checkbox-label-btn btn">
-                    <input type="checkbox">
-                    Zahlung auf Rechnung </label>
-            </div>
-        </fieldset>
-        <fieldset id="listingPaymentMethods" class="well">
+        
+        <fieldset class="well" id="listingPaymentConditions">
             <div class="row-fluid">
-                <div class="span12">
-                    <label for="paymentConditions"> Akzeptierte Zahlungsmittel </label>
-                    <label class="checkbox inline checkbox-label-btn btn">
-                        <input type="checkbox" checked>
-                        RicardoPay </label>
-                    <label class="checkbox inline checkbox-label-btn btn">
-                        <input type="checkbox">
-                        Bank / Post </label>
-                    <label class="checkbox inline checkbox-label-btn btn">
-                        <input type="checkbox">
-                        Bar </label>
-                </div>
+            <div class="span12">
+                <label for="paymentConditions">Welche Zahlungsarten möchten Sie anbieten?</label>
+                  <div class="span3 option-group">
+                      <h4>Zahlung im Voraus</h4>
+                      <div>
+                              <button class="btn"><i class="icon-remove"></i>RicardoPay</button>
+                              <button class="btn"><i class="icon-remove"></i>Bank / Post</button>
+                      </div>
+                  </div>
+                  <div class="span3 option-group">
+                      <h4>Zahlung bei Abholung</h4>
+                      <div>
+                              <button class="btn"><i class="icon-remove"></i>Barzahlung</button>
+                      </div>
+                  </div>
+                  <div class="span3 option-group">
+                      <h4>Zahlung auf Rechnung</h4>
+                      <div>
+                              <button class="btn"><i class="icon-remove"></i>RicardoPay</button>
+                              <button class="btn"><i class="icon-remove"></i>Bank / Post</button>
+                      </div>
+                  </div>
             </div>
             <div class="row-fluid section">
                 <div class="span12">
@@ -139,7 +155,7 @@ $Layout->start();
         </fieldset>
         <fieldset class="row-fluid" id="listingsReactivation">
             <div class="span12 well">
-                <label for="reactivationOption"> Wie oft soll ihr Angebot bei Enden ohne Gebot reaktiviert werden? </label>
+                <label for="reactivationOption">Wie häufig soll Ihr Artikel reaktiviert werden?</label>
                 <select class="span1">
                     <option selected>0</option>
                     <option>1</option>
