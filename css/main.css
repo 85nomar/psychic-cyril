@@ -130,70 +130,69 @@ h1, h2, h3, h4 {
 }
 /* Step1 Category-Selection */
 
-					.navCat ul {
-						display:none;
-						}
-					.navCat:first-child ul{
-						display:block;
-						}
-					.navCat.span2 {
-						margin-left: 0 !important;
-						margin-right: 2.12766%;
-						width:22.8%;
-						}
-					.navCat.expandLvl {
-						width:18.2%;
-						}
-					.navCat.span2:last-child {
-						margin-right: 0;
-						}
-						
-					.navCat li {
-						}
-						
-					.navCat a {
-						color: #333;
-						padding-right: 25px !important;
-						position:relative;
-						border-bottom: 1px solid #CCCCCC;
-						}
-						
-					.navCat .catSuggest a {
-						color: #999;
-						}
-					.navCat .catSuggest .catAlternativ a {
-						color: #fc9013;
-						}
-						
-					.navCat .catSuggest .catAlternativ i {
-						background-image: url("https://pics.ricardostatic.ch/contents/ch/assets/images/ricardo_icons_orange.png");
-    
-						}
-						
-					.navCat li.active a {
-						color: #fff !important;
-						background-color:#fc9013;
-						}
-						
-					.navCat li.active i {
-						background-image: url("https://pics.ricardostatic.ch/contents/ch/assets/images/ricardo_icons_white.png") !important;
-						}
-						
-					.navCat li i {
-						display:none;
-						position:absolute;
-						right: 5px;
-						top:7px;
-						}
-						
-					.navCat li.hasSub i, .navCat li.active i {
-						display:block;
-						}
-						
-					.navCat li.active i {
-						background-position: -288px 0;
-						}
-						
+.navCat ul {
+    display: none;
+}
+.navCat:first-child ul {
+    display: block;
+}
+.navCat.span2 {
+    margin-left: 0 !important;
+    margin-right: 2.12766%;
+    width: 22.8%;
+}
+.navCat.expandLvl {
+    width: 18.2%;
+}
+.navCat.span2:last-child {
+    margin-right: 0;
+}
+
+.navCat li {
+}
+
+.navCat a {
+    color: #333;
+    padding-right: 25px !important;
+    position: relative;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.navCat .catSuggest a {
+    color: #999;
+}
+.navCat .catSuggest .catAlternativ a {
+    color: #fc9013;
+}
+
+.navCat .catSuggest .catAlternativ i {
+    background-image: url("https://pics.ricardostatic.ch/contents/ch/assets/images/ricardo_icons_orange.png");
+}
+
+.navCat li.active a {
+    color: #fff !important;
+    background-color: #fc9013;
+}
+
+.navCat li.active i {
+    background-image: url("https://pics.ricardostatic.ch/contents/ch/assets/images/ricardo_icons_white.png") !important;
+}
+
+.navCat li i {
+    display: none;
+    position: absolute;
+    right: 5px;
+    top: 7px;
+}
+
+.navCat li.hasSub i, .navCat li.active i {
+    display: block;
+}
+
+.navCat li.active i {
+    background-position: -288px 0;
+}
+
 /* -?- */
 #savedForLater {
     margin-bottom: 30px;
@@ -344,36 +343,36 @@ h1, h2, h3, h4 {
 
 /* Step3 - Listing-Type */
 
-#listingType label.btn {    
-	display: inline-block;
-	float: none;
-	margin: 0;
-	height:120px;
-	position:relative;
-	font-size:12px;
-	}
-	
-#listingType label.btn i {
-	background-image:none;
-	position:absolute;
-	border: 1px solid #999;
-	border-radius: 4px;
-	right:7px;
-	top:7px;
-	}
-	
-#listingType label.btn li{
-	text-align:left;
-	list-style: disc inside none;
-	padding-left: 5px;
-	text-align: left;
-	}
+#listingType label.btn {
+    display: inline-block;
+    float: none;
+    margin: 0;
+    height: 120px;
+    position: relative;
+    font-size: 12px;
+}
 
-input.toggle[type="radio"]:checked + label i{
-	background-image: url("https://pics.ricardostatic.ch/contents/ch/assets/images/ricardo_icons_white.png") !important;
-	background-position:-288px 0;
-	border-color:#a6b825 !important;
-	background-color:#a6b825 !important;
+#listingType label.btn i {
+    background-image: none;
+    position: absolute;
+    border: 1px solid #999;
+    border-radius: 4px;
+    right: 7px;
+    top: 7px;
+}
+
+#listingType label.btn li {
+    text-align: left;
+    list-style: disc inside none;
+    padding-left: 5px;
+    text-align: left;
+}
+
+input.toggle[type="radio"]:checked + label i {
+    background-image: url("https://pics.ricardostatic.ch/contents/ch/assets/images/ricardo_icons_white.png") !important;
+    background-position: -288px 0;
+    border-color: #a6b825 !important;
+    background-color: #a6b825 !important;
 }
 
 #listingType .seperator {
@@ -392,60 +391,58 @@ input[type="radio"].toggle:checked + label {
     border-color: #bcd229;
 }
 /*input[type="radio"].toggle:checked + label {
-    color: #ffffff;
-    background-color: #1946A0;
-    background-image: linear-gradient(to bottom, #2382C8, #1946A0);
-    background-repeat: repeat-x;
-    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-}*/
+ color: #ffffff;
+ background-color: #1946A0;
+ background-image: linear-gradient(to bottom, #2382C8, #1946A0);
+ background-repeat: repeat-x;
+ border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+ }*/
 
 /* Step3 - Paymentcondition */
 					#fixedPricePricing{
 						display:none;
 						}
 
-        	#listingPaymentConditions .option-group {
-						margin: 0 2.12766% 0 0;
-						height:120px;
-						
-						border-radius: 5px;
-    				border: 1px solid rgba(0, 0, 0, 0.1);
-    				box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
-						display: inline-block;
-						font-family: 'MetaOTBook',Verdana,sans-serif;
-						font-size: 14px;
-     				line-height: 20px;
-    				padding: 4px 12px;
-    				text-align: center;
-    				text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
-						background-color:#eee;
-						}
-        	#listingPaymentConditions .option-group.selected {
-						border-color:#bcd229;
-						}
-        	#listingPaymentConditions button{
-						color:#999;
-						margin-bottom: 5px;
-						width:100%;
-						position:relative;
-						}
-        	#listingPaymentConditions button.active {
-						color:#fff;
-						background-color:#bcd229;    
-						text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-						}
-        	#listingPaymentConditions button i {
-						background-image:none;
-						
-						margin: 0 5px 0 0;
-						position:absolute;
-						right:5px;
-						top:7px;
-						}
-        	#listingPaymentConditions button.active i {
-						background-position:-288px 0;    
-						background-image: url("https://pics.ricardostatic.ch/contents/ch/assets/images/ricardo_icons_white.png");
-						}
+#listingPaymentConditions .option-group {
+    margin: 0 2.12766% 0 0;
+    height: 120px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    display: inline-block;
+    font-family: 'MetaOTBook', Verdana, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 4px 12px;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+    background-color: #eee;
+}
+#listingPaymentConditions .option-group.selected {
+    border-color: #bcd229;
+}
+#listingPaymentConditions button {
+    color: #999;
+    margin-bottom: 5px;
+    width: 100%;
+    position: relative;
+}
+#listingPaymentConditions button.active {
+    color: #fff;
+    background-color: #bcd229;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+}
+#listingPaymentConditions button i {
+    background-image: none;
+    margin: 0 5px 0 0;
+    position: absolute;
+    right: 5px;
+    top: 7px;
+}
+#listingPaymentConditions button.active i {
+    background-position: -288px 0;
+    background-image: url("https://pics.ricardostatic.ch/contents/ch/assets/images/ricardo_icons_white.png");
+}
 
 /* -?- */
 
@@ -490,7 +487,7 @@ input[type="radio"].toggle:checked + label {
     float: left;
     width: 425px;
     padding: 15px;
-		margin:0;
+    margin: 0;
 }
 #it_LoginSection {
     background-color: #eee;
@@ -501,7 +498,7 @@ input[type="radio"].toggle:checked + label {
 }
 #it_LoginSection dt {
     width: 150px;
-		float:left;
+    float: left;
 }
 #it_LoginSection dd {
     margin-left: 150px;
@@ -510,28 +507,28 @@ input[type="radio"].toggle:checked + label {
     width: 200px;
 }
 #it_LoginSection input[type='checkbox'] {
-		width:auto;
+    width: auto;
     float: left;
 }
 
 /* Step6 Overview and Preview */
 
 #articlePreview {
-	margin-top: 0;
-	}
+    margin-top: 0;
+}
 #articlePreview img {
-	border: 1px solid #FFFFFF;
-	border-radius: 5px 5px 5px 5px;
-	box-shadow: 1px 1px 3px #999999;
-	cursor: pointer;
-	margin-bottom: 15px;
-	}
+    border: 1px solid #FFFFFF;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 1px 1px 3px #999999;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
 #articlePreview .btn {
-	}
+}
 fieldset h3 {
-	line-height: 30px;
-	margin-top: 0;
-	}
+    line-height: 30px;
+    margin-top: 0;
+}
 
 /*********************************************************************
  * Overriding noUiSlider default css
@@ -616,28 +613,26 @@ label {
 }
 .modal {
     width: 960px;
-		margin-left: -480px;
+    margin-left: -480px;
 }
 /*********************************************************************
  * overriding noUIslider default styles
  *********************************************************************/
 
-
-
- /*********************************************************************
+/*********************************************************************
  * styles for ImageMover in ImageUploader
  *********************************************************************/
 .noUiSlider.horizontal {
     width: 80%;
 }
 
-.image-movers{
+.image-movers {
     position: absolute;
     width: 70px;
     margin: 55px 0 0 -27px;
 }
 
-.image-movers .btn{
+.image-movers .btn {
     max-width: 20px;
     height: 22px;
     margin-top: 6px !important;
@@ -655,34 +650,34 @@ label {
     margin-left: 3px;
 }
 
-.image-movers .move-left{
+.image-movers .move-left {
     float: left;
     background-position: -405px -45px;
 }
 
-.image-movers .move-right{
+.image-movers .move-right {
     float: right;
     background-position: -430px -45px;
 }
 
-.productImages .span3 .productImage .move-left{
+.productImages .span3 .productImage .move-left {
     visibility: hidden;
 }
 
-.productImages .span9 .productImage:last-child .move-right{
+.productImages .span9 .productImage:last-child .move-right {
     visibility: hidden;
 }
 
- /*********************************************************************
+/*********************************************************************
  * styles for topBar
  *********************************************************************/
 
- .stepIndicator li a div{
+.stepIndicator li a div {
     float: left;
     max-width: 70px;
- }
+}
 
-  .stepIndicator li a div:first-child{
+.stepIndicator li a div:first-child {
     font-family: 'MetaOTBold';
     font-size: 40px;
     margin-left: 25px;
@@ -715,30 +710,28 @@ label {
     margin-left: 30px;
  }
 
-   .stepIndicator li:last-child a div:last-child{
+.stepIndicator li:last-child a div:last-child {
     margin-top: 5px;
- }
-  
-   .stepIndicator .stepN6 a{
- }
- 
- .accordion-toggle {
+}
+
+.accordion-toggle {
     border-radius: 4px 4px 0 0;
     background: #f29106;
     color: white;
- }
+}
 
- .accordion-toggle:hover{
+.accordion-toggle:hover {
     color: white;
- }
+}
 
- .accordion-body{
+.accordion-body {
     background-color: rgb(245, 245, 245);
- }
+}
 
- .accordion-heading a small{
+.accordion-heading a small {
     color: white;
- }
+}
 
-
-
+footer {
+    background: none;
+}
