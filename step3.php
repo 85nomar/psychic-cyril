@@ -162,7 +162,7 @@ $Layout->start();
                 <textarea class="span6" rows="3" placeholder="Erwähnen Sie hier z.B, wenn Sie zusätzliche Gebühren für Postüberweisungen erheben"></textarea>
             </div>
             <aside>
-              <p><img title="ricardopay – einfach sicher" style="margin: 0" alt="ricardopay – einfach sicher" src="https://ricardopay.betaqxl.com/Content/img/logo-small.png"></p>
+              <p><img title="ricardopay – einfach sicher" style="margin: 0" alt="ricardopay – einfach sicher" src="img/ricardo-pay.png"></p>
               <p><strong>Vorteile</strong></p>
               <ul>
                <li>ricardopay ist gratis </li>
