@@ -39,41 +39,33 @@ $Layout->start();
 
                 </div>
             </div>
-            <div id="auctionPricing" class="section collapse in">
-                <label for="auctionStartPrice"> Startpreis </label>
-                <div class="row-fluid">
-                    <div class="span3">
-                        <div class="input-prepend">
-                            <span class="add-on">CHF</span>
-                            <input class="span10" id="inputStartPrice" type="text" placeholder="Startpreis setzen">
-                        </div>
-                    </div>
-                    <div class="span9">
-                        <a href="#" class="btn btn-link" data-toggle="collapse" data-target="#buyNowSection">Sofortkaufen-Option hinzu</a><small class="label label-warning">+ CHF 1.00</small>
-                    </div>
-                </div>
-                <div class="row-fluid">
-                    <div class="span3">
-                        <label for="auctionIncrementPrice"> Erhöhungsschritt </label>
-                        <div class="input-prepend">
-                            <span class="add-on">CHF</span>
-                            <input class="span10" id="inputIncrementPrice" type="text" value="0.05">
-                        </div>
-                    </div>
-                    <div class="span9">
-                        <div class="collapse" id="buyNowSection">
-                            <label for="buyNowPrice"> Sofort-Kaufen-Preis </label>
-                            <div class="input-prepend">
-                                <span class="add-on">CHF</span>
-                                <input class="span10" id="buyNowPrice" type="text" placeholder="Sofort-Kaufen-Preis">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div id="auctionPricing" class="row-fluid">
+              <div class="span3">
+                  <label for="auctionStartPrice">Startpreis <i class="icon-info-sign" data-toggle="tooltip" data-placement="right" title="Legen Sie einen Startpreis für die Auktion fest. Wenn Sie beispielsweise einen Startpreis von CHF 5.00 festlegen, muss das erste Gebot mindestens CHF 5.00 betragen."></i></label>
+                  <div class="input-prepend">
+                      <span class="add-on">CHF</span>
+                      <input class="span10" id="inputStartPrice" type="text" placeholder="Startpreis setzen">
+                  </div>
+              </div>
+              <div class="span3">
+                  <label for="auctionIncrementPrice">Erhöhungsschritt <i class="icon-info-sign" data-toggle="tooltip" data-placement="right" title="Legen Sie selbst fest in welchen Schritten geboten werden darf."></i></label>
+                  <div class="input-prepend">
+                      <span class="add-on">CHF</span>
+                      <input class="span10" id="inputIncrementPrice" type="text" value="0.05">
+                  </div>
+              </div>
+              <div class="span6">
+                  <label for="buyNowPrice">Sofort-Kaufen-Preis <span class="optionalField">(optional)</span> <i class="icon-info-sign" data-toggle="tooltip" data-placement="right" title="Mit der „Sofortkaufen“ Option können Sie einen fixen Wunsch-Preis festlegen. Somit kann ein Käufer der auf das Risiko einer Auktion verzichten möchte  den Artikel sofort kaufen."></i></label>
+                  <div class="input-prepend">
+                      <span class="add-on">CHF</span>
+                      <input class="span10" id="buyNowPrice" type="text" placeholder="Sofort-Kaufen-Preis">
+                  </div>
+                  <span class="optionWithCosts">Kostenpflichtig: CHF 0.60</span>
+              </div>
             </div>
-            <div id="fixedPricePricing" class="row-fluid section collapse">
+            <div id="fixedPricePricing" class="row-fluid">
                 <div class="span12">
-                    <label for="fixedPrice"> Preis </label>
+                    <label for="fixedPrice">Preis <i class="icon-info-sign" data-toggle="tooltip" data-placement="right" title="Legen Sie einen Preis fest und verkaufen Sie den Artikel direkt an den ersten Käufer."></i></label>
                     <div class="row-fluid">
                         <div class="span12">
                             <div class="input-prepend">
@@ -88,26 +80,25 @@ $Layout->start();
         
         <fieldset class="well" id="listingPaymentConditions">
             <div class="row-fluid">
-            <div class="span12">
                 <label for="paymentConditions">Welche Zahlungsarten möchten Sie anbieten?</label>
                   <div class="span3 option-group">
                       <h4>Zahlung im Voraus</h4>
                       <div>
-                              <button class="btn"><i class="icon-remove"></i>RicardoPay</button>
-                              <button class="btn"><i class="icon-remove"></i>Bank / Post</button>
+                       <button class="btn" data-toggle="tooltip" data-placement="right" title="Zahlungsmöglichkeiten: Mit Guthaben, Per Kreditkarte (Visa/MasterCard), PostFinance, Per Rechnung"><i class="icon-remove"></i>RicardoPay</button>
+                       <button class="btn"><i class="icon-remove"></i>Bank / Post</button>
                       </div>
                   </div>
                   <div class="span3 option-group">
                       <h4>Zahlung bei Abholung</h4>
                       <div>
-                              <button class="btn"><i class="icon-remove"></i>Barzahlung</button>
+                       <button class="btn"><i class="icon-remove"></i>Barzahlung</button>
                       </div>
                   </div>
                   <div class="span3 option-group">
                       <h4>Zahlung auf Rechnung</h4>
                       <div>
-                              <button class="btn"><i class="icon-remove"></i>RicardoPay</button>
-                              <button class="btn"><i class="icon-remove"></i>Bank / Post</button>
+                       <button class="btn" data-toggle="tooltip" data-placement="right" title="Zahlungsmöglichkeiten: Mit Guthaben, Per Kreditkarte (Visa/MasterCard), PostFinance, Per Rechnung"><i class="icon-remove"></i>RicardoPay</button>
+                       <button class="btn"><i class="icon-remove"></i>Bank / Post</button>
                       </div>
                   </div>
             </div>
@@ -119,6 +110,17 @@ $Layout->start();
             <div class="row-fluid collapse" id="additional-payment-notes">
                 <textarea class="span6" rows="3" placeholder="Erwähnen Sie hier z.B, wenn Sie zusätzliche Gebühren für Postüberweisungen erheben"></textarea>
             </div>
+            <aside>
+              <p><img title="ricardopay – einfach sicher" style="margin: 0" alt="ricardopay – einfach sicher" src="https://ricardopay.betaqxl.com/Content/img/logo-small.png"></p>
+              <p><strong>Vorteile</strong></p>
+              <ul>
+               <li>ricardopay ist gratis </li>
+               <li>Verkäuferschutz</li>
+               <li>Zahlungseingang innerhalb von 48 Stunden</li>
+               <li>Weniger Adminstrationsaufwand</li>
+              </ul>              
+              <p><a href="https://ricardopay.betaqxl.com">Mehr zu ricardopay</a></p>
+            </aside>
         </fieldset>
     </section>
     <section class="section">
@@ -168,7 +170,7 @@ $Layout->start();
                     <option>8</option>
                     <option>9</option>
                 </select>
-                <span class="help-inline">reaktivieren</span>
+                <span class="help-inline">reaktivieren <span class="optionalField">(optional)</span> <i class="icon-info-sign" data-toggle="tooltip" data-placement="right" title="Falls Ihr Artikel in der von Ihnen gewählten Dauer nicht verkauft werden sollte, wird der Artikel automatisch wieder reaktiviert.  Dabei entstehen wiederholt Einstellgebühren."></i></span>
             </div>
         </fieldset>
     </section>

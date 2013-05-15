@@ -10,16 +10,65 @@ h1, h2, h3, h4 {
     color: #333;
 }
 
-#logo {
-    margin-top: 5px;
+.well {
+	position:relative;
 }
+
+.well aside{
+	border-left: 1px dotted #CCCCCC;
+	float: right;
+	font-size: 11px;
+	padding: 10px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 200px;
+	height:90%;
+	}
+	
+.optionWithCosts{
+	font-size:11px;
+	color: #999;
+	margin-left:10px;
+	}
+
+.optionalField{
+	font-size:11px;
+	color:#a6b825;
+	}
+	
+.tooltip-inner {
+	text-shadow:none;
+}
+
+#logo {
+    margin-top: 15px;
+}
+
+
+#mainnav {
+	text-align:right;
+	padding-top:15px;
+}
+#mainnav a{
+	background-color: #fff;
+	background-image: none;
+	border-color: #ddd;
+}
+#mainnav i{
+	margin:-1px 2px 0 -2px;
+}
+
 #formNav {
-    margin: 40px 0;
-    padding-left: 20px;
+    margin: 5px 0;
+   /* padding-left: 20px;*/
+}
+.stepIndicator {
+	width:970px;
 }
 .stepIndicator > li > a {
     position: relative;
-    width: 120px;
+    width: 135px;
     height: 30px;
     padding: 12px;
     background: #f29106;
@@ -42,7 +91,7 @@ h1, h2, h3, h4 {
     content: "";
     position: absolute;
     top: -4px;
-    left: 146px;
+    left: 161px;
     border-style: solid;
     border-width: 31px 0 31px 31px;
     border-color: transparent #ffffff;
@@ -77,6 +126,7 @@ h1, h2, h3, h4 {
 }
 .stepIndicator > li:last-child > a:after {
     background-color:white;
+		border-width: 0;
 }
 /* Step1 Category-Selection */
 
@@ -329,6 +379,10 @@ input.toggle[type="radio"]:checked + label i{
 #listingType .seperator {
 	padding: 5px;
 	}
+	
+#auctionPricing, #fixedPricePricing {
+	margin-top:20px;
+	}
 
 /*http://stackoverflow.com/questions/5523735/how-to-make-a-radio-button-look-like-a-toggle-button */
 input[type="radio"].toggle {
@@ -346,6 +400,9 @@ input[type="radio"].toggle:checked + label {
 }*/
 
 /* Step3 - Paymentcondition */
+					#fixedPricePricing{
+						display:none;
+						}
 
         	#listingPaymentConditions .option-group {
 						margin: 0 2.12766% 0 0;
@@ -631,15 +688,38 @@ label {
     margin-left: 25px;
     margin-top: 10px;
  }
+ .stepIndicator .stepN1 a {
+    width: 110px;
+}
+ 
+ .stepIndicator .stepN1 a:before {
+    left: 136px;
+    position: absolute;
+    top: -4px;
+    width: 0;
+    z-index: 1;
+}
+
+  .stepIndicator .stepN1 a div:first-child{
+    margin-left: 0;
+ } 
+ 
    .stepIndicator li a div:last-child{
     margin-left: 5px;
     position: absolute;
     margin-left: 55px;
     z-index: 9999;
  }
+  
+   .stepIndicator .stepN1 a div:last-child{
+    margin-left: 30px;
+ }
 
    .stepIndicator li:last-child a div:last-child{
     margin-top: 5px;
+ }
+  
+   .stepIndicator .stepN6 a{
  }
  
  .accordion-toggle {

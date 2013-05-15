@@ -52,6 +52,7 @@ $(document).ready(function() {
 			event.preventDefault();
 		})
 		.mousedown(function(event){
+			$('#listingPaymentConditions button').removeClass('active').parents('.option-group').removeClass('selected');// for single-selection
 			$(this).toggleClass('active');
 		})
 		.mouseup(function(event){
@@ -150,14 +151,24 @@ $(document).ready(function() {
         $this.parents(".shipping-element").find(".inputShippingCosts").val(v);
     });
 
-    $("#listingType .toggle").on("click", function(e) {
+    /*$("#listingType .toggle").on("click", function(e) {
         var $this = $(this), target = $this.attr('data-target');
 
         if ($(target).hasClass('in'))
             return;
         $(".in").removeClass('in');
         $(target).addClass('in');
-    });
+    });	*/	
+		
+		$('label[for="toggle-auction"]').click(function(e) {
+			$('#auctionPricing').show();
+			$('#fixedPricePricing').hide();
+		});
+		$('label[for="toggle-fixedPriceOffer"]').click(function(e) {
+			$('#auctionPricing').hide();
+			$('#fixedPricePricing').show();
+		});
+		$('*[data-toggle="tooltip"]').tooltip();
 		
 	// Overall Calculate maximum Modal-Body-Height
 
