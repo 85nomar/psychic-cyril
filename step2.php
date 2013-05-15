@@ -38,19 +38,10 @@ $Layout->start();
                 <option selected>Gebraucht</option>
                 <option>Defekt</option>
             </select>
-            <label for="inputProductCondition">
-                Verkaufsvorlage auswählen
-            </label>
-            <select id="productCondition">
-                <option>keine</option>
-                <option>Verkaufsvorlage 1</option>
-                <option>Verkaufsvorlage 2</option>
-                <option>Verkaufsvorlage 3</option>
-            </select>
             <label for="inputDescription">
                 Beschreibung
             </label>
-            <div class="editor-toolbar pull-right">
+            <div class="editor-toolbar pull-right">§
                 <a href="#">mehr</a>
                 <i class="icon-bold"></i><i class="icon-italic"></i><i class="icon-list"></i>
             </div>
