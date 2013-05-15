@@ -2,7 +2,7 @@
 
 /*fixes*/
 
-#mce_27-body.mce-container-body{
+#mce_24-body.mce-container-body{
 	width: 190px;
     position: relative;
     overflow: hidden;
@@ -11,13 +11,13 @@
     
 }
 
-#mce_28.mce-toolbar{
+#mce_25.mce-toolbar{
 	position: absolute;
     height: 35px;
     width: 800px;
 }
 
-#mce_27{
+#mce_24{
 	height: 35px;
 }
 
@@ -63,8 +63,11 @@
 	top:73px !important;
 }
 
-#mce_44, #mce_45, #mce_46{
+
+
+/*#mce_41:not(.mce-textbox):not(.mce-combobox), #mce_42:not(.mce-combobox):not(.mce-textbox), #mce_43:not(.mce-combobox):not(.mce-textbox):not(.mce-container){
 	display:none;
 }
-
+*/
 /*fixes end*/
+
