@@ -2195,105 +2195,250 @@ table th[class*="span"],
 }
 
 .icon-orange {
-  background-image: url("https://pics.ricardostatic.ch/contents/ch/assets/images/ricardo_icons_orange.png");
+  background-image: url("/contents/ch/assets/images/ricardo_icons_orange.png");
 }
 
 .icon-green {
-  background-image: url("https://pics.ricardostatic.ch/contents/ch/assets/images/ricardo_icons_green.png");
+  background-image: url("/contents/ch/assets/images/ricardo_icons_green.png");
 }
 
-.icon-favorite {
-  background-position: -120px 0;
+.icon-blue {
+  background-image: url("/contents/ch/assets/images/ricardo_icons_blue.png");
 }
 
-.icon-view-gallery {
-  background-position: -216px 0;
-}
-
-.icon-view-list {
-  background-position: -264px 0;
-}
-
-.icon-check {
-  background-position: -192px -24px;
-}
-
-.icon-mylinks {
-  background-position: -72px -24px;
-}
-
-.icon-auction {
-  background-position: -240px -72px;
-}
-
-.icon-classified {
-  background-position: 0 -24px;
-}
-
-.icon-buynow {
-  background-position: -144px -72px;
-}
-
-.icon-delivered {
-  background-position: -312px -72px;
-}
-
-.icon-pickip {
+.icon-home, .icon-pickip {
   background-position: 0 0;
 }
-
-.icon-priceoffer {
-  background-position: -288px -72px;
+.icon-file{
+  background-position: -24px 0;
 }
-
-.icon-newitem {
+.icon-search{
+  background-position: -48px 0;
+}
+.icon-envelope{
+  background-position: -72px 0;
+}
+.icon-time{
+  background-position: -96px 0;
+}
+.icon-star, .icon-favorite {
+  background-position: -120px 0;
+}
+.icon-star-empty{
+  background-position: -144px 0;
+}
+.icon-user{
+  background-position: -168px 0;
+}
+.icon-lock, .icon-logout{
+  background-position: -192px 0;
+}
+.icon-th-large, .icon-view-gallery {
+  background-position: -216px 0;
+}
+.icon-th{
+  background-position: -240px 0;
+}
+.icon-th-list, .icon-view-list {
+  background-position: -264px 0;
+}
+.icon-ok {
+  background-position: -288px 0;
+}
+.icon-remove{
+  background-position: -312px 0;
+}
+.icon-zoom-in{
+  background-position: -336px 0;
+}
+.icon-zoom-out{
+  background-position: -360px 0;
+}
+.icon-repeat, .icon-rotate{
+  background-position: -384px 0;
+}
+.icon-trash{
+  background-position: -456px 0;
+}
+.icon-refresh{
+  background-position: -408px 0;
+}
+.icon-flag{
+  background-position: -432px 0;
+}
+.icon-tag, .icon-classified {
+  background-position: 0 -24px;
+}
+.icon-tags, .icon-newitem {
   background-position: -24px -24px;
 }
-
-.icon-about {
-  background-position: -336px -72px;
+.icon-book{
+  background-position: -48px -24px;
 }
-
-.icon-ok {
-  background-position: -288px 0px;
+.icon-bookmark, .icon-mylinks {
+  background-position: -72px -24px;
 }
-
-.icon-help {
-  background-position: -336px -24px;
+.icon-print{
+  background-position: -96px -24px;
 }
-
-.icon-share {
+.icon-camera{
+  background-position: -120px -24px;
+}
+.icon-edit{
+  background-position: -144px -24px;
+}
+.icon-share{
   background-position: -168px -24px;
 }
-
-.icon-folder-open {
-  background-position: -168px -72px;
+.icon-check{
+  background-position: -192px -24px;
 }
-
-.icon-chevron-down {
-  background-position: -384px -48px;
+.icon-move{
+  background-position: -216px -24px;
 }
-
-.icon-chevron-right {
-  background-position: -432px -48px;
+.icon-plus-sign{
+  background-position: -240px -24px;
 }
-
-.icon-chevron-left {
-  background-position: -408px -48px;
+.icon-minus-sign{
+  background-position: -264px -24px;
 }
-
+.icon-remove-sign{
+  background-position: -288px -24px;
+}
+.icon-ok-sign{
+  background-position: -312px -24px;
+}
+.icon-question-sign, .icon-help {
+  background-position: -336px -24px;
+}
+.icon-info-sign{
+  background-position: -360px -24px;
+}
+.icon-exclamation-sign{
+  background-position: -384px -24px;
+}
+.icon-pencil{
+  background-position: -408px -24px;
+}
+.icon-map-marker{
+  background-position: -432px -24px;
+}
+.icon-picture{
+  background-position: -456px -24px;
+}
+.icon-bell{
+  background-position: 0 -48px;
+}
+.icon-certificate{
+  background-position: -24px -48px;
+}
+.icon-thumbs-up{
+  background-position: -48px -48px;
+}
+.icon-thumbs-down{
+  background-position: -72px -48px;
+}
+.icon-hand-right{
+  background-position: -96px -48px;
+}
+.icon-hand-left{
+  background-position: -120px -48px;
+}
+.icon-hand-up{
+  background-position: -144px -48px;
+}
+.icon-hand-down{
+  background-position: -168px -48px;
+}
+.icon-ok-circle{
+  background-position: -192px -48px;
+}
+.icon-ban-circle{
+  background-position: -216px -48px;
+}
+.icon-fire{
+  background-position: -240px -48px;
+}
+.icon-eye-open{
+  background-position: -264px -48px;
+}
+.icon-warning-sign{
+  background-position: -288px -48px;
+	}
+.icon-calendar{
+  background-position: -312px -48px;
+}
+.icon-comment{
+  background-position: -336px -48px;
+}
 .icon-chevron-up, .icon-chevron-top {
   background-position: -360px -48px;
 }
-
-.icon-envelope {
-  background-position: -72px 0;
+.icon-chevron-down{
+  background-position: -384px -48px;
 }
-.icon-remove {
-  background-position: -312px 0px;
+.icon-chevron-left{
+  background-position: -408px -48px;
 }
-.icon-plus {
-  background-position: -48px -72px; 
+.icon-chevron-right{
+  background-position: -432px -48px;
+}
+.icon-share-alt{
+  background-position: -456px -48px;
+}
+.icon-resize-full{
+  background-position: 0 -72px;
+}
+.icon-resize-small{
+  background-position: -24px -72px;
+}
+.icon-plus{
+  background-position: -48px -72px;
+}
+.icon-minus{
+  background-position: -72px -72px;
+}
+.icon-globe{
+  background-position: -96px -72px;
+}
+.icon-wrench{
+  background-position: -120px -72px;
+}
+.icon-shopping-cart, .icon-buynow {
+  background-position: -144px -72px;
+}
+.icon-folder-open{
+  background-position: -168px -72px;
+}
+.icon-filter{
+  background-position: -192px -72px;
+}
+.icon-briefcase{
+  background-position: -216px -72px;
+}
+.icon-auction {
+  background-position: -240px -72px;
+}
+.icon-priceoffer {
+  background-position: -288px -72px;
+}
+.icon-delivered {
+  background-position: -312px -72px;
+}
+.icon-about {
+  background-position: -336px -72px;
+}
+.icon-heart{
+  background-position: -384px -72px;
+}
+.icon-film{
+  background-position: -408px -72px;
+}
+.icon-leaf{
+  background-position: -432px -72px;
+}
+.icon-key, .icon-login{
+  background-position: -456px -72px;
 }
 
 .dropup,
