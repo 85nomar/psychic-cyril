@@ -46,21 +46,18 @@ $(document).ready(function() {
     ricardoImageUpload.init();
 
     // Step3 - Payment-Conditions-Selection
-						
-		$('#listingPaymentConditions button')
-		.click(function(event){
-			event.preventDefault();
-		})
-		.mousedown(function(event){
-			$(this).toggleClass('active');
-		})
-		.mouseup(function(event){
-			 if($(this).parent().find('.active').size() > 0){
-				$(this).parents('.option-group').addClass('selected');
-			 } else {
-				$(this).parents('.option-group').removeClass('selected');
-			 }
-		});		
+
+    $('#listingPaymentConditions button').click(function(event) {
+        event.preventDefault();
+    }).mousedown(function(event) {
+        $(this).toggleClass('active');
+    }).mouseup(function(event) {
+        if ($(this).parent().find('.active').size() > 0) {
+            $(this).parents('.option-group').addClass('selected');
+        } else {
+            $(this).parents('.option-group').removeClass('selected');
+        }
+    });
 
     // Step3 - Date & Time functions
     (function($) {
@@ -102,20 +99,17 @@ $(document).ready(function() {
         $('#dateEndTimePicker').on("changeDate", function(e) {
             $(".noUiSlider").noUiSlider("disabled", true);
         })
-        // Day-Slider
-        // define possible duration in days as an array
-        // maps to the range: and step: parameters above
-        var mapDays = [1, 5, 10], labelCount = mapDays.length;
 
+        // Day-Slider
         $(".noUiSlider").noUiSlider({
-            range : [0, 2],
-            start : 2,
+            range : [0, 9],
+            start : 9,
             handles : 1,
             connect : "lower",
             orientation : "horizontal",
             step : 1,
             slide : function(e) {
-                var sliderVal = $(this).val(), daysInMs = mapDays[sliderVal] * 24 * 60 * 60 * 1000, startDate = startDatePicker.getDate();
+                var sliderVal = $(this).val(), daysInMs = (sliderVal + 1) * 24 * 60 * 60 * 1000, startDate = startDatePicker.getDate();
 
                 // update EndDatePicker with duration choosen via slider
                 endDatePicker.setStartDate(new Date(startDate.getTime() + oneDay));
@@ -158,56 +152,56 @@ $(document).ready(function() {
         $(".in").removeClass('in');
         $(target).addClass('in');
     });
-		
-	// Overall Calculate maximum Modal-Body-Height
 
-	function getClientHeight() {
-		var myHeight = 0;
-		if (typeof (window.innerWidth) == 'number') {
-			//Non-IE
-			myHeight = window.innerHeight;
-		} else if (document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)) {
-			//IE 6+ in ′standards compliant mode′
-			myHeight = document.documentElement.clientHeight;
-		} else if (document.body && (document.body.clientWidth || document.body.clientHeight)) {
-			//IE 4 compatible
-			myHeight = document.body.clientHeight;
-		}
-		return myHeight;
-	}
-		
-	clientHeight = getClientHeight();
-	modalMargin = clientHeight / 5;
-	modelHeader = 49;
-	modelFooter = 56;
-	modalBodyNoFoot = clientHeight - modalMargin - modelHeader;
-	modalBodyWithFoot = clientHeight - modalMargin - modelHeader - modelFooter;
+    // Overall Calculate maximum Modal-Body-Height
 
-	$('.modal').each(function () {
+    function getClientHeight() {
+        var myHeight = 0;
+        if ( typeof (window.innerWidth) == 'number') {
+            //Non-IE
+            myHeight = window.innerHeight;
+        } else if (document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)) {
+            //IE 6+ in ′standards compliant mode′
+            myHeight = document.documentElement.clientHeight;
+        } else if (document.body && (document.body.clientWidth || document.body.clientHeight)) {
+            //IE 4 compatible
+            myHeight = document.body.clientHeight;
+        }
+        return myHeight;
+    }
 
-		if ($(this).find('.modal-footer').size() != 1) {
-			// modals without a footer
-			$(this).find('.modal-body').css('max-height', modalBodyNoFoot);
-		} else {
-			// modals with a footer
-			$(this).find('.modal-body').css('max-height', modalBodyWithFoot);
-		}
+    clientHeight = getClientHeight();
+    modalMargin = clientHeight / 5;
+    modelHeader = 49;
+    modelFooter = 56;
+    modalBodyNoFoot = clientHeight - modalMargin - modelHeader;
+    modalBodyWithFoot = clientHeight - modalMargin - modelHeader - modelFooter;
 
-	});
-		
-	// Step 5 - Login Modal
-		   
-	$('#prelogin').click(function(event){
-			event.preventDefault();
-			$('#modalLogin').modal('show');				
-	});
-		
-	// Step 6 - Login Modal
-		
-	$('#articlePreview img, #articlePreview a').click(function(event){
-			event.preventDefault();
-			$('#modalPreview').modal('show');				
-	});
+    $('.modal').each(function() {
+
+        if ($(this).find('.modal-footer').size() != 1) {
+            // modals without a footer
+            $(this).find('.modal-body').css('max-height', modalBodyNoFoot);
+        } else {
+            // modals with a footer
+            $(this).find('.modal-body').css('max-height', modalBodyWithFoot);
+        }
+
+    });
+
+    // Step 5 - Login Modal
+
+    $('#prelogin').click(function(event) {
+        event.preventDefault();
+        $('#modalLogin').modal('show');
+    });
+
+    // Step 6 - Login Modal
+
+    $('#articlePreview img, #articlePreview a').click(function(event) {
+        event.preventDefault();
+        $('#modalPreview').modal('show');
+    });
 
     // function to move images in ImageUploader
     function imageMovers() {

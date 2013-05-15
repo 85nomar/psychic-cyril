@@ -4,7 +4,7 @@ $Layout->title='Selling';
 $Layout->start();
 ?>
 
-<h2>Preis und Dauer des Angebots einstellen</h2>
+<h2>Wie möchten Sie Ihr Produkt verkaufen?</h2>
 
 <form>
     <section class="section">
@@ -137,9 +137,11 @@ $Layout->start();
                     <label for="Dauer"> Dauer </label>
                     <div class="noUiSlider"></div>
                     <div class="stepLabels">
-                        <span>1d</span>
-                        <span>5d</span>
-                        <span>10d</span>
+                        <span class="one">1T</span>
+                        <span class="three">3T</span>
+                        <span class="five">5T</span>
+                        <span class="seven">7T</span>
+                        <span class="ten">10T</span>
                     </div>
                 </div>
                 <div class="span4">

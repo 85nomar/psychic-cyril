@@ -1,4 +1,4 @@
-/**********************************************************************
+    /**********************************************************************
  * Selling-Form
  **********************************************************************/
 /* color orange: #f29106 */
@@ -387,7 +387,7 @@ input[type="radio"].toggle:checked + label {
     background-image: url("https://pics.ricardostatic.ch/contents/ch/assets/images/ricardo_icons_white.png");
 }
 
-/* -?- */
+/* Step 6 Fees*/
 
 .table-sum tbody tr td:last-child {
     text-align: right;
@@ -404,10 +404,9 @@ input[type="radio"].toggle:checked + label {
 .table-first-column-title tr td:first-child {
     color: #999999;
 }
-.editmode {
-    border-color: #2382C8;
-    background: none;
-}
+
+/* Step 3 - Date & Time */
+
 .noUiSlider {
     margin-top: 15px;
 }
@@ -416,12 +415,34 @@ input[type="radio"].toggle:checked + label {
     cursor: pointer;
 }
 
-.stepLabels {
-    width: 80%;
+.stepLabels span:before {
+    content: "";
+    position: relative;
+    top: -16px;
+    left: 7px;
+    border-style: solid;
+    border-width: 1px 0 1px 1px;
+    border-color: transparent #757575;
 }
 
-.stepLabels span:not(:first-child) {
-    margin-left: 36%;
+.stepLabels .one {
+    margin-left: -7px;
+}
+
+.stepLabels .three {
+    margin-left: 31px;
+}
+
+.stepLabels .five {
+    margin-left: 30px;
+}
+
+.stepLabels .seven {
+    margin-left: 30px;
+}
+
+.stepLabels .ten {
+    margin-left: 54px;
 }
 
 /* Step5 Promotion & Login */
@@ -479,6 +500,18 @@ fieldset h3 {
 .noUiSlider.connect.disabled a, .noUiSlider.connect.lower.disabled {
     background: none repeat scroll 0 0 #CCCCCC;
     cursor: not-allowed;
+}
+
+.noUiSlider.connect a, .noUiSlider.connect.lower {
+    background-color: #c5c5c5;
+}
+
+.noUiSlider {
+    border-color: #757575;
+}
+
+.noUiSlider, .noUiSlider.connect.lower a {
+    background-color: #f2f2f2;
 }
 
 /*********************************************************************
