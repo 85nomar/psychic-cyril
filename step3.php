@@ -85,43 +85,7 @@ $Layout->start();
                 </div>
             </div>
         </fieldset>
-        
-        <fieldset class="well" id="listingPaymentConditions">
-            <div class="row-fluid">
-            <div class="span12">
-                <label for="paymentConditions">Welche Zahlungsarten möchten Sie anbieten?</label>
-                  <div class="span3 option-group">
-                      <h4>Zahlung im Voraus</h4>
-                      <div>
-                              <button class="btn"><i class="icon-remove"></i>RicardoPay</button>
-                              <button class="btn"><i class="icon-remove"></i>Bank / Post</button>
-                      </div>
-                  </div>
-                  <div class="span3 option-group">
-                      <h4>Zahlung bei Abholung</h4>
-                      <div>
-                              <button class="btn"><i class="icon-remove"></i>Barzahlung</button>
-                      </div>
-                  </div>
-                  <div class="span3 option-group">
-                      <h4>Zahlung auf Rechnung</h4>
-                      <div>
-                              <button class="btn"><i class="icon-remove"></i>RicardoPay</button>
-                              <button class="btn"><i class="icon-remove"></i>Bank / Post</button>
-                      </div>
-                  </div>
-            </div>
-            <div class="row-fluid section">
-                <div class="span12">
-                    <a id="add-additional-payment-notes" data-toggle="collapse" data-target="#additional-payment-notes" class="btn btn-link">Zusätzliche Bemerkungen zu den Zahlungsmitteln</a><small class="muted">(optional)</small>
-                </div>
-            </div>
-            <div class="row-fluid collapse" id="additional-payment-notes">
-                <textarea class="span6" rows="3" placeholder="Erwähnen Sie hier z.B, wenn Sie zusätzliche Gebühren für Postüberweisungen erheben"></textarea>
-            </div>
-        </fieldset>
-    </section>
-    <section class="section">
+
         <fieldset class="well" id="listingStartTimeAndDuration">
             <div class="row-fluid">
                 <div class="span4">
@@ -171,6 +135,41 @@ $Layout->start();
                     <option>9</option>
                 </select>
                 <span class="help-inline">reaktivieren</span>
+            </div>
+        </fieldset>
+        
+        <fieldset class="well" id="listingPaymentConditions">
+            <div class="row-fluid">
+            <div class="span12">
+                <label for="paymentConditions">Welche Zahlungsarten möchten Sie anbieten?</label>
+                  <div class="span3 option-group">
+                      <h4>Zahlung im Voraus</h4>
+                      <div>
+                              <button class="btn"><i class="icon-remove"></i>RicardoPay</button>
+                              <button class="btn"><i class="icon-remove"></i>Bank / Post</button>
+                      </div>
+                  </div>
+                  <div class="span3 option-group">
+                      <h4>Zahlung bei Abholung</h4>
+                      <div>
+                              <button class="btn"><i class="icon-remove"></i>Barzahlung</button>
+                      </div>
+                  </div>
+                  <div class="span3 option-group">
+                      <h4>Zahlung auf Rechnung</h4>
+                      <div>
+                              <button class="btn"><i class="icon-remove"></i>RicardoPay</button>
+                              <button class="btn"><i class="icon-remove"></i>Bank / Post</button>
+                      </div>
+                  </div>
+            </div>
+            <div class="row-fluid section">
+                <div class="span12">
+                    <a id="add-additional-payment-notes" data-toggle="collapse" data-target="#additional-payment-notes" class="btn btn-link">Zusätzliche Bemerkungen zu den Zahlungsmitteln</a><small class="muted">(optional)</small>
+                </div>
+            </div>
+            <div class="row-fluid collapse" id="additional-payment-notes">
+                <textarea class="span6" rows="3" placeholder="Erwähnen Sie hier z.B, wenn Sie zusätzliche Gebühren für Postüberweisungen erheben"></textarea>
             </div>
         </fieldset>
     </section>
