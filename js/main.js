@@ -103,20 +103,17 @@ $(document).ready(function() {
         $('#dateEndTimePicker').on("changeDate", function(e) {
             $(".noUiSlider").noUiSlider("disabled", true);
         })
-        // Day-Slider
-        // define possible duration in days as an array
-        // maps to the range: and step: parameters above
-        var mapDays = [1, 5, 10], labelCount = mapDays.length;
 
+        // Day-Slider
         $(".noUiSlider").noUiSlider({
-            range : [0, 2],
-            start : 2,
+            range : [0, 9],
+            start : 9,
             handles : 1,
             connect : "lower",
             orientation : "horizontal",
             step : 1,
             slide : function(e) {
-                var sliderVal = $(this).val(), daysInMs = mapDays[sliderVal] * 24 * 60 * 60 * 1000, startDate = startDatePicker.getDate();
+                var sliderVal = $(this).val(), daysInMs = (sliderVal + 1) * 24 * 60 * 60 * 1000, startDate = startDatePicker.getDate();
 
                 // update EndDatePicker with duration choosen via slider
                 endDatePicker.setStartDate(new Date(startDate.getTime() + oneDay));
