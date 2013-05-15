@@ -78,7 +78,7 @@ $Layout->start();
                         <div class="span12">
                             <div class="input-prepend">
                                 <span class="add-on">CHF</span>
-                                <input class="span10" id="fixedPrice" type="text" placeholder="Sofort-Kaufen-Preis">
+                                <input class="span10" id="fixedPrice" type="text" placeholder="Preis">
                             </div>
                         </div>
                     </div>
