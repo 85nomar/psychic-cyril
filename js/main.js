@@ -52,7 +52,7 @@ $(document).ready(function() {
 			event.preventDefault();
 		})
 		.mousedown(function(event){
-			$('#listingPaymentConditions button').removeClass('active').parents('.option-group').removeClass('selected');// for single-selection
+			$('.option-group').not($(this).parents('.option-group')).removeClass('selected').find('button').removeClass('active');// for single-selection
 			$(this).toggleClass('active');
 		})
 		.mouseup(function(event){
@@ -62,6 +62,12 @@ $(document).ready(function() {
 				$(this).parents('.option-group').removeClass('selected');
 			 }
 		});		
+		
+		$('.option-group:last button')
+		.mousedown(function(event){
+			$(this).parents('.option-group').find('button').removeClass('active');// for single-selection
+			$(this).addClass('active');
+		});// for single-selection
 
     // Step3 - Date & Time functions
     (function($) {
@@ -206,6 +212,36 @@ $(document).ready(function() {
 
 	});
 		
+	// Step 5 - Selling Options
+	
+	
+		isChecked = $('#adWindow input[name="adWindow"]:checked').parents('.option').index();
+		$('#adWindow #optionCarousel').carousel(isChecked).carousel('pause');
+		$('#adWindow #optionCarousel .item').eq(isChecked).addClass('selected');	
+		$('#adWindow .option').eq(isChecked).addClass('selected');				
+		
+    $('#adWindow .option')
+			.bind('mouseenter',function(){
+				showItem = $(this).index();
+				$('#adWindow #optionCarousel').carousel(showItem).carousel('pause');
+			})
+			.bind('mouseleave',function(){
+				showItem = $('#optionCarousel .item.selected').index();
+				$('#adWindow #optionCarousel').carousel(showItem).carousel('pause');
+			})
+			.bind('mousedown',function(){
+				showItem = $(this).index();
+				$('#adWindow .option').removeClass('selected');
+				$(this).addClass('selected');
+				$('#adWindow #optionCarousel .item').removeClass('selected');
+				$('#adWindow #optionCarousel .item').eq(showItem).addClass('selected');				
+			});
+			
+		$('#adHomepage .option')
+			.bind('mousedown',function(){
+				$(this).toggleClass('selected');				
+			});
+	
 	// Step 5 - Login Modal
 		   
 	$('#prelogin').click(function(event){

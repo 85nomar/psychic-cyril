@@ -97,8 +97,9 @@ $Layout->start();
                   <div class="span3 option-group">
                       <h4>Zahlung auf Rechnung</h4>
                       <div>
-                       <button class="btn" data-toggle="tooltip" data-placement="right" title="Zahlungsmöglichkeiten: Mit Guthaben, Per Kreditkarte (Visa/MasterCard), PostFinance, Per Rechnung"><i class="icon-remove"></i>RicardoPay</button>
-                       <button class="btn"><i class="icon-remove"></i>Bank / Post</button>
+                       <button class="btn"><i class="icon-remove"></i>nach Erhalt</button>
+                       <button class="btn"><i class="icon-remove"></i>innert 14 Tagen</button>
+                       <button class="btn"><i class="icon-remove"></i>innert 30 Tagen</button>
                       </div>
                   </div>
             </div>
