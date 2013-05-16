@@ -95,8 +95,7 @@ $Layout -> start();
                 <li>Das gebuchte Werbefenster wird rotierend eingesetzt.</li>
                 <li>Sie können den Interval der Einblendungen selber auswählen (Gold, Silber, Bronze)</li>
               </ol>
-            </div>            
-            
+            </div>
           </div>
          </div>
         <div class="span6 optionPreview">
