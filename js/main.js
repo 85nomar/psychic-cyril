@@ -162,7 +162,7 @@ $(document).ready(function() {
             // make sure costs input field is visible
             showCosts(data.costsInputDiv);
             // check wether costs field is disabled and reset "offer for free" option accordingly
-            data.costsInputDiv.removeAttr("disabled");
+            data.costsInputDiv.find(".js-input-shipping-costs").prop('disabled', false);
             // reset js-free-shipping checkbox
             data.costsInputDiv.closest(".js-shipping-costs").find(".js-shipping-free").attr('checked', false);
             // check whether value is actually a placeholder
@@ -208,15 +208,13 @@ $(document).ready(function() {
 
         // function to check and process a certain selected option
         function processSelection(selectOption, data) {
-            var targetClass = selectOption.attr("data-target"), price = selectOption.attr("data-price"), data = (data !== undefined) ? data : {};
+            var targetClass = selectOption.attr("data-target"), price = selectOption.attr("data-price"), 
+            data = (data !== undefined) ? data : {};
             // save a reference to current js-shipping-element
-            if (data.shippingElement == undefined) {
-                data.shippingElement = selectOption.closest(".js-shipping-element");
-            }
+            data.shippingElement = selectOption.closest(".js-shipping-element");
+
             // save a reference to the costs input field if not already existing
-            if (data.costsInputDiv == undefined) {
-                data.costsInputDiv = data.shippingElement.find(".js-shipping-costs");
-            }
+            data.costsInputDiv = data.shippingElement.find(".js-shipping-costs");
 
             if (targetClass !== undefined) {
                 // always hide open addons first
@@ -257,7 +255,7 @@ $(document).ready(function() {
             // reset state
             clone.find(".js-shipping-addon").addClass("hide");
             clone.find(".js-shipping-costs").addClass("hide");
-            clone.find(".js-input-shipping-costs").removeAttr("disabled");
+            clone.find(".js-input-shipping-costs").prop('disabled', false);
             // insert into DOM
             clone.insertAfter(newest).find(".js-delete-additional-shipping").removeClass("hide");
 
@@ -271,9 +269,9 @@ $(document).ready(function() {
         $(".js-shipping-free").change(function() {
             var $this = $(this), el = $this.closest(".js-shipping-costs").find(".js-input-shipping-costs"), restoredVal;
             if ($this.is(':checked')) {
-                el.val("0.00").attr("disabled", "disabled");
+                el.val("0.00").prop('disabled', true);
             } else {
-                el.removeAttr("disabled");
+                el.prop('disabled', false);
                 // restore value from selected option
                 restoredVal = $this.closest(".js-shipping-element").find(".js-shipping-addon:not(.hide) > :selected").attr("data-price");
                 el.val(restoredVal);
