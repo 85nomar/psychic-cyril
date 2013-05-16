@@ -46,20 +46,28 @@ $(document).ready(function() {
     ricardoImageUpload.init();
 
     // Step3 - Payment-Conditions-Selection
-
-    $('#listingPaymentConditions button').click(function(event) {
-        event.preventDefault();
-    }).mousedown(function(event) {
-        $('#listingPaymentConditions button').removeClass('active').parents('.option-group').removeClass('selected');
-        // for single-selection
-        $(this).toggleClass('active');
-    }).mouseup(function(event) {
-        if ($(this).parent().find('.active').size() > 0) {
-            $(this).parents('.option-group').addClass('selected');
-        } else {
-            $(this).parents('.option-group').removeClass('selected');
-        }
-    });
+						
+		$('#listingPaymentConditions button')
+		.click(function(event){
+			event.preventDefault();
+		})
+		.mousedown(function(event){
+			$('.option-group').not($(this).parents('.option-group')).removeClass('selected').find('button').removeClass('active');// for single-selection
+			$(this).toggleClass('active');
+		})
+		.mouseup(function(event){
+			 if($(this).parent().find('.active').size() > 0){
+				$(this).parents('.option-group').addClass('selected');
+			 } else {
+				$(this).parents('.option-group').removeClass('selected');
+			 }
+		});		
+		
+		$('.option-group:last button')
+		.mousedown(function(event){
+			$(this).parents('.option-group').find('button').removeClass('active');// for single-selection
+			$(this).addClass('active');
+		});// for single-selection
 
     // Step3 - Date & Time functions
     (function($) {
@@ -259,73 +267,103 @@ $(document).ready(function() {
     })(window.jQuery);
 
     /*$("#listingType .toggle").on("click", function(e) {
-     var $this = $(this), target = $this.attr('data-target');
+        var $this = $(this), target = $this.attr('data-target');
 
-     if ($(target).hasClass('in'))
-     return;
-     $(".in").removeClass('in');
-     $(target).addClass('in');
-     });	*/
+        if ($(target).hasClass('in'))
+            return;
+        $(".in").removeClass('in');
+        $(target).addClass('in');
+    });	*/	
+		
+		$('label[for="toggle-auction"]').click(function(e) {
+			$('#auctionPricing').show();
+			$('#fixedPricePricing').hide();
+		});
+		$('label[for="toggle-fixedPriceOffer"]').click(function(e) {
+			$('#auctionPricing').hide();
+			$('#fixedPricePricing').show();
+		});
+		$('*[data-toggle="tooltip"]').tooltip();
+		
+	// Overall Calculate maximum Modal-Body-Height
 
-    $('label[for="toggle-auction"]').click(function(e) {
-        $('#auctionPricing').show();
-        $('#fixedPricePricing').hide();
-    });
-    $('label[for="toggle-fixedPriceOffer"]').click(function(e) {
-        $('#auctionPricing').hide();
-        $('#fixedPricePricing').show();
-    });
-    $('*[data-toggle="tooltip"]').tooltip();
+	function getClientHeight() {
+		var myHeight = 0;
+		if (typeof (window.innerWidth) == 'number') {
+			//Non-IE
+			myHeight = window.innerHeight;
+		} else if (document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)) {
+			//IE 6+ in ′standards compliant mode′
+			myHeight = document.documentElement.clientHeight;
+		} else if (document.body && (document.body.clientWidth || document.body.clientHeight)) {
+			//IE 4 compatible
+			myHeight = document.body.clientHeight;
+		}
+		return myHeight;
+	}
+		
+	clientHeight = getClientHeight();
+	modalMargin = clientHeight / 5;
+	modelHeader = 49;
+	modelFooter = 56;
+	modalBodyNoFoot = clientHeight - modalMargin - modelHeader;
+	modalBodyWithFoot = clientHeight - modalMargin - modelHeader - modelFooter;
 
-    // Overall Calculate maximum Modal-Body-Height
+	$('.modal').each(function () {
 
-    function getClientHeight() {
-        var myHeight = 0;
-        if ( typeof (window.innerWidth) == 'number') {
-            //Non-IE
-            myHeight = window.innerHeight;
-        } else if (document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)) {
-            //IE 6+ in ′standards compliant mode′
-            myHeight = document.documentElement.clientHeight;
-        } else if (document.body && (document.body.clientWidth || document.body.clientHeight)) {
-            //IE 4 compatible
-            myHeight = document.body.clientHeight;
-        }
-        return myHeight;
-    }
+		if ($(this).find('.modal-footer').size() != 1) {
+			// modals without a footer
+			$(this).find('.modal-body').css('max-height', modalBodyNoFoot);
+		} else {
+			// modals with a footer
+			$(this).find('.modal-body').css('max-height', modalBodyWithFoot);
+		}
 
-    clientHeight = getClientHeight();
-    modalMargin = clientHeight / 5;
-    modelHeader = 49;
-    modelFooter = 56;
-    modalBodyNoFoot = clientHeight - modalMargin - modelHeader;
-    modalBodyWithFoot = clientHeight - modalMargin - modelHeader - modelFooter;
-
-    $('.modal').each(function() {
-
-        if ($(this).find('.modal-footer').size() != 1) {
-            // modals without a footer
-            $(this).find('.modal-body').css('max-height', modalBodyNoFoot);
-        } else {
-            // modals with a footer
-            $(this).find('.modal-body').css('max-height', modalBodyWithFoot);
-        }
-
-    });
-
-    // Step 5 - Login Modal
-
-    $('#prelogin').click(function(event) {
-        event.preventDefault();
-        $('#modalLogin').modal('show');
-    });
-
-    // Step 6 - Login Modal
-
-    $('#articlePreview img, #articlePreview a').click(function(event) {
-        event.preventDefault();
-        $('#modalPreview').modal('show');
-    });
+	});
+		
+	// Step 5 - Selling Options
+	
+	
+		isChecked = $('#adWindow input[name="adWindow"]:checked').parents('.option').index();
+		$('#adWindow #optionCarousel').carousel(isChecked).carousel('pause');
+		$('#adWindow #optionCarousel .item').eq(isChecked).addClass('selected');	
+		$('#adWindow .option').eq(isChecked).addClass('selected');				
+		
+    $('#adWindow .option')
+			.bind('mouseenter',function(){
+				showItem = $(this).index();
+				$('#adWindow #optionCarousel').carousel(showItem).carousel('pause');
+			})
+			.bind('mouseleave',function(){
+				showItem = $('#optionCarousel .item.selected').index();
+				$('#adWindow #optionCarousel').carousel(showItem).carousel('pause');
+			})
+			.bind('mousedown',function(){
+				showItem = $(this).index();
+				$('#adWindow .option').removeClass('selected');
+				$(this).addClass('selected');
+				$('#adWindow #optionCarousel .item').removeClass('selected');
+				$('#adWindow #optionCarousel .item').eq(showItem).addClass('selected');				
+			});
+			
+		$('#adHomepage .option')
+			.bind('mousedown',function(){
+				$(this).toggleClass('selected');				
+			});
+	
+	// Step 5 - Login Modal
+		   
+	$('#prelogin').click(function(event){
+			event.preventDefault();
+			$('#modalLogin').modal('show');				
+	});
+		
+	// Step 6 - Login Modal
+		
+	$('#articlePreview img, #articlePreview a').click(function(event){
+			event.preventDefault();
+			$('#modalPreview').modal('show');				
+	});
 
     // function to move images in ImageUploader
     function imageMovers() {
