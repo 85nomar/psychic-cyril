@@ -215,7 +215,7 @@ $Layout -> start();
                     </tr>
                     <tr>
                         <td>Total</td>
-                        <td colspan="2">21.05 CHF</td>
+                        <td colspan="2">6.05 CHF</td>
                     </tr>
                 </tbody>
             </table>

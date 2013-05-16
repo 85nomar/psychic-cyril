@@ -27,7 +27,7 @@
             selector: "#singleEditor .tinymce",
             language : "de",
             plugins: "code,link,image,textcolor",
-            toolbar: "undo redo | bold italic underline | styleselect | forecolor | alignleft aligncenter alignjustify | bullist numlist outdent indent | image | code | styleselect",
+            toolbar: "undo redo | bold italic underline | styleselect | forecolor | alignleft aligncenter | bullist numlist outdent indent | image | code | styleselect",
             menu: "none"
 
          });
