@@ -63,7 +63,7 @@ $Layout -> start();
               <p class="optionPrice"><span class="currency">CHF</span> 2.00</p>
               <p><strong>Der Artikel erscheint ab und zu im Werbefenster</strong></p>
               <ol>
-                <li>Ihr Artikel wird attraktiv im Webefenster zuoberst auf der Artikel-Seite angezeigt.</li>
+                <li>Ihr Artikel wird attraktiv im Werbefenster zuoberst auf der Artikel-Seite angezeigt.</li>
                 <li>Das gebuchte Werbefenster wird rotierend eingesetzt.</li>
                 <li>Sie können den Interval der Einblendungen selber auswählen (Gold, Silber, Bronze)</li>
               </ol>
@@ -77,7 +77,7 @@ $Layout -> start();
               <p class="optionPrice"><span class="currency">CHF</span> 5.00</p>
               <p><strong>Der Artikel erscheint <big>5x</big> öfters als beim Werbefenster Bronze</strong></p>
               <ol>
-                <li>Ihr Artikel wird attraktiv im Webefenster zuoberst auf der Artikel-Seite angezeigt.</li>
+                <li>Ihr Artikel wird attraktiv im Werbefenster zuoberst auf der Artikel-Seite angezeigt.</li>
                 <li>Das gebuchte Werbefenster wird rotierend eingesetzt.</li>
                 <li>Sie können den Interval der Einblendungen selber auswählen (Gold, Silber, Bronze)</li>
               </ol>
@@ -91,7 +91,7 @@ $Layout -> start();
               <p class="optionPrice"><span class="currency">CHF</span> 15.00</p>
               <p><strong>Der Artikel erscheint <big>20x</big> öfters als beim Werbefenster Bronze</strong></p>
               <ol>
-                <li>Ihr Artikel wird attraktiv im Webefenster zuoberst auf der Artikel-Seite angezeigt.</li>
+                <li>Ihr Artikel wird attraktiv im Werbefenster zuoberst auf der Artikel-Seite angezeigt.</li>
                 <li>Das gebuchte Werbefenster wird rotierend eingesetzt.</li>
                 <li>Sie können den Interval der Einblendungen selber auswählen (Gold, Silber, Bronze)</li>
               </ol>
