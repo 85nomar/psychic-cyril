@@ -30,7 +30,7 @@ $Layout->start();
             </label>
             <input class="span7" type="text" id="inputTitle" placeholder="Tragen Sie hier die Produktbezeichnung ein">
             <label for="inputSubtitle">
-                Untertitel <span style="color:gray;">(Kostenlos)</span>
+                Untertitel <span class="optionalField">(Kostenlos)</span>
             </label>
             <input class="span7" type="text" id="inputSubtitle" placeholder="Bewerben Sie ihr Produkt mit einem kurzen Satz">
             <label for="inputNumber">
@@ -58,7 +58,7 @@ $Layout->start();
             </label>
             <input class="span7" type="text" id="inputTitle" placeholder="Entrez le nom du produit ici">
             <label for="inputSubtitle">
-                Sous-titre <span style="color:gray;">(gratuit)</span>
+                Sous-titre <span class="optionalField">(gratuit)</span>
             </label>
             <input class="span7" type="text" id="inputSubtitle" placeholder="Appliquez votre produit avec une courte phrase">
             <label for="inputNumber">
@@ -121,7 +121,7 @@ $Layout->start();
                         </div>
                         <img src="img/img_placeholder_90.jpg">
                     </div>
-                    <h6 class="pull-left mainProductImageTitle">Haupt-Bild</h6>
+                    <h6 class="pull-left mainProductImageTitle optionalField">Dieses Bild wird als Haupt-Bild für jedes Listing angezeigt</h6>
                     
                 </div>
                 <div class="span9">

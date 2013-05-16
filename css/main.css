@@ -1033,6 +1033,15 @@ float: left;
 margin-left: 36px;
 }
 
+.mce-path div{
+    display: none !important;
+}
+
+.productImages h6{
+    margin-top:0px;
+    width: 110px;
+}
+
 
 /*iframe#fr{
     margin-left: 30px;
