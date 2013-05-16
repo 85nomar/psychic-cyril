@@ -139,7 +139,7 @@ $Layout -> start();
                         </div>
                     </div>
                     <div class="span2 text-right">
-                        <a href="step1.php" class="btn"> Bearbeiten </a>
+                        <a href="step4.php" class="btn"> Bearbeiten </a>
                     </div>
                 </div>
             </fieldset>
