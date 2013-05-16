@@ -184,11 +184,11 @@ $Layout -> start();
 			<a href="http://auto.ch.betaqxl.com/form/lostpassword.asp" target="_blank">Benutzername und/oder Passwort vergessen?</a>
 		</section>
 		<section id="it_RegisterSection">
-			<h4>Noch keine Benutzerkonto?</h4>
+			<h4>Noch kein Benutzerkonto?</h4>
       <ol>
       	<li>Jetzt registrieren.</li>
       	<li>Wir prüfen Ihre Registrierung und schalten Sie innerhalb von 48 Stunden frei.</li>
-      	<li>Ihr erfasstes Angebot wirde in der Zwischenzeit gespeichert.</li>
+      	<li>Ihr erfasstes Angebot wird in der Zwischenzeit gespeichert.</li>
       </ol>
 			<a href="https://www.ricardo.ch/registration/" class="hpcButton hpcBlue btn btn-darkblue" target="_blank">Jetzt registrieren</a><!--11888-->
 		</section>
