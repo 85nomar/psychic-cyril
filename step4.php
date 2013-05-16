@@ -61,7 +61,8 @@ $Layout -> start();
                     </div>
                     <label class="checkbox inline">
                         <input class="js-shipping-free" type="checkbox">
-                        Kostenloser Versand <i class="icon-info-sign" data-container="body" data-toggle="tooltip" data-placement="right" title="Wenn Sie „Kostenloser Versand“ wählen, wird in der Spalte „Versand“ in den Suchergebnissen  und auf Ihrer Artikelseite „kostenlos“ angezeigt. Es fallen keine Porto-, Versicherungs-, Verpackungs- und Bearbeitungsgebühren an."></i></label>
+                        Kostenloser Versand <i class="icon-info-sign" data-toggle="tooltip" data-placement="top" title="Wenn Sie „Kostenloser Versand“ wählen, wird in der Spalte „Versand“ in den Suchergebnissen  und auf Ihrer Artikelseite „kostenlos“ angezeigt. Es fallen keine Porto-, Versicherungs-, Verpackungs- und Bearbeitungsgebühren an.">
+                        </i></label>
                 </div>
                 <a href="#" class="form-inline-component btn btn-square-icon shipping-delete-btn js-delete-additional-shipping hide"><i class="icon-remove"></i></a>
             </form>

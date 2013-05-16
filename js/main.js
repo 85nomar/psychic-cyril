@@ -256,6 +256,7 @@ $(document).ready(function() {
             clone.find(".js-shipping-addon").addClass("hide");
             clone.find(".js-shipping-costs").addClass("hide");
             clone.find(".js-input-shipping-costs").prop('disabled', false);
+            clone.find(".icon-info-sign").remove();
             // insert into DOM
             clone.insertAfter(newest).find(".js-delete-additional-shipping").removeClass("hide");
 
