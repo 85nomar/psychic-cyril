@@ -35,11 +35,20 @@ $(document).ready(function() {
         }
     });
 
-    $('#categoryFinder .btn').click(function() {
+    function markCategoryTree () {
+        $(".navCat .active").removeClass("active");
         $('.navCat ul').each(function(index) {
             $(this).delay(400 * index - 1).fadeIn(300).addClass('catSuggest').find('.demo').addClass('active');
-
         });
+    }
+
+    // on btn click
+    $('#categoryFinder .btn').click(markCategoryTree);
+    // on keyboard enter
+    $("#appendedInputButton").keypress(function(e) {
+        if(e.which == 13) {
+            markCategoryTree();
+        }
     });
 
     // initialize upload img section
@@ -248,6 +257,7 @@ $(document).ready(function() {
             // reset state
             clone.find(".js-shipping-addon").addClass("hide");
             clone.find(".js-shipping-costs").addClass("hide");
+            clone.find(".js-input-shipping-costs").removeAttr("disabled");
             // insert into DOM
             clone.insertAfter(newest).find(".js-delete-additional-shipping").removeClass("hide");
 
