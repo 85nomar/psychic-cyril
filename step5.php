@@ -74,8 +74,8 @@ $Layout -> start();
               <img class="bigPic" src="img/push05_big.png" width="104" height="86" align="right" />
               <p>Werbefenster</p>
               <h2 class="optionName">Silber</h2>
-              <p class="optionPrice"><span class="currency">CHF</span> 15.00</p>
-              <p><strong>Der Artikel erscheint 5x öfters als beim Werbefenster Bronze</strong></p>
+              <p class="optionPrice"><span class="currency">CHF</span> 5.00</p>
+              <p><strong>Der Artikel erscheint <big>5x</big> öfters als beim Werbefenster Bronze</strong></p>
               <ol>
                 <li>Ihr Artikel wird attraktiv im Webefenster zuoberst auf der Artikel-Seite angezeigt.</li>
                 <li>Das gebuchte Werbefenster wird rotierend eingesetzt.</li>
@@ -88,8 +88,8 @@ $Layout -> start();
               <img class="bigPic" src="img/push20_big.png" width="104" height="86" align="right" />
               <p>Werbefenster</p>
               <h2 class="optionName">Gold</h2>
-              <p class="optionPrice"><span class="currency">CHF</span> 5.00</p>
-              <p><strong>Der Artikel erscheint 20x öfters als beim Werbefenster Bronze</strong></p>
+              <p class="optionPrice"><span class="currency">CHF</span> 15.00</p>
+              <p><strong>Der Artikel erscheint <big>20x</big> öfters als beim Werbefenster Bronze</strong></p>
               <ol>
                 <li>Ihr Artikel wird attraktiv im Webefenster zuoberst auf der Artikel-Seite angezeigt.</li>
                 <li>Das gebuchte Werbefenster wird rotierend eingesetzt.</li>
@@ -100,7 +100,7 @@ $Layout -> start();
           </div>
          </div>
         <div class="span6 optionPreview">
-          <p>So wirds Aussehen:</p>
+          <p>Hier wird der Artikel angezeit:</p>
           <img src="img/TopOffers_2nd_Level_top_prototyp_iphone.jpg" width="328" height="263" />
         </div>
       <div></div>
@@ -109,16 +109,17 @@ $Layout -> start();
       
     </div>
    </fieldset>
+   <p>&nbsp;</p>
   <fieldset id="adHomepage" class="well">
     <div class="row-fluid">
       <div class="span3">
-        <label>Soll Ihr Artikel auf der ricardo-Startseite angezeigt werden?</label>
+        <label>Möchten Sie Ihren Artikel auf der meistbesuchten Seite von ricardo.ch publizieren?</label>
         <div>
           <div class="option optDisable">
             <label for="none">
               <input type="radio" name="adHomepage" value="1" id="none" />
               <i class="icon-ok icon-white"></i>
-              <span class="value">Top Angebot Homepage</span>
+              <span class="value">Ja</span>
              </label>
           </div>
         </div>
@@ -143,7 +144,7 @@ $Layout -> start();
           </div>
          </div>
         <div class="span6 optionPreview">
-          <p>So wirds Aussehen:</p>
+          <p>Hier wird der Artikel angezeit:</p>
           <img src="img/hp_promo_prototype_iphone.jpg" width="328" height="209" />
         </div>
       <div></div>

@@ -131,12 +131,12 @@ $Layout->start();
         </fieldset>
         <fieldset class="well" id="listingPaymentConditions">
             <div class="row-fluid">
-                <label for="paymentConditions">Welche Zahlungsarten möchten Sie anbieten?</label>
+                <label for="paymentConditions">Zu welchem Zeitpunkt möchten Sie, dass der Kunde bezahlt?</label>
                   <div class="span3 option-group">
                       <h4>Zahlung im Voraus</h4>
                       <div>
-                       <button class="btn" data-toggle="tooltip" data-placement="right" title="Zahlungsmöglichkeiten: Mit Guthaben, Per Kreditkarte (Visa/MasterCard), PostFinance, Per Rechnung"><i class="icon-remove"></i>RicardoPay</button>
-                       <button class="btn"><i class="icon-remove"></i>Bank / Post</button>
+                       <button class="btn"><i class="icon-remove"></i>RicardoPay<br /><small>einfach sicher</small></button>
+                       <button class="btn"><i class="icon-remove"></i>Bank / Post<br /><small>(2-3 Tage)</small></button>
                       </div>
                   </div>
                   <div class="span3 option-group">
@@ -146,10 +146,11 @@ $Layout->start();
                       </div>
                   </div>
                   <div class="span3 option-group">
-                      <h4>Zahlung auf Rechnung</h4>
+                      <h4>Zahlung nach Erhalt</h4>
                       <div>
-                       <button class="btn" data-toggle="tooltip" data-placement="right" title="Zahlungsmöglichkeiten: Mit Guthaben, Per Kreditkarte (Visa/MasterCard), PostFinance, Per Rechnung"><i class="icon-remove"></i>RicardoPay</button>
-                       <button class="btn"><i class="icon-remove"></i>Bank / Post</button>
+                       <button class="btn"><i class="icon-remove"></i>innert 7 Tagen</button>
+                       <button class="btn"><i class="icon-remove"></i>innert 14 Tagen</button>
+                       <button class="btn"><i class="icon-remove"></i>innert 30 Tagen</button>
                       </div>
                   </div>
             </div>
@@ -163,14 +164,8 @@ $Layout->start();
             </div>
             <aside>
               <p><img title="ricardopay – einfach sicher" style="margin: 0" alt="ricardopay – einfach sicher" src="img/ricardo-pay.png"></p>
-              <p><strong>Vorteile</strong></p>
-              <ul>
-               <li>ricardopay ist gratis </li>
-               <li>Verkäuferschutz</li>
-               <li>Zahlungseingang innerhalb von 48 Stunden</li>
-               <li>Weniger Adminstrationsaufwand</li>
-              </ul>              
-              <p><a href="https://ricardopay.betaqxl.com">Mehr zu ricardopay</a></p>
+              <p><a href="#" id="ricardopayInfo">Wie funktioniert ricardopay?</a></p>
+              <a href="#" class="btn">kostenlos freischalten</a>
             </aside>
         </fieldset>
 
@@ -180,4 +175,48 @@ $Layout->start();
 <div class="form-actions">
     <a href="step4.php" class="btn btn-primary pull-right">Weiter zu "Versandoptionen"</a>
 </div>
+
+<div id="modalRicardoPay" class="modal hide fade">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		<h3>Auf ricardo.ch einloggen</h3>
+	</div>
+	<div class="modal-body">
+	<!-- Modal-Body Start-->
+  	
+    <div class="row-fluid">
+      <div class="span6">
+        <h3>Wie funktioniert RicardoPay?</h3>
+        <ol>
+          <li>Sie bieten RicardoPay als Zahlungsoption an</li>
+          <li>Der Käufer zahlt per ricardopay-Guthaben, Kreditkarte oder Rechnung</li>
+          <li>Sie erhalten sofort eine E-Mail oder SMS, dass der Käufer bezahlt hat</li>
+          <li>Das Geld wird sofort auf Ihr ricardo.ch Konto oder ihr eigenes Bankkonto überwiesen</li>
+        </ol>
+      </div>
+      <div class="span6">
+        <h3>Kostenlos</h3>
+        <ul>
+          <li>RicardoPay ist für den Verkäufer kostenlos</li>
+          <li><p>Die Käufer zahlen 0-2% Zahlungsgebühren je nach gewählter Zahlungsmethode:</p>
+            <table class="table table-striped" style="width:auto;">
+              <tr><td>ricardopay-Guthaben:</td><td>Keine Gebühren</td></tr>
+              <tr><td>Kreditkarte:</td><td>2% Gebühr</td></tr>
+              <tr><td>Postfinance Card:</td><td>1% Gebühr</td></tr>
+              <tr><td>Rechnung:</td><td>1% Gebühr</td></tr>
+            </table>      
+          </li>
+        </ul>
+      </div>
+    </div>
+	
+	<!-- Modal-Body End-->
+	<span class="clear"></span>
+	</div>
+	<!--<div class="modal-footer">
+		<a href="#" class="btn">Close</a>
+		<a href="#" class="btn btn-primary">Save changes</a>
+	</div>-->
+</div>
+
 <?php $Layout->end(); ?>

@@ -41,6 +41,15 @@ h1, h2, h3, h4 {
 	text-shadow:none;
 }
 
+.modal-body ol{    
+	list-style: decimal outside none;
+	margin-left: 20px;
+}
+.modal-body ul{
+	list-style: disc outside none;
+  margin-left: 20px;
+}
+
 #logo {
     margin-top: 15px;
 }
@@ -836,7 +845,7 @@ label {
     margin-left: 5px;
     position: absolute;
     margin-left: 55px;
-    z-index: 9999;
+    z-index: 500;
  }
   
    .stepIndicator .stepN1 a div:last-child{
