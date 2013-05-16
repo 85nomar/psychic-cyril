@@ -8,10 +8,18 @@ $Layout->start();
 <form>
     <div class="row-fluid">
         <div class="span12 well">
-            <label class="checkbox">
+            <label class="checkbox swissIcons">
                 <input type="checkbox">
                 Ihr Produkt zweisprachig erfassen
             </label>
+            <div id="swissIcons">
+                <img src="img/de_schweiz_icon.png" />
+                <img src="img/plus.png" />
+                <img src="img/fr_schweiz_icon.png" />
+                <img src="img/gleich.png" />
+                <img src="img/ganze_schweiz_icon.png" />
+            </div>
+
         </div>
     </div>
         <div class="row-fluid langs">

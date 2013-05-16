@@ -926,14 +926,14 @@ top: 682px !important;
 
 .span6.de #vv_submenu.de{
 
-left: 729px !important;
-top: 681px !important;
+left: 248px !important;
+top: 398px !important;
 }
 
 .span12.de #vv_submenu.de{
 
-left: 729px !important;
-top: 681px !important;
+left: 676px !important;
+top: 363px !important;
 }
 
 
@@ -978,8 +978,8 @@ margin: 1px 5px;
 
     .de #arrow, .fr #arrow{
     position: absolute;
-    top: -4px;
-    right: 2px;
+top: -19px;
+right: -15px;
     }
 
     #DualEditorFR .mce-tinymce .mce-container-body:first-child .mce-container .mce-container-body .mce-toolbar, #DualEditorDE .mce-tinymce .mce-container-body:first-child .mce-container .mce-container-body .mce-toolbar{
@@ -1020,6 +1020,17 @@ label[for=inputPictures]{
     clear: both;}
 .de #arrow{
     display: none;
+}
+
+.checkbox.swissIcons {
+max-width: 220px;
+float: left;
+margin-top: 16px;
+}
+
+#swissIcons{
+float: left;
+margin-left: 36px;
 }
 
 
