@@ -3,7 +3,7 @@ require ('inc/layout.php');
 $Layout->title='Selling';
 $Layout->start();
 ?>
-<h2>Produkt beschreiben</h2>
+<h2>Wie möchten Sie Ihren Artikel beschreiben?</h2>
 
 <form>
     <div class="row-fluid">
@@ -185,6 +185,6 @@ $Layout->start();
     </div>
 </form>
 <div class="form-actions">
-    <a href="step3.php" class="btn btn-primary pull-right">Weiter zu "Preis und Dauer"</a>
+    <a href="step3.php" class="btn btn-primary pull-right">Weiter zu &laquo;Preis & Dauer festlegen&raquo;</a>
 </div>
 <?php $Layout -> end(); ?>

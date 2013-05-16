@@ -202,7 +202,7 @@ $Layout -> start();
 </form>
 
 <div class="form-actions">
-    <a href="step4.php" class="btn btn-primary pull-right">Weiter zu "Versand Optionen"</a>
+    <a href="step4.php" class="btn btn-primary pull-right">Weiter zu &laquo;Artikel versenden&raquo;</a>
 </div>
 
 <div id="modalRicardoPay" class="modal hide fade">

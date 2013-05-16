@@ -156,7 +156,7 @@ $Layout -> start();
 </form>
 
 <div class="form-actions">
-    <a href="step6.php" class="btn btn-primary pull-right" id="prelogin">Weiter zu "Zusammenfassung"</a>
+    <a href="step6.php" class="btn btn-primary pull-right" id="prelogin">Weiter zu &laquo;Übersicht&raquo;</a>
 </div>
 
 <div id="modalLogin" class="modal hide fade">
