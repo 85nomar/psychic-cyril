@@ -157,10 +157,10 @@ $Layout->start();
             </div>
         </div>
     </div>
-    <div class="accordion" id="accordion2">
+    <div class="accordion step2" id="accordion2">
         <div class="accordion-group">
             <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo"> Weitere Eigenschaften <small class="muted">(optional)</small></a>
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo"> Weitere Eigenschaften <small class="muted">(optional)</small><i class="icon-chevron-down"></i></a>
             </div>
             <div id="collapseTwo" class="accordion-body collapse">
                 <div class="accordion-inner">

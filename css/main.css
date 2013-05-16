@@ -890,12 +890,12 @@ label {
 
 .accordion-toggle {
     border-radius: 4px 4px 0 0;
-    background: #f29106;
-    color: white;
+    background: #f5f5f5;
+    color: #333;
 }
 
 .accordion-toggle:hover {
-    color: white;
+    color: #333;
 }
 
 .accordion-body {
@@ -903,12 +903,18 @@ label {
 }
 
 .accordion-heading a small {
-    color: white;
+    color: #333;
+}
+
+#accordion2.step2 i{
+    float: right;
 }
 
 footer {
     background: none;
 }
+
+
 
 /*Editors css*/
 
