@@ -1,26 +1,58 @@
 <?php
-require ('inc/layout.php');
-$Layout->title='Selling';
-$Layout->start();
-?>
-<h2>Produkt beschreiben</h2>
+include 'inc/head.php' ?>
 
+<h2>Produkt beschreiben</h2>
+<style>
+    .de, .fr {
+        float:left;
+        margin-bottom: 100px;
+    }
+    .de .mce-menubar{
+        display: none;
+    }
+
+    .de #arrow, .fr #arrow{
+    position: absolute;
+    top: -4px;
+    right: 2px;
+    }
+
+    #DualEditorFR .mce-tinymce .mce-container-body:first-child .mce-container .mce-container-body .mce-toolbar, #DualEditorDE .mce-tinymce .mce-container-body:first-child .mce-container .mce-container-body .mce-toolbar{
+        overflow:hidden;
+        height: 34px;
+    }
+
+    #singleEditor{
+    }
+
+    .sn #arrow{
+        position: absolute;
+    right: 0;
+    top: 0;
+    }
+    #multieditors{
+        min-height: 300px;
+    }
+.float{
+    float: left;
+}
+</style>
 <form>
     <div class="row-fluid">
         <div class="span12 well">
             <label class="checkbox">
-                <input type="checkbox">
+                <input type="checkbox" checked>
                 Ihr Produkt zweisprachig erfassen
             </label>
         </div>
     </div>
-        <div class="row-fluid langs">
+    <div class="row-fluid langs">
         <div class="span12 well">
-            <div class="span6 float de-row">
+            <div class="span6 float">
             <label for="inputTitle">
                 Titel
             </label>
-            <input class="span7" type="text" id="inputTitle" placeholder="Tragen Sie hier die Produktbezeichnung ein">
+            <input class="span5" type="text" id="inputTitle" placeholder="Tragen Sie hier die Produktbezeichnung ein">
             <label for="inputSubtitle">
                 Untertitel <span style="color:rgb(0, 153, 255);">(Kostenlos)</span>
             </label>
@@ -44,11 +76,11 @@ $Layout->start();
                 Wie möchten Sie Ihren Artikel beschreiben?
             </label>
         </div>
-        <div class="span6 float fr-row">
+        <div class="span6 float">
             <label for="inputTitle">
                 Titel
             </label>
-            <input class="span7" type="text" id="inputTitle" placeholder="Tragen Sie hier die Produktbezeichnung ein">
+            <input class="span5" type="text" id="inputTitle" placeholder="Tragen Sie hier die Produktbezeichnung ein">
             <label for="inputSubtitle">
                 Untertitel <span style="color:rgb(0, 153, 255);">(Kostenlos)</span>
             </label>
@@ -74,7 +106,7 @@ $Layout->start();
         </div>
             
             <div id="multieditors">
-                <div id="DualEditorDE" class="span12 de">
+                <div id="DualEditorDE" class="span6 de">
                       <textarea class="tinyman" rows="4" placeholder="Beschreiben Sie ihr Produkt hier"></textarea>
                 </div>
 
@@ -177,4 +209,3 @@ $Layout->start();
 <div class="form-actions">
     <a href="step3.php" class="btn btn-primary pull-right">Weiter zu "Preis und Dauer"</a>
 </div>
-<?php $Layout -> end(); ?>

@@ -24,13 +24,31 @@
         <script src="lib/js/tinymce/js/tinymce/tinymce.min.js"></script>
         <script type="text/javascript">
         tinymce.init({
-            selector: ".tinymce",
+            selector: "#singleEditor .tinymce",
             language : "de",
             plugins: "code,link,image,textcolor",
             toolbar: "undo redo | bold italic underline | styleselect | forecolor | alignleft aligncenter alignjustify | bullist numlist outdent indent | image | code | styleselect",
             menu: "none"
 
          });
+
+        tinymce.init({
+            selector: "#DualEditorDE .tinyman",
+            language : "de",
+            plugins: "code,link,image,textcolor",
+            toolbar: "undo redo | bold italic underline | styleselect | forecolor | alignleft aligncenter alignjustify | bullist numlist outdent indent | image | code ",
+            menu: "none"
+
+         });
+        tinymce.init({
+            selector: "#DualEditorFR .tinyman",
+            language : "de",
+            plugins: "code,link,image,textcolor",
+            toolbar: "undo redo | bold italic underline | styleselect | forecolor | alignleft aligncenter alignjustify | bullist numlist outdent indent | image | code ",
+            menu: "none"
+
+         });
+
         </script>
         <!-- Stylesheets -->
         <link rel="stylesheet" type="text/css" href="css/main.css">
