@@ -52,7 +52,7 @@ $(document).ready(function() {
 			event.preventDefault();
 		})
 		.mousedown(function(event){
-			$('.option-group').not($(this).parents('.option-group')).removeClass('selected').find('button').removeClass('active');// for single-selection
+			$('.option-group').not($(this).parents('.option-group')).removeClass('selected').find('button').removeClass('active');
 			$(this).toggleClass('active');
 		})
 		.mouseup(function(event){
@@ -65,9 +65,14 @@ $(document).ready(function() {
 		
 		$('.option-group:last button')
 		.mousedown(function(event){
-			$(this).parents('.option-group').find('button').removeClass('active');// for single-selection
+			$(this).parents('.option-group').find('button').removeClass('active');
 			$(this).addClass('active');
-		});// for single-selection
+		});
+		
+		$('#ricardopayInfo').click(function(event) {
+			event.preventDefault();
+      $('#modalRicardoPay').modal('show');
+    });
 
     // Step3 - Date & Time functions
     (function($) {
