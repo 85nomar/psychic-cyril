@@ -30,7 +30,7 @@ $Layout->start();
             </label>
             <input class="span7" type="text" id="inputTitle" placeholder="Tragen Sie hier die Produktbezeichnung ein">
             <label for="inputSubtitle">
-                Untertitel <span style="color:rgb(0, 153, 255);">(Kostenlos)</span>
+                Untertitel <span style="color:gray;">(Kostenlos)</span>
             </label>
             <input class="span7" type="text" id="inputSubtitle" placeholder="Bewerben Sie ihr Produkt mit einem kurzen Satz">
             <label for="inputNumber">
@@ -54,13 +54,13 @@ $Layout->start();
         </div>
         <div class="span6 float fr-row">
             <label for="inputTitle">
-                Titel
+                Titre de l'article
             </label>
-            <input class="span7" type="text" id="inputTitle" placeholder="Tragen Sie hier die Produktbezeichnung ein">
+            <input class="span7" type="text" id="inputTitle" placeholder="Entrez le nom du produit ici">
             <label for="inputSubtitle">
-                Untertitel <span style="color:rgb(0, 153, 255);">(Kostenlos)</span>
+                Sous-titre <span style="color:gray;">(gratuit)</span>
             </label>
-            <input class="span7" type="text" id="inputSubtitle" placeholder="Bewerben Sie ihr Produkt mit einem kurzen Satz">
+            <input class="span7" type="text" id="inputSubtitle" placeholder="Appliquez votre produit avec une courte phrase">
             <label for="inputNumber">
             Anzahl zu verkaufende Exemplare insgesamt
             </label>
