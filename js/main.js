@@ -134,23 +134,129 @@ $(document).ready(function() {
     });
 
     /* Step 4 - Shipping */
+    (function($) {
+        // function to update costs input field
+        function updatePrice(val, data) {
+            // make sure costs input field is visible
+            showCosts(data.costsInputDiv);
+            // check wether costs field is disabled and reset "offer for free" option accordingly
+            data.costsInputDiv.removeAttr("disabled");
+            // reset js-free-shipping checkbox
+            data.costsInputDiv.closest(".js-shipping-costs").find(".js-shipping-free").attr('checked', false);
+            // check whether value is actually a placeholder
+            if (isNaN(val)) {
+                data.costsInputDiv.find(".js-input-shipping-costs").attr("placeholder", val).val("");
+            } else {
+                // update with value
+                data.costsInputDiv.find(".js-input-shipping-costs").val(val);
+            }
+        }
 
-    $(".add-additional-shipping").on("click", function(event) {
-        event.preventDefault();
-        $(".shipping-element:first").clone(true).insertAfter(".shipping-element:last");
-    });
+        // function to show costs input field
+        function showCosts(element) {
+            // check if costs input field visible
+            if (element.hasClass("hide")) {
+                element.removeClass("hide");
+            }
+        }
 
-    $(".remove-additional-shipping").on("click", function(event) {
-        event.preventDefault();
-        console.log(event);
-    });
+        // function to show additional dropdown for certain shipping methods
+        function showAdditionalOption(targetClass, data) {
+            var target = data.shippingElement.find("." + targetClass);
+            target.removeClass("hide");
+            // update costs with default selected value
+            updatePrice(target.find(":selected").attr("data-price"), data);
+            // register event listener on options
+            target.find("option").on("click.additionalDropdown", null, target, function(e) {
+                // add AdditionalDropdown element name to context
+                // that way we know later whether an additionalDropdown was clicked
+                data.context = e.data;
+                processSelection($(this), data);
+            });
+        }
 
-    $(".inputShippingMethod > option").on("click", function(e) {
-        var $this = $(this), v;
-        if (!( v = $this.attr("data-value")))
-            v = "0.00";
-        $this.parents(".shipping-element").find(".inputShippingCosts").val(v);
-    });
+        // function to hide additional dropdowns if visible when not needed for a certain shipping method
+        function hideAddon(selectOption, data) {
+            var els = data.shippingElement.find(".js-shipping-addon");
+            // hide
+            els.addClass("hide");
+            // remove event-listeners as no longer needed atm
+            els.find("option").off("click.additionalDropdown");
+        }
+
+        // function to check and process a certain selected option
+        function processSelection(selectOption, data) {
+            var targetClass = selectOption.attr("data-target"), price = selectOption.attr("data-price"), data = (data !== undefined) ? data : {};
+            // save a reference to current js-shipping-element
+            if (data.shippingElement == undefined) {
+                data.shippingElement = selectOption.closest(".js-shipping-element");
+            }
+            // save a reference to the costs input field if not already existing
+            if (data.costsInputDiv == undefined) {
+                data.costsInputDiv = data.shippingElement.find(".js-shipping-costs");
+            }
+
+            if (targetClass !== undefined) {
+                // always hide open addons first
+                hideAddon(selectOption, data);
+                showAdditionalOption(targetClass, data);
+            } else if (price !== undefined) {
+                // check if selection was made in AdditinalDropdown
+                // --> only hide them if not
+                if (data.context === undefined) {
+                    hideAddon(selectOption, data);
+                }
+                updatePrice(price, data);
+            }
+        }
+
+        // register event listeners
+        $(".js-shipping-method > option").on("click", function(e) {
+            processSelection($(this));
+        });
+
+        $(".js-add-additional-shipping").on("click", function(event) {
+            event.preventDefault();
+            var newest, clone, lastSel;
+            // get newest element
+            newest = $(".js-shipping-element").last();
+            lastSel = newest.find(".js-shipping-method :selected");
+
+            // abort if no value selected in previous
+            // or if already choosen more than 5 options
+            if (lastSel.val() == "-1" || $(".js-shipping-element").length >= 5) {
+                console.log("max options reached");
+                // TODO: set some error style to select box
+                // return
+                return;
+            }
+            // clone it
+            clone = newest.clone(true);
+            // reset state
+            clone.find(".js-shipping-addon").addClass("hide");
+            clone.find(".js-shipping-costs").addClass("hide");
+            // insert into DOM
+            clone.insertAfter(newest).find(".js-delete-additional-shipping").removeClass("hide");
+
+        });
+
+        $(".js-delete-additional-shipping").on("click", function(event) {
+            event.preventDefault();
+            $(this).closest(".js-shipping-element").remove();
+        });
+
+        $(".js-shipping-free").change(function() {
+            var $this = $(this), el = $this.closest(".js-shipping-costs").find(".js-input-shipping-costs"), restoredVal;
+            if ($this.is(':checked')) {
+                el.val("0.00").attr("disabled", "disabled");
+            } else {
+                el.removeAttr("disabled");
+                // restore value from selected option
+                restoredVal = $this.closest(".js-shipping-element").find(".js-shipping-addon:not(.hide) > :selected").attr("data-price");
+                el.val(restoredVal);
+            }
+        });
+    })(window.jQuery);
 
     /*$("#listingType .toggle").on("click", function(e) {
      var $this = $(this), target = $this.attr('data-target');

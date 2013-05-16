@@ -41,6 +41,22 @@ h1, h2, h3, h4 {
 	text-shadow:none;
 }
 
+.form-inline-component {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+
+.input-number {
+    width: 50px;
+}
+
+.btn-square-icon {
+    width: 15px;
+    height: 15px;
+    padding: 6px;
+}
+
 #logo {
     margin-top: 15px;
 }
@@ -499,6 +515,15 @@ input[type="radio"].toggle:checked + label {
     margin-left: 54px;
 }
 
+/* Step 4 - Shipping */
+.select-wide {
+    width: 250px;
+}
+
+.shipping-delete-btn {
+    margin-left: 20px;
+}
+
 /* Step5 Promotion & Login */
 
 #it_LoginSection, #it_RegisterSection {
@@ -621,6 +646,12 @@ label {
 }
 .icon-list {
     background-position: -360px -48px;
+}
+.icon-remove {
+    background-position: -312px -2px;
+}
+.icon-plus {
+    background-position: -48px -74px;
 }
 .well > legend {
     display: inline;
