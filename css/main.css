@@ -28,13 +28,13 @@ h1, h2, h3, h4 {
 	
 .optionWithCosts{
 	font-size:11px;
-	color: #999;
+	color: #757575;
 	margin-left:10px;
 	}
 
 .optionalField{
 	font-size:11px;
-	color:#a6b825;
+	color:#757575;
 	}
 	
 .tooltip-inner {
@@ -159,7 +159,7 @@ h1, h2, h3, h4 {
 }
 
 .navCat .catSuggest a {
-    color: #999;
+    color: #757575;
 }
 .navCat .catSuggest .catAlternativ a {
     color: #fc9013;
@@ -308,10 +308,7 @@ h1, h2, h3, h4 {
 .checkbox.inline.checkbox-label-btn.btn-small {
     padding: 10px 25px;
 }
-.checkbox.inline.checkbox-label-btn-wide {
-    padding-left: 30px;
-    margin-right: 20px;
-}
+
 .checkbox-label-btn-promoFeature {
     text-align: left;
     border-color: #F09600;
@@ -347,7 +344,7 @@ h1, h2, h3, h4 {
     display: inline-block;
     float: none;
     margin: 0;
-    height: 120px;
+    /*height: 120px;*/
     position: relative;
     font-size: 12px;
 }
@@ -355,7 +352,7 @@ h1, h2, h3, h4 {
 #listingType label.btn i {
     background-image: none;
     position: absolute;
-    border: 1px solid #999;
+    border: 1px solid #757575;
     border-radius: 4px;
     right: 7px;
     top: 7px;
@@ -405,7 +402,7 @@ input[type="radio"].toggle:checked + label {
 
 #listingPaymentConditions .option-group {
     margin: 0 2.12766% 0 0;
-    height: 120px;
+    height: 160px;
     border-radius: 5px;
     border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -422,7 +419,7 @@ input[type="radio"].toggle:checked + label {
     border-color: #bcd229;
 }
 #listingPaymentConditions button {
-    color: #999;
+    color: #757575;
     margin-bottom: 5px;
     width: 100%;
     position: relative;
@@ -459,7 +456,7 @@ input[type="radio"].toggle:checked + label {
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 .table-first-column-title tr td:first-child {
-    color: #999999;
+    color: #757575;
 }
 
 /* Step 3 - Date & Time */
@@ -502,7 +499,107 @@ input[type="radio"].toggle:checked + label {
     margin-left: 54px;
 }
 
-/* Step5 Promotion & Login */
+/* Step5 Promotion */
+
+
+		.blowUp {
+			height:100%;
+			}
+		.blowUp .carousel-inner {
+			background-color:#fff;
+			border:1px solid #ccc;
+			padding: 20px;
+			position:relative;
+			margin-top:-23px;
+			margin-bottom:-23px;
+			border-radius:5px;
+			box-shadow: 0 0 3px rgba(0,0,0,0.2);
+			width:auto;
+			overflow:visible;
+			}
+		#adWindow .blowUp .carousel-inner {
+			height:325px;
+			}
+		#adHomepage .blowUp .carousel-inner {
+			height:245px;
+			}
+		.option label{
+			height:55px;    
+			border-radius: 5px;
+			padding: 5px 0 5px 10px;
+			margin: 0 -5px 5px -5px;
+			}
+		.option:hover label{
+			background-color:#fff;
+			}
+		.optDisable label{
+			height:auto;
+			}
+		.option label input{
+			visibility:hidden;
+			}
+		.option label i{
+			margin-left:-20px;
+			background-image: none;
+			border: 1px solid #999999;
+			border-radius: 4px 4px 4px 4px;
+			}
+		.option:hover label i{
+			border-color: #A6B825 !important;
+			}
+		.option.selected label i{
+			background-color: #A6B825 !important;
+			background-image: url("https://pics.ricardostatic.ch/contents/ch/assets/images/ricardo_icons_white.png") !important;
+			background-position: -288px 0;
+			border-color: #A6B825 !important;
+			}
+		.option label .value{
+			display: inline-block;
+			margin-left: 5px;
+			}
+		#adWindow .option label .value{
+    	width: 105px;
+			}
+		.option label *{
+			vertical-align:middle;
+			}
+		.sash {
+			position:absolute;
+			top: -26px;
+			left: -26px;
+		}
+		.optionName {
+			margin-bottom:0;
+		}
+		.optionPrice {
+			color:#fc9013;
+			font-weight:bold;
+    	margin-bottom: 20px;
+		}
+		.optionPrice .currency{
+			font-weight:normal;
+		}
+		.carousel {
+			margin-bottom:0;
+			}
+		.description .bigPic{
+			float:right;
+			}
+		.description strong{
+			clear: both;
+			display: block;
+			line-height: 20px;
+			padding-top: 10px;
+			}
+		.description ol{
+			list-style: decimal outside none;
+    	margin-left: 20px;
+			}
+		.description li{
+    	margin-bottom: 10px;
+			}			
+
+/* Step5 Login */
 
 #it_LoginSection, #it_RegisterSection {
     float: left;
@@ -540,7 +637,7 @@ input[type="radio"].toggle:checked + label {
 #articlePreview img {
     border: 1px solid #FFFFFF;
     border-radius: 5px 5px 5px 5px;
-    box-shadow: 1px 1px 3px #999999;
+    box-shadow: 1px 1px 3px #757575;
     cursor: pointer;
     margin-bottom: 15px;
 }
@@ -648,9 +745,12 @@ label {
     width: 960px;
     margin-left: -480px;
 }
-/*********************************************************************
- * overriding noUIslider default styles
- *********************************************************************/
+
+.form-actions {
+    background: none;
+    border: none;
+    padding: 20px 0;
+}
 
 /*********************************************************************
  * styles for ImageMover in ImageUploader

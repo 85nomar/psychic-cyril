@@ -226,7 +226,7 @@ $Layout -> start();
 <div class="form-actions">
     <a href="#" class="btn btn-success pull-right">List your item</a>
     <span class="separator muted pull-right separatorFloated"> | </span>
-    <label class="checkbox inline pull-right"><input type="checkbox"> Ich akzeptiere die AGBs von ricardo.ch</label>
+    <label class="checkbox inline pull-right">Ich akzeptiere die AGBs von ricardo.ch <input type="checkbox"></label>
 </div>
 
 <div id="modalPreview" class="modal hide fade">
