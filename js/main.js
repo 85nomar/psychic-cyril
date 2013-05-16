@@ -366,13 +366,17 @@ $(document).ready(function() {
 			});
 	
 	// Step 5 - Login Modal
-		   
-	$('#prelogin').click(function(event){
-			event.preventDefault();
-			$('#modalLogin').modal('show');				
-	});
-		
-	// Step 6 - Login Modal
+    (function($) {
+        function showLogin(event) {
+            event.preventDefault();
+            $('#modalLogin').modal('show');
+        };
+
+        $('#prelogin').click(showLogin);
+        $(".stepN6").click(showLogin);
+    })(window.jQuery);
+
+	// Step 6 - Preview Modal
 		
 	$('#articlePreview img, #articlePreview a').click(function(event){
 			event.preventDefault();

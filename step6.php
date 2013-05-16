@@ -7,51 +7,44 @@ $Layout -> start();
 <h2>Und so wird es aussehen. Sind Sie damit einverstanden?</h2>
 
 <div class="row-fluid">
-    <div class="span10">
-        <ul class="breadcrumb">
-            <li>
-                <a href="#">Computer & Elektronik</a><span class="divider">/</span>
-            </li>
-            <li>
-                <a href="#">Smartphones</a><span class="divider">/</span>
-            </li>
-            <li class="active">
-                I-Phone
-            </li>
-        </ul>
-    </div>
-    <div class="span2">
-        <a href="step1.php" class="btn btn-small">Kategorie ändern</a>
-    </div>
-</div>
-
-<div class="row-fluid">
     <div class="span3">
-        <div id="articlePreview" class="row-fluid section">
+        <div id="articlePreview" class="row-fluid">
             <div class="span12">
                 <img src="img/articlePreview_tmb.png">
                 <a href="#" class="btn"><i class="icon-share icon-blue"></i> Vorschau anzeigen</a>
             </div>
         </div>
-       <!-- <div class="row-fluid section">
-            <div class="span12 text-center">
-                <img src="img/img_placeholder_140.jpg" class="img-polaroid">
-            </div>
+        <!-- <div class="row-fluid section">
+        <div class="span12 text-center">
+        <img src="img/img_placeholder_140.jpg" class="img-polaroid">
+        </div>
         </div>
         <div class="row-fluid section">
-            <div class="span12 text-center">
-                <img src="img/img_placeholder_90.jpg" class="img-polaroid">
-                <img src="img/img_placeholder_90.jpg" class="img-polaroid">
-                <a href="#" class"btn btn-link">Weiteres Foto hinzufügen</a>
-            </div>
+        <div class="span12 text-center">
+        <img src="img/img_placeholder_90.jpg" class="img-polaroid">
+        <img src="img/img_placeholder_90.jpg" class="img-polaroid">
+        <a href="#" class"btn btn-link">Weiteres Foto hinzufügen</a>
+        </div>
         </div>-->
     </div>
     <div class="span9">
         <form class="form-horizontal">
             <fieldset class="well">
-                <h3>
-                    Produkt-Details
-                </h3>
+                <ul class="breadcrumb pull-left">
+                    <li>
+                        <a href="#">Computer & Elektronik</a><span class="divider">/</span>
+                    </li>
+                    <li>
+                        <a href="#">Smartphones</a><span class="divider">/</span>
+                    </li>
+                    <li class="active">
+                        I-Phone
+                    </li>
+                </ul>
+                <a href="step1.php" class="btn pull-right">Kategorie ändern</a>
+            </fieldset>
+            <fieldset class="well">
+                <h3> Produkt-Details </h3>
                 <div class="row-fluid">
                     <div class="span10">
                         <div class="row-fluid">
@@ -59,21 +52,15 @@ $Layout -> start();
                                 <tbody>
                                     <tr>
                                         <td class="span5">Sprache</td>
-                                        <td class="span7">
-                                        Deutsch
-                                        </td>
+                                        <td class="span7"> Deutsch </td>
                                     </tr>
                                     <tr>
                                         <td>Titel</td>
-                                        <td>
-                                        i-Phone 3 GS black 16 GB
-                                        </td>
+                                        <td> i-Phone 3 GS black 16 GB </td>
                                     </tr>
                                     <tr>
                                         <td>Untertitel</td>
-                                        <td>
-                                        Neues I-Phone, das einzig wahre
-                                        </td>
+                                        <td> Neues I-Phone, das einzig wahre </td>
                                     </tr>
                                     <tr>
                                         <td>Beschreibung</td>
@@ -84,16 +71,12 @@ $Layout -> start();
                         </div>
                     </div>
                     <div class="span2 text-right">
-                        <a href="step2.php" class="btn">
-                            Bearbeiten
-                        </a>
+                        <a href="step2.php" class="btn"> Bearbeiten </a>
                     </div>
                 </div>
             </fieldset>
             <fieldset class="well">
-                <h3>
-                    Preis & Dauer des Angebots
-                </h3>
+                <h3> Preis & Dauer des Angebots </h3>
                 <div class="row-fluid">
                     <div class="span10">
                         <div class="row-fluid">
@@ -132,16 +115,12 @@ $Layout -> start();
                         </div>
                     </div>
                     <div class="span2 text-right">
-                        <a href="step3.php" class="btn">
-                            Bearbeiten
-                        </a>
+                        <a href="step3.php" class="btn"> Bearbeiten </a>
                     </div>
                 </div>
             </fieldset>
             <fieldset class="well">
-                <h3>
-                    Versand-Optionen
-                </h3>
+                <h3> Versand-Optionen </h3>
                 <div class="row-fluid">
                     <div class="span10">
                         <div class="row-fluid">
@@ -160,9 +139,7 @@ $Layout -> start();
                         </div>
                     </div>
                     <div class="span2 text-right">
-                        <a href="step1.php" class="btn">
-                            Bearbeiten
-                        </a>
+                        <a href="step4.php" class="btn"> Bearbeiten </a>
                     </div>
                 </div>
             </fieldset>
@@ -209,7 +186,7 @@ $Layout -> start();
                         <td>Sofortkaufen-Option</td>
                         <td colspan="2">1.00 CHF</td>
                     </tr>
-                                        <tr>
+                    <tr>
                         <td>Werbefenster silber</td>
                         <td colspan="2">5.00 CHF</td>
                     </tr>
@@ -226,26 +203,30 @@ $Layout -> start();
 <div class="form-actions">
     <a href="#" class="btn btn-success pull-right btn-large">Artikel erstellen</a>
     <span class="separator muted pull-right separatorFloated"> | </span>
-    <label class="checkbox inline pull-right">Ich akzeptiere die AGBs von ricardo.ch <input type="checkbox"></label>
+    <label class="checkbox inline pull-right">Ich akzeptiere die AGBs von ricardo.ch
+        <input type="checkbox">
+    </label>
 </div>
 
 <div id="modalPreview" class="modal hide fade">
-	<div class="modal-header">
-		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-		<h3>Artikel-Vorschau</h3>
-	</div>
-	<div class="modal-body">
-	<!-- Modal-Body Start-->  
-  	
-    <img src="img/articlePreview.png"> 
-	
-	<!-- Modal-Body End-->
-	<span class="clear"></span>
-	</div>
-	<!--<div class="modal-footer">
-		<a href="#" class="btn">Close</a>
-		<a href="#" class="btn btn-primary">Save changes</a>
-	</div>-->
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+            &times;
+        </button>
+        <h3>Artikel-Vorschau</h3>
+    </div>
+    <div class="modal-body">
+        <!-- Modal-Body Start-->
+
+        <img src="img/articlePreview.png">
+
+        <!-- Modal-Body End-->
+        <span class="clear"></span>
+    </div>
+    <!--<div class="modal-footer">
+    <a href="#" class="btn">Close</a>
+    <a href="#" class="btn btn-primary">Save changes</a>
+    </div>-->
 </div>
 
 <?php $Layout -> end(); ?>
