@@ -123,7 +123,7 @@ $Layout->start();
                         </div>
                         <img src="img/img_placeholder_90.jpg">
                     </div>
-                    <div class="pull-left mainProductImageTitle optionalField">Dieses Bild wird als Haupt-Bild für jedes Listing angezeigt</div>
+                    <div class="pull-left mainProductImageTitle optionalField">Dieses Bild wird als Vorschaubild für Ihren Artikel auf Suchresultat-Seiten verwendet</div>
                     
                 </div>
                 <div class="span9">
