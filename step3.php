@@ -1,7 +1,7 @@
 <?php
 require ('inc/layout.php');
-$Layout->title='Selling';
-$Layout->start();
+$Layout -> title = 'Selling';
+$Layout -> start();
 ?>
 
 <h2>Wie möchten Sie Ihr Produkt verkaufen?</h2>
@@ -12,56 +12,62 @@ $Layout->start();
             <div class="row-fluid">
                 <div class="span12">
                     <label for="auctionType">Wie möchten Sie Ihr Produkt verkaufen?</label>
-                    
+
                     <input class="toggle" type="radio" name="toggle" id="toggle-auction" value="option1" data-target="#auctionPricing" checked>
-                    <label class="btn span3" for="toggle-auction">
-                    	<i class="icon-remove"></i>
-                      <h4>Auktion</h4>
-                      <ul>
-                        <li>Der Markt bestimmt den Preis</li>
-                        <li>Mitreissendes Kauferlebnis</li>
-                        <li>Höhere Verkaufschancen </li>
-                      </ul>
-                    </label>
-                    
+                    <label class="btn span3" for="toggle-auction"> <i class="icon-remove"></i> <h4>Auktion</h4>
+                        <ul>
+                            <li>
+                                Der Markt bestimmt den Preis
+                            </li>
+                            <li>
+                                Mitreissendes Kauferlebnis
+                            </li>
+                            <li>
+                                Höhere Verkaufschancen
+                            </li>
+                        </ul> </label>
+
                     <span class="seperator"> oder </span>
-                    
+
                     <input class="toggle" type="radio" name="toggle" id="toggle-fixedPriceOffer" data-target="#fixedPricePricing" value="option2">
-                    <label class="btn span3" for="toggle-fixedPriceOffer">
-                    	<i class="icon-remove"></i>
-                      <h4>Fixpreis-Angebot</h4>
-                      <ul>
-                        <li>Sie bestimmen den Preis</li>
-                        <li>Konventionelles Kauferlebnis</li>
-                        <li>Geringere Verkaufschancen</li>
-                      </ul>
-                    </label>
+                    <label class="btn span3" for="toggle-fixedPriceOffer"> <i class="icon-remove"></i> <h4>Fixpreis-Angebot</h4>
+                        <ul>
+                            <li>
+                                Sie bestimmen den Preis
+                            </li>
+                            <li>
+                                Konventionelles Kauferlebnis
+                            </li>
+                            <li>
+                                Geringere Verkaufschancen
+                            </li>
+                        </ul> </label>
 
                 </div>
             </div>
             <div id="auctionPricing" class="row-fluid">
-              <div class="span3">
-                  <label for="auctionStartPrice">Startpreis <i class="icon-info-sign" data-toggle="tooltip" data-placement="right" title="Legen Sie einen Startpreis für die Auktion fest. Wenn Sie beispielsweise einen Startpreis von CHF 5.00 festlegen, muss das erste Gebot mindestens CHF 5.00 betragen."></i></label>
-                  <div class="input-prepend">
-                      <span class="add-on">CHF</span>
-                      <input class="span10" id="inputStartPrice" type="text" placeholder="Startpreis setzen">
-                  </div>
-              </div>
-              <div class="span3">
-                  <label for="auctionIncrementPrice">Erhöhungsschritt <i class="icon-info-sign" data-toggle="tooltip" data-placement="right" title="Legen Sie selbst fest in welchen Schritten geboten werden darf."></i></label>
-                  <div class="input-prepend">
-                      <span class="add-on">CHF</span>
-                      <input class="span10" id="inputIncrementPrice" type="text" value="0.05">
-                  </div>
-              </div>
-              <div class="span6">
-                  <label for="buyNowPrice">Sofort-Kaufen-Preis <span class="optionalField">(optional)</span> <i class="icon-info-sign" data-toggle="tooltip" data-placement="right" title="Mit der „Sofortkaufen“ Option können Sie einen fixen Wunsch-Preis festlegen. Somit kann ein Käufer der auf das Risiko einer Auktion verzichten möchte  den Artikel sofort kaufen."></i></label>
-                  <div class="input-prepend">
-                      <span class="add-on">CHF</span>
-                      <input class="span10" id="buyNowPrice" type="text" placeholder="Sofort-Kaufen-Preis">
-                  </div>
-                  <span class="optionWithCosts">Kostenpflichtig: CHF 0.60</span>
-              </div>
+                <div class="span3">
+                    <label for="auctionStartPrice">Startpreis <i class="icon-info-sign" data-toggle="tooltip" data-placement="right" title="Legen Sie einen Startpreis für die Auktion fest. Wenn Sie beispielsweise einen Startpreis von CHF 5.00 festlegen, muss das erste Gebot mindestens CHF 5.00 betragen."></i></label>
+                    <div class="input-prepend">
+                        <span class="add-on">CHF</span>
+                        <input class="span10" id="inputStartPrice" type="text" placeholder="Startpreis setzen">
+                    </div>
+                </div>
+                <div class="span3">
+                    <label for="auctionIncrementPrice">Erhöhungsschritt <i class="icon-info-sign" data-toggle="tooltip" data-placement="right" title="Legen Sie selbst fest in welchen Schritten geboten werden darf."></i></label>
+                    <div class="input-prepend">
+                        <span class="add-on">CHF</span>
+                        <input class="span10" id="inputIncrementPrice" type="text" value="0.05">
+                    </div>
+                </div>
+                <div class="span6">
+                    <label for="buyNowPrice">Sofort-Kaufen-Preis <span class="optionalField">(optional)</span> <i class="icon-info-sign" data-toggle="tooltip" data-placement="right" title="Mit der „Sofortkaufen“ Option können Sie einen fixen Wunsch-Preis festlegen. Somit kann ein Käufer der auf das Risiko einer Auktion verzichten möchte  den Artikel sofort kaufen."></i></label>
+                    <div class="input-prepend">
+                        <span class="add-on">CHF</span>
+                        <input class="span10" id="buyNowPrice" type="text" placeholder="Sofort-Kaufen-Preis">
+                    </div>
+                    <span class="optionWithCosts">Kostenpflichtig: CHF 0.60</span>
+                </div>
             </div>
             <div id="fixedPricePricing" class="row-fluid">
                 <div class="span12">
@@ -131,92 +137,138 @@ $Layout->start();
         </fieldset>
         <fieldset class="well" id="listingPaymentConditions">
             <div class="row-fluid">
-                <label for="paymentConditions">Zu welchem Zeitpunkt möchten Sie, dass der Kunde bezahlt?</label>
-                  <div class="span3 option-group">
-                      <h4>Zahlung im Voraus</h4>
-                      <div>
-                       <button class="btn"><i class="icon-remove"></i>RicardoPay<br /><small>einfach sicher</small></button>
-                       <button class="btn"><i class="icon-remove"></i>Bank / Post<br /><small>(2-3 Tage)</small></button>
-                      </div>
-                  </div>
-                  <div class="span3 option-group">
-                      <h4>Zahlung bei Abholung</h4>
-                      <div>
-                       <button class="btn"><i class="icon-remove"></i>Barzahlung</button>
-                      </div>
-                  </div>
-                  <div class="span3 option-group">
-                      <h4>Zahlung nach Erhalt</h4>
-                      <div>
-                       <button class="btn"><i class="icon-remove"></i>innert 7 Tagen</button>
-                       <button class="btn"><i class="icon-remove"></i>innert 14 Tagen</button>
-                       <button class="btn"><i class="icon-remove"></i>innert 30 Tagen</button>
-                      </div>
-                  </div>
-            </div>
-            <div class="row-fluid section">
-                <div class="span12">
-                    <a id="add-additional-payment-notes" data-toggle="collapse" data-target="#additional-payment-notes" class="btn btn-link">Zusätzliche Bemerkungen zu den Zahlungsmitteln</a><small class="muted">(optional)</small>
+                <aside class="span3 ricardopay-info-box">
+                    <p><img title="ricardopay – einfach sicher" style="margin: 0" alt="ricardopay – einfach sicher" src="img/ricardo-pay.png">
+                    </p>
+                    <p>
+                        <a href="#" id="ricardopayInfo">Wie funktioniert ricardopay?</a>
+                    </p>
+                </aside>
+                <div class="span9">
+
+                    <label for="paymentConditions">Zu welchem Zeitpunkt möchten Sie, dass der Kunde bezahlt?</label>
+                    <div class="row-fluid">
+                        <div class="span4 option-group">
+                            <h4>Zahlung im Voraus</h4>
+                            <div>
+                                <button class="btn">
+                                    <i class="icon-remove"></i>RicardoPay
+                                    <br />
+                                    <small>einfach sicher</small>
+                                </button>
+                                <button class="btn">
+                                    <i class="icon-remove"></i>Bank / Post
+                                    <br />
+                                    <small>(2-3 Tage)</small>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="span4 option-group">
+                            <h4>Zahlung bei Abholung</h4>
+                            <div>
+                                <button class="btn">
+                                    <i class="icon-remove"></i>Barzahlung
+                                </button>
+                            </div>
+                        </div>
+                        <div class="span4 option-group">
+                            <h4>Zahlung nach Erhalt</h4>
+                            <div>
+                                <button class="btn">
+                                    Rechnung innert 7 Tagen
+                                </button>
+                                <button class="btn">
+                                    Rechnung innert 14 Tagen
+                                </button>
+                                <button class="btn">
+                                    Rechnung innert 30 Tagen
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-fluid section">
+                        <div class="span12">
+                            <a id="add-additional-payment-notes" data-toggle="collapse" data-target="#additional-payment-notes" class="btn btn-link">Zusätzliche Bemerkungen zu den Zahlungsmitteln</a><small class="muted">(optional)</small>
+                        </div>
+                    </div>
+                    <div class="row-fluid collapse" id="additional-payment-notes">
+                        <textarea class="span6" rows="3" placeholder="Erwähnen Sie hier z.B, wenn Sie zusätzliche Gebühren für Postüberweisungen erheben"></textarea>
+                    </div>
                 </div>
             </div>
-            <div class="row-fluid collapse" id="additional-payment-notes">
-                <textarea class="span6" rows="3" placeholder="Erwähnen Sie hier z.B, wenn Sie zusätzliche Gebühren für Postüberweisungen erheben"></textarea>
-            </div>
-            <aside>
-              <p><img title="ricardopay – einfach sicher" style="margin: 0" alt="ricardopay – einfach sicher" src="img/ricardo-pay.png"></p>
-              <p><a href="#" id="ricardopayInfo">Wie funktioniert ricardopay?</a></p>
-              <a href="#" class="btn">kostenlos freischalten</a>
-            </aside>
         </fieldset>
 
     </section>
 </form>
 
 <div class="form-actions">
-    <a href="step4.php" class="btn btn-primary pull-right">Weiter zu "Versandoptionen"</a>
+    <a href="step4.php" class="btn btn-primary pull-right">Weiter zu "Versand Optionen"</a>
 </div>
 
 <div id="modalRicardoPay" class="modal hide fade">
-	<div class="modal-header">
-		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-		<h3>Auf ricardo.ch einloggen</h3>
-	</div>
-	<div class="modal-body">
-	<!-- Modal-Body Start-->
-  	
-    <div class="row-fluid">
-      <div class="span6">
-        <h3>Wie funktioniert RicardoPay?</h3>
-        <ol>
-          <li>Sie bieten RicardoPay als Zahlungsoption an</li>
-          <li>Der Käufer zahlt per ricardopay-Guthaben, Kreditkarte oder Rechnung</li>
-          <li>Sie erhalten sofort eine E-Mail oder SMS, dass der Käufer bezahlt hat</li>
-          <li>Das Geld wird sofort auf Ihr ricardo.ch Konto oder ihr eigenes Bankkonto überwiesen</li>
-        </ol>
-      </div>
-      <div class="span6">
-        <h3>Kostenlos</h3>
-        <ul>
-          <li>RicardoPay ist für den Verkäufer kostenlos</li>
-          <li><p>Die Käufer zahlen 0-2% Zahlungsgebühren je nach gewählter Zahlungsmethode:</p>
-            <table class="table table-striped" style="width:auto;">
-              <tr><td>ricardopay-Guthaben:</td><td>Keine Gebühren</td></tr>
-              <tr><td>Kreditkarte:</td><td>2% Gebühr</td></tr>
-              <tr><td>Postfinance Card:</td><td>1% Gebühr</td></tr>
-              <tr><td>Rechnung:</td><td>1% Gebühr</td></tr>
-            </table>      
-          </li>
-        </ul>
-      </div>
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+            &times;
+        </button>
+        <img src="img/ricardo-pay.png">
     </div>
-	
-	<!-- Modal-Body End-->
-	<span class="clear"></span>
-	</div>
-	<!--<div class="modal-footer">
-		<a href="#" class="btn">Close</a>
-		<a href="#" class="btn btn-primary">Save changes</a>
-	</div>-->
+    <div class="modal-body">
+        <!-- Modal-Body Start-->
+        <div class="row-fluid">
+            <div class="span6">
+                <h3>Wie funktioniert RicardoPay?</h3>
+                <ol>
+                    <li>
+                        Sie bieten RicardoPay als Zahlungsoption an
+                    </li>
+                    <li>
+                        Der Käufer zahlt per ricardopay-Guthaben, Kreditkarte oder Rechnung
+                    </li>
+                    <li>
+                        Sie erhalten sofort eine E-Mail oder SMS, dass der Käufer bezahlt hat
+                    </li>
+                    <li>
+                        Das Geld wird sofort auf Ihr ricardo.ch Konto oder ihr eigenes Bankkonto überwiesen
+                    </li>
+                </ol>
+            </div>
+            <div class="span6">
+                <h3>Kostenlos</h3>
+                <ul>
+                    <li>
+                        RicardoPay ist für den Verkäufer kostenlos
+                    </li>
+                    <li>
+                        <p>
+                            Die Käufer zahlen 0-2% Zahlungsgebühren je nach gewählter Zahlungsmethode:
+                        </p>
+                        <table class="table table-striped" style="width:auto;">
+                            <tr>
+                                <td>ricardopay-Guthaben:</td><td>Keine Gebühren</td>
+                            </tr>
+                            <tr>
+                                <td>Kreditkarte:</td><td>2% Gebühr</td>
+                            </tr>
+                            <tr>
+                                <td>Postfinance Card:</td><td>1% Gebühr</td>
+                            </tr>
+                            <tr>
+                                <td>Rechnung:</td><td>1% Gebühr</td>
+                            </tr>
+                        </table>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Modal-Body End-->
+        <span class="clear"></span>
+    </div>
+    <!--<div class="modal-footer">
+    <a href="#" class="btn">Close</a>
+    <a href="#" class="btn btn-primary">Save changes</a>
+    </div>-->
 </div>
 
-<?php $Layout->end(); ?>
+<?php $Layout->end();
+?>

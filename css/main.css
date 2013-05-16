@@ -14,18 +14,12 @@ h1, h2, h3, h4 {
 	position:relative;
 }
 
-.well aside{
-	border-left: 1px dotted #CCCCCC;
-	float: right;
-	font-size: 11px;
+.ricardopay-info-box {
+	border-right: 1px dotted #CCCCCC;
 	padding: 10px;
-	position: absolute;
-	right: 0;
-	top: 0;
-	width: 200px;
-	height:90%;
-	}
-	
+	height: 190px;
+}
+
 .optionWithCosts{
 	font-size:11px;
 	color: #757575;
@@ -427,7 +421,6 @@ input[type="radio"].toggle:checked + label {
 						}
 
 #listingPaymentConditions .option-group {
-    margin: 0 2.12766% 0 0;
     height: 160px;
     border-radius: 5px;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -727,6 +720,11 @@ fieldset h3 {
 /*********************************************************************
  * overriding bootstrap.css default styles
  *********************************************************************/
+
+.tooltip-inner {
+    text-align: left;
+}
+
 label {
     margin-bottom: 10px;
 }
