@@ -30,13 +30,9 @@ $Layout->start();
             </label>
             <input class="span7" type="text" id="inputTitle" placeholder="Tragen Sie hier die Produktbezeichnung ein">
             <label for="inputSubtitle">
-                Untertitel <span class="optionalField">(Kostenlos)</span>
+                Untertitel <span class="optionalField">NEU: Gratis! <span style="text-decoration:line-through;">CHF 0.90</span> (optional)</span>
             </label>
             <input class="span7" type="text" id="inputSubtitle" placeholder="Bewerben Sie ihr Produkt mit einem kurzen Satz">
-            <label for="inputNumber">
-            Anzahl zu verkaufende Exemplare insgesamt
-            </label>
-            <input class="span1" type="number" id="inputNumber" placeholder="1">
             <label for="inputProductCondition">
                             Zustand des Produkts
             </label>
@@ -48,6 +44,11 @@ $Layout->start();
                 <option>Antik</option>
                 <option>Defekt</option>
             </select>
+            <label for="inputNumber">
+            Anzahl zu verkaufende Exemplare insgesamt
+            </label>
+            <input class="span1" type="number" id="inputNumber" placeholder="1">
+            
             <label for="inputDescription">
                 Wie möchten Sie Ihren Artikel beschreiben?
             </label>
@@ -58,13 +59,9 @@ $Layout->start();
             </label>
             <input class="span7" type="text" id="inputTitle" placeholder="Entrez le nom du produit ici">
             <label for="inputSubtitle">
-                Sous-titre <span class="optionalField">(gratuit)</span>
+                Sous-titre <span class="optionalField">NOUVEAU: gratuit! <span style="text-decoration:line-through;">CHF 0.90</span> (optional)</span>
             </label>
-            <input class="span7" type="text" id="inputSubtitle" placeholder="Appliquez votre produit avec une courte phrase">
-            <label for="inputNumber">
-            Anzahl zu verkaufende Exemplare insgesamt
-            </label>
-            <input class="span1" type="number" id="inputNumber" placeholder="1">
+            <input class="span7" type="text" id="inputSubtitle" placeholder="Appliquez votre produit avec une courte phrase">  
             <label for="inputProductCondition">
                             Zustand des Produkts
             </label>
@@ -76,6 +73,11 @@ $Layout->start();
                 <option>Antik</option>
                 <option>Defekt</option>
             </select>
+            <label for="inputNumber">
+            Anzahl zu verkaufende Exemplare insgesamt
+            </label>
+            <input class="span1" type="number" id="inputNumber" placeholder="1">
+          
             <label for="inputDescription">
                 Wie möchten Sie Ihren Artikel beschreiben?
             </label>
@@ -92,7 +94,7 @@ $Layout->start();
             </div>
             
             <label for="inputPictures">
-                Bilder hinzufügen <small>(bis zu 10 Bilder)</small>
+                Bilder hinzufügen <span class="optionalField">NEU: Galeriebild gratis! <span style="text-decoration:line-through;">CHF 0.30</span> (optional)</span></span>
             </label>
             <div class="row-fluid section productImages">
                 <div class="span3">
@@ -121,7 +123,7 @@ $Layout->start();
                         </div>
                         <img src="img/img_placeholder_90.jpg">
                     </div>
-                    <h6 class="pull-left mainProductImageTitle optionalField">Dieses Bild wird als Haupt-Bild für jedes Listing angezeigt</h6>
+                    <div class="pull-left mainProductImageTitle optionalField">Dieses Bild wird als Haupt-Bild für jedes Listing angezeigt</div>
                     
                 </div>
                 <div class="span9">

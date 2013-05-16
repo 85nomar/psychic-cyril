@@ -210,8 +210,8 @@ $Layout -> start();
                         <td colspan="2">1.00 CHF</td>
                     </tr>
                                         <tr>
-                        <td>Gallery-Promotion silber</td>
-                        <td colspan="2">20.00 CHF</td>
+                        <td>Werbefenster silber</td>
+                        <td colspan="2">5.00 CHF</td>
                     </tr>
                     <tr>
                         <td>Total</td>
@@ -224,7 +224,7 @@ $Layout -> start();
 </div>
 
 <div class="form-actions">
-    <a href="#" class="btn btn-success pull-right">List your item</a>
+    <a href="#" class="btn btn-success pull-right btn-large">Artikel erstellen</a>
     <span class="separator muted pull-right separatorFloated"> | </span>
     <label class="checkbox inline pull-right">Ich akzeptiere die AGBs von ricardo.ch <input type="checkbox"></label>
 </div>

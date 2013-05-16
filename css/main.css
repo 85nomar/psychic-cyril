@@ -659,6 +659,8 @@ input[type="radio"].toggle:checked + label {
 
 /* Step6 Overview and Preview */
 
+.form-actions 
+
 #articlePreview {
     margin-top: 0;
 }
@@ -974,7 +976,7 @@ margin: 1px 5px;
     }
     .de, .fr {
         float:left;
-        margin-bottom: 100px;
+        margin-bottom: 30px;
     }
     .de .mce-menubar{
         display: none;
@@ -1041,11 +1043,14 @@ margin-left: 36px;
     display: none !important;
 }
 
-.productImages h6{
+.productImages div.mainProductImageTitle{
     margin-top:0px;
-    width: 110px;
+    width: 115px;
 }
 
+body > .mce-container.mce-panel.mce-floatpanel:not(.mce-menu-sub) > .mce-container-body.mce-stack-layout > .mce-menu-item:nth-child(2),body > .mce-container.mce-panel.mce-floatpanel:not(.mce-menu-sub)  > .mce-container-body.mce-stack-layout > .mce-menu-item:nth-child(3), body > .mce-container.mce-panel.mce-floatpanel:not(.mce-menu-sub) > .mce-container-body.mce-stack-layout > .mce-menu-item:nth-child(4)  {
+    display: none;
+}
 
 /*iframe#fr{
     margin-left: 30px;
