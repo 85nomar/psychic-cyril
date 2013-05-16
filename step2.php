@@ -45,7 +45,7 @@ $Layout->start();
                 <option>Defekt</option>
             </select>
             <label for="inputNumber">
-            Anzahl zu verkaufende Exemplare insgesamt
+            Stückzahl
             </label>
             <input class="span1" type="number" id="inputNumber" placeholder="1">
             
