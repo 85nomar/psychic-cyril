@@ -8,27 +8,27 @@ class Layout
         array(
             'url'=>'step1',
             'step'=> '1',
-            'title'=>'Kategorie auswählen',
+            'title'=>'Kategorie',
         ),
         array(
             'url'=>'step2',
             'step'=> '2',
-            'title'=>'Artikel beschreiben',
+            'title'=>'Artikel',
         ),
         array(
             'url'=>'step3',
             'step'=> '3',
-            'title'=>'Preis & Dauer festlegen',
+            'title'=>'Preis & Dauer',
         ),
         array(
             'url'=>'step4',
             'step'=> '4',
-            'title'=>'Artikel versenden',
+            'title'=>'Versand',
         ),
         array(
             'url'=>'step5',
             'step'=> '5',
-            'title'=>'Artikel bewerben',
+            'title'=>'Werbung',
         ),
         array(
             'url'=>'step6',

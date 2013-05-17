@@ -185,6 +185,6 @@ $Layout->start();
     </div>
 </form>
 <div class="form-actions">
-    <a href="step3.php" class="btn btn-primary pull-right">Weiter zu &laquo;Preis & Dauer festlegen&raquo;</a>
+    <a href="step3.php" class="btn btn-primary pull-right">Weiter zu &laquo;Preis & Dauer&raquo;</a>
 </div>
 <?php $Layout -> end(); ?>

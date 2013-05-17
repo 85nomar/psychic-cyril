@@ -108,7 +108,7 @@ $Layout -> start();
 </div>
 
 <div class="form-actions">
-    <a href="step2.php" class="btn btn-primary pull-right">Weiter zu &laquo;Artikel beschreiben&raquo;</a>
+    <a href="step2.php" class="btn btn-primary pull-right">Weiter zu &laquo;Artikel&raquo;</a>
 </div>
 
 <?php $Layout -> end(); ?>
