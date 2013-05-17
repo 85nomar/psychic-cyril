@@ -13,7 +13,7 @@ class Layout
         array(
             'url'=>'step2',
             'step'=> '2',
-            'title'=>'Artikel',
+            'title'=>'Beschreibung',
         ),
         array(
             'url'=>'step3',
