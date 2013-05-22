@@ -6,7 +6,26 @@ $Layout -> start();
 
 <h2>In welcher Kategorie möchten Sie Ihr Produkt einstellen?</h2>
 
-<div class="row-fluid">
+<div id="carsCatSelector" class="cars accessory row-fluid" style="text-align:center;">
+	<a href="step1.php" class="span2 btn setCookie" data-view="cars"><img src="img/car.png" width="89" height="72" />Autos</a>
+	<a href="step1.php" class="span2 btn setCookie" data-view="cars"><img src="img/bike.png" width="89" height="72" />Motoräder</a>
+	<a href="step1.php" class="span2 btn setCookie" data-view="cars"><img src="img/utility.png" width="89" height="72" />Nutzfahrzeuge</a>
+	<a href="step1.php" class="span2 btn setCookie" data-view="accessory"><img src="img/accessories.png" width="89" height="72" />Zubehör</a>
+	<a href="step1.php" class="span2 btn setCookie" data-view="cars">Andere Fahrzeuge</a>
+</div>
+  <script type="text/javascript">
+    $(document).ready(function(e) {
+    });
+  </script>
+  <style>
+		#carsCatSelector a{
+			display:inline-block;
+			float:none;
+			height:95px;
+			}
+  </style>
+
+<div class="core accessory row-fluid">
     <form class="form-search span12">
         <fieldset id="categoryFinder" class="well">
             <div class="input-append">

@@ -1,4 +1,48 @@
+function setCookie( name, value, expires, path, domain, secure ){
+	var today = new Date();
+	today.setTime( today.getTime() );
+	if ( expires ){
+		expires = expires * 1000 * 60 * 60 * 24;
+	}
+	var expires_date = new Date( today.getTime() + (expires) );
+	
+	document.cookie = name + "=" +escape( value ) +
+	( ( expires ) ? ";expires=" + expires_date.toGMTString() : "" ) +
+	( ( path ) ? ";path=" + path : "" ) +
+	( ( domain ) ? ";domain=" + domain : "" ) +
+	( ( secure ) ? ";secure" : "" );
+}
+
+function getCookie(cookieName){
+var i,x,y,ARRcookies=document.cookie.split(";");
+for (i=0;i<ARRcookies.length;i++)
+  {
+  x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
+  y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
+  x=x.replace(/^\s+|\s+$/g,"");
+  if (x==cookieName)
+    {
+    return unescape(y);
+    }
+  }
+}
+
+if (getCookie('view')=='cars'){
+	document.writeln('<style>.core{display:none;}.accessory{display:none}.cars{display:block}</style>');
+	}
+else if (getCookie('view')=='accessory') {
+	document.writeln('<style>.core{display:block;}.cars{display:none}.accessory{display:block}</style>');
+	}
+else {
+	setCookie('view','core');
+	document.writeln('<style>.cars{display:none}.accessory{display:none}.core{display:block;}</style>');
+	}
+
 $(document).ready(function() {
+	
+		$('.setCookie').mousedown(function(){
+			setCookie('view', $(this).attr('data-view'));
+		});
 
     // init Cat-Selection
     $('.navCat:first ul').show();
