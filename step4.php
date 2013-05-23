@@ -96,6 +96,6 @@ $Layout -> start();
 </fieldset>
 
 <div class="form-actions">
-    <a href="step5.php" class="btn btn-primary pull-right">Weiter zu &laquo;Werbung&raquo;</a>
+    <a href="step5.php" class="btn btn-primary pull-right">Weiter zu &laquo;<?php echo $Layout->formNav[4]["title"]; ?>&raquo;</a>
 </div>
 <?php $Layout -> end(); ?>
