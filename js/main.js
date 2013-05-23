@@ -31,7 +31,7 @@ if (getCookie('view')=='cars'){
 	document.writeln('<style>.core{display:none;}.accessory{display:none}.cars{display:block}</style>');
 	}
 else if (getCookie('view')=='accessory') {
-	document.writeln('<style>.core{display:block;}.cars{display:none}.accessory{display:block}</style>');
+	document.writeln('<style>.core{display:none;}.cars{display:none}.accessory{display:block}</style>');
 	}
 else {
 	setCookie('view','core');
@@ -51,12 +51,12 @@ $(document).ready(function() {
     $('.navCat a').click(function(event) {// add click-functions
         event.preventDefault();
 
-        allCatNo = $('.navCat').size();
+        allCatNo = $(this).parents('controls').find('.navCat').size();
         // numbers of navs
         thisCatNo = parseInt($(this).parents('nav').attr('id').match(/[0-9.]+/g));
         // number of this nav
 
-        $('.navCat:eq(' + thisCatNo + ')').find('.active').removeClass('active');
+        $(this).parents('.navCat:eq(' + thisCatNo + ')').find('.active').removeClass('active');
         // remove active from next nav
         $(this).parents('nav').find('li').removeClass('active');
         // remove all actives in this category
@@ -64,7 +64,7 @@ $(document).ready(function() {
         // set this as active
 
         for (var i = thisCatNo + 1; i < allCatNo; i++) {// hide other navs and actives in other navs
-            $('.navCat:eq(' + i + ') ul').hide().find('.active').removeClass('active');
+            $(this).parents('.navCat:eq(' + i + ') ul').hide().find('.active').removeClass('active');
         }
         $(this).parents('nav').next().find('ul').fadeIn();
         // show nex nav
@@ -80,8 +80,8 @@ $(document).ready(function() {
     });
 
     function markCategoryTree () {
-        $(".navCat .active").removeClass("active");
-        $('.navCat ul').each(function(index) {
+        $('.navCat .active').removeClass('active');
+        $('.row-fluid:visible .navCat ul').each(function(index) {
             $(this).delay(400 * index - 1).fadeIn(300).addClass('catSuggest').find('.demo').addClass('active');
         });
     }
@@ -91,6 +91,7 @@ $(document).ready(function() {
     // on keyboard enter
     $("#appendedInputButton").keypress(function(e) {
         if(e.which == 13) {
+					e.preventDefault();
             markCategoryTree();
         }
     });
@@ -130,19 +131,18 @@ $(document).ready(function() {
     // Step3 - Date & Time functions
     (function($) {
         var now = new Date(), in10days = new Date(now.getTime() + 864000000), in20days = new Date(in10days.getTime() + 864000000), tenDays = 864000000, oneDay = 86400000;
-
         $('#dateStartTimePicker').datetimepicker({
             language : 'de',
             pickSeconds : false,
             startDate : now,
-            endDate : new Date(now.getTime() + 2592000000) , // max. 3 months in advance of 10 days
+            endDate : new Date(now.getTime() + 2592000000) // max. 3 months in advance of 10 days
         });
 
         $('#dateEndTimePicker').datetimepicker({
             language : 'de',
             pickSeconds : false,
             startDate : in10days, // set +10 days as default end date. Changes dynamically according to StartTimePicker
-            endDate : in20days, // max. 10 days duration. changes dynamically
+            endDate : in20days // max. 10 days duration. changes dynamically
         });
 
         // update endDatePicker when startDatePicker changes
@@ -182,7 +182,7 @@ $(document).ready(function() {
                 endDatePicker.setStartDate(new Date(startDate.getTime() + oneDay));
                 endDatePicker.setEndDate(new Date(startDate.getTime() + tenDays));
                 endDatePicker.setLocalDate(new Date(startDate.getTime() + daysInMs));
-            },
+            }
         });
     })(window.jQuery);
 
@@ -438,7 +438,7 @@ $(document).ready(function() {
             overlay : '.removeImageOverlay',
             btnGroup : '.image-movers',
             moveLeft : '.move-left',
-            moveRight : '.move-right',
+            moveRight : '.move-right'
         };
 
         $(assets.overlay + ' .btn').on('click', function() {

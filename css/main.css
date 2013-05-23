@@ -191,7 +191,7 @@ h1, h2, h3, h4 {
 
 .navCat li.active a {
     color: #fff !important;
-    background-color: #fc9013;
+    background-color: #a6b825 !important;
 }
 
 .navCat li.active i {
