@@ -10,7 +10,7 @@ $Layout -> start();
 	<fieldset id="adWindow" class="well">
     <div class="row-fluid">
       <div class="span3">
-        <label>Wie oft soll Ihr Artikel im Werbefenster angezeigt werden?</label>
+        <label>Wie oft soll Ihr Artikel im Anzeigefenster angezeigt werden?</label>
         <div>
           <div class="option optDisable">
             <label for="none">
@@ -49,22 +49,22 @@ $Layout -> start();
             <div id="optionTypeNone" class="item active description">
               <!--<i class="sash"><img src="img/schleife_silver.png" width="53" height="54" /></i>
               <img class="bigPic" src="img/push05_big.png" width="104" height="86" align="right" />-->
-              <p>Werbefenster</p>
-              <h2 class="optionName">Kein Werbefenster</h2>
+              <p>Anzeigefenster</p>
+              <h2 class="optionName">Kein Anzeigefenster</h2>
               <p class="optionPrice"><span class="currency">CHF</span> 0.00</p>
-              <p><strong>Ihr Artikel wird NICHT im attraktiven Werbefenster angezeigt.</strong></p>
+              <p><strong>Ihr Artikel wird NICHT im attraktiven Anzeigefenster angezeigt.</strong></p>
             </div>
           
             <div id="optionTypeBronce" class="item description">
               <i class="sash"><img src="img/schleife_bronze.png" width="53" height="54" /></i>
               <img class="bigPic" src="img/push01_big.png" width="39" height="86" />
-              <p>Werbefenster</p>
+              <p>Anzeigefenster</p>
               <h2 class="optionName">Bronze</h2>
               <p class="optionPrice"><span class="currency">CHF</span> 2.00</p>
-              <p><strong>Der Artikel erscheint ab und zu im Werbefenster</strong></p>
+              <p><strong>Der Artikel erscheint selten im Anzeigefenster</strong></p>
               <ol>
-                <li>Ihr Artikel wird attraktiv im Werbefenster zuoberst auf der Artikel-Seite angezeigt.</li>
-                <li>Das gebuchte Werbefenster wird rotierend eingesetzt.</li>
+                <li>Ihr Artikel wird attraktiv im Anzeigefenster zuoberst auf der Artikel-Seite angezeigt.</li>
+                <li>Das gebuchte Anzeigefenster wird rotierend eingesetzt.</li>
                 <li>Sie können den Interval der Einblendungen selber auswählen (Gold, Silber, Bronze)</li>
               </ol>
             </div>
@@ -72,13 +72,13 @@ $Layout -> start();
             <div id="optionTypeSilver" class="item description">
               <i class="sash"><img src="img/schleife_silver.png" width="53" height="54" /></i>
               <img class="bigPic" src="img/push05_big.png" width="104" height="86" align="right" />
-              <p>Werbefenster</p>
+              <p>Anzeigefenster</p>
               <h2 class="optionName">Silber</h2>
               <p class="optionPrice"><span class="currency">CHF</span> 5.00</p>
-              <p><strong>Der Artikel erscheint <big>5x</big> öfters als beim Werbefenster Bronze</strong></p>
+              <p><strong>Der Artikel erscheint <big>5x</big> öfters als beim Anzeigefenster Bronze</strong></p>
               <ol>
-                <li>Ihr Artikel wird attraktiv im Werbefenster zuoberst auf der Artikel-Seite angezeigt.</li>
-                <li>Das gebuchte Werbefenster wird rotierend eingesetzt.</li>
+                <li>Ihr Artikel wird attraktiv im Anzeigefenster zuoberst auf der Artikel-Seite angezeigt.</li>
+                <li>Das gebuchte Anzeigefenster wird rotierend eingesetzt.</li>
                 <li>Sie können den Interval der Einblendungen selber auswählen (Gold, Silber, Bronze)</li>
               </ol>
             </div>
@@ -86,13 +86,13 @@ $Layout -> start();
             <div id="optionTypeGold" class="item description">
               <i class="sash"><img src="img/schleife_gold.png" width="53" height="54" /></i>
               <img class="bigPic" src="img/push20_big.png" width="104" height="86" align="right" />
-              <p>Werbefenster</p>
+              <p>Anzeigefenster</p>
               <h2 class="optionName">Gold</h2>
               <p class="optionPrice"><span class="currency">CHF</span> 15.00</p>
-              <p><strong>Der Artikel erscheint <big>20x</big> öfters als beim Werbefenster Bronze</strong></p>
+              <p><strong>Der Artikel erscheint <big>20x</big> öfters als beim Anzeigefenster Bronze</strong></p>
               <ol>
-                <li>Ihr Artikel wird attraktiv im Werbefenster zuoberst auf der Artikel-Seite angezeigt.</li>
-                <li>Das gebuchte Werbefenster wird rotierend eingesetzt.</li>
+                <li>Ihr Artikel wird attraktiv im Anzeigefenster zuoberst auf der Artikel-Seite angezeigt.</li>
+                <li>Das gebuchte Anzeigefenster wird rotierend eingesetzt.</li>
                 <li>Sie können den Interval der Einblendungen selber auswählen (Gold, Silber, Bronze)</li>
               </ol>
             </div>
@@ -155,7 +155,7 @@ $Layout -> start();
 </form>
 
 <div class="form-actions">
-    <a href="step6.php" class="btn btn-primary pull-right" id="prelogin">Weiter zu &laquo;Übersicht&raquo;</a>
+    <a href="step6.php" class="btn btn-primary pull-right" id="prelogin">Weiter & Anmelden</a>
 </div>
 
 <div id="modalLogin" class="modal hide fade">

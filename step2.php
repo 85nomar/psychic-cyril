@@ -30,7 +30,7 @@ $Layout->start();
             </label>
             <input class="span7" type="text" id="inputTitle" placeholder="Tragen Sie hier die Produktbezeichnung ein">
             <label for="inputSubtitle">
-                Untertitel <span class="optionalField">NEU: Gratis! <span style="text-decoration:line-through;">CHF 0.90</span> (optional)</span>
+                Untertitel <span class="optionalField">NEU: Gratis! <span style="text-decoration:line-through;">CHF 0.90</span> (optional)</span> <i class="icon-info-sign" data-toggle="tooltip" data-placement="right" title="" data-original-title="Test : Brauche Text für dieses Tooltip"></i>
             </label>
             <input class="span7" type="text" id="inputSubtitle" placeholder="Bewerben Sie ihr Produkt mit einem kurzen Satz">
             <label for="inputProductCondition">
@@ -50,7 +50,7 @@ $Layout->start();
             <input class="span1" type="number" id="inputNumber" placeholder="1">
             
             <label for="inputDescription">
-                Wie möchten Sie Ihren Artikel beschreiben?
+                Wie möchten Sie Ihren Artikel beschreiben? <i class="icon-info-sign" data-toggle="tooltip" data-placement="right" title="Es dürfen keine privaten Email- sowie www-Adressen ausgeschrieben werden"></i>
             </label>
         </div>
         <div class="span6 float fr-row">

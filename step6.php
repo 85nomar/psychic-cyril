@@ -187,7 +187,7 @@ $Layout -> start();
                         <td colspan="2">1.00 CHF</td>
                     </tr>
                     <tr>
-                        <td>Werbefenster silber</td>
+                        <td>Anzeigefenster silber</td>
                         <td colspan="2">5.00 CHF</td>
                     </tr>
                     <tr>
