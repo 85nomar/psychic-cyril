@@ -70,9 +70,9 @@ $Layout -> start();
 
 <div class="core accessory row-fluid">
     <form class="form-search span12">
-        <fieldset id="categoryFinder" class="well">
+        <fieldset id="categoryFinder" class="well section">
             <div class="input-append">
-                <input class="span12" id="appendedInputButton" autocomplete="off" type="text" placeholder="z.B iPhone Tisch Computer Lego" />
+                <input class="span12" id="appendedInputButton" autocomplete="off" autofocus="autofocus" type="text" placeholder="z.B iPhone Tisch Computer Lego" />
                 <button class="btn" type="button">
                     Kategorie vorschlagen lassen!
                 </button>
