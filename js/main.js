@@ -130,7 +130,7 @@ $(document).ready(function() {
 
     // Step3 - Date & Time functions
     (function($) {
-        var now = new Date(), in10days = new Date(now.getTime() + 864000000), in20days = new Date(in10days.getTime() + 864000000), tenDays = 864000000, oneDay = 86400000;
+        var now = new Date(), in10days = new Date(now.getTime() + 864000000), tenDays = 864000000, oneDay = 86400000;
         $('#dateStartTimePicker').datetimepicker({
             language : 'de',
             pickSeconds : false,
@@ -141,8 +141,8 @@ $(document).ready(function() {
         $('#dateEndTimePicker').datetimepicker({
             language : 'de',
             pickSeconds : false,
-            startDate : in10days, // set +10 days as default end date. Changes dynamically according to StartTimePicker
-            endDate : in20days // max. 10 days duration. changes dynamically
+            startDate : new Date(now.getTime() + oneDay),
+            endDate : in10days
         });
 
         // update endDatePicker when startDatePicker changes
@@ -161,7 +161,7 @@ $(document).ready(function() {
             endDatePicker.setLocalDate(new Date(e.date.getTime() + tenDays));
             // update Slider
             $(".noUiSlider").noUiSlider("disabled", false);
-            $(".noUiSlider").val(2);
+            $(".noUiSlider").val(9);
         })
 
         $('#dateEndTimePicker').on("changeDate", function(e) {
