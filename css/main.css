@@ -1059,6 +1059,10 @@ body > .mce-container.mce-panel.mce-floatpanel:not(.mce-menu-sub) > .mce-contain
 .de iframe, .fr iframe{
     height: 100px ;
 }
+
+.stepIndicator.nav.nav-pills li a {
+cursor: default;
+}
 /*iframe#fr{
     margin-left: 30px;
 }
