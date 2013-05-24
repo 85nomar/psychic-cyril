@@ -7,12 +7,66 @@ $Layout -> start();
 <h2>In welcher Kategorie möchten Sie Ihr Produkt einstellen?</h2>
 
 <div id="carsCatSelector" class="cars accessory row-fluid" style="text-align:center;">
-	<a href="step1.php" class="span2 btn" data-view="cars"><img src="img/car.png" width="89" height="72" />Autos</a>	
-	<a href="step1.php" class="span2 btn" data-view="cars"><img src="img/bike.png" width="89" height="72" />Motoräder</a>
-	<a href="step1.php" class="span2 btn" data-view="cars"><img src="img/utility.png" width="89" height="72" />Nutzfahrzeuge</a>
-	<a href="step1.php" class="span2 btn" data-view="accessory"><img src="img/accessories.png" width="89" height="72" />Zubehör</a>
-	<a href="step1.php" class="span2 btn" data-view="cars">Andere Fahrzeuge</a>
+  <script type="text/javascript">
+			if(getCookie('view')=='cars'){
+				document.writeln('<a href="#carTypeSelector" class="span2 btn toggle" data-toggle="collapse"><img src="img/car.png" width="89" height="72" />Autos</a>');
+			}
+			else {
+				document.writeln('<a href="step1.php" class="span2 btn setCookie" data-view="cars"><img src="img/car.png" width="89" height="72" />Autos</a>');
+			}
+  </script>
+	<!--<a href="step1.php" class="span2 btn setCookie" data-view="cars"><img src="img/car.png" width="89" height="72" />Autos</a>	-->
+	<a href="step1.php" class="span2 btn setCookie" data-view="cars"><img src="img/bike.png" width="89" height="72" />Motoräder</a>
+	<a href="step1.php" class="span2 btn setCookie" data-view="cars"><img src="img/utility.png" width="89" height="72" />Nutzfahrzeuge</a>
+	<a href="step1.php" class="span2 btn setCookie" data-view="accessory"><img src="img/accessories.png" width="89" height="72" />Zubehör</a>
+	<a href="step1.php" class="span2 btn setCookie" data-view="cars">Andere Fahrzeuge</a>
 </div>
+  <script type="text/javascript">
+    $(document).ready(function(e) {
+    });
+  </script>
+  <style>
+		.hiddenRow {
+			display:none;
+			}
+		.control-group {
+			margin-bottom:0;
+			}
+		.btn-disabled {
+			color:#CCC;
+			border-color:#eee #ddd #ddd #eee;
+			}
+		#carsCatSelector{
+			margin-bottom:15px;
+			}
+		#carsCatSelector a{
+			display:inline-block;
+			float:none;
+			height:110px;
+			padding-top:80px;
+			position:relative;
+			}
+		#carsCatSelector img{ 
+			left: 50%;
+			margin-left: -44px;
+			position: absolute;
+			top: 5px;
+			}
+		#carSelector .well{
+			min-height:350px;
+			}
+		.carIDHint {
+			position:relative;
+			height:110px;
+			margin-top:15px;
+		}
+		.carIDHint div:last-child {
+			position:absolute;
+			bottom:0;
+			right:0px;
+			min-height:auto;
+		}
+  </style>
 
 <div class="core accessory row-fluid">
     <form class="form-search span12">
@@ -42,6 +96,27 @@ $Layout -> start();
 					source: ['iPhone','iPhone 3G','iPhone 3G S','iPhone 4','iPhone 4S','iPhone 5','iPhone Cover','iPhone Etui','iPhone Akku','iPhone Kabel','iPhone Headset'] 
 				});
 			}
+			
+			// show cars-section
+			$('#carTypeSelector a').click(function(){
+				$('#carSelector').collapse('show');
+			});
+			
+			$('#IDRegistrYear').change(function(){
+				fieldVal = $.trim($(this).val());
+				console.log(fieldVal);
+				if(fieldVal != '' && fieldVal != '-' && fieldVal != 0){
+					$('#carVerionSelector').collapse('show');
+				}		
+			});	
+			
+			$('#FormFuel').change(function(){
+				fieldVal = $.trim($(this).val());
+				console.log(fieldVal);
+				if(fieldVal != '' && fieldVal != '-' && fieldVal != 0){
+					$('#carAttributeSelector').collapse('show');
+				}				
+			});
 			
     });
   </script>
@@ -178,13 +253,33 @@ $Layout -> start();
 
 <div id="carSelector" class="cars row-fluid collapse collapse-body">
 	<h3>Wie möchten Sie Ihr Fahrzeug einstellen?</h3>
-	<div class="span4 well carSelector" >
+	<div class="span4 well">
     	<h4>Mit Typenschein-Nummer</h4>
-      
+      <script type="text/javascript">
+      	$(document).ready(function(e) {
+          $('.controls select:last-child, .controls input:last-child').each(function() {
+            $(this).change(function(){
+							fieldVal = $.trim($(this).val());
+							console.log(fieldVal);
+							if(fieldVal != '' && fieldVal != '-' && fieldVal != 0){
+								console.log("do check now...");
+								
+								if($(this).parents('.control-group').next('.control-group').height() > 0){
+									var myObj = $(this).parents('.control-group').next('.control-group');
+								} else {
+									var myObj = $(this).parents('.control-group').next('.control-group').next();
+								}
+								console.log("length of obj :",myObj.length);
+							  myObj.find('select').removeAttr('disabled');
+							}
+						});
+          });
+        });
+      </script>
       <div class="control-group">
         <label class="control-label">Nummer</label>
         <div class="controls">
-          <input class="span12" type="text" name="TxtCertification" id="TxtCertification" />
+          <input class="span12" type="text" />
         </div>
      	</div>
       
@@ -335,9 +430,19 @@ $Layout -> start();
   
 	<div class="span2">oder</div>
   
-	<div class="span4 well carSelector">
-    	<h4>Mit Marke / Model</h4>
-      <div class="control-group">
+      <script type="text/javascript">
+				$(document).ready(function(e) {
+          $('#FormModel').change(function(e) {
+						fieldVal = $.trim($(this).val());
+						console.log(fieldVal);
+						if(fieldVal == 0){
+							$('#alternateModelConrol').collapse('show')
+						}            
+          });
+        });
+      </script>
+	<div class="span4 well">
+    	<h4>Mit Marke / Model</h4><div class="control-group">
         <label class="control-label">Zulassungsdatum</label>
         <div class="controls">    
           <select class="span8" name="FormRegistrMonth" id="FormRegistrMonth" tabindex="3">
@@ -591,7 +696,7 @@ $Layout -> start();
       <div id="alternateModelConrol" class="control-group collapse collapse-body">
         <label class="control-label">anderes Modell</label>
         <div class="controls">
-        	<input type="text" name="alternateModel" id="alternateModel" />
+        	<input type="text" name="alternateModel" id="alternateModel" disabled="disabled" />
         </div>
       </div>
       <div class="control-group">
@@ -615,6 +720,86 @@ $Layout -> start();
       </div>
   </div>
 </div>
+<style>
+	#carVerionSelector .oddRow td {
+		background-color:#FFF;
+	} 
+	#carVerionSelector .versionDetails td {
+		background-color:#bcd229;
+		color:#fff;
+	} 
+	#carVerionSelector .versionBasic {
+		cursor:pointer;
+	} 
+	#carVerionSelector .versionBasic.selected td {
+		background-color: #a6b825;
+		color:#fff;
+	} 
+	#carVerionSelector .versionDetails {
+		display:none;
+	} 
+	#carVerionSelector .versionDetails td{
+		padding-left: 33px;
+	} 
+	#carVerionSelector .versionDetails dl {
+		margin:0;
+	} 
+	#carVerionSelector .versionDetails dt, #carVerionSelector .versionDetails dd {
+		display: inline-block;
+		font-weight:normal;
+	} 
+	#carVerionSelector .versionDetails dt:after {
+   content: ": ";
+	} 
+	#carVerionSelector .versionDetails dd {
+		border-right: 1px dotted;
+    display: inline-block;
+    margin-right: 10px;
+    padding-right: 15px;
+	} 
+	
+	.icon-select {
+	  background-image: none;
+    border: 1px solid #757575;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+		margin-right:10px;
+	}
+	.selected .icon-select {
+		background-color: #fff;
+    background-image: url("https://pics.ricardostatic.ch/contents/ch/assets/images/ricardo_icons_green.png");
+    background-position: -288px 0;
+    border-color: #fff !important;
+	}
+</style>
+<script type="text/javascript">
+	$(document).ready(function(e) {
+		$('#carVerionSelector table tr:visible:odd').addClass('oddRow');
+		
+    $('.versionBasic').click(function(){
+			$('.versionBasic.selected').removeClass('selected');
+			$(this).addClass('selected');
+			$('.versionDetails').hide();
+			$(this).next().show();
+			
+			$('.form-actions .cars.btn').addClass('btn-primary').removeClass('btn-disabled');		
+		});
+			
+		$('#altHP').bind('change blur',function(){
+			fieldVal = $.trim($(this).val());
+			console.log(fieldVal);
+			if(fieldVal != '' && fieldVal != '-' && fieldVal != 0){
+				$('.form-actions .cars.btn').addClass('btn-primary').removeClass('btn-disabled');
+			}		
+			else {
+				$('.form-actions .cars.btn').removeClass('btn-primary').addClass('btn-disabled');
+				}		
+		});
+		
+		
+  });	
+</script>
 
 <div id="carVerionSelector" class="cars row-fluid collapse collapse-body">
 	<h3>Welche Fahrzeug-Version möchten Sie Verkaufen?</h3>
