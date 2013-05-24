@@ -40,9 +40,31 @@ else {
 
 $(document).ready(function() {
 	
-		$('.setCookie').mousedown(function(){
-			setCookie('view', $(this).attr('data-view'));
-		});
+	$('.setCookie').mousedown(function(){
+		setCookie('view', $(this).attr('data-view'));
+	});
+	
+	// disable/enable next-btn
+	
+	function enableNextButton(){
+		$('.form-actions .cars.btn').addClass('btn-primary').removeClass('btn-disabled');		
+	}
+	
+	function disableNextButton(){
+		$('.form-actions .cars.btn').removeClass('btn-primary').addClass('btn-disabled');	
+	}
+	
+	$('.form-actions .btn').click(function(event){
+		event.preventDefault();
+		if($(this).hasClass('btn-disabled')==false){
+			window.location.href = $(this).attr('href');
+		}
+		else {
+			console.log('click not allowed');
+		}
+	});
+		
+// +++++++++++++++++++++++++ Step 1 +++++++++++++++++++++++++
 
     // init Cat-Selection
     $('.navCat:first ul').show();
@@ -95,11 +117,136 @@ $(document).ready(function() {
             markCategoryTree();
         }
     });
+		
+	// .cars Category-Selector
+	
+	$('#carsCatSelector a').click(function(event) {
+		event.preventDefault()				
+		thisView   = getCookie('view');
+		targetView = $(this).attr('data-view');
+		
+		if (thisView != targetView){
+			setCookie('view', $(this).attr('data-view'));
+			location.reload();
+		}
+		else {
+			target='.catSelect.'+thisView;
+			$(target).collapse('show');
+		}        
+	});
+	
+	function checkFieldCollapse(target,collapse){
+		$(target).change(function(){
+			fieldVal = $.trim($(this).val());
+			console.log(fieldVal);
+			if(fieldVal != '' && fieldVal != '-' && fieldVal != 0){
+				$(collapse).collapse('show');
+			}
+			else {
+				$(collapse).collapse('hide');
+			}
+		});	
+	}
+			
+	// show .cars Car-Type-Selector
+	
+	$('#carTypeSelector a').click(function(){
+		$('#carSelector').collapse('show');
+	});
+	
+	// show .cars Car-Version-Selector
+	
+	checkFieldCollapse('#IDRegistrYear','#carVerionSelector');
+	checkFieldCollapse('#FormFuel','#carAttributeSelector');
+					
+	// enable/disable form-fields
+	
+	function carReset(thisSelector){
+		$('.carSelector').not(thisSelector.parents('.carSelector')).removeClass('selected');
+		$('.carSelector').not(thisSelector.parents('.carSelector')).find('.control-group:gt(0) select').attr('disabled','disabled');
+		$('.carSelector').not(thisSelector.parents('.carSelector')).find('option:selected').removeAttr('selected');
+		$('.carSelector').not(thisSelector.parents('.carSelector')).find('input').val('');
+			
+		thisSelector.parents('.carSelector').addClass('selected');
+	};
+	
+	$('.carSelector select').change(function(){
+		carReset($(this));
+	});
+	
+	$('.controls select:last-child, .controls input:last-child').each(function() {
+		$(this).change(function(){
+			fieldVal = $.trim($(this).val());
+			if(fieldVal != '' && fieldVal != '-' && fieldVal != 0){
+				
+				if($(this).parents('.control-group').next('.control-group').height() > 0){
+					var myObj = $(this).parents('.control-group').next('.control-group');
+				} else {
+					var myObj = $(this).parents('.control-group').next('.control-group').next();
+				}
+				myObj.find('select').removeAttr('disabled');
+			}
+			else {
+				$(this).parents('.control-group').nextAll('.control-group').find('select').attr('disabled','disabled').find('option:selected').removeAttr('selected');	
+			}
+		});
+	});
+	
+	$('#TxtCertification').keyup(function(){
+		carReset($(this));
+		if($(this).val().length == 6){
+			$(this).parents('.control-group').next('.control-group').find('select').removeAttr('disabled');
+			$(this).parents('.control-group').next('.control-group').find('select:first').focus();
+		}
+		else {
+			$(this).parents('.control-group').nextAll('.control-group').find('select').attr('disabled','disabled').find('option:selected').removeAttr('selected');
+		}
+	});
+					
+	// show hide alternate Model 
+	
+	$('#FormModel').change(function(e) {
+		fieldVal = $.trim($(this).val());
+		console.log(fieldVal);
+		if(fieldVal == 0){
+			$('#alternateModelConrol').collapse('show')
+		}            
+	});
+		
+	// Car-Version-Select-Table
+		
+	$('#carVerionSelector table tr:visible:odd').addClass('oddRow');
+	
+	$('.versionBasic').click(function(){
+		$('.versionBasic.selected').removeClass('selected');
+		$(this).addClass('selected');
+		$('.versionDetails').hide();
+		$(this).next().show();
+		
+		enableNextButton();
+	});
+	
+	// Enable Next-Button by set HP for alternative Cars
+		
+	$('#altHP').bind('change blur',function(){
+		fieldVal = $.trim($(this).val());
+		console.log(fieldVal);
+		if(fieldVal != '' && fieldVal != '-' && fieldVal != 0){
+			enableNextButton();
+		}		
+		else {
+			disableNextButton()
+		}		
+	});
+		
+// +++++++++++++++++++++++++ Step2 (Core) +++++++++++++++++++++++++
 
     // initialize upload img section
     ricardoImageUpload.init();
 
-    // Step3 - Payment-Conditions-Selection
+// +++++++++++++++++++++++++ Step3 +++++++++++++++++++++++++
+ 
+		//Payment-Conditions-Selection
 						
 		$('#listingPaymentConditions button')
 		.click(function(event){
