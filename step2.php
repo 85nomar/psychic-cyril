@@ -98,6 +98,11 @@ $Layout->start();
             </label>
             <div class="row-fluid section productImages">
                 <div class="span3">
+  
+                    <div class="pull-left mainProductImageTitle optionalField">Dieses Bild wird als Vorschaubild für Ihren Artikel auf Suchresultat-Seiten verwendet</div>
+                    
+                </div>
+                <div class="span9">
                     <div class="productImage img-polaroid mainProductImage">
                         <div class="uploadProgressOverlay">
                             <button class="uploadCancelBtn btn btn-mini">
@@ -109,7 +114,7 @@ $Layout->start();
                             </div>
                         </div>
                         <div class="removeImageOverlay">
-                            <a href="#" class="text-error"><small>Löschen &times;</small></a>
+                            <a href="#" class="text-error"><i class="icon-trash"></i></a>
                             <div class="image-movers">
                                 <div class="btn move-left"></div>
                                 <div class="btn move-right"></div>
@@ -123,10 +128,6 @@ $Layout->start();
                         </div>
                         <img src="img/img_placeholder_90.jpg">
                     </div>
-                    <div class="pull-left mainProductImageTitle optionalField">Dieses Bild wird als Vorschaubild für Ihren Artikel auf Suchresultat-Seiten verwendet</div>
-                    
-                </div>
-                <div class="span9">
                     <div class="productImage img-polaroid">
                         <img src="img/img_placeholder_90.jpg">
                     </div>

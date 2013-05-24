@@ -808,6 +808,7 @@ label {
     position: absolute;
     width: 70px;
     margin: 55px 0 0 -27px;
+    display: none;
 }
 
 .image-movers .btn {
