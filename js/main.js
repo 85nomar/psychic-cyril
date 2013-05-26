@@ -647,6 +647,8 @@ $(document).ready(function() {
 
     imageMovers();
 
+    $('.done .num').html('<img src="/git.psychic-cyril/img/haken.png" />');
+
 });
 
 $(window).load(function(){
@@ -769,6 +771,9 @@ $(window).load(function(){
             });
         });
     }
+
+        
+
 
 maxChars();
 dragAndDrop();

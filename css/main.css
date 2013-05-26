@@ -217,10 +217,11 @@ h1, h2, h3, h4 {
     z-index: 1;
 }
 .stepIndicator > li.done > a {
-    background-color: #A5B937;
+    background-color: #e5e5e5;
+    color:#1946a0;
 }
 .stepIndicator > li.done > a:after {
-    border-color: transparent #A5B937;
+    border-color: transparent #e5e5e5;
 }
 .stepIndicator > li.todo > a {
     background-color: #e5e5e5;
@@ -1332,5 +1333,9 @@ div.charAmount{
 
 span.charsLeft{
     font-weight: bold;
+}
+
+.done img{
+    margin-top: -13px;
 }
 
