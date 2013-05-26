@@ -4,7 +4,7 @@ $Layout -> title = 'Selling';
 $Layout -> start();
 ?>
 
-<h2>Und so wird es aussehen. Sind Sie damit einverstanden?</h2>
+<h2>Und so wird es aussehen. Sind Sie damit einverstanden? <a href="#" class="btn btn-success pull-right btn-large">online stellen</a></h2>
 
 <div class="row-fluid">
     <div class="span3">
@@ -201,7 +201,7 @@ $Layout -> start();
 </div>
 
 <div class="form-actions">
-    <a href="#" class="btn btn-success pull-right btn-large">Artikel erstellen</a>
+    <a href="#" class="btn btn-success pull-right btn-large">online stellen</a>
     <span class="separator muted pull-right separatorFloated"> | </span>
     <label class="checkbox inline pull-right">Ich akzeptiere die AGBs von ricardo.ch
         <input type="checkbox">
