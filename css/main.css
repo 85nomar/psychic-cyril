@@ -1311,3 +1311,26 @@ margin-left: 350px;
 
 /*Editors css END*/
 
+/*****NEW*******/
+
+#urlSaver{
+    display: none;
+}
+
+.droper img:not(.placeholder){
+    cursor:move;
+}
+
+input.charsCount{
+    margin-bottom: 0px !important;
+}
+
+div.charAmount{
+    margin-bottom: 10px;
+    font-size: 10px;
+}
+
+span.charsLeft{
+    font-weight: bold;
+}
+

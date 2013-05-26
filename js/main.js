@@ -648,3 +648,128 @@ $(document).ready(function() {
     imageMovers();
 
 });
+
+$(window).load(function(){
+    function dragAndDrop(e){
+        // Some element definitions
+        var elements = {
+                        cBody : 'body',
+                        containerClass : '.productImage',
+                        draggableImg : '.productImage img',
+                        droper : '.droper',
+        }
+
+        var functions = {
+                        // updates the URL-safer with the urls from image-uploader
+                        updatetUrlSaver :       function(){
+                                                var counter = $('.droper').length;
+                                                console.log(counter);
+                                                for(sprint = 0; sprint < counter; sprint++){
+                                                    imgScr = $('.productImage:eq('+sprint+') img').attr('src');
+                                                    $('#urlSaver').append('<img src="'+imgScr+'" />')
+                                                }
+                                        },
+                        // gets the URLs form URL-saver and transfers them to
+                        getFromUrlSaver :       function(){
+                                                var counter = $('#urlSaver img').length;
+                                                console.log(counter);
+                                                 for(sprint = 0; sprint < counter; sprint++){
+                                                    UrlSaverImgSrc = $('#urlSaver img:eq('+sprint+')').attr('src');
+                                                    $('.productImage:eq('+sprint+') img').attr('src', UrlSaverImgSrc);
+                                                 }
+                                        },
+                        }
+
+    // Drag Start
+    var mypic = $(elements.containerClass);
+        mypic.delegate('img:not(.placeholder)','dragstart',function(e){
+            // empty all images from URLSaver
+            $('#urlSaver').html('');
+            // Update the URLSaver
+            functions.updatetUrlSaver();
+            //set class ondrag
+            $(this).parents('.productImage').addClass('ondragcontainer');
+            //Array for Transfer to drop
+            var transferData = [];
+            //Offsets of Current image
+            var curOffsets = $(this).offset();
+            var curOffsetLeft = curOffsets.left;
+            var curOffsetTop = curOffsets.top;    
+            var img = $(this).attr('src');
+            // Push data to Array
+            transferData.push(curOffsetLeft.toFixed(0), curOffsetTop.toFixed(0), img)
+            //set Value to transfer to dropEvent
+            e.originalEvent.dataTransfer.setData("Text", transferData);
+
+            console.log(transferData[2]);
+        });
+
+        // Dragenter (Not relevant)
+        var dragBox = $('body');
+        dragBox.delegate('.droper','dragenter', function(e){
+            e.preventDefault();
+            console.log('Dragenter checked');
+        });
+
+        // Dragover (Not relevant)
+        dragBox.delegate('.droper','dragover', function(e){
+        e.preventDefault();
+        console.log('Dragover checked');
+        });
+
+        // Drop 
+         dragBox.delegate('.droper','drop', function(e){
+            // rmove Class 'ondragcontainer'
+            $('.ondragcontainer').removeClass('ondragcontainer');
+            //preventDefault
+            e.preventDefault();
+            // Data from Dragstart (Image-SRC)
+            var TransferData = e.originalEvent.dataTransfer.getData("Text");
+            var recivedData = TransferData.split(',');
+            var offsetsDragStart = [recivedData[0], recivedData[1]]
+            // detect offset from image in DropZone
+            var curOffsets = $(this).children('img').offset();
+            var curOffsetLeft = curOffsets.left;
+            var curOffsetTop = curOffsets.top;
+            //Drop handling
+            if (offsetsDragStart[0] < curOffsetLeft && offsetsDragStart[1] == curOffsetTop.toFixed(0) || offsetsDragStart[1] > curOffsetTop.toFixed(0)){
+                // Find url from the img in the dropZone
+                var detectDropZone = $(this).find('img').attr('src');
+                if (detectDropZone != recivedData[2]){
+                    // Find the img in UrlSaver
+                    $('#urlSaver').find("img[src$='"+recivedData[2]+"']").remove();
+                    // set the droped img after the dropZone
+                    $('#urlSaver').find("img[src$='"+detectDropZone+"']").after('<img src="'+recivedData[2]+'" />');
+                    functions.getFromUrlSaver();
+                }
+            }else if(offsetsDragStart[0] > curOffsetLeft && offsetsDragStart[1] == curOffsetTop.toFixed(0) || offsetsDragStart[1] < curOffsetTop.toFixed(0)){   
+                // Find url from the img in the dropZone
+                var detectDropZone = $(this).find('img').attr('src');
+                if (detectDropZone != recivedData[2]){
+                    // Find the img in UrlSaver
+                    $('#urlSaver').find("img[src$='"+recivedData[2]+"']").remove();
+                    // set the droped img after the dropZone
+                    $('#urlSaver').find("img[src$='"+detectDropZone+"']").before('<img src="'+recivedData[2]+'" />');
+                    functions.getFromUrlSaver();
+                }
+
+            }            
+        });
+    }
+    function maxChars(e){
+        $('.charsCount').on('focus', function(){
+            var maxChars =  100;
+            $(this).attr('maxlength',maxChars)
+            
+            $(this).keyup(function(){
+                var counter = $(this).val().length;
+                var charsLeft = maxChars-counter;
+                $(this).attr('maxlength',maxChars)
+                $(this).next('div').children('span.charsLeft').html(charsLeft);
+            });
+        });
+    }
+
+maxChars();
+dragAndDrop();
+});

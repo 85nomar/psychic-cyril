@@ -111,6 +111,28 @@ var ricardoImageUpload = {
         if (node.find(_$this.config.removeImgOverlay).length < 1) {
             removeOverlay.clone(true).prependTo(node);
         }
+
+                var elements = {
+                        cBody : 'body',
+                        containerClass : '.productImage',
+                        draggableImg : '.productImage img',
+                        droper : '.droper',
+
+        }
+
+        $(elements.draggableImg).each(function(){
+            var that = $(this);
+            var imgSrc = that.attr('src');
+            if (imgSrc.indexOf('placeholder') > 0){
+                that.parents(elements.containerClass).removeClass('droper');
+                that.parents(elements.containerClass).addClass('placeholder');
+                that.addClass('placeholder');
+            }else{
+                that.parents(elements.containerClass).addClass('droper');
+                that.parents(elements.containerClass).removeClass('placeholder');
+                that.removeClass('placeholder');
+            }
+        });
     },
     _onImgDelete : function(e) {
         // click handler to remove an image from the collection
@@ -136,6 +158,28 @@ var ricardoImageUpload = {
         node.removeClass(_$this._uploadCompletedClass);
         // move add images overlay to the first element that hasn't an image yet
         $(_$this.config.addImgOverlay).appendTo(_$this._freeNodeSelector);
+
+                var elements = {
+                        cBody : 'body',
+                        containerClass : '.productImage',
+                        draggableImg : '.productImage img',
+                        droper : '.droper',
+
+        }
+
+        $(elements.draggableImg).each(function(){
+            var that = $(this);
+            var imgSrc = that.attr('src');
+            if (imgSrc.indexOf('placeholder') > 0){
+                that.parents(elements.containerClass).removeClass('droper');
+                that.parents(elements.containerClass).addClass('placeholder');
+                that.addClass('placeholder');
+            }else{
+                that.parents(elements.containerClass).addClass('droper');
+                that.parents(elements.containerClass).removeClass('placeholder');
+                that.removeClass('placeholder');
+            }
+        });
     },
     _showRemoveImgOverlay : function(e) {
         $(this).find(_$this.config.removeImgOverlay).show();

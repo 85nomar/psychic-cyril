@@ -28,11 +28,13 @@ $Layout->start();
             <label for="inputTitle">
                 Titel
             </label>
-            <input class="span7" type="text" id="inputTitle" placeholder="Tragen Sie hier die Produktbezeichnung ein">
+            <input class="span7 charsCount" type="text" id="inputTitle" placeholder="Tragen Sie hier die Produktbezeichnung ein" maxlength="100">
+            <div class="charAmount">Verbleibende Zeichen <span class="charsLeft">100</span></div>
             <label for="inputSubtitle">
                 Untertitel <span class="optionalField">NEU: Gratis! <span style="text-decoration:line-through;">CHF 0.90</span> (optional)</span> <i class="icon-info-sign" data-toggle="tooltip" data-placement="right" title="" data-original-title="Test : Brauche Text für dieses Tooltip"></i>
             </label>
-            <input class="span7" type="text" id="inputSubtitle" placeholder="Bewerben Sie ihr Produkt mit einem kurzen Satz">
+            <input class="span7 charsCount" type="text" id="inputSubtitle" placeholder="Bewerben Sie ihr Produkt mit einem kurzen Satz" maxlength="100">
+            <div class="charAmount">Verbleibende Zeichen <span class="charsLeft">100</span></div>
             <label for="inputProductCondition">
                             Zustand des Produkts
             </label>
@@ -57,11 +59,13 @@ $Layout->start();
             <label for="inputTitle">
                 Titre de l'article
             </label>
-            <input class="span7" type="text" id="inputTitle" placeholder="Entrez le nom du produit ici">
+            <input class="span7 charsCount" type="text" id="inputTitle" placeholder="Entrez le nom du produit ici" maxlength="100">
+            <div class="charAmount">Verbleibende Zeichen <span class="charsLeft">100</span></div>
             <label for="inputSubtitle">
                 Sous-titre <span class="optionalField">NOUVEAU: gratuit! <span style="text-decoration:line-through;">CHF 0.90</span> (optional)</span>
             </label>
-            <input class="span7" type="text" id="inputSubtitle" placeholder="Appliquez votre produit avec une courte phrase">  
+            <input class="span7 charsCount" type="text" id="inputSubtitle" placeholder="Appliquez votre produit avec une courte phrase" maxlength="100">  
+            <div class="charAmount">Verbleibende Zeichen <span class="charsLeft">100</span></div>
             <label for="inputProductCondition">
                             Zustand des Produkts
             </label>
@@ -188,4 +192,5 @@ $Layout->start();
 <div class="form-actions">
     <a href="step3.php" class="btn btn-primary pull-right">Weiter zu &laquo;<?php echo $Layout->formNav[2]["title"]; ?>&raquo;</a>
 </div>
+<div id="urlSaver"></div>
 <?php $Layout -> end(); ?>
