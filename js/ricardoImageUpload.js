@@ -149,7 +149,7 @@ var ricardoImageUpload = {
             // move this node to the end of img list (not to the end of mainImg div)
             node.removeClass(_$this.config.mainImgClass).appendTo(_$this.config.imgsContainer + " > div:eq(1)");
             // but take one from img list (not the mainImg)
-            $("." + _$this._uploadCompletedClass + ":first,." + _$this._isUploadingClass + ":first").prependTo(_$this.config.imgsContainer + " > div:first").addClass(_$this.config.mainImgClass);
+            //$("." + _$this._uploadCompletedClass + ":first,." + _$this._isUploadingClass + ":first").prependTo(_$this.config.imgsContainer + " > div:first").addClass(_$this.config.mainImgClass);
         } else {
             node.appendTo(_$this.config.imgsContainer + " > div:eq(1)");
         }
