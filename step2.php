@@ -28,13 +28,13 @@ $Layout->start();
             <label for="inputTitle">
                 Titel
             </label>
-            <input class="span7 charsCount" type="text" id="inputTitle" placeholder="Tragen Sie hier die Produktbezeichnung ein" maxlength="100">
-            <div class="charAmount">Verbleibende Zeichen <span class="charsLeft">100</span></div>
+            <input class="span7 charsCount" type="text" id="inputTitle" placeholder="Tragen Sie hier die Produktbezeichnung ein" maxlength="60">
+            <div class="charAmount">Verbleibende Zeichen <span class="charsLeft">60</span></div>
             <label for="inputSubtitle">
                 Untertitel <span class="optionalField">NEU: Gratis! <span style="text-decoration:line-through;">CHF 0.90</span> (optional)</span> <i class="icon-info-sign" data-toggle="tooltip" data-placement="right" title="" data-original-title="Test : Brauche Text für dieses Tooltip"></i>
             </label>
-            <input class="span7 charsCount" type="text" id="inputSubtitle" placeholder="Bewerben Sie ihr Produkt mit einem kurzen Satz" maxlength="100">
-            <div class="charAmount">Verbleibende Zeichen <span class="charsLeft">100</span></div>
+            <input class="span7 charsCount" type="text" id="inputSubtitle" placeholder="Bewerben Sie ihr Produkt mit einem kurzen Satz" maxlength="40">
+            <div class="charAmount">Verbleibende Zeichen <span class="charsLeft">40</span></div>
             <label for="inputProductCondition">
                             Zustand des Produkts
             </label>

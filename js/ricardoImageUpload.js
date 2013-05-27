@@ -182,9 +182,9 @@ var ricardoImageUpload = {
         });
     },
     _showRemoveImgOverlay : function(e) {
-        $(this).find(_$this.config.removeImgOverlay).show();
+        //$(this).find(_$this.config.removeImgOverlay).show();
     },
     _hideRemoveImgOverlay : function(e) {
-        $(this).find(_$this.config.removeImgOverlay).hide();
+        //$(this).find(_$this.config.removeImgOverlay).hide();
     }
 }
