@@ -780,6 +780,7 @@ $(window).load(function(){
 
 
 function setPaymentCookie(){
+    //set cookie
     $('.option-group .btn').click(function(){
         var selectedOption = $(this).parents('.option-group.selected').children('h4').text();
         if (selectedOption.indexOf('Abholung') > -1){
@@ -787,13 +788,34 @@ function setPaymentCookie(){
         }else{
             setCookie('optionGroup', 'other');
         }
-
     });
-
     var cookieVal = getCookie('optionGroup');
     if (cookieVal == 'Barzahlung'){
+        // Step 4
+        // hide or show the whole labebel
+        if ($('.js-shipping-method option:selected').val().indexOf('10') > -1){
+                $('.js-shipping-costs label').addClass('hide');
+        }else{
+                $('.js-shipping-costs label').removeClass('hide');
+    }   // if cookie value is Barzahlung set the option Abholung dur Käufer as standard.
         $(".js-shipping-method option[value$='-1']").removeAttr('selected');
         $(".js-shipping-method option[value$='10']").attr('selected', true);
+        $('.js-shipping-costs').removeClass('hide');
+        $('.inputShippingCosts').val('0.00');
+        // hide checkbox for free shipping
+        $('.js-shipping-method').on('click', function(){
+            if ($('.js-shipping-method option:selected').val().indexOf('10') > -1){
+                $('.js-shipping-costs label').addClass('hide');
+            }else{
+                $('.js-shipping-costs label').removeClass('hide');
+
+            }
+        });
+        // Step 3
+        $(".option-group:eq(1)").addClass('active selected');
+        $(".option-group:eq(1) .btn").addClass('active');
+
+
     }
 }
 
