@@ -16,28 +16,28 @@ $Layout -> start();
             <label for="none">
               <input type="radio" name="adWindow" value="none" id="none" checked="checked" />
               <i class="icon-ok icon-white"></i>
-              <span class="value">nie</span>
+              <span class="value">Nie</span>
              </label>
           </div>
           <div class="option">
             <label for="bronce">
               <input type="radio" name="adWindow" value="bronce" id="bronce" />
               <i class="icon-ok icon-white"></i>
-              <span class="value">selten (Bronze)</span>
+              <span class="value">3x weniger</span>
               <img src="img/push01.png" width="75" height="55" /></label>
           </div>
           <div class="option">
             <label for="silver">
               <input type="radio" name="adWindow" value="silver" id="silver" />
               <i class="icon-ok icon-white"></i>
-              <span class="value">oft (Silber)</span>
+              <span class="value">Standard CHF 5.00</span>
               <img src="img/push05.png" width="75" height="55" /></label>
           </div>
           <div class="option">
             <label for="gold">
               <input type="radio" name="adWindow" value="gold" id="gold" />
               <i class="icon-ok icon-white"></i>
-              <span class="value">sehr oft (Gold)</span>
+              <span class="value">4x mehr</span>
               <img src="img/push20.png" width="75" height="55" /></label>
           </div>
         </div>
