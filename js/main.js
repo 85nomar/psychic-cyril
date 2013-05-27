@@ -647,7 +647,7 @@ $(document).ready(function() {
 
     imageMovers();
 
-    $('.done .num').html('<img src="/git.psychic-cyril/img/haken.png" />');
+    $('.done .num').html('<img src="img/haken.png" />');
 
 });
 
