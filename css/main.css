@@ -1380,7 +1380,10 @@ label[for='silver'] .value{
     color: white;
     font-size: 14px;
     font-weight: bold;
-    width:200px !important;
+    width:150px !important;
 }
 
 
+.sash{
+    display:none;
+}
