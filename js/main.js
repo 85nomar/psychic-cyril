@@ -778,9 +778,27 @@ $(window).load(function(){
         });
     }
 
-        
+
+function setPaymentCookie(){
+    $('.option-group .btn').click(function(){
+        var selectedOption = $(this).parents('.option-group.selected').children('h4').text();
+        if (selectedOption.indexOf('Abholung') > -1){
+            $.cookie('optionGroup', 'Barzahlung');
+        }else{
+            $.cookie('optionGroup', 'other');
+        }
+    });
+
+    var cookieVal = $.cookie('optionGroup');
+    if (cookieVal == 'Barzahlung'){
+        $(".js-shipping-method option[value$='10']").attr('selected', true)
+    }
+}
+
 
 
 maxChars();
 dragAndDrop();
+setPaymentCookie();
+
 });
