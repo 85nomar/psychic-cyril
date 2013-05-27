@@ -740,7 +740,7 @@ $(window).load(function(){
             var curOffsetLeft = curOffsets.left;
             var curOffsetTop = curOffsets.top;
             //Drop handling
-            if (offsetsDragStart[0] < curOffsetLeft && offsetsDragStart[1] == curOffsetTop.toFixed(0) || offsetsDragStart[1] < curOffsetTop.toFixed(0)){
+            if (offsetsDragStart[0] < curOffsetLeft && offsetsDragStart[1] == curOffsetTop.toFixed(0) || offsetsDragStart[1] > curOffsetTop.toFixed(0)){
                 // Find url from the img in the dropZone
                 var detectDropZone = $(this).find('img').attr('src');
                 if (detectDropZone != recivedData[2]){
@@ -750,7 +750,7 @@ $(window).load(function(){
                     $('#urlSaver').find("img[src$='"+detectDropZone+"']").after('<img src="'+recivedData[2]+'" />');
                     functions.getFromUrlSaver();
                 }
-            }else if(offsetsDragStart[0] > curOffsetLeft && offsetsDragStart[1] == curOffsetTop.toFixed(0) || offsetsDragStart[1] > curOffsetTop.toFixed(0)){   
+            }else if(offsetsDragStart[0] > curOffsetLeft && offsetsDragStart[1] == curOffsetTop.toFixed(0) || offsetsDragStart[1] < curOffsetTop.toFixed(0)){   
                 // Find url from the img in the dropZone
                 var detectDropZone = $(this).find('img').attr('src');
                 if (detectDropZone != recivedData[2]){
