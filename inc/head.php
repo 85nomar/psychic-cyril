@@ -22,7 +22,6 @@
         <script src="lib/js/fileupload/jquery.fileupload.js"></script>
         <script src="js/ricardoImageUpload.js"></script>
         <script src="lib/js/tinymce/js/tinymce/tinymce.min.js"></script>
-        <script src="lib/js/jquery-cookies/jquery.cookie.js"></script>
         <script type="text/javascript">
         tinymce.init({
             selector: "#singleEditor .tinymce",

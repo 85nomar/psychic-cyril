@@ -783,15 +783,17 @@ function setPaymentCookie(){
     $('.option-group .btn').click(function(){
         var selectedOption = $(this).parents('.option-group.selected').children('h4').text();
         if (selectedOption.indexOf('Abholung') > -1){
-            $.cookie('optionGroup', 'Barzahlung');
+            setCookie('optionGroup', 'Barzahlung');
         }else{
-            $.cookie('optionGroup', 'other');
+            setCookie('optionGroup', 'other');
         }
+
     });
 
-    var cookieVal = $.cookie('optionGroup');
+    var cookieVal = getCookie('optionGroup');
     if (cookieVal == 'Barzahlung'){
-        $(".js-shipping-method option[value$='10']").attr('selected', true)
+        $(".js-shipping-method option[value$='-1']").removeAttr('selected');
+        $(".js-shipping-method option[value$='10']").attr('selected', true);
     }
 }
 
