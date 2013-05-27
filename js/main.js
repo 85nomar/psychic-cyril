@@ -790,12 +790,6 @@ function setPaymentCookie(){
         }
     });
 
-    if ($('.js-shipping-method option:selected').val().indexOf('10') > -1){
-                $('.js-shipping-costs .checkbox').addClass('hide');
-                console.log('something2');
-        }else{
-                $('.js-shipping-costs .checkbox').removeClass('hide');
-            }
     var cookieVal = getCookie('optionGroup');
     if (cookieVal == 'Barzahlung'){
     // Step 4
@@ -813,7 +807,7 @@ function setPaymentCookie(){
             }
         });
         // hide checkbox for free shipping
-        if ($('.js-shipping-method option:selected').val().indexOf('10') > -1){
+        if ($('.js-shipping-method').length != 0 && $('.js-shipping-method option:selected').val().indexOf('10') > -1){
                 $('.js-shipping-costs .checkbox').addClass('hide');
                 console.log('something2');
         }else{
