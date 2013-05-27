@@ -625,7 +625,7 @@ input[type="radio"].toggle:checked + label {
 						}
 
 #listingPaymentConditions .option-group {
-    height: 160px;
+    height: 195px;
     border-radius: 5px;
     border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -1336,5 +1336,44 @@ span.charsLeft{
 
 .done img{
     margin-top: -13px;
+}
+
+.option-group .btn{
+    width: 180px !important;
+    height: 130px; 
+    text-align: left;
+
+
+}
+
+.ricardoPayList{
+    list-style:disc inside none;
+    margin:3px 0 3px 0;
+}
+
+.ricardoPayList li{
+    line-height: 12px;
+}
+
+small.smaller{
+    font-size: 9px;
+}
+.option-group textarea{
+margin: 5px 0px 10px;
+width: 108%;
+height: 91px;
+margin-left: -13px;
+}
+
+.span6.option-group{
+    width: 404px;
+}
+
+.option label[for='silver']{
+    background-color: #f29106 !important;
+    width: 400px;
+    margin-left: -30px;
+    box-shadow: 0 0 8px;
+
 }
 

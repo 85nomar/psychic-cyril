@@ -137,33 +137,39 @@ $Layout -> start();
         </fieldset>
         <fieldset class="well" id="listingPaymentConditions">
             <div class="row-fluid">
-                <aside class="span3 ricardopay-info-box">
+                <!--<aside class="span3 ricardopay-info-box">
                     <p><img title="ricardopay – einfach sicher" style="margin: 0" alt="ricardopay – einfach sicher" src="img/ricardo-pay.png">
                     </p>
                     <p>
                         <a href="#" id="ricardopayInfo">Wie funktioniert ricardopay?</a>
                     </p>
-                </aside>
-                <div class="span9">
+                </aside>-->
+                <div class="span12">
 
                     <label for="paymentConditions">Zu welchem Zeitpunkt möchten Sie, dass der Kunde bezahlt?</label>
                     <div class="row-fluid">
-                        <div class="span4 option-group">
+                        <div class="span6 option-group">
                             <h4>Zahlung im Voraus</h4>
                             <div>
-                                <button class="btn">
-                                    <i class="icon-remove"></i>RicardoPay
+                                <button class="btn" style="float:left"> 
+                                    <img title="ricardopay – einfach sicher" style="margin: 0" alt="ricardopay – einfach sicher" src="img/ricardo-pay.png"><br />
+                                    <small>Käuferschutz bis CHF 500.-</small>
                                     <br />
-                                    <small>einfach sicher</small>
+                                    <ul class="ricardoPayList">
+                                        <li><small class="smaller">Per Rechnung</small></li>
+                                        <li><small class="smaller">Per ricardo-Guthaben</small></li>
+                                        <li><small class="smaller">Per Kreditkarte:</small></li>
+                                    </ul>
+                                    <img src="img/creditcards.png" />
                                 </button>
-                                <button class="btn">
+                                <button class="btn" style="float:right">
                                     <i class="icon-remove"></i>Bank / Post
                                     <br />
                                     <small>(2-3 Tage)</small>
                                 </button>
                             </div>
                         </div>
-                        <div class="span4 option-group">
+                        <div class="span3 option-group">
                             <h4>Zahlung bei Abholung</h4>
                             <div>
                                 <button class="btn">
@@ -171,17 +177,12 @@ $Layout -> start();
                                 </button>
                             </div>
                         </div>
-                        <div class="span4 option-group">
-                            <h4>Zahlung nach Erhalt</h4>
+                        <div class="span3 option-group">
+                            <h4>Sonstige</h4>
                             <div>
                                 <button class="btn">
-                                    Rechnung innert 7 Tagen
-                                </button>
-                                <button class="btn">
-                                    Rechnung innert 14 Tagen
-                                </button>
-                                <button class="btn">
-                                    Rechnung innert 30 Tagen
+                                    Gemäss Beschreibung
+                                    <textarea></textarea>
                                 </button>
                             </div>
                         </div>
