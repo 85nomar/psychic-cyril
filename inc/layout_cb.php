@@ -11,24 +11,24 @@ class Layout_cb
             'title'=>'Kategorie',
         ),
         array(
-            'url'=>'step2',
+            'url'=>'step2cb',
             'step'=> '2',
-            'title'=>'Beschreibung',
+            'title'=>'Details',
         ),
         array(
-            'url'=>'step3',
+            'url'=>'step2',
             'step'=> '3',
-            'title'=>'Preis & Dauer',
+            'title'=>'Beschreibung',
         ),
         array(
             'url'=>'step4',
             'step'=> '4',
-            'title'=>'Versand',
+            'title'=>'Preis & Dauer',
         ),
         array(
             'url'=>'step5',
             'step'=> '5',
-            'title'=>'Werbung',
+            'title'=>'Anzeigefenster',
         ),
         array(
             'url'=>'step6',
