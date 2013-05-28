@@ -16,7 +16,7 @@ $Layout_cb -> nav_cb();
                     <label for="auctionType">Wie möchten Sie Ihr Produkt verkaufen?</label>
 
                     <input class="toggle" type="radio" name="toggle" id="toggle-auction" value="option1" data-target="#auctionPricing" checked>
-                    <label class="btn span3" for="toggle-auction"> <i class="icon-remove"></i> <h4>Auktion</h4>
+                    <label class="btn span3" for="toggle-auction"> <i class="icon-select"></i> <h4>Auktion</h4>
                         <ul>
                             <li>
                                 Der Markt bestimmt den Preis
@@ -32,7 +32,7 @@ $Layout_cb -> nav_cb();
                     <span class="seperator"> oder </span>
 
                     <input class="toggle" type="radio" name="toggle" id="toggle-fixedPriceOffer" data-target="#fixedPricePricing" value="option2">
-                    <label class="btn span3" for="toggle-fixedPriceOffer"> <i class="icon-remove"></i> <h4>Fixpreis-Angebot</h4>
+                    <label class="btn span3" for="toggle-fixedPriceOffer"> <i class="icon-select"></i> <h4 class="core accessory">Fixpreis-Angebot</h4><h4 class="cars">Anzeige</h4>
                         <ul>
                             <li>
                                 Sie bestimmen den Preis
@@ -152,8 +152,9 @@ $Layout_cb -> nav_cb();
                     <div class="row-fluid">
                         <div class="span6 option-group">
                             <h4>Zahlung im Voraus</h4>
-                            <div>
-                                <button class="btn" style="float:left"> 
+                            <div class="span12">
+                                <div class="btn span6" style="float:left"> 
+                                    <i class="icon-select"></i>
                                     <img title="ricardopay – einfach sicher" style="margin: 0" alt="ricardopay – einfach sicher" src="img/ricardo-pay.png"><br />
                                     <small>Käuferschutz bis CHF 500.-</small>
                                     <br />
@@ -163,29 +164,31 @@ $Layout_cb -> nav_cb();
                                         <li><small class="smaller">Per Kreditkarte:</small></li>
                                     </ul>
                                     <img src="img/creditcards.png" />
-                                </button>
-                                <button class="btn" style="float:right">
-                                    <i class="icon-remove"></i>Bank / Post
+                                </div>
+                                <div class="btn span6" style="float:right">
+                                    <i class="icon-select"></i>
+                                    Bank / Post
                                     <br />
                                     <small>(2-3 Tage)</small>
-                                </button>
+                                </div>
                             </div>
                         </div>
                         <div class="span3 option-group">
                             <h4>Zahlung bei Abholung</h4>
-                            <div>
-                                <button class="btn">
-                                    <i class="icon-remove"></i>Barzahlung
-                                </button>
+                            <div class="span12">
+                                <div class="btn span12">
+                                    <i class="icon-select"></i>
+                                    Barzahlung
+                                </div>
                             </div>
                         </div>
                         <div class="span3 option-group">
                             <h4>Sonstige</h4>
-                            <div>
-                                <button class="btn">
+                            <div class="span12 likeDescription">
+                                <div class="btn span12">
                                     Gemäss Beschreibung
                                     <textarea></textarea>
-                                </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -205,7 +208,7 @@ $Layout_cb -> nav_cb();
 </form>
 
 <div class="form-actions">
-    <a href="step4.php" class="btn btn-primary pull-right">Weiter zu &laquo;<?php echo $Layout->formNav[3]["title"]; ?>&raquo;</a>
+    <a href="step4.php" class="btn btn-primary pull-right core asseccory">Weiter zu &laquo;<?php echo $Layout->formNav[3]["title"]; ?>&raquo;</a><a href="step5.php" class="btn btn-primary pull-right cars">Weiter zu &laquo;<?php echo $Layout->formNav[4]["title"]; ?>&raquo;</a>
 </div>
 
 <div id="modalRicardoPay" class="modal hide fade">
