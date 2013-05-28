@@ -28,10 +28,10 @@ class Layout_cb
         array(
             'url'=>'step5',
             'step'=> '5',
-            'title'=>'Anzeigefenster',
+            'title'=>'Optionen',
         ),
         array(
-            'url'=>'step6',
+            'url'=>'step6cb',
             'step'=> '6',
             'title'=>'Übersicht',
         )

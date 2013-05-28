@@ -347,13 +347,14 @@ $Layout_cb -> nav_cb();
 </form>
 
 <div class="form-actions">
-    <a href="step6.php" class="btn btn-primary pull-right" id="prelogin">Weiter & Anmelden</a>
+    <a href="step6.php" class="btn btn-primary pull-right core accessory" id="prelogin">Weiter & Anmelden</a>
+    <a href="step6cb.php" class="btn btn-primary pull-right cars">Weiter & Anmelden</a>
 </div>
 
 <div id="modalLogin" class="modal hide fade">
 	<div class="modal-header">
 		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-		<h3>Auf ricardo.ch einloggen</h3>
+		<h3>Auf autoricardo.ch einloggen</h3>
 	</div>
 	<div class="modal-body">
 	<!-- Modal-Body Start-->

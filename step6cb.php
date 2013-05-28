@@ -12,7 +12,7 @@ $Layout_cb -> nav_cb();
     <div class="span3">
         <div id="articlePreview" class="row-fluid">
             <div class="span12">
-                <img src="img/articlePreview_tmb.png">
+                <img src="img/articlePreview_cars_tmb.jpg">
                 <a href="#" class="btn"><i class="icon-share icon-blue"></i> Vorschau anzeigen</a>
             </div>
         </div>
@@ -32,21 +32,87 @@ $Layout_cb -> nav_cb();
     <div class="span9">
         <form class="form-horizontal">
             <fieldset class="well">
-                <ul class="breadcrumb pull-left">
-                    <li>
-                        <a href="#">Computer & Elektronik</a><span class="divider">/</span>
-                    </li>
-                    <li>
-                        <a href="#">Smartphones</a><span class="divider">/</span>
-                    </li>
-                    <li class="active">
-                        I-Phone
-                    </li>
-                </ul>
-                <a href="step1.php" class="btn pull-right">Kategorie ändern</a>
+                <h3> Details </h3>
+                <div class="row-fluid">
+                    <div class="span10">
+                        <div class="row-fluid">
+                            <table class="table table-condensed table-first-column-title">
+                                <tbody>
+                                    <tr>
+                                        <td class="span5">Aufbauart</td>
+                                        <td class="span7">Limousine </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Treibstoff</td>
+                                        <td>Benzin bleifrei </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Türen</td>
+                                        <td> 5 </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Leistung PS</td>
+                                        <td>115 PS</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="span5">Getriebeart</td>
+                                        <td class="span7">Schaltgetriebe </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Erstzulassung</td>
+                                        <td>02.2012</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Typenschein-Nummer</td>
+                                        <td>1VD227</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Kilometerstand</td>
+                                        <td>73'000</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="span5">Fahrzeugart</td>
+                                        <td class="span7">Occasion </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Aussenfarbe</td>
+                                        <td>blue</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Innenfarbe</td>
+                                        <td>black</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Garantie</td>
+                                        <td>12 Monate</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ab Mfk</td>
+                                        <td>03.2013</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Zusätzliche Informationen</td>
+                                        <td>Tuning, Set mit 8 Reifen, Nichtraucher-Fahrzeug</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Standard Ausstattung</td>
+                                        <td><a href="step2cb.php">Siehe Auswahl in Schritt 2</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Optionale Ausstattung</td>
+                                        <td><a href="step2cb.php">Siehe Auswahl in Schritt 2</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="span2 text-right">
+                        <a href="step2cb.php" class="btn"> Bearbeiten </a>
+                    </div>
+                </div>
             </fieldset>
             <fieldset class="well">
-                <h3> Produkt-Details </h3>
+                <h3> Beschreibung </h3>
                 <div class="row-fluid">
                     <div class="span10">
                         <div class="row-fluid">
@@ -54,19 +120,19 @@ $Layout_cb -> nav_cb();
                                 <tbody>
                                     <tr>
                                         <td class="span5">Sprache</td>
-                                        <td class="span7"> Deutsch </td>
+                                        <td class="span7">Deutsch</td>
                                     </tr>
                                     <tr>
                                         <td>Titel</td>
-                                        <td> i-Phone 3 GS black 16 GB </td>
+                                        <td>Gold 1.6 FSI Comfort</td>
                                     </tr>
                                     <tr>
                                         <td>Untertitel</td>
-                                        <td> Neues I-Phone, das einzig wahre </td>
+                                        <td>Lorum ipsum doloresLorum ipsum dolores Lorum ipsum dolores</td>
                                     </tr>
                                     <tr>
                                         <td>Beschreibung</td>
-                                        <td>Lorum ipsum dolores Lorum ipsum dolores Lorum ipsum dolores Lorum ipsum doloresLorum ipsum dolores Lorum ipsum dolores</td>
+                                        <td>Lorum ipsum doloresLorum ipsum dolores Lorum ipsum dolores</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -85,20 +151,20 @@ $Layout_cb -> nav_cb();
                             <table class="table table-condensed table-first-column-title">
                                 <tbody>
                                     <tr>
-                                        <td class="span5">Einstellen als</td>
-                                        <td class="span7">Auktion</td>
+                                        <td class="span5">Art der Anzeige</td>
+                                        <td class="span7">Auktion </td>
                                     </tr>
                                     <tr>
-                                        <td>Startpreis</td>
-                                        <td>CHF 150.-</td>
+                                        <td >Startpreis</td>
+                                        <td >CHF 19'000.00</td>
                                     </tr>
                                     <tr>
                                         <td>Erhöhungsschritt</td>
-                                        <td>CHF 1.-</td>
+                                        <td>CHF 1.00</td>
                                     </tr>
                                     <tr>
                                         <td>Sofortkaufenpreis</td>
-                                        <td>CHF 300.-</td>
+                                        <td>CHF 25'000.00</td>
                                     </tr>
                                     <tr>
                                         <td>Akzeptierte Zahlungskonditionen</td>
@@ -106,11 +172,19 @@ $Layout_cb -> nav_cb();
                                     </tr>
                                     <tr>
                                         <td>Akzeptierte Zahlungsmittel</td>
-                                        <td>Ricardo Pay, Bar</td>
+                                        <td>Bar</td>
                                     </tr>
                                     <tr>
-                                        <td>Startet am und endet am</td>
-                                        <td>4. April 2013 13:45 | 10. April 2013 15:20</td>
+                                        <td>Startet am</td>
+                                        <td>3. May 2013 13:45</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Endet am</td>
+                                        <td>10. May 2013 13:45</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Reaktivierung</td>
+                                        <td>Nein</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -121,31 +195,7 @@ $Layout_cb -> nav_cb();
                     </div>
                 </div>
             </fieldset>
-            <fieldset class="well">
-                <h3> Versand-Optionen </h3>
-                <div class="row-fluid">
-                    <div class="span10">
-                        <div class="row-fluid">
-                            <table class="table table-condensed table-first-column-title">
-                                <tbody>
-                                    <tr>
-                                        <td class="span5">Lieferbar </td>
-                                        <td class="span7">sofort</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Mögliche Versand-Optionen</td>
-                                        <td>Brief A-Post (2.40 CHF) | Brief B-Post (1.50 CHF)</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="span2 text-right">
-                        <a href="step4.php" class="btn"> Bearbeiten </a>
-                    </div>
-                </div>
-            </fieldset>
-            <h3>Gebühren-Zusammenstellung</h3>
+            <h3>Gebühren</h3>
             <table class="table table-condensed table-striped" style="display:none;">
                 <tbody>
                     <tr>
@@ -182,19 +232,23 @@ $Layout_cb -> nav_cb();
                 <tbody>
                     <tr>
                         <td>Einstellgebüren</td>
-                        <td colspan="2">0.05 CHF</td>
+                        <td colspan="2">00.05 CHF</td>
                     </tr>
                     <tr>
-                        <td>Sofortkaufen-Option</td>
-                        <td colspan="2">1.00 CHF</td>
+                        <td>Option Top-Angebot Resultatseite</td>
+                        <td colspan="2">05.00 CHF</td>
                     </tr>
                     <tr>
-                        <td>Anzeigefenster silber</td>
-                        <td colspan="2">5.00 CHF</td>
+                        <td>Option Farbiger Hintergrund</td>
+                        <td colspan="2">10.00 CHF</td>
+                    </tr>
+                    <tr>
+                        <td>Option Startseite</td>
+                        <td colspan="2">60.00 CHF</td>
                     </tr>
                     <tr>
                         <td>Total</td>
-                        <td colspan="2">6.05 CHF</td>
+                        <td colspan="2">75.05 CHF</td>
                     </tr>
                 </tbody>
             </table>
@@ -220,7 +274,7 @@ $Layout_cb -> nav_cb();
     <div class="modal-body">
         <!-- Modal-Body Start-->
 
-        <img src="img/articlePreview.png">
+        <img src="img/articlePreview_cars.jpg">
 
         <!-- Modal-Body End-->
         <span class="clear"></span>

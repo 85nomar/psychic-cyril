@@ -55,11 +55,10 @@ $(document).ready(function() {
 	}
 	
 	$('.form-actions .btn').click(function(event){
-		event.preventDefault();
 		if($(this).hasClass('btn-disabled')==false){
-			window.location.href = $(this).attr('href');
 		}
 		else {
+		    event.preventDefault();
 			console.log('click not allowed');
 		}
 	});
@@ -124,13 +123,18 @@ $(document).ready(function() {
 		event.preventDefault()				
 		thisView   = getCookie('view');
 		targetView = $(this).attr('data-view');
+		$(this).addClass("selected");
 		
 		if (thisView != targetView){
+		    $('#carsCatSelector a').removeClass("selected");
+		    $(this).addClass("selected");
 			setCookie('view', $(this).attr('data-view'));
 			setCookie('catg', $(this).index());
 			location.reload();
 		}
 		else {
+		    $('#carsCatSelector a').removeClass("selected");
+		    $(this).addClass("selected");
 			target='.catSelect.'+thisView;
 			$(target).collapse('show');
 		}        
