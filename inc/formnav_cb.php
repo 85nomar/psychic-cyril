@@ -1,4 +1,4 @@
-<nav id="formNav cars">
+<nav id="formNav" class="cars">
     <ol class="stepIndicator nav nav-pills">
         <?php 
             $thisNav = $this->formNav;

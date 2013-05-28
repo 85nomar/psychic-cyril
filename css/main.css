@@ -1432,4 +1432,11 @@ label[for='silver'] .value{
 img.specialHover{
     box-shadow: 0 0 8px gray;
     border-radius: 3px;
+    cursor: pointer;
+}
+
+.hovered{
+    position: absolute;
+    top: 50px;
+    margin-left: -400px;
 }
