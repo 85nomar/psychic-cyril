@@ -61,13 +61,13 @@ $Layout_cb -> nav_cb();
             <label for="inputTitle">
                 Titre de l'article
             </label>
-            <input class="span7 charsCount" type="text" id="inputTitle" placeholder="Entrez le nom du produit ici" maxlength="100">
-            <div class="charAmount">Verbleibende Zeichen <span class="charsLeft">100</span></div>
+            <input class="span7 charsCount" type="text" id="inputTitle" placeholder="Entrez le nom du produit ici" maxlength="60">
+            <div class="charAmount">Verbleibende Zeichen <span class="charsLeft">60</span></div>
             <label for="inputSubtitle">
                 Sous-titre <span class="optionalField">NOUVEAU: gratuit! <span style="text-decoration:line-through;">CHF 0.90</span> (optional)</span>
             </label>
-            <input class="span7 charsCount" type="text" id="inputSubtitle" placeholder="Appliquez votre produit avec une courte phrase" maxlength="100">  
-            <div class="charAmount">Verbleibende Zeichen <span class="charsLeft">100</span></div>
+            <input class="span7 charsCount" type="text" id="inputSubtitle" placeholder="Appliquez votre produit avec une courte phrase" maxlength="40">  
+            <div class="charAmount">Verbleibende Zeichen <span class="charsLeft">40</span></div>
             <label for="inputProductCondition">
                             Zustand des Produkts
             </label>

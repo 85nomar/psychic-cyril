@@ -6,7 +6,7 @@ $Layout -> start();
 $Layout_cb -> nav_cb();
 ?>
 
-<h2>Und so wird es aussehen. Sind Sie damit einverstanden? <a href="#" class="btn btn-success pull-right btn-large">online stellen</a></h2>
+<h2>Und so wird es aussehen. Sind Sie damit einverstanden?</h2>
 
 <div class="row-fluid">
     <div class="span3">
