@@ -43,10 +43,18 @@ h1, h2, h3, h4 {
 	-webkit-column-width: 200px;
 	margin:0;
 	}
-
+	
 .optionList li{
+	/*width:200px;*/
 	position:relative;
+	/*float:left;*/
+	break-inside: avoid-column;
+  -webkit-column-break-inside: avoid;
+	list-style:none;
 	}
+
+/*.optionList li{
+	}*/
 	
 	
 .optionList i {
@@ -85,7 +93,7 @@ h1, h2, h3, h4 {
 	background-color: #fff;
 	background-image: url("https://pics.ricardostatic.ch/contents/ch/assets/images/ricardo_icons_green.png");
 	background-position: -288px 0;
-	border-color: #fff !important;
+	border-color: #a6b825 !important;
 }
 
 .btn-square-icon {
@@ -148,6 +156,10 @@ h1, h2, h3, h4 {
 .collapse-heading {
 	padding: 5px 15px;
 	border-radius: 5px;
+}
+
+.accordion-inner {
+	background-color:#fff;
 }
 
 .ricardopay-info-box {
@@ -558,6 +570,28 @@ h1, h2, h3, h4 {
 	
 #userSelectionDetail dl{
 	margin:0;
+	}
+	
+#standardEquipement .optionList, #standardFeatureAcc .optionList, #optionalEquipement .optionList, #optionalFeatureAcc .optionList {
+	clear: both;
+	column-count: 2;
+	column-gap: 10px;
+	/*column-width: 290px;*/
+	-moz-column-count: 2;
+	-moz-column-gap: 10px;
+	/*-moz-column-width: 290px;*/
+	-webkit-column-count: 2;
+	-webkit-column-gap: 10px;
+	/*-webkit-column-width: 290px;*/
+	margin:0;
+	}
+	
+#standardEquipement .optionList, #optionalEquipement .optionList {
+	width: 750px;
+	}
+ #standardFeatureAcc .optionList li, #optionalFeatureAcc .optionList li {
+	float: left;
+	width: 290px;
 	}
 
 /* +++++++++++++++++++++++++ Step3 +++++++++++++++++++++++++ */

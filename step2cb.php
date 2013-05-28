@@ -203,7 +203,49 @@ $Layout_cb -> nav_cb();
       </div>
     </div>
   </div>
-  <div class="row-fluid">
+  <script>
+		function customCheckList(target){
+			$(target).find('.optionList input:checked').parent().addClass('selected');
+			$(target).find('.optionList label').each(function(){
+				$(this).click(function(){
+					$(this).parent().toggleClass('selected').find('input').attr('checked','checked');
+				});
+			});
+		}
+		
+		function limitList(target,limit,threshold){
+			
+			var listTarget = $(target).find('ul');
+			
+			listTarget.each(function(){
+				var listLength = $(this).children('li').size();				
+				if (listLength > threshold) {				
+					for (i=0;i < listLength;i++){
+						if(i>=limit){
+							$(this).children('li').eq(i).addClass('hiddenFirst');
+						}
+					}					
+					$(this).after('<div class="listLimiter"> <a href="#" class="btn btn-small pull-right"><i class="icon-chevron-down"></i> alle anzeigen ('+listLength+')</a></div>');
+				}			
+			});
+			$('.listLimiter .btn').click(function(event) {
+				event.preventDefault();
+				hiddenList = $(this).parent().prev();				
+				hiddenList.find('li.hiddenFirst').each(function(index) {
+					$(this).delay(100 * index - 3).fadeIn(150);
+				});
+				$(this).parent().hide();
+				
+      });
+		}
+		
+  	$(document).ready(function(e) {
+      customCheckList('#additionalEquipement, #standardEquipement, #standardFeatureAcc, #optionalEquipement, #optionalFeatureAcc');
+			//limitList('#standardEquipement',2,2);
+			//limitList('#optionalEquipement',4,6);
+    });
+  </script>
+  <div class="row-fluid" id="additionalEquipement">
     <div class="span12 well">
    		<div class="control-group">
         <label class="control-label">Zusätzliche Ausstattung <span class="optionalField">(optional)</span></label>
@@ -254,6 +296,977 @@ $Layout_cb -> nav_cb();
       </div>
     </div>
   </div>
+  
+  <div class="row-fluid" id="standardEquipement">
+    <div class="span12 well">
+   		<div class="control-group">
+        <label class="control-label">Standard Ausstattung <span class="optionalField">(optional)</span></label>
+        
+        <div class="controls">
+          <ul class="optionList">
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Komfortfahrwerk</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Antriebsschlupfregelung (ASR)</label>
+            </li>
+            
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Fahrdynamik Paket</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Elektronisches Stabilitäts-Programm (ESP) mit Berganfahrassistent</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">4 Rad Lenkung</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Multifunktionslenkrad mit Tempomat</label>
+            </li>
+            
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Tempomat inkl. SPEEDTRONIC</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Bordcomputer im Fond</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Media Interface</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Parkassistent vorne und hinten</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Servolenkung</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Dach in Wagenfarbe</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Aussenspiegelpaket</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Elektrisches Schiebe-/Hebedach</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Komfortschlüssel inklusive sensorgesteuerter Gepäckraumentriegelung</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Leichtmetallräder im 6-Speichen-Design<</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Seitenschutzleisten in Wagenfarbe</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Chrom-Paket</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">ABS, EBD<BR>mit elektronischer Bremskraftverteilung</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Winterkomplettradsatz</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Fernlichtassistent</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Bi-Xenon-Lichtanlage mit automatischer<BR>Leuchtweitenregulierung inkl.Kurvenlicht</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Winter-Paket</label>
+            </li>
+          </ul>
+        </div>
+        
+        <a href="#modalStandardFeatures" role="button" class="btn btn-small pull-right" data-toggle="modal">alle anzeigen</a>
+          
+      </div>
+    </div>
+  </div>
+  
+  <div class="row-fluid" id="optionalEquipement">
+    <div class="span12 well">
+   		<div class="control-group">
+        <label class="control-label">Optionale Ausstattung <span class="optionalField">(optional)</span></label>
+        
+        <h4>Antrieb / Fahrwerk</h4>
+        <div class="controls">
+          <ul class="optionList">
+            
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Fahrdynamik Paket</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Motorschutzblech</label>
+            </li>
+            
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Auspuffendrohr Sport Design</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Antriebsschlupfregelung (ASR)</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Instrumentenbeleuchtung, regelbar</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Farbige Zifferblätter</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Multifunktionsanzeige 'Plus'</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Bordinstrumente mit weisser Beleuchtung<BR>und Multifunktionsdisplay</label>
+            </li>            
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Parksensoren vorne und hinten lackiert</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Gurtstatusanzeige fnr Fondsitze</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">iPod + USB Anschluss</label>
+            </li>    
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Blinker in Aussenspiegel</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Elektrisches Schiebe-/Hebedach</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Dach in Wagenfarbe</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Colorverglasung</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Rücksitze geteilt abklappbar</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Seitenschutzleisten in Wagenfarbe</label>
+            </li> 
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Fernlichtassistent</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Drittes Bremslicht LED</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Automatische StabilitSts-Control (ASC)</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Winterkomplettradsatz</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Leder-Paket</label>
+            </li>
+          </ul>
+        </div>
+        
+        <a href="#modalOptionalFeatures" role="button" class="btn btn-small pull-right" data-toggle="modal">alle anzeigen</a>
+          
+      </div>
+    </div>
+  </div>
+  
+<div id="modalStandardFeatures" class="modal hide fade">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		<h3>Standard Austattung</h3>
+	</div>
+	<div class="modal-body">
+	<!-- Modal-Body Start-->
+  
+  	<div class="accordion" id="standardFeatureAcc">
+    
+     <div class="accordion-group">
+      <div class="accordion-heading">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#standardFeatureAcc" href="#collapse11">Antrieb / Fahrwerk</a>
+      </div>
+      <div id="collapse11" class="accordion-body collapse in">
+        <div class="accordion-inner">
+          <ul class="optionList">
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Auspuffendrohr Sport Design</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Auspuffblende</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Komfortfahrwerk</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Antriebsschlupfregelung (ASR)</label>
+            </li>
+            
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Fahrdynamik Paket</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Elektronisches Stabilitäts-Programm (ESP) mit Berganfahrassistent</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">4 Rad Lenkung</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Motorschutzblech</label>
+            </li>
+          </ul>
+        </div>
+      </div>
+     </div>
+    
+     <div class="accordion-group">
+      <div class="accordion-heading">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#standardFeatureAcc" href="#collapse12">Audio / Kommunikation / Instrumente</a>
+      </div>
+      <div id="collapse12" class="accordion-body collapse">
+        <div class="accordion-inner">
+         <ul class="optionList">
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Multifunktionslenkrad mit Tempomat</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Farbige Zifferblätter</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Multifunktionsanzeige 'Plus'</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Bordinstrumente mit weisser Beleuchtung<BR>und Multifunktionsdisplay</label>
+            </li>
+            
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Tempomat inkl. SPEEDTRONIC</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Instrumentenbeleuchtung, regelbar</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Bordcomputer im Fond</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Media Interface</label>
+            </li>
+            
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Parksensoren vorne und hinten lackiert</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Parkassistent vorne und hinten</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Aussentemperaturanzeige</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Voltmeter, Oeldruck-, Oeltemperatur-<BR>anzeige</label>
+            </li>            
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Reifendruck-Kontrollanzeige</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Gurtstatusanzeige fnr Fondsitze</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">iPod + USB Anschluss</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">7 Premium Lautsprecher</label>
+            </li>            
+          </ul>
+        </div>
+      </div>
+     </div>
+    
+     <div class="accordion-group">
+      <div class="accordion-heading">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#standardFeatureAcc" href="#collapse13">Komfort/Innen & Aussen</a>
+      </div>
+      <div id="collapse13" class="accordion-body collapse">
+        <div class="accordion-inner">
+          <ul class="optionList">
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Servolenkung</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Dach in Wagenfarbe</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Colorverglasung</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Heckscheibenheizung</label>
+            </li>
+            
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Aussenspiegelpaket</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Blinker in Aussenspiegel</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Elektrisches Schiebe-/Hebedach</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Heckklappe mit Scheibenwischer</label>
+            </li>            
+          </ul>
+        </div>
+      </div>
+     </div>
+    
+     <div class="accordion-group">
+      <div class="accordion-heading">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#standardFeatureAcc" href="#collapse14">Laden/Ziehen/Transport</a>
+      </div>
+      <div id="collapse14" class="accordion-body collapse">
+        <div class="accordion-inner">
+          <ul class="optionList">
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Komfortschlüssel inklusive sensorgesteuerter Gepäckraumentriegelung</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Beifahrersitz-Rückenlehne umklappbar</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Rücksitze geteilt abklappbar</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Kofferraummatte</label>
+            </li>
+          </ul>
+        </div>
+      </div>
+     </div>
+    
+     <div class="accordion-group">
+      <div class="accordion-heading">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#standardFeatureAcc" href="#collapse15">Optik/Tuning</a>
+      </div>
+      <div id="collapse15" class="accordion-body collapse">
+        <div class="accordion-inner">
+          <ul class="optionList">
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Verchromtes Auspuffendrohr</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Leichtmetallräder im 6-Speichen-Design<</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Seitenschutzleisten in Wagenfarbe</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Chrom-Paket</label>
+            </li>
+          </ul>
+        </div>
+      </div>
+     </div>
+    
+     <div class="accordion-group">
+      <div class="accordion-heading">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#standardFeatureAcc" href="#collapse16">Sicherheit</a>
+      </div>
+      <div id="collapse16" class="accordion-body collapse">
+        <div class="accordion-inner">
+          <ul class="optionList">
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">ABS, EBD<BR>mit elektronischer Bremskraftverteilung</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Automatische StabilitSts-Control (ASC)</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Wegfahrsperre</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Winterkomplettradsatz</label>
+            </li>  
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Nebelscheinwerfer</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Fernlichtassistent</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Bi-Xenon-Lichtanlage mit automatischer<BR>Leuchtweitenregulierung inkl.Kurvenlicht</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Drittes Bremslicht LED</label>
+            </li>
+          </ul>
+        </div>
+      </div>
+     </div>
+    
+     <div class="accordion-group">
+      <div class="accordion-heading">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#standardFeatureAcc" href="#collapse17">Diverses</a>
+      </div>
+      <div id="collapse17" class="accordion-body collapse">
+        <div class="accordion-inner">
+          <ul class="optionList">
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox" checked="checked">
+              <label class="control-label">Winter-Paket</label>
+            </li>
+          </ul>
+        </div>
+      </div>
+     </div>    
+    
+  	</div>    
+	
+	<!-- Modal-Body End-->
+	<span class="clear"></span>
+	</div>
+	<!--<div class="modal-footer">
+		<a href="#" class="btn">Close</a>
+		<a href="#" class="btn btn-primary">Save changes</a>
+	</div>-->
+</div>
+  
+<div id="modalOptionalFeatures" class="modal hide fade">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		<h3>Optionale Austattung</h3>
+	</div>
+	<div class="modal-body">
+	<!-- Modal-Body Start-->
+  
+  	<div class="accordion" id="optionalFeatureAcc">
+    
+     <div class="accordion-group">
+      <div class="accordion-heading">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#optionalFeatureAcc" href="#collapse21">Antrieb / Fahrwerk</a>
+      </div>
+      <div id="collapse21" class="accordion-body collapse in">
+        <div class="accordion-inner">
+          <ul class="optionList">
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Auspuffendrohr Sport Design</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Auspuffblende</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Komfortfahrwerk</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Antriebsschlupfregelung (ASR)</label>
+            </li>
+            
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Fahrdynamik Paket</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Elektronisches Stabilitäts-Programm (ESP) mit Berganfahrassistent</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">4 Rad Lenkung</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Motorschutzblech</label>
+            </li>
+          </ul>
+        </div>
+      </div>
+     </div>
+    
+     <div class="accordion-group">
+      <div class="accordion-heading">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#optionalFeatureAcc" href="#collapse22">Audio / Kommunikation / Instrumente</a>
+      </div>
+      <div id="collapse22" class="accordion-body collapse">
+        <div class="accordion-inner">
+         <ul class="optionList">
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Multifunktionslenkrad mit Tempomat</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Farbige Zifferblätter</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Multifunktionsanzeige 'Plus'</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Bordinstrumente mit weisser Beleuchtung<BR>und Multifunktionsdisplay</label>
+            </li>
+            
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Tempomat inkl. SPEEDTRONIC</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Instrumentenbeleuchtung, regelbar</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Bordcomputer im Fond</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Media Interface</label>
+            </li>
+            
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Parksensoren vorne und hinten lackiert</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Parkassistent vorne und hinten</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Aussentemperaturanzeige</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Voltmeter, Oeldruck-, Oeltemperatur-<BR>anzeige</label>
+            </li>            
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Reifendruck-Kontrollanzeige</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Gurtstatusanzeige fnr Fondsitze</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">iPod + USB Anschluss</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">7 Premium Lautsprecher</label>
+            </li>            
+          </ul>
+        </div>
+      </div>
+     </div>
+    
+     <div class="accordion-group">
+      <div class="accordion-heading">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#optionalFeatureAcc" href="#collapse23">Komfort/Innen & Aussen</a>
+      </div>
+      <div id="collapse23" class="accordion-body collapse">
+        <div class="accordion-inner">
+          <ul class="optionList">
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Servolenkung</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Dach in Wagenfarbe</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Colorverglasung</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Heckscheibenheizung</label>
+            </li>
+            
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Aussenspiegelpaket</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Blinker in Aussenspiegel</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Elektrisches Schiebe-/Hebedach</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Heckklappe mit Scheibenwischer</label>
+            </li>            
+          </ul>
+        </div>
+      </div>
+     </div>
+    
+     <div class="accordion-group">
+      <div class="accordion-heading">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#optionalFeatureAcc" href="#collapse24">Laden/Ziehen/Transport</a>
+      </div>
+      <div id="collapse24" class="accordion-body collapse">
+        <div class="accordion-inner">
+          <ul class="optionList">
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Komfortschlüssel inklusive sensorgesteuerter Gepäckraumentriegelung</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Beifahrersitz-Rückenlehne umklappbar</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Rücksitze geteilt abklappbar</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Kofferraummatte</label>
+            </li>
+          </ul>
+        </div>
+      </div>
+     </div>
+    
+     <div class="accordion-group">
+      <div class="accordion-heading">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#optionalFeatureAcc" href="#collapse25">Optik/Tuning</a>
+      </div>
+      <div id="collapse25" class="accordion-body collapse">
+        <div class="accordion-inner">
+          <ul class="optionList">
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Verchromtes Auspuffendrohr</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Leichtmetallräder im 6-Speichen-Design<</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Seitenschutzleisten in Wagenfarbe</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Chrom-Paket</label>
+            </li>
+          </ul>
+        </div>
+      </div>
+     </div>
+    
+     <div class="accordion-group">
+      <div class="accordion-heading">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#optionalFeatureAcc" href="#collapse26">Sicherheit</a>
+      </div>
+      <div id="collapse26" class="accordion-body collapse">
+        <div class="accordion-inner">
+          <ul class="optionList">
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">ABS, EBD<BR>mit elektronischer Bremskraftverteilung</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Automatische StabilitSts-Control (ASC)</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Wegfahrsperre</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Winterkomplettradsatz</label>
+            </li>  
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Nebelscheinwerfer</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Fernlichtassistent</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Bi-Xenon-Lichtanlage mit automatischer<BR>Leuchtweitenregulierung inkl.Kurvenlicht</label>
+            </li>
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Drittes Bremslicht LED</label>
+            </li>
+          </ul>
+        </div>
+      </div>
+     </div>
+    
+     <div class="accordion-group">
+      <div class="accordion-heading">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#optionalFeatureAcc" href="#collapse27">Diverses</a>
+      </div>
+      <div id="collapse27" class="accordion-body collapse">
+        <div class="accordion-inner">
+          <ul class="optionList">
+            <li>
+            	<i class="icon-select"></i>
+              <input type="checkbox">
+              <label class="control-label">Winter-Paket</label>
+            </li>
+          </ul>
+        </div>
+      </div>
+     </div>    
+    
+  	</div>    
+	
+	<!-- Modal-Body End-->
+	<span class="clear"></span>
+	</div>
+	<!--<div class="modal-footer">
+		<a href="#" class="btn">Close</a>
+		<a href="#" class="btn btn-primary">Save changes</a>
+	</div>-->
+</div>
+  
 </form>
 <div class="form-actions">
     <a href="step2.php" class="btn btn-primary pull-right">Weiter zu &laquo;Artikelbeschreibung&raquo;</a>
