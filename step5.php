@@ -9,7 +9,7 @@ $Layout_cb -> nav_cb();
 <h2>Wie möchten Sie Ihren Artikel bewerben?</h2>
 
 <form>
-	<fieldset id="adWindow" class="well core">
+	<fieldset id="adWindow" class="well core accessory">
     <div class="row-fluid">
       <div class="span3">
         <label>Wie oft soll Ihr Artikel im Anzeigefenster angezeigt werden?</label>
@@ -204,16 +204,15 @@ $Layout_cb -> nav_cb();
             <div id="optionTypeNone" class="item active description">
               <!--<i class="sash"><img src="img/schleife_silver.png" width="53" height="54" /></i>
               <img class="bigPic" src="img/push05_big.png" width="104" height="86" align="right" />-->
-              <p>Anzeigefenster</p>
-              <h2 class="optionName">Top-Angebot in Listing</h2>
-              <p class="optionPrice"><span class="currency">CHF</span> 7.50</p>
+              <h2 class="optionName">Top-Angebot Resultatseite</h2>
+              <p class="optionPrice"><span class="currency">CHF</span> 5.00</p>
               <p class="optionMaintext">Ihr Artikel erscheint zusammen mit 4 weiteren Artikel oberhalb des Suchresultats.</p>
             </div>     
             
           </div>
          </div>
         <div class="span6 optionPreview">
-          <p>Suchresultat-Seite</p>
+          <p>Resultatseite</p>
           <!-- Bootstrap Modal 1 Anfang -->
           <div id="ModalTopOffer" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
             <div class="modal-header">
@@ -229,59 +228,7 @@ $Layout_cb -> nav_cb();
           </div>
           <!-- Bootstrap Modal 1 Ende -->
           <img data-toggle="modal" href="#ModalTopOffer" class="specialHover" src="img/car_overlays/tnails/car_topoffer.jpg" width="328" height="209" />
-        </div>
-      <div></div>
-      </div>
-      <div></div>
-      
-    </div>
-  </fieldset>
-    <!-- Row 2 -->
-    <fieldset id="adHomepage" class="well cars">
-        <div class="row-fluid">
-      <div class="span3">
-        <label>Möchten Sie Ihren Artikel auf der Startseite von auto.ricardo.ch anzeigen?</label>
-        <div>
-          <div class="option optDisable">
-            <label for="none">
-              <input type="radio" name="adHomepage" value="1" id="none" />
-              <i class="icon-ok icon-white"></i>
-              <span class="value">Ja</span>
-             </label>
-          </div>
-        </div>
-      </div>
-      <div class="span9 blowUp">
-        <div id="optionCarousel" class="span6 carousel">
-          <div id="" class="carousel-inner">
-          
-            <div id="optionTypeNone" class="item active description">
-              <!--<i class="sash"><img src="img/schleife_silver.png" width="53" height="54" /></i>
-              <img class="bigPic" src="img/push05_big.png" width="104" height="86" align="right" />-->
-              <p>Top Angebot</p>
-              <h2 class="optionName">Startseite</h2>
-              <p class="optionPrice"><span class="currency">CHF</span> 40.00</p>
-              <p class="optionMaintext">Ihr Artikel erscheint auf der Startseite von auto.ricardo.ch zusammen mit anderen Top-Angeboten.</p>
-            </div>     
-          </div>
-         </div> 
-        <div class="span6 optionPreview">
-          <p>Startseite</p>
-          <!-- Bootstrap Modal 2 Anfang -->
-          <div id="ModalStartseite" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-              <h3 id="myModalLabel"></h3>
-            </div>
-            <div class="modal-body">
-              <img src="img/car_overlays/fullsize/car_startseite.jpg" />
-            </div>
-            <div class="modal-footer">
-              <button class="btn" data-dismiss="modal">Schliessen</button>
-            </div>
-          </div>
-          <!-- Bootstrap Modal 2 Ende -->
-          <img data-toggle="modal" href="#ModalStartseite" class="specialHover" src="img/car_overlays/tnails/car_startseite.jpg" width="328" height="209" />
+          <small class="pull-right">(Anklicken zum vergrössern.)</small>
         </div>
       <div></div>
       </div>
@@ -311,7 +258,6 @@ $Layout_cb -> nav_cb();
             <div id="optionTypeNone" class="item active description">
               <!--<i class="sash"><img src="img/schleife_silver.png" width="53" height="54" /></i>
               <img class="bigPic" src="img/push05_big.png" width="104" height="86" align="right" />-->
-              <p>Suchresultat-Seite</p>
               <h2 class="optionName">Farbiger Hintergrund</h2>
               <p class="optionPrice"><span class="currency">CHF</span> 10.00</p>
               <p class="optionMaintext">Durch den farbigen Hintergrund in der Suchresultat-Seite wird Ihr Artikel besser wahrgenommen.</p>
@@ -320,7 +266,7 @@ $Layout_cb -> nav_cb();
           </div>
          </div>
         <div class="span6 optionPreview">
-          <p>Suchresultat-Seite</p>
+          <p>Resultatseite</p>
           <!-- Bootstrap Modal 3 Anfang -->
           <div id="ModalHighlight" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
             <div class="modal-header">
@@ -336,6 +282,7 @@ $Layout_cb -> nav_cb();
           </div>
           <!-- Bootstrap Modal 3 Ende -->
           <img data-toggle="modal" href="#ModalHighlight" class="specialHover" src="img/car_overlays/tnails/car_highlight.jpg" width="328" height="209" />
+          <small class="pull-right">(Anklicken zum vergrössern.)</small>
         </div>
       <div></div>
       </div>
@@ -343,6 +290,59 @@ $Layout_cb -> nav_cb();
       
     </div>
    </fieldset>
+    <!-- Row 2 -->
+    <fieldset id="adHomepage" class="well cars">
+        <div class="row-fluid">
+      <div class="span3">
+        <label>Möchten Sie Ihren Artikel auf der Startseite von auto.ricardo.ch anzeigen?</label>
+        <div>
+          <div class="option optDisable">
+            <label for="none">
+              <input type="radio" name="adHomepage" value="1" id="none" />
+              <i class="icon-ok icon-white"></i>
+              <span class="value">Ja</span>
+             </label>
+          </div>
+        </div>
+      </div>
+      <div class="span9 blowUp">
+        <div id="optionCarousel" class="span6 carousel">
+          <div id="" class="carousel-inner">
+          
+            <div id="optionTypeNone" class="item active description">
+              <!--<i class="sash"><img src="img/schleife_silver.png" width="53" height="54" /></i>
+              <img class="bigPic" src="img/push05_big.png" width="104" height="86" align="right" />-->
+              <h2 class="optionName">Startseite</h2>
+              <p class="optionPrice"><span class="currency">CHF</span> 60.00</p>
+              <p class="optionMaintext">Ihr Artikel erscheint auf der Startseite von auto.ricardo.ch zusammen mit anderen Top-Angeboten.</p>
+            </div>     
+          </div>
+         </div> 
+        <div class="span6 optionPreview">
+          <p>Startseite</p>
+          <!-- Bootstrap Modal 2 Anfang -->
+          <div id="ModalStartseite" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h3 id="myModalLabel"></h3>
+            </div>
+            <div class="modal-body">
+              <img src="img/car_overlays/fullsize/car_startseite.jpg" />
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Schliessen</button>
+            </div>
+          </div>
+          <!-- Bootstrap Modal 2 Ende -->
+          <img data-toggle="modal" href="#ModalStartseite" class="specialHover" src="img/car_overlays/tnails/car_startseite.jpg" width="328" height="209" />
+          <small class="pull-right">(Anklicken zum vergrössern.)</small>
+        </div>
+      <div></div>
+      </div>
+      <div></div>
+      
+    </div>
+  </fieldset>
 
 </form>
 
