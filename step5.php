@@ -9,7 +9,7 @@ $Layout_cb -> nav_cb();
 <h2>Wie möchten Sie Ihren Artikel bewerben?</h2>
 
 <form>
-	<fieldset id="adWindow" class="well">
+	<fieldset id="adWindow" class="well core">
     <div class="row-fluid">
       <div class="span3">
         <label>Wie oft soll Ihr Artikel im Anzeigefenster angezeigt werden?</label>

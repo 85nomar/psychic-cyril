@@ -28,7 +28,7 @@ class Layout
         array(
             'url'=>'step5',
             'step'=> '5',
-            'title'=>'Werbung',
+            'title'=>'Anzeigefenster',
         ),
         array(
             'url'=>'step6',

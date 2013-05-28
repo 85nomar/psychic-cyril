@@ -919,7 +919,7 @@ $Layout_cb -> nav_cb();
 
 <div class="form-actions">
     <a href="step2.php" class="btn btn-primary pull-right core accessory">Weiter zu &laquo;<?php echo $Layout->formNav[1]["title"]; ?>&raquo;</a>
-    <a href="step2cb.php" class="btn btn-disabled pull-right cars">Weiter zu &laquo;<?php echo $Layout->formNav[1]["title"]; ?>&raquo;</a>
+    <a href="step2cb.php" class="btn btn-disabled pull-right cars">Weiter zu &laquo;<?php echo $Layout_cb->formNav[1]["title"]; ?>&raquo;</a>
 </div>
 
 <div id="modalCarID" class="modal hide fade">
