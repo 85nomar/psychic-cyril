@@ -347,21 +347,33 @@ $Layout_cb -> nav_cb();
 </form>
 
 <div class="form-actions">
-    <a href="step6.php" class="btn btn-primary pull-right core accessory" id="prelogin">Weiter & Anmelden</a>
-    <a href="step6cb.php" class="btn btn-primary pull-right cars">Weiter & Anmelden</a>
+    <a href="step6.php" class="btn btn-primary pull-right core accessory js-prelogin">Weiter & Anmelden</a>
+    <a href="step6cb.php" class="btn btn-primary pull-right cars js-prelogin">Weiter & Anmelden</a>
 </div>
 
 <div id="modalLogin" class="modal hide fade">
 	<div class="modal-header">
 		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-		<h3>Auf autoricardo.ch einloggen</h3>
+		<h3>Bitte einloggen</h3>
 	</div>
 	<div class="modal-body">
 	<!-- Modal-Body Start-->
   	<p>Um den nächsten Schritt abschliessen zu können müssen Sie angemeldet sein. Logen Sie sich dazu ein oder erstellen Sie ein neues Benutzerkonto.</p>
 	
 		<section id="it_LoginSection" class="it_logForm">
-    	<form action="step6.php">
+    	<form action="step6.php" class="core accessory">
+        <dl>
+          <dt><label for="uxNickName">Benutzername</label></dt>
+          <dd><input type="text" class="it_inputField" tabindex="10" id="uxNickName" name="ctl00$ctl00$SiteContent$MasterContent$LoginForm1$uxNickName"></dd>
+          <dt><label for="uxPassword">Passwort</label></dt>
+          <dd><input type="password" class="it_inputField" tabindex="11" id="uxPassword" name="ctl00$ctl00$SiteContent$MasterContent$LoginForm1$uxPassword"></dd>
+          <dt></dt>
+          <dd><input type="checkbox" tabindex="12" checked="checked" id="it_checkboxInp" class="it_inputField"><label for="it_checkboxInp" class="it_txtRemember">Benutzername speichern</label></dd>
+          <dt></dt>
+          <dd><input type="submit" class="validButton btn btn-primary" id="uxSendLogin" value="Login"></dd>
+        </dl>
+      </form>
+    <form action="step6cb.php" class="cars">
         <dl>
           <dt><label for="uxNickName">Benutzername</label></dt>
           <dd><input type="text" class="it_inputField" tabindex="10" id="uxNickName" name="ctl00$ctl00$SiteContent$MasterContent$LoginForm1$uxNickName"></dd>

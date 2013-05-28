@@ -27,20 +27,31 @@ $Layout_cb -> nav_cb();
         <div class="row-fluid langs">
         <div class="span12 well">
             <div class="span6 float de-row">
-            <label for="inputTitle">
+            <label for="inputTitle" class="core accessory">
                 Titel
             </label>
-            <input class="span7 charsCount" type="text" id="inputTitle" placeholder="Tragen Sie hier die Produktbezeichnung ein" maxlength="60">
-            <div class="charAmount">Verbleibende Zeichen <span class="charsLeft">60</span></div>
+            <input class="span7 charsCount core accessory" type="text" id="inputTitle" placeholder="Tragen Sie hier die Produktbezeichnung ein" maxlength="60">
+            <div class="charAmount core accessory">Verbleibende Zeichen <span class="charsLeft">60</span></div>
+            
+            <label for="inputTitle" class="cars">
+                Titel
+            </label>
+            <div class="input-prepend cars">
+                <span class="add-on">Golf 1.6 FSI Comfort</span>
+                <input class="charsCount" type="text" id="inputTitle" placeholder="..." maxlength="40">
+                <div class="charAmount">Verbleibende Zeichen <span class="charsLeft">40</span></div>
+            </div>
+            
             <label for="inputSubtitle">
-                Untertitel <span class="optionalField">NEU: Gratis! <span style="text-decoration:line-through;">CHF 0.90</span> (optional)</span> <i class="icon-info-sign" data-toggle="tooltip" data-placement="right" title="" data-original-title="Test : Brauche Text für dieses Tooltip"></i>
+                Untertitel <span class="optionalField">NEU: Gratis! <span style="text-decoration:line-through;">CHF 0.90</span> (optional)</span>
             </label>
             <input class="span7 charsCount" type="text" id="inputSubtitle" placeholder="Bewerben Sie ihr Produkt mit einem kurzen Satz" maxlength="40">
             <div class="charAmount">Verbleibende Zeichen <span class="charsLeft">40</span></div>
-            <label for="inputProductCondition">
+            
+            <label for="inputProductCondition" class="core accessory">
                             Zustand des Produkts
             </label>
-            <select id="productCondition">
+            <select id="productCondition" class="core accessory">
                 <option>Neu</option>
                 <option>Fabrikneu und ungeöffnet</option>
                 <option>Neuwertig</option>
@@ -48,30 +59,41 @@ $Layout_cb -> nav_cb();
                 <option>Antik</option>
                 <option>Defekt</option>
             </select>
-            <label for="inputNumber">
+            
+            <label for="inputNumber" class="core accessory">
             Stückzahl
             </label>
-            <input class="span1" type="number" id="inputNumber" placeholder="1">
+            <input class="span1 core accessory" type="number" id="inputNumber" placeholder="1">
             
             <label for="inputDescription">
                 Wie möchten Sie Ihren Artikel beschreiben? <i class="icon-info-sign" data-toggle="tooltip" data-placement="right" title="Es dürfen keine privaten Email- sowie www-Adressen ausgeschrieben werden"></i>
             </label>
         </div>
         <div class="span6 float fr-row">
-            <label for="inputTitle">
+            <label for="inputTitle" class="core accessory">
                 Titre de l'article
             </label>
-            <input class="span7 charsCount" type="text" id="inputTitle" placeholder="Entrez le nom du produit ici" maxlength="60">
-            <div class="charAmount">Verbleibende Zeichen <span class="charsLeft">60</span></div>
+            <input class="span7 charsCount core accessory" type="text" id="inputTitle" placeholder="Entrez le nom du produit ici" maxlength="60">
+            <div class="charAmount core accessory">Verbleibende Zeichen <span class="charsLeft">60</span></div>
+            
+            <label for="inputTitle" class="cars">
+                Titre de l'article
+            </label>
+            <div class="input-prepend cars">
+                <span class="add-on">Golf 1.6 FSI Comfort</span>
+                <input class="charsCount" type="text" id="inputTitle" placeholder="..." maxlength="40">
+                <div class="charAmount">Verbleibende Zeichen <span class="charsLeft">40</span></div>
+            </div>
+            
             <label for="inputSubtitle">
                 Sous-titre <span class="optionalField">NOUVEAU: gratuit! <span style="text-decoration:line-through;">CHF 0.90</span> (optional)</span>
             </label>
             <input class="span7 charsCount" type="text" id="inputSubtitle" placeholder="Appliquez votre produit avec une courte phrase" maxlength="40">  
             <div class="charAmount">Verbleibende Zeichen <span class="charsLeft">40</span></div>
-            <label for="inputProductCondition">
+            <label for="inputProductCondition" class="core accessory">
                             Zustand des Produkts
             </label>
-            <select id="productCondition">
+            <select id="productCondition" class="core accessory">
                 <option>Neu</option>
                 <option>Fabrikneu und ungeöffnet</option>
                 <option>Neuwertig</option>
@@ -79,10 +101,10 @@ $Layout_cb -> nav_cb();
                 <option>Antik</option>
                 <option>Defekt</option>
             </select>
-            <label for="inputNumber">
+            <label for="inputNumber" class="core accessory">
             Stückzahl
             </label>
-            <input class="span1" type="number" id="inputNumber" placeholder="1">
+            <input class="span1 core accessory" type="number" id="inputNumber" placeholder="1">
           
             <label for="inputDescription">
                 Wie möchten Sie Ihren Artikel beschreiben?
@@ -192,7 +214,7 @@ $Layout_cb -> nav_cb();
     </div>
 </form>
 <div class="form-actions">
-    <a href="step3.php" class="btn btn-primary pull-right core">Weiter zu &laquo;<?php echo $Layout->formNav[2]["title"]; ?>&raquo;</a>
+    <a href="step3.php" class="btn btn-primary pull-right core accessory">Weiter zu &laquo;<?php echo $Layout->formNav[2]["title"]; ?>&raquo;</a>
     <a href="step3.php" class="btn btn-primary pull-right cars">Weiter zu &laquo;<?php echo $Layout_cb->formNav[3]["title"]; ?>&raquo;</a>
 </div>
 <div id="urlSaver"></div>

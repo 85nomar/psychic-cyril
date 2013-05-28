@@ -1,69 +1,61 @@
-function setCookie( name, value, expires, path, domain, secure ){
-	var today = new Date();
-	today.setTime( today.getTime() );
-	if ( expires ){
-		expires = expires * 1000 * 60 * 60 * 24;
-	}
-	var expires_date = new Date( today.getTime() + (expires) );
-	
-	document.cookie = name + "=" +escape( value ) +
-	( ( expires ) ? ";expires=" + expires_date.toGMTString() : "" ) +
-	( ( path ) ? ";path=" + path : "" ) +
-	( ( domain ) ? ";domain=" + domain : "" ) +
-	( ( secure ) ? ";secure" : "" );
-}
-
-function getCookie(cookieName){
-var i,x,y,ARRcookies=document.cookie.split(";");
-for (i=0;i<ARRcookies.length;i++)
-  {
-  x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
-  y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
-  x=x.replace(/^\s+|\s+$/g,"");
-  if (x==cookieName)
-    {
-    return unescape(y);
+function setCookie(name, value, expires, path, domain, secure) {
+    var today = new Date();
+    today.setTime(today.getTime());
+    if (expires) {
+        expires = expires * 1000 * 60 * 60 * 24;
     }
-  }
+    var expires_date = new Date(today.getTime() + (expires));
+
+    document.cookie = name + "=" + escape(value) + ((expires ) ? ";expires=" + expires_date.toGMTString() : "" ) + ((path ) ? ";path=" + path : "" ) + ((domain ) ? ";domain=" + domain : "" ) + ((secure ) ? ";secure" : "" );
 }
 
-if (getCookie('view')=='cars'){
-	document.writeln('<style>.core{display:none;}.accessory{display:none}.cars{display:block}</style>');
-	}
-else if (getCookie('view')=='accessory') {
-	document.writeln('<style>.core{display:none;}.cars{display:none}.accessory{display:block}</style>');
-	}
-else {
-	setCookie('view','core');
-	document.writeln('<style>.cars{display:none}.accessory{display:none}.core{display:block;}</style>');
-	}
+function getCookie(cookieName) {
+    var i, x, y, ARRcookies = document.cookie.split(";");
+    for ( i = 0; i < ARRcookies.length; i++) {
+        x = ARRcookies[i].substr(0, ARRcookies[i].indexOf("="));
+        y = ARRcookies[i].substr(ARRcookies[i].indexOf("=") + 1);
+        x = x.replace(/^\s+|\s+$/g, "");
+        if (x == cookieName) {
+            return unescape(y);
+        }
+    }
+}
+
+if (getCookie('view') == 'cars') {
+    document.writeln('<style>.core{display:none !important;}.accessory{display:none !important}.cars{display:block !important;}</style>');
+} else if (getCookie('view') == 'accessory') {
+    document.writeln('<style>.core{display:none !important;}.cars{display:none !important}.accessory{display:block !important;}</style>');
+} else {
+    setCookie('view', 'core');
+    document.writeln('<style>.cars{display:none !important}.accessory{display:none !important}.core{display:block !important;}</style>');
+}
 
 $(document).ready(function() {
-	
-	$('.setCookie').mousedown(function(){
-		setCookie('view', $(this).attr('data-view'));
-	});
-	
-	// disable/enable next-btn
-	
-	function enableNextButton(){
-		$('.form-actions .cars.btn').addClass('btn-primary').removeClass('btn-disabled');		
-	}
-	
-	function disableNextButton(){
-		$('.form-actions .cars.btn').removeClass('btn-primary').addClass('btn-disabled');	
-	}
-	
-	$('.form-actions .btn').click(function(event){
-		if($(this).hasClass('btn-disabled')==false){
-		}
-		else {
-		    event.preventDefault();
-			console.log('click not allowed');
-		}
-	});
-		
-// +++++++++++++++++++++++++ Step 1 +++++++++++++++++++++++++
+
+    $('.setCookie').mousedown(function() {
+        setCookie('view', $(this).attr('data-view'));
+    });
+
+    // disable/enable next-btn
+
+    function enableNextButton() {
+        $('.form-actions .cars.btn').addClass('btn-primary').removeClass('btn-disabled');
+    }
+
+    function disableNextButton() {
+        $('.form-actions .cars.btn').removeClass('btn-primary').addClass('btn-disabled');
+    }
+
+
+    $('.form-actions .btn').click(function(event) {
+        if ($(this).hasClass('btn-disabled') == false) {
+        } else {
+            event.preventDefault();
+            console.log('click not allowed');
+        }
+    });
+
+    // +++++++++++++++++++++++++ Step 1 +++++++++++++++++++++++++
 
     // init Cat-Selection
     $('.navCat:first ul').show();
@@ -100,7 +92,7 @@ $(document).ready(function() {
         }
     });
 
-    function markCategoryTree () {
+    function markCategoryTree() {
         $('.navCat .active').removeClass('active');
         $('.row-fluid:visible .navCat ul').each(function(index) {
             $(this).delay(400 * index - 1).fadeIn(300).addClass('catSuggest').find('.demo').addClass('active');
@@ -111,186 +103,176 @@ $(document).ready(function() {
     $('#categoryFinder .btn').click(markCategoryTree);
     // on keyboard enter
     $("#appendedInputButton").keypress(function(e) {
-        if(e.which == 13) {
-					e.preventDefault();
+        if (e.which == 13) {
+            e.preventDefault();
             markCategoryTree();
         }
     });
-		
-	// .cars Category-Selector
-	
-	$('#carsCatSelector a').click(function(event) {
-		event.preventDefault()				
-		thisView   = getCookie('view');
-		targetView = $(this).attr('data-view');
-		$(this).addClass("selected");
-		
-		if (thisView != targetView){
-		    $('#carsCatSelector a').removeClass("selected");
-		    $(this).addClass("selected");
-			setCookie('view', $(this).attr('data-view'));
-			setCookie('catg', $(this).index());
-			location.reload();
-		}
-		else {
-		    $('#carsCatSelector a').removeClass("selected");
-		    $(this).addClass("selected");
-			target='.catSelect.'+thisView;
-			$(target).collapse('show');
-		}        
-	});
-	
-	if(getCookie('catg')!=undefined){
-		$('#carsCatSelector a:eq('+getCookie('catg')+')').addClass('selected');
-		}
-	
-	if( getCookie('view')=='cars' && getCookie('catg')!=undefined){		
-				$('#carTypeSelector').height('auto');
-		}
-	
-	function checkFieldCollapse(target,collapse){
-		$(target).change(function(){
-			fieldVal = $.trim($(this).val());
-			console.log(fieldVal);
-			if(fieldVal != '' && fieldVal != '-' && fieldVal != 0){
-				$(collapse).collapse('show');
-			}
-			else {
-				$(collapse).collapse('hide');
-			}
-		});	
-	}
-	
-	function checkFieldValue(target){
-			fieldVal = $.trim(target.val());
-			if(fieldVal != '' && fieldVal != '-' && fieldVal != 0){
-				valCheck = true;
-			}
-			else {
-				valCheck = false;
-			}
-			return valCheck;
-	}
-			
-	// show .cars Car-Type-Selector
-	
-	$('#carTypeSelector a').click(function(){
-		$('#carSelector').collapse('show');
-	});
-	
-	// show .cars Car-Version-Selector
-	
-	checkFieldCollapse('#IDRegistrYear','#carVerionSelector');
-	checkFieldCollapse('#FormFuel','#carAttributeSelector');
-					
-	// enable/disable form-fields
-	
-	function carReset(thisSelector){
-		$('.carSelector').not(thisSelector.parents('.carSelector')).removeClass('selected');
-		$('.carSelector').not(thisSelector.parents('.carSelector')).find('.control-group:gt(0) select').attr('disabled','disabled');
-		$('.carSelector').not(thisSelector.parents('.carSelector')).find('option:selected').removeAttr('selected');
-		$('.carSelector').not(thisSelector.parents('.carSelector')).find('input').val('');
-			
-		thisSelector.parents('.carSelector').addClass('selected');
-	};
-	
-	$('.carSelector select').change(function(){
-		carReset($(this));
-	});
-	
-	$('.controls select:last-child, .controls input:last-child').each(function() {
-		$(this).bind('change blur keyup mouseup',function(){
-			if(checkFieldValue($(this))==true){	
-				if($(this).parents('.control-group').next('.control-group').height() > 0){
-					var myObj = $(this).parents('.control-group').next('.control-group');
-				} else {
-					var myObj = $(this).parents('.control-group').next('.control-group').next();
-				}
-				myObj.find('select').removeAttr('disabled');
-			}
-			else {
-				$(this).parents('.control-group').nextAll('.control-group').find('select').attr('disabled','disabled').find('option:selected').removeAttr('selected');	
-			}
-		});
-	});
-	
-	$('#TxtCertification').bind('change blur keyup mouseup',function(){
-		carReset($(this));
-		if($(this).val().length == 6){
-			$(this).parents('.control-group').next('.control-group').find('select').removeAttr('disabled');
-		}
-		else {
-			$(this).parents('.control-group').nextAll('.control-group').find('select').attr('disabled','disabled').find('option:selected').removeAttr('selected');
-		}
-	});
-					
-	// show hide alternate Model 
-	
-	$('#FormModel').bind('change blur keyup mouseup',function(e) {
-		fieldVal = $.trim($(this).val());
-		if(fieldVal == 0){
-			$('#alternateModelConrol').collapse('show')
-		}            
-	});
-		
-	// Car-Version-Select-Table
-		
-	$('#carVerionSelector table tr:visible:odd').addClass('oddRow');
-	
-	$('.versionBasic').click(function(){
-		$('.versionBasic.selected').removeClass('selected');
-		$(this).addClass('selected');
-		$('.versionDetails').hide();
-		$(this).next().show();
-		
-		enableNextButton();
-	});
-	
-	// Enable Next-Button by set HP for alternative Cars
-		
-	$('#altHP').bind('change blur keyup mouseup',function(){
-		if(checkFieldValue($(this))==true){	
-			enableNextButton();
-		}		
-		else {
-			disableNextButton()
-		}		
-	});
-		
-// +++++++++++++++++++++++++ Step2 (Core) +++++++++++++++++++++++++
+
+    // .cars Category-Selector
+
+    $('#carsCatSelector a').click(function(event) {
+        event.preventDefault()
+        thisView = getCookie('view');
+        targetView = $(this).attr('data-view');
+        $(this).addClass("selected");
+
+        if (thisView != targetView) {
+            $('#carsCatSelector a').removeClass("selected");
+            $(this).addClass("selected");
+            setCookie('view', $(this).attr('data-view'));
+            setCookie('catg', $(this).index());
+            location.reload();
+        } else {
+            $('#carsCatSelector a').removeClass("selected");
+            $(this).addClass("selected");
+            target = '.catSelect.' + thisView;
+            $(target).collapse('show');
+        }
+    });
+
+    if (getCookie('catg') != undefined) {
+        $('#carsCatSelector a:eq(' + getCookie('catg') + ')').addClass('selected');
+    }
+
+    if (getCookie('view') == 'cars' && getCookie('catg') != undefined) {
+        $('#carTypeSelector').height('auto');
+    }
+
+    function checkFieldCollapse(target, collapse) {
+        $(target).change(function() {
+            fieldVal = $.trim($(this).val());
+            console.log(fieldVal);
+            if (fieldVal != '' && fieldVal != '-' && fieldVal != 0) {
+                $(collapse).collapse('show');
+            } else {
+                $(collapse).collapse('hide');
+            }
+        });
+    }
+
+    function checkFieldValue(target) {
+        fieldVal = $.trim(target.val());
+        if (fieldVal != '' && fieldVal != '-' && fieldVal != 0) {
+            valCheck = true;
+        } else {
+            valCheck = false;
+        }
+        return valCheck;
+    }
+
+    // show .cars Car-Type-Selector
+
+    $('#carTypeSelector a').click(function() {
+        $('#carSelector').collapse('show');
+    });
+
+    // show .cars Car-Version-Selector
+
+    checkFieldCollapse('#IDRegistrYear', '#carVerionSelector');
+    checkFieldCollapse('#FormFuel', '#carAttributeSelector');
+
+    // enable/disable form-fields
+
+    function carReset(thisSelector) {
+        $('.carSelector').not(thisSelector.parents('.carSelector')).removeClass('selected');
+        $('.carSelector').not(thisSelector.parents('.carSelector')).find('.control-group:gt(0) select').attr('disabled', 'disabled');
+        $('.carSelector').not(thisSelector.parents('.carSelector')).find('option:selected').removeAttr('selected');
+        $('.carSelector').not(thisSelector.parents('.carSelector')).find('input').val('');
+
+        thisSelector.parents('.carSelector').addClass('selected');
+    };
+
+    $('.carSelector select').change(function() {
+        carReset($(this));
+    });
+
+    $('.controls select:last-child, .controls input:last-child').each(function() {
+        $(this).bind('change blur keyup mouseup', function() {
+            if (checkFieldValue($(this)) == true) {
+                if ($(this).parents('.control-group').next('.control-group').height() > 0) {
+                    var myObj = $(this).parents('.control-group').next('.control-group');
+                } else {
+                    var myObj = $(this).parents('.control-group').next('.control-group').next();
+                }
+                myObj.find('select').removeAttr('disabled');
+            } else {
+                $(this).parents('.control-group').nextAll('.control-group').find('select').attr('disabled', 'disabled').find('option:selected').removeAttr('selected');
+            }
+        });
+    });
+
+    $('#TxtCertification').bind('change blur keyup mouseup', function() {
+        carReset($(this));
+        if ($(this).val().length == 6) {
+            $(this).parents('.control-group').next('.control-group').find('select').removeAttr('disabled');
+        } else {
+            $(this).parents('.control-group').nextAll('.control-group').find('select').attr('disabled', 'disabled').find('option:selected').removeAttr('selected');
+        }
+    });
+
+    // show hide alternate Model
+
+    $('#FormModel').bind('change blur keyup mouseup', function(e) {
+        fieldVal = $.trim($(this).val());
+        if (fieldVal == 0) {
+            $('#alternateModelConrol').collapse('show')
+        }
+    });
+
+    // Car-Version-Select-Table
+
+    $('#carVerionSelector table tr:visible:odd').addClass('oddRow');
+
+    $('.versionBasic').click(function() {
+        $('.versionBasic.selected').removeClass('selected');
+        $(this).addClass('selected');
+        $('.versionDetails').hide();
+        $(this).next().show();
+
+        enableNextButton();
+    });
+
+    // Enable Next-Button by set HP for alternative Cars
+
+    $('#altHP').bind('change blur keyup mouseup', function() {
+        if (checkFieldValue($(this)) == true) {
+            enableNextButton();
+        } else {
+            disableNextButton()
+        }
+    });
+
+    // +++++++++++++++++++++++++ Step2 (Core) +++++++++++++++++++++++++
 
     // initialize upload img section
     ricardoImageUpload.init();
 
-// +++++++++++++++++++++++++ Step3 +++++++++++++++++++++++++
- 
-		//Payment-Conditions-Selection
-						
-		$('#listingPaymentConditions .btn')
-		.click(function(event){
-			event.preventDefault();
-		})
-		.mousedown(function(event){
-			$('.option-group').not($(this).parents('.option-group')).removeClass('active').find('.btn').removeClass('selected');
-			$(this).toggleClass('selected');
-		})
-		.mouseup(function(event){
-			 if($(this).parent().find('.selected').size() > 0){
-				$(this).parents('.option-group').addClass('active');
-			 } else {
-				$(this).parents('.option-group').removeClass('active');
-			 }
-		});		
-		
-		$('.option-group:last .btn')
-		.mousedown(function(event){
-			$(this).parents('.option-group').find('.btn').removeClass('selected');
-			$(this).addClass('selected');
-		});
-		
-		$('#ricardopayInfo').click(function(event) {
-			event.preventDefault();
-      $('#modalRicardoPay').modal('show');
+    // +++++++++++++++++++++++++ Step3 +++++++++++++++++++++++++
+
+    //Payment-Conditions-Selection
+
+    $('#listingPaymentConditions .btn').click(function(event) {
+        event.preventDefault();
+    }).mousedown(function(event) {
+        $('.option-group').not($(this).parents('.option-group')).removeClass('active').find('.btn').removeClass('selected');
+        $(this).toggleClass('selected');
+    }).mouseup(function(event) {
+        if ($(this).parent().find('.selected').size() > 0) {
+            $(this).parents('.option-group').addClass('active');
+        } else {
+            $(this).parents('.option-group').removeClass('active');
+        }
+    });
+
+    $('.option-group:last .btn').mousedown(function(event) {
+        $(this).parents('.option-group').find('.btn').removeClass('selected');
+        $(this).addClass('selected');
+    });
+
+    $('#ricardopayInfo').click(function(event) {
+        event.preventDefault();
+        $('#modalRicardoPay').modal('show');
     });
 
     // Step3 - Date & Time functions
@@ -417,8 +399,7 @@ $(document).ready(function() {
 
         // function to check and process a certain selected option
         function processSelection(selectOption, data) {
-            var targetClass = selectOption.attr("data-target"), price = selectOption.attr("data-price"), 
-            data = (data !== undefined) ? data : {};
+            var targetClass = selectOption.attr("data-target"), price = selectOption.attr("data-price"), data = (data !== undefined) ? data : {};
             // save a reference to current js-shipping-element
             data.shippingElement = selectOption.closest(".js-shipping-element");
 
@@ -490,107 +471,102 @@ $(document).ready(function() {
     })(window.jQuery);
 
     /*$("#listingType .toggle").on("click", function(e) {
-        var $this = $(this), target = $this.attr('data-target');
+     var $this = $(this), target = $this.attr('data-target');
 
-        if ($(target).hasClass('in'))
-            return;
-        $(".in").removeClass('in');
-        $(target).addClass('in');
-    });	*/	
-		
-		$('label[for="toggle-auction"]').click(function(e) {
-			$('#auctionPricing').show();
-			$('#fixedPricePricing').hide();
-		});
-		$('label[for="toggle-fixedPriceOffer"]').click(function(e) {
-			$('#auctionPricing').hide();
-			$('#fixedPricePricing').show();
-		});
-		$('*[data-toggle="tooltip"]').tooltip();
-		
-	// Overall Calculate maximum Modal-Body-Height
+     if ($(target).hasClass('in'))
+     return;
+     $(".in").removeClass('in');
+     $(target).addClass('in');
+     });	*/
 
-	function getClientHeight() {
-		var myHeight = 0;
-		if (typeof (window.innerWidth) == 'number') {
-			//Non-IE
-			myHeight = window.innerHeight;
-		} else if (document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)) {
-			//IE 6+ in ′standards compliant mode′
-			myHeight = document.documentElement.clientHeight;
-		} else if (document.body && (document.body.clientWidth || document.body.clientHeight)) {
-			//IE 4 compatible
-			myHeight = document.body.clientHeight;
-		}
-		return myHeight;
-	}
-		
-	clientHeight = getClientHeight();
-	modalMargin = clientHeight / 5;
-	modelHeader = 49;
-	modelFooter = 56;
-	modalBodyNoFoot = clientHeight - modalMargin - modelHeader;
-	modalBodyWithFoot = clientHeight - modalMargin - modelHeader - modelFooter;
+    $('label[for="toggle-auction"]').click(function(e) {
+        $('#auctionPricing').show();
+        $('#fixedPricePricing').hide();
+    });
+    $('label[for="toggle-fixedPriceOffer"]').click(function(e) {
+        $('#auctionPricing').hide();
+        $('#fixedPricePricing').show();
+    });
+    $('*[data-toggle="tooltip"]').tooltip();
 
-	$('.modal').each(function () {
+    // Overall Calculate maximum Modal-Body-Height
 
-		if ($(this).find('.modal-footer').size() != 1) {
-			// modals without a footer
-			$(this).find('.modal-body').css('max-height', modalBodyNoFoot);
-		} else {
-			// modals with a footer
-			$(this).find('.modal-body').css('max-height', modalBodyWithFoot);
-		}
+    function getClientHeight() {
+        var myHeight = 0;
+        if ( typeof (window.innerWidth) == 'number') {
+            //Non-IE
+            myHeight = window.innerHeight;
+        } else if (document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)) {
+            //IE 6+ in ′standards compliant mode′
+            myHeight = document.documentElement.clientHeight;
+        } else if (document.body && (document.body.clientWidth || document.body.clientHeight)) {
+            //IE 4 compatible
+            myHeight = document.body.clientHeight;
+        }
+        return myHeight;
+    }
 
-	});
-		
-	// Step 5 - Selling Options
-	
-	
-		isChecked = $('#adWindow input[name="adWindow"]:checked').parents('.option').index();
-		$('#adWindow #optionCarousel').carousel(isChecked).carousel('pause');
-		$('#adWindow #optionCarousel .item').eq(isChecked).addClass('selected');	
-		$('#adWindow .option').eq(isChecked).addClass('selected');				
-		
-    $('#adWindow .option')
-			.bind('mouseenter',function(){
-				showItem = $(this).index();
-				$('#adWindow #optionCarousel').carousel(showItem).carousel('pause');
-			})
-			.bind('mouseleave',function(){
-				showItem = $('#optionCarousel .item.selected').index();
-				$('#adWindow #optionCarousel').carousel(showItem).carousel('pause');
-			})
-			.bind('mousedown',function(){
-				showItem = $(this).index();
-				$('#adWindow .option').removeClass('selected');
-				$(this).addClass('selected');
-				$('#adWindow #optionCarousel .item').removeClass('selected');
-				$('#adWindow #optionCarousel .item').eq(showItem).addClass('selected');				
-			});
-			
-		$('#adHomepage .option')
-			.bind('mousedown',function(){
-				$(this).toggleClass('selected');				
-			});
-	
-	// Step 5 - Login Modal
+    clientHeight = getClientHeight();
+    modalMargin = clientHeight / 5;
+    modelHeader = 49;
+    modelFooter = 56;
+    modalBodyNoFoot = clientHeight - modalMargin - modelHeader;
+    modalBodyWithFoot = clientHeight - modalMargin - modelHeader - modelFooter;
+
+    $('.modal').each(function() {
+
+        if ($(this).find('.modal-footer').size() != 1) {
+            // modals without a footer
+            $(this).find('.modal-body').css('max-height', modalBodyNoFoot);
+        } else {
+            // modals with a footer
+            $(this).find('.modal-body').css('max-height', modalBodyWithFoot);
+        }
+
+    });
+
+    // Step 5 - Selling Options
+
+    isChecked = $('#adWindow input[name="adWindow"]:checked').parents('.option').index();
+    $('#adWindow #optionCarousel').carousel(isChecked).carousel('pause');
+    $('#adWindow #optionCarousel .item').eq(isChecked).addClass('selected');
+    $('#adWindow .option').eq(isChecked).addClass('selected');
+
+    $('#adWindow .option').bind('mouseenter', function() {
+        showItem = $(this).index();
+        $('#adWindow #optionCarousel').carousel(showItem).carousel('pause');
+    }).bind('mouseleave', function() {
+        showItem = $('#optionCarousel .item.selected').index();
+        $('#adWindow #optionCarousel').carousel(showItem).carousel('pause');
+    }).bind('mousedown', function() {
+        showItem = $(this).index();
+        $('#adWindow .option').removeClass('selected');
+        $(this).addClass('selected');
+        $('#adWindow #optionCarousel .item').removeClass('selected');
+        $('#adWindow #optionCarousel .item').eq(showItem).addClass('selected');
+    });
+
+    $('#adHomepage .option').bind('mousedown', function() {
+        $(this).toggleClass('selected');
+    });
+
+    // Step 5 - Login Modal
     (function($) {
         function showLogin(event) {
             event.preventDefault();
             $('#modalLogin').modal('show');
         };
 
-        $('#prelogin').click(showLogin);
+        $('.js-prelogin').click(showLogin);
         $(".stepN6").click(showLogin);
     })(window.jQuery);
 
-	// Step 6 - Preview Modal
-		
-	$('#articlePreview img, #articlePreview a').click(function(event){
-			event.preventDefault();
-			$('#modalPreview').modal('show');				
-	});
+    // Step 6 - Preview Modal
+
+    $('#articlePreview img, #articlePreview a').click(function(event) {
+        event.preventDefault();
+        $('#modalPreview').modal('show');
+    });
 
     // function to move images in ImageUploader
     function imageMovers() {
@@ -669,46 +645,46 @@ $(document).ready(function() {
 
 });
 
-$(window).load(function(){
-    function dragAndDrop(e){
+$(window).load(function() {
+    function dragAndDrop(e) {
         // Some element definitions
         var elements = {
-                        cBody : 'body',
-                        containerClass : '.productImage',
-                        draggableImg : '.productImage img',
-                        droper : '.droper',
+            cBody : 'body',
+            containerClass : '.productImage',
+            draggableImg : '.productImage img',
+            droper : '.droper',
         }
 
         var functions = {
-                        // updates the URL-safer with the urls from image-uploader
-                        updatetUrlSaver :       function(){
-                                                var counter = $('.droper').length;
-                                                console.log(counter);
-                                                for(sprint = 0; sprint < counter; sprint++){
-                                                    imgScr = $('.productImage:eq('+sprint+') img').attr('src');
-                                                    $('#urlSaver').append('<img src="'+imgScr+'" />')
-                                                }
-                                        },
-                        // gets the URLs form URL-saver and transfers them to
-                        getFromUrlSaver :       function(){
-                                                var counter = $('#urlSaver img').length;
-                                                console.log(counter);
-                                                 for(sprint = 0; sprint < counter; sprint++){
-                                                    UrlSaverImgSrc = $('#urlSaver img:eq('+sprint+')').attr('src');
-                                                    $('.productImage:eq('+sprint+') img').attr('src', UrlSaverImgSrc);
-                                                 }
-                                        },
-                         //update
-                        uploadFieldFix  :       function(){
-                                                $('.addProductImageLink img').attr('src', 'img/camera.png');
-                                                console.log('url updated')
+            // updates the URL-safer with the urls from image-uploader
+            updatetUrlSaver : function() {
+                var counter = $('.droper').length;
+                console.log(counter);
+                for ( sprint = 0; sprint < counter; sprint++) {
+                    imgScr = $('.productImage:eq(' + sprint + ') img').attr('src');
+                    $('#urlSaver').append('<img src="' + imgScr + '" />')
+                }
+            },
+            // gets the URLs form URL-saver and transfers them to
+            getFromUrlSaver : function() {
+                var counter = $('#urlSaver img').length;
+                console.log(counter);
+                for ( sprint = 0; sprint < counter; sprint++) {
+                    UrlSaverImgSrc = $('#urlSaver img:eq(' + sprint + ')').attr('src');
+                    $('.productImage:eq(' + sprint + ') img').attr('src', UrlSaverImgSrc);
+                }
+            },
+            //update
+            uploadFieldFix : function() {
+                $('.addProductImageLink img').attr('src', 'img/camera.png');
+                console.log('url updated')
 
-                                        },
-                        }
+            },
+        }
 
-    // Drag Start
-    var mypic = $(elements.containerClass);
-        mypic.delegate('img:not(.placeholder)','dragstart',function(e){
+        // Drag Start
+        var mypic = $(elements.containerClass);
+        mypic.delegate('img:not(.placeholder)', 'dragstart', function(e) {
             // empty all images from URLSaver
             $('#urlSaver').html('');
             // Update the URLSaver
@@ -720,7 +696,7 @@ $(window).load(function(){
             //Offsets of Current image
             var curOffsets = $(this).offset();
             var curOffsetLeft = curOffsets.left;
-            var curOffsetTop = curOffsets.top;    
+            var curOffsetTop = curOffsets.top;
             var img = $(this).attr('src');
             // Push data to Array
             transferData.push(curOffsetLeft.toFixed(0), curOffsetTop.toFixed(0), img)
@@ -732,19 +708,19 @@ $(window).load(function(){
 
         // Dragenter (Not relevant)
         var dragBox = $('body');
-        dragBox.delegate('.droper','dragenter', function(e){
+        dragBox.delegate('.droper', 'dragenter', function(e) {
             e.preventDefault();
             console.log('Dragenter checked');
         });
 
         // Dragover (Not relevant)
-        dragBox.delegate('.droper','dragover', function(e){
-        e.preventDefault();
-        console.log('Dragover checked');
+        dragBox.delegate('.droper', 'dragover', function(e) {
+            e.preventDefault();
+            console.log('Dragover checked');
         });
 
-        // Drop 
-         dragBox.delegate('.droper','drop', function(e){
+        // Drop
+        dragBox.delegate('.droper', 'drop', function(e) {
             // rmove Class 'ondragcontainer'
             $('.ondragcontainer').removeClass('ondragcontainer');
             //preventDefault
@@ -758,87 +734,86 @@ $(window).load(function(){
             var curOffsetLeft = curOffsets.left;
             var curOffsetTop = curOffsets.top;
             //Drop handling
-            if (offsetsDragStart[0] < curOffsetLeft && offsetsDragStart[1] == curOffsetTop.toFixed(0) || offsetsDragStart[1] > curOffsetTop.toFixed(0)){
+            if (offsetsDragStart[0] < curOffsetLeft && offsetsDragStart[1] == curOffsetTop.toFixed(0) || offsetsDragStart[1] > curOffsetTop.toFixed(0)) {
                 // Find url from the img in the dropZone
                 var detectDropZone = $(this).find('img').attr('src');
-                if (detectDropZone != recivedData[2]){
+                if (detectDropZone != recivedData[2]) {
                     // Find the img in UrlSaver
-                    $('#urlSaver').find("img[src$='"+recivedData[2]+"']").remove();
+                    $('#urlSaver').find("img[src$='" + recivedData[2] + "']").remove();
                     // set the droped img after the dropZone
-                    $('#urlSaver').find("img[src$='"+detectDropZone+"']").after('<img src="'+recivedData[2]+'" />');
+                    $('#urlSaver').find("img[src$='" + detectDropZone + "']").after('<img src="' + recivedData[2] + '" />');
                     functions.getFromUrlSaver();
                 }
-            }else if(offsetsDragStart[0] > curOffsetLeft && offsetsDragStart[1] == curOffsetTop.toFixed(0) || offsetsDragStart[1] < curOffsetTop.toFixed(0)){   
+            } else if (offsetsDragStart[0] > curOffsetLeft && offsetsDragStart[1] == curOffsetTop.toFixed(0) || offsetsDragStart[1] < curOffsetTop.toFixed(0)) {
                 // Find url from the img in the dropZone
                 var detectDropZone = $(this).find('img').attr('src');
-                if (detectDropZone != recivedData[2]){
+                if (detectDropZone != recivedData[2]) {
                     // Find the img in UrlSaver
-                    $('#urlSaver').find("img[src$='"+recivedData[2]+"']").remove();
+                    $('#urlSaver').find("img[src$='" + recivedData[2] + "']").remove();
                     // set the droped img after the dropZone
-                    $('#urlSaver').find("img[src$='"+detectDropZone+"']").before('<img src="'+recivedData[2]+'" />');
+                    $('#urlSaver').find("img[src$='" + detectDropZone + "']").before('<img src="' + recivedData[2] + '" />');
                     functions.getFromUrlSaver();
                 }
 
             }
-            functions.uploadFieldFix();            
+            functions.uploadFieldFix();
         });
     }
 
-    function maxChars(e){
-        $('.charsCount').on('focus', function(){
-            var maxChars =  $(this).attr('maxlength');            
-            $(this).keyup(function(){
+    function maxChars(e) {
+        $('.charsCount').on('focus', function() {
+            var maxChars = $(this).attr('maxlength');
+            $(this).keyup(function() {
                 var counter = $(this).val().length;
-                var charsLeft = maxChars-counter;
-                $(this).attr('maxlength',maxChars)
+                var charsLeft = maxChars - counter;
+                $(this).attr('maxlength', maxChars)
                 $(this).next('div').children('span.charsLeft').html(charsLeft);
             });
         });
     }
 
-
-function setPaymentCookie(){
-    //set cookie
-    $('.option-group .btn').click(function(){
-        var selectedOption = $(this).parents('.option-group.active').children('h4').text();
-        if (selectedOption.indexOf('Abholung') > -1){
-            setCookie('optionGroup', 'Barzahlung');
-        }else{
-            setCookie('optionGroup', 'other');
-        }
-    });
-
-    var cookieVal = getCookie('optionGroup');
-    if (cookieVal == 'Barzahlung'){
-    // Step 4
-      // if cookie value is Barzahlung set the option Abholung dur Käufer as standard.
-        $(".js-shipping-method option[value$='-1']").removeAttr('selected');
-        $(".js-shipping-method option[value$='10']").attr('selected', true);
-        $('.js-shipping-costs').removeClass('hide');
-        $('.inputShippingCosts').val('0.00');
-        // hide checkbox for free shipping
-        $('.js-shipping-method').on('click', function(){
-            if ($('.js-shipping-method option:selected').val().indexOf('10') > -1){
-                $('.js-shipping-costs label').addClass('hide');
-            }else{
-                $('.js-shipping-costs label').removeClass('hide');
+    function setPaymentCookie() {
+        //set cookie
+        $('.option-group .btn').click(function() {
+            var selectedOption = $(this).parents('.option-group.active').children('h4').text();
+            if (selectedOption.indexOf('Abholung') > -1) {
+                setCookie('optionGroup', 'Barzahlung');
+            } else {
+                setCookie('optionGroup', 'other');
             }
         });
-        // hide checkbox for free shipping
-        if ($('.js-shipping-method').length != 0 && $('.js-shipping-method option:selected').val().indexOf('10') > -1){
+
+        var cookieVal = getCookie('optionGroup');
+        if (cookieVal == 'Barzahlung') {
+            // Step 4
+            // if cookie value is Barzahlung set the option Abholung dur Käufer as standard.
+            $(".js-shipping-method option[value$='-1']").removeAttr('selected');
+            $(".js-shipping-method option[value$='10']").attr('selected', true);
+            $('.js-shipping-costs').removeClass('hide');
+            $('.inputShippingCosts').val('0.00');
+            // hide checkbox for free shipping
+            $('.js-shipping-method').on('click', function() {
+                if ($('.js-shipping-method option:selected').val().indexOf('10') > -1) {
+                    $('.js-shipping-costs label').addClass('hide');
+                } else {
+                    $('.js-shipping-costs label').removeClass('hide');
+                }
+            });
+            // hide checkbox for free shipping
+            if ($('.js-shipping-method').length != 0 && $('.js-shipping-method option:selected').val().indexOf('10') > -1) {
                 $('.js-shipping-costs .checkbox').addClass('hide');
                 console.log('something2');
-        }else{
+            } else {
                 $('.js-shipping-costs .checkbox').removeClass('hide');
+            }
+            // Step 3
+            $(".option-group:eq(1)").addClass('active');
+            $(".option-group:eq(1) .btn").addClass('selected');
         }
-        // Step 3
-        $(".option-group:eq(1)").addClass('active');
-        $(".option-group:eq(1) .btn").addClass('selected');
     }
-}
 
-maxChars();
-dragAndDrop();
-setPaymentCookie();
+    maxChars();
+    dragAndDrop();
+    setPaymentCookie();
 
-});
+}); 
