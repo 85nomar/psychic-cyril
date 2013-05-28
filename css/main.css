@@ -1445,13 +1445,15 @@ label[for='silver'] .value{
     visibility: hidden;
 }
 .optionMaintext{
-    line-height: 30px;
+    line-height: 20px;
 }
 
 img.specialHover{
     box-shadow: 0 0 8px gray;
     border-radius: 3px;
     cursor: pointer;
+		cursor: -webkit-zoom-in; 
+		cursor: -moz-zoom-in;
 }
 
 .hovered{
