@@ -221,7 +221,7 @@ $Layout_cb -> nav_cb();
               <h3 id="myModalLabel"></h3>
             </div>
             <div class="modal-body">
-              <img src="img/car_overlays/fullsize/car_startseite.jpg" />
+              <img src="img/car_overlays/fullsize/car_topoffer.jpg" />
             </div>
             <div class="modal-footer">
               <button class="btn" data-dismiss="modal">Schliessen</button>
@@ -274,7 +274,7 @@ $Layout_cb -> nav_cb();
               <h3 id="myModalLabel"></h3>
             </div>
             <div class="modal-body">
-              <img src="img/car_overlays/fullsize/car_topoffer.jpg" />
+              <img src="img/car_overlays/fullsize/car_startseite.jpg" />
             </div>
             <div class="modal-footer">
               <button class="btn" data-dismiss="modal">Schliessen</button>
