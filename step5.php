@@ -84,11 +84,11 @@ $Layout_cb -> nav_cb();
         <div class="span6 optionPreview">
           <p>Hauptkategorieseite</p>
 
-          <img class="specialHover" src="img/previewAnzeigefenster1.jpg" />
+          <img class="specialHover" src="img/kategorie_anzeigefenster_klein.jpg" />
           <img src="img/plus.png" style="margin:10px 0 10px 155px;" />
           <p>Hauptkategorieseite</p>
 
-          <img class="specialHover" src="img/previewAnzeigefenster1.jpg" />
+          <img class="specialHover" src="img/listing_anzeigefenster_klein.jpg" />
           
         </div>
       <div></div>
