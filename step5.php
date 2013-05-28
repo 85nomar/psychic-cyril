@@ -83,12 +83,38 @@ $Layout_cb -> nav_cb();
          </div>
         <div class="span6 optionPreview">
           <p>Hauptkategorieseite</p>
-
-          <img class="specialHover" src="img/kategorie_anzeigefenster_klein.jpg" />
+                    <!-- Bootstrap Modal 1 Core Anfang -->
+          <div id="ModalMainCategory" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h3 id="myModalLabel"></h3>
+            </div>
+            <div class="modal-body">
+              <img src="img/kategorie_full.jpg" />
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Schliessen</button>
+            </div>
+          </div>
+          <!-- Bootstrap Modal 1 Core Ende -->
+          <img data-toggle="modal" href="#ModalMainCategory" class="specialHover" src="img/kategorie_anzeigefenster_klein.jpg" />
           <img src="img/plus.png" style="margin:10px 0 10px 155px;" />
           <p>Suchresultat-Seite</p>
-
-          <img class="specialHover" src="img/listing_anzeigefenster_klein.jpg" />
+                    <!-- Bootstrap Modal 2 Core Anfang -->
+          <div id="ModalSearchResult" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h3 id="myModalLabel"></h3>
+            </div>
+            <div class="modal-body">
+              <img src="img/listing_full.jpg" />
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Schliessen</button>
+            </div>
+          </div>
+          <!-- Bootstrap Modal 2 Core Ende -->
+          <img data-toggle="modal" href="#ModalSearchResult" class="specialHover" src="img/listing_anzeigefenster_klein.jpg" />
           
         </div>
       <div></div>
@@ -133,7 +159,21 @@ $Layout_cb -> nav_cb();
          </div>
         <div class="span6 optionPreview">
           <p>Hier wird der Artikel angezeit:</p>
-          <img src="img/hp_promo_prototype_iphone.jpg" width="328" height="209" />
+          <!-- Bootstrap Modal 3 Core Anfang -->
+          <div id="ModalHomePage" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h3 id="myModalLabel"></h3>
+            </div>
+            <div class="modal-body">
+              <img src="img/hp_full.jpg" />
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Schliessen</button>
+            </div>
+          </div>
+          <!-- Bootstrap Modal 3 Core Ende -->
+          <img data-toggle="modal" href="#ModalHomePage" class="specialHover" src="img/hp_promo_prototype_iphone.jpg" width="328" height="209" />
         </div>
       <div></div>
       </div>

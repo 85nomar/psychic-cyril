@@ -21,7 +21,7 @@ class Layout_cb
             'title'=>'Beschreibung',
         ),
         array(
-            'url'=>'step4',
+            'url'=>'step3',
             'step'=> '4',
             'title'=>'Preis & Dauer',
         ),
