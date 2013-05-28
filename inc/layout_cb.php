@@ -31,7 +31,7 @@ class Layout_cb
             'title'=>'Anzeigefenster',
         ),
         array(
-            'url'=>'step6cb',
+            'url'=>'step6',
             'step'=> '6',
             'title'=>'Übersicht',
         )
