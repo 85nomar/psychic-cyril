@@ -1,5 +1,5 @@
 <?php
-class Layout
+class Layout_cb
 {
     public $anonym=false;
     public $title='';
@@ -48,10 +48,8 @@ class Layout
     }
 
     // Layout listed Contructor
-    public function start() {
-        require ('head.php');
-        require ('header.php');
-        require ('formnav.php');
+    public function nav_cb() {
+        require ('formnav_cb.php');
     }
 
     public function end() {
@@ -60,5 +58,5 @@ class Layout
 
 }
 
-$Layout=new Layout();
+$Layout_cb=new Layout_cb();
 ?>
