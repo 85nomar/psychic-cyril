@@ -1,7 +1,9 @@
 <?php
 require ('inc/layout.php');
+require ('inc/layout_cb.php');
 $Layout -> title = 'Selling';
 $Layout -> start();
+$Layout_cb -> nav_cb();
 ?>
 
 <h2>Wie möchten Sie Ihr Produkt verkaufen?</h2>

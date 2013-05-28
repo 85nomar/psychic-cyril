@@ -1,7 +1,9 @@
 <?php
 require ('inc/layout.php');
+require ('inc/layout_cb.php');
 $Layout -> title = 'Selling';
 $Layout -> start();
+$Layout_cb -> nav_cb();
 ?>
 
 <h2>Wie möchten Sie Ihren Artikel bewerben?</h2>
@@ -14,7 +16,7 @@ $Layout -> start();
         <div>
           <div class="option optDisable">
             <label for="none">
-              <input type="radio" name="adWindow" value="none" id="none" checked="checked" />
+              <input type="radio" name="adWindow" value="none" id="none" />
               <i class="icon-ok icon-white"></i>
               <span class="value">Nie</span>
              </label>
@@ -28,7 +30,7 @@ $Layout -> start();
           </div>
           <div class="option">
             <label for="silver">
-              <input type="radio" name="adWindow" value="silver" id="silver" />
+              <input type="radio" name="adWindow" value="silver" id="silver" checked="checked"/>
               <i class="icon-ok icon-white"></i>
               <span class="value">Standard CHF 5.00</span>
               <img src="img/push05.png" width="75" height="55" /></label>
@@ -49,58 +51,45 @@ $Layout -> start();
             <div id="optionTypeNone" class="item active description">
               <!--<i class="sash"><img src="img/schleife_silver.png" width="53" height="54" /></i>
               <img class="bigPic" src="img/push05_big.png" width="104" height="86" align="right" />-->
-              <p>Anzeigefenster</p>
-              <h2 class="optionName">Kein Anzeigefenster</h2>
-              <p class="optionPrice"><span class="currency">CHF</span> 0.00</p>
-              <p><strong>Ihr Artikel wird NICHT im attraktiven Anzeigefenster angezeigt.</strong></p>
+              <p class="optionMaintext">Der Artikel erscheint nicht in den Anzeigefenstern. Ihre Verkaufschancen werden nicht erhöht.</p>
             </div>
           
             <div id="optionTypeBronce" class="item description">
               <i class="sash"><img src="img/schleife_bronze.png" width="53" height="54" /></i>
-              <img class="bigPic" src="img/push01_big.png" width="39" height="86" />
+              
               <p>Anzeigefenster</p>
-              <h2 class="optionName">Bronze</h2>
+              <h2 class="optionName">Hauptkategorie- & Suchresultat-Seite</h2>
               <p class="optionPrice"><span class="currency">CHF</span> 2.00</p>
-              <p><strong>Der Artikel erscheint selten im Anzeigefenster</strong></p>
-              <ol>
-                <li>Ihr Artikel wird attraktiv im Anzeigefenster zuoberst auf der Artikel-Seite angezeigt.</li>
-                <li>Das gebuchte Anzeigefenster wird rotierend eingesetzt.</li>
-                <li>Sie können den Interval der Einblendungen selber auswählen (Gold, Silber, Bronze)</li>
-              </ol>
+              <p class="optionMaintext">Der Artikel erscheint <b><big>3x</big></b> weniger in den Anzeigefenster als bei der Option “Standard”.</p>
             </div>
           
             <div id="optionTypeSilver" class="item description">
               <i class="sash"><img src="img/schleife_silver.png" width="53" height="54" /></i>
-              <img class="bigPic" src="img/push05_big.png" width="104" height="86" align="right" />
               <p>Anzeigefenster</p>
-              <h2 class="optionName">Silber</h2>
+              <h2 class="optionName">Hautptkategorie- & Suchresultat-Seite</h2>
               <p class="optionPrice"><span class="currency">CHF</span> 5.00</p>
-              <p><strong>Der Artikel erscheint <big>5x</big> öfters als beim Anzeigefenster Bronze</strong></p>
-              <ol>
-                <li>Ihr Artikel wird attraktiv im Anzeigefenster zuoberst auf der Artikel-Seite angezeigt.</li>
-                <li>Das gebuchte Anzeigefenster wird rotierend eingesetzt.</li>
-                <li>Sie können den Interval der Einblendungen selber auswählen (Gold, Silber, Bronze)</li>
-              </ol>
+              <p class="optionMaintext">Der Artikel erscheint in den Anzeigefenstern abwechselnd mit anderen Artikeln.<br /><br /> Sie haben die Möglichkeit, den Artikel “mehr” oder “weniger” in der Rotation anzuzeigen.Siehe Video</p>
             </div>
           
             <div id="optionTypeGold" class="item description">
               <i class="sash"><img src="img/schleife_gold.png" width="53" height="54" /></i>
-              <img class="bigPic" src="img/push20_big.png" width="104" height="86" align="right" />
+              
               <p>Anzeigefenster</p>
-              <h2 class="optionName">Gold</h2>
+              <h2 class="optionName">Hauptkategorie- & Suchresultat-Seite</h2>
               <p class="optionPrice"><span class="currency">CHF</span> 15.00</p>
-              <p><strong>Der Artikel erscheint <big>20x</big> öfters als beim Anzeigefenster Bronze</strong></p>
-              <ol>
-                <li>Ihr Artikel wird attraktiv im Anzeigefenster zuoberst auf der Artikel-Seite angezeigt.</li>
-                <li>Das gebuchte Anzeigefenster wird rotierend eingesetzt.</li>
-                <li>Sie können den Interval der Einblendungen selber auswählen (Gold, Silber, Bronze)</li>
-              </ol>
+              <p class="optionMaintext">Der Artikel erscheint <b><big>4x</big></b> mehr in dem Anzeigefenster als bei der Option “Standard”.</p>
             </div>
           </div>
          </div>
         <div class="span6 optionPreview">
-          <p>Hier wird der Artikel angezeit:</p>
-          <img src="img/TopOffers_2nd_Level_top_prototyp_iphone.jpg" width="328" height="263" />
+          <p>Hauptkategorieseite</p>
+
+          <img class="specialHover" src="img/previewAnzeigefenster1.jpg" />
+          <img src="img/plus.png" />
+          <p>Hauptkategorieseite</p>
+
+          <img class="specialHover" src="img/previewAnzeigefenster1.jpg" />
+          
         </div>
       <div></div>
       </div>

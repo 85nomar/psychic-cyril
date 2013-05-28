@@ -1,7 +1,9 @@
 <?php
 require ('inc/layout.php');
-$Layout->title='Selling';
-$Layout->start();
+require ('inc/layout_cb.php');
+$Layout -> title = 'Selling';
+$Layout -> start();
+$Layout_cb -> nav_cb();
 ?>
 <h2>Welche Eigenschaften besitzt ihr Fahrzeug?</h2>
 

@@ -1387,3 +1387,15 @@ label[for='silver'] .value{
 .sash{
     display:none;
 }
+
+.option img{
+    visibility: hidden;
+}
+.optionMaintext{
+    line-height: 30px;
+}
+
+img.specialHover{
+    box-shadow: 0 0 8px gray;
+    border-radius: 3px;
+}
