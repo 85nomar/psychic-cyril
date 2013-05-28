@@ -262,26 +262,26 @@ $(document).ready(function() {
  
 		//Payment-Conditions-Selection
 						
-		$('#listingPaymentConditions button')
+		$('#listingPaymentConditions .btn')
 		.click(function(event){
 			event.preventDefault();
 		})
 		.mousedown(function(event){
-			$('.option-group').not($(this).parents('.option-group')).removeClass('selected').find('button').removeClass('active');
-			$(this).toggleClass('active');
+			$('.option-group').not($(this).parents('.option-group')).removeClass('active').find('.btn').removeClass('selected');
+			$(this).toggleClass('selected');
 		})
 		.mouseup(function(event){
-			 if($(this).parent().find('.active').size() > 0){
-				$(this).parents('.option-group').addClass('selected');
+			 if($(this).parent().find('.selected').size() > 0){
+				$(this).parents('.option-group').addClass('active');
 			 } else {
-				$(this).parents('.option-group').removeClass('selected');
+				$(this).parents('.option-group').removeClass('active');
 			 }
 		});		
 		
-		$('.option-group:last button')
+		$('.option-group:last .btn')
 		.mousedown(function(event){
-			$(this).parents('.option-group').find('button').removeClass('active');
-			$(this).addClass('active');
+			$(this).parents('.option-group').find('.btn').removeClass('selected');
+			$(this).addClass('selected');
 		});
 		
 		$('#ricardopayInfo').click(function(event) {
@@ -796,7 +796,7 @@ $(window).load(function(){
 function setPaymentCookie(){
     //set cookie
     $('.option-group .btn').click(function(){
-        var selectedOption = $(this).parents('.option-group.selected').children('h4').text();
+        var selectedOption = $(this).parents('.option-group.active').children('h4').text();
         if (selectedOption.indexOf('Abholung') > -1){
             setCookie('optionGroup', 'Barzahlung');
         }else{
@@ -828,8 +828,8 @@ function setPaymentCookie(){
                 $('.js-shipping-costs .checkbox').removeClass('hide');
         }
         // Step 3
-        $(".option-group:eq(1)").addClass('active selected');
-        $(".option-group:eq(1) .btn").addClass('active');
+        $(".option-group:eq(1)").addClass('active');
+        $(".option-group:eq(1) .btn").addClass('selected');
     }
 }
 
