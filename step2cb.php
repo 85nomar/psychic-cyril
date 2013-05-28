@@ -206,7 +206,7 @@ $Layout_cb -> nav_cb();
   <script>
 		function customCheckList(target){
 			$(target).find('.optionList input:checked').parent().addClass('selected');
-			$(target).find('.optionList label').each(function(){
+			$(target).find('.optionList label, .optionList i').each(function(){
 				$(this).click(function(){
 					$(this).parent().toggleClass('selected').find('input').attr('checked','checked');
 				});
@@ -248,7 +248,7 @@ $Layout_cb -> nav_cb();
   <div class="row-fluid" id="additionalEquipement">
     <div class="span12 well">
    		<div class="control-group">
-        <label class="control-label">Zusätzliche Ausstattung <span class="optionalField">(optional)</span></label>
+        <label class="control-label">Zusätzliche Informationen <span class="optionalField">(optional)</span></label>
         <div class="controls">
           <ul class="optionList">
             <li>
@@ -435,7 +435,6 @@ $Layout_cb -> nav_cb();
    		<div class="control-group">
         <label class="control-label">Optionale Ausstattung <span class="optionalField">(optional)</span></label>
         
-        <h4>Antrieb / Fahrwerk</h4>
         <div class="controls">
           <ul class="optionList">
             
@@ -571,7 +570,7 @@ $Layout_cb -> nav_cb();
     
      <div class="accordion-group">
       <div class="accordion-heading">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#standardFeatureAcc" href="#collapse11">Antrieb / Fahrwerk</a>
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#standardFeatureAcc" href="#collapse11">Antrieb / Fahrwerk <i class="icon-chevron-down pull-right"></i></a>
       </div>
       <div id="collapse11" class="accordion-body collapse in">
         <div class="accordion-inner">
@@ -624,7 +623,7 @@ $Layout_cb -> nav_cb();
     
      <div class="accordion-group">
       <div class="accordion-heading">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#standardFeatureAcc" href="#collapse12">Audio / Kommunikation / Instrumente</a>
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#standardFeatureAcc" href="#collapse12">Audio / Kommunikation / Instrumente <i class="icon-chevron-down pull-right"></i></a>
       </div>
       <div id="collapse12" class="accordion-body collapse">
         <div class="accordion-inner">
@@ -718,7 +717,7 @@ $Layout_cb -> nav_cb();
     
      <div class="accordion-group">
       <div class="accordion-heading">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#standardFeatureAcc" href="#collapse13">Komfort/Innen & Aussen</a>
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#standardFeatureAcc" href="#collapse13">Komfort/Innen & Aussen <i class="icon-chevron-down pull-right"></i></a>
       </div>
       <div id="collapse13" class="accordion-body collapse">
         <div class="accordion-inner">
@@ -771,7 +770,7 @@ $Layout_cb -> nav_cb();
     
      <div class="accordion-group">
       <div class="accordion-heading">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#standardFeatureAcc" href="#collapse14">Laden/Ziehen/Transport</a>
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#standardFeatureAcc" href="#collapse14">Laden/Ziehen/Transport <i class="icon-chevron-down pull-right"></i></a>
       </div>
       <div id="collapse14" class="accordion-body collapse">
         <div class="accordion-inner">
@@ -803,7 +802,7 @@ $Layout_cb -> nav_cb();
     
      <div class="accordion-group">
       <div class="accordion-heading">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#standardFeatureAcc" href="#collapse15">Optik/Tuning</a>
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#standardFeatureAcc" href="#collapse15">Optik/Tuning <i class="icon-chevron-down pull-right"></i></a>
       </div>
       <div id="collapse15" class="accordion-body collapse">
         <div class="accordion-inner">
@@ -835,7 +834,7 @@ $Layout_cb -> nav_cb();
     
      <div class="accordion-group">
       <div class="accordion-heading">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#standardFeatureAcc" href="#collapse16">Sicherheit</a>
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#standardFeatureAcc" href="#collapse16">Sicherheit <i class="icon-chevron-down pull-right"></i></a>
       </div>
       <div id="collapse16" class="accordion-body collapse">
         <div class="accordion-inner">
@@ -887,7 +886,7 @@ $Layout_cb -> nav_cb();
     
      <div class="accordion-group">
       <div class="accordion-heading">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#standardFeatureAcc" href="#collapse17">Diverses</a>
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#standardFeatureAcc" href="#collapse17">Diverses <i class="icon-chevron-down pull-right"></i></a>
       </div>
       <div id="collapse17" class="accordion-body collapse">
         <div class="accordion-inner">
@@ -925,7 +924,7 @@ $Layout_cb -> nav_cb();
     
      <div class="accordion-group">
       <div class="accordion-heading">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#optionalFeatureAcc" href="#collapse21">Antrieb / Fahrwerk</a>
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#optionalFeatureAcc" href="#collapse21">Antrieb / Fahrwerk <i class="icon-chevron-down pull-right"></i></a>
       </div>
       <div id="collapse21" class="accordion-body collapse in">
         <div class="accordion-inner">
@@ -978,7 +977,7 @@ $Layout_cb -> nav_cb();
     
      <div class="accordion-group">
       <div class="accordion-heading">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#optionalFeatureAcc" href="#collapse22">Audio / Kommunikation / Instrumente</a>
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#optionalFeatureAcc" href="#collapse22">Audio / Kommunikation / Instrumente <i class="icon-chevron-down pull-right"></i></a>
       </div>
       <div id="collapse22" class="accordion-body collapse">
         <div class="accordion-inner">
@@ -1072,7 +1071,7 @@ $Layout_cb -> nav_cb();
     
      <div class="accordion-group">
       <div class="accordion-heading">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#optionalFeatureAcc" href="#collapse23">Komfort/Innen & Aussen</a>
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#optionalFeatureAcc" href="#collapse23">Komfort/Innen & Aussen <i class="icon-chevron-down pull-right"></i></a>
       </div>
       <div id="collapse23" class="accordion-body collapse">
         <div class="accordion-inner">
@@ -1125,7 +1124,7 @@ $Layout_cb -> nav_cb();
     
      <div class="accordion-group">
       <div class="accordion-heading">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#optionalFeatureAcc" href="#collapse24">Laden/Ziehen/Transport</a>
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#optionalFeatureAcc" href="#collapse24">Laden/Ziehen/Transport <i class="icon-chevron-down pull-right"></i></a>
       </div>
       <div id="collapse24" class="accordion-body collapse">
         <div class="accordion-inner">
@@ -1157,7 +1156,7 @@ $Layout_cb -> nav_cb();
     
      <div class="accordion-group">
       <div class="accordion-heading">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#optionalFeatureAcc" href="#collapse25">Optik/Tuning</a>
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#optionalFeatureAcc" href="#collapse25">Optik/Tuning <i class="icon-chevron-down pull-right"></i></a>
       </div>
       <div id="collapse25" class="accordion-body collapse">
         <div class="accordion-inner">
@@ -1241,7 +1240,7 @@ $Layout_cb -> nav_cb();
     
      <div class="accordion-group">
       <div class="accordion-heading">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#optionalFeatureAcc" href="#collapse27">Diverses</a>
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#optionalFeatureAcc" href="#collapse27">Diverses <i class="icon-chevron-down pull-right"></i></a>
       </div>
       <div id="collapse27" class="accordion-body collapse">
         <div class="accordion-inner">

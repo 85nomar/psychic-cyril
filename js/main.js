@@ -127,6 +127,7 @@ $(document).ready(function() {
 		
 		if (thisView != targetView){
 			setCookie('view', $(this).attr('data-view'));
+			setCookie('catg', $(this).index());
 			location.reload();
 		}
 		else {
@@ -134,6 +135,14 @@ $(document).ready(function() {
 			$(target).collapse('show');
 		}        
 	});
+	
+	if(getCookie('catg')!=undefined){
+		$('#carsCatSelector a:eq('+getCookie('catg')+')').addClass('selected');
+		}
+	
+	if( getCookie('view')=='cars' && getCookie('catg')!=undefined){		
+				$('#carTypeSelector').height('auto');
+		}
 	
 	function checkFieldCollapse(target,collapse){
 		$(target).change(function(){
@@ -146,6 +155,17 @@ $(document).ready(function() {
 				$(collapse).collapse('hide');
 			}
 		});	
+	}
+	
+	function checkFieldValue(target){
+			fieldVal = $.trim(target.val());
+			if(fieldVal != '' && fieldVal != '-' && fieldVal != 0){
+				valCheck = true;
+			}
+			else {
+				valCheck = false;
+			}
+			return valCheck;
 	}
 			
 	// show .cars Car-Type-Selector
@@ -175,10 +195,8 @@ $(document).ready(function() {
 	});
 	
 	$('.controls select:last-child, .controls input:last-child').each(function() {
-		$(this).change(function(){
-			fieldVal = $.trim($(this).val());
-			if(fieldVal != '' && fieldVal != '-' && fieldVal != 0){
-				
+		$(this).bind('change blur keyup mouseup',function(){
+			if(checkFieldValue($(this))==true){	
 				if($(this).parents('.control-group').next('.control-group').height() > 0){
 					var myObj = $(this).parents('.control-group').next('.control-group');
 				} else {
@@ -192,11 +210,10 @@ $(document).ready(function() {
 		});
 	});
 	
-	$('#TxtCertification').keyup(function(){
+	$('#TxtCertification').bind('change blur keyup mouseup',function(){
 		carReset($(this));
 		if($(this).val().length == 6){
 			$(this).parents('.control-group').next('.control-group').find('select').removeAttr('disabled');
-			$(this).parents('.control-group').next('.control-group').find('select:first').focus();
 		}
 		else {
 			$(this).parents('.control-group').nextAll('.control-group').find('select').attr('disabled','disabled').find('option:selected').removeAttr('selected');
@@ -205,9 +222,8 @@ $(document).ready(function() {
 					
 	// show hide alternate Model 
 	
-	$('#FormModel').change(function(e) {
+	$('#FormModel').bind('change blur keyup mouseup',function(e) {
 		fieldVal = $.trim($(this).val());
-		console.log(fieldVal);
 		if(fieldVal == 0){
 			$('#alternateModelConrol').collapse('show')
 		}            
@@ -228,10 +244,8 @@ $(document).ready(function() {
 	
 	// Enable Next-Button by set HP for alternative Cars
 		
-	$('#altHP').bind('change blur',function(){
-		fieldVal = $.trim($(this).val());
-		console.log(fieldVal);
-		if(fieldVal != '' && fieldVal != '-' && fieldVal != 0){
+	$('#altHP').bind('change blur keyup mouseup',function(){
+		if(checkFieldValue($(this))==true){	
 			enableNextButton();
 		}		
 		else {

@@ -186,7 +186,7 @@ $Layout_cb -> nav_cb();
       <div class="control-group">
         <label class="control-label">Nummer</label>
         <div class="controls">
-          <input class="span12" type="text" name="TxtCertification" id="TxtCertification" />
+          <input class="span12" type="text" name="TxtCertification" id="TxtCertification" maxlength="6" />
         </div>
      	</div>
       
@@ -593,7 +593,7 @@ $Layout_cb -> nav_cb();
       <div id="alternateModelConrol" class="control-group collapse collapse-body">
         <label class="control-label">anderes Modell</label>
         <div class="controls">
-        	<input type="text" name="alternateModel" id="alternateModel" />
+        	<input class="span12" type="text" name="alternateModel" id="alternateModel" />
         </div>
       </div>
       <div class="control-group">
@@ -805,10 +805,6 @@ $Layout_cb -> nav_cb();
 </div>
 
 <div id="carAttributeSelector" class="cars row-fluid  collapse collapse-body">
-	<div class="alert alert-error">
-  	 <button type="button" class="close" data-dismiss="alert">&times;</button>
-     <p>Wir haben Ihr Fahrzeug nicht gefunden.</p>
-  </div>
 	<h3>Wie lauten die technischen Details des Fahrzeuges?</h3>
   <div class="well">
   		<div class="row-fluid">
@@ -870,6 +866,12 @@ $Layout_cb -> nav_cb();
       </div>
   		<div class="row-fluid">
         <div class="control-group span3">
+          <label class="control-label">Leistung PS</label>
+          <div class="controls">
+            <input class="span12" type="text" name="altHP" id="altHP" />
+          </div>
+        </div>
+        <div class="control-group span3">
           <label class="control-label">Zylinder <span class="optionalField">(optional)</span></label>
           <div class="controls">
             <input class="span12" type="text" name="" id="" />
@@ -879,12 +881,6 @@ $Layout_cb -> nav_cb();
           <label class="control-label">Hubraum ccm <span class="optionalField">(optional)</span></label>
           <div class="controls">
             <input class="span12" type="text" name="" id="" />
-          </div>
-        </div>
-        <div class="control-group span3">
-          <label class="control-label">Leistung PS</label>
-          <div class="controls">
-            <input class="span12" type="text" name="altHP" id="altHP" />
           </div>
         </div>
         <div class="control-group span3">
