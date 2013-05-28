@@ -1044,9 +1044,12 @@ label {
 
 .image-movers {
     position: absolute;
-    width: 70px;
-    margin: 55px 0 0 -27px;
-		display:none;
+    width: 75px;
+    margin: 55px 0 0 -70px;
+    display: none;
+}
+.droper .image-movers{
+    display: inline-block;
 }
 
 .image-movers .btn {
