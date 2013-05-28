@@ -85,7 +85,7 @@ $Layout_cb -> nav_cb();
           <p>Hauptkategorieseite</p>
 
           <img class="specialHover" src="img/previewAnzeigefenster1.jpg" />
-          <img src="img/plus.png" />
+          <img src="img/plus.png" style="margin:10px 0 10px 155px;" />
           <p>Hauptkategorieseite</p>
 
           <img class="specialHover" src="img/previewAnzeigefenster1.jpg" />
