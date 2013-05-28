@@ -166,7 +166,7 @@ $Layout_cb -> nav_cb();
             </div>
         </div>
     </div>
-    <div class="accordion step2" id="accordion2">
+    <div class="accordion step2 core" id="accordion2">
         <div class="accordion-group">
             <div class="accordion-heading">
                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo"> Weitere Eigenschaften <small class="muted">(optional)</small><i class="icon-chevron-down"></i></a>

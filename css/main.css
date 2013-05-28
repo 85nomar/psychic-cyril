@@ -1443,3 +1443,7 @@ img.specialHover{
     top: 50px;
     margin-left: -400px;
 }
+
+#adHomepage.cars .blowUp .carousel-inner{
+    max-height: 180px;
+}
