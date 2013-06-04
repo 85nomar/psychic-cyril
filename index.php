@@ -11,6 +11,7 @@ $Layout->start(); ?>
 
 <script type="text/javascript">
 	setCookie('catg','',-1);
+	setCookie('reachedStep','',-1);
 	setCookie('optionGroup','',-1);
 </script>
 

@@ -21,20 +21,60 @@ function getCookie(cookieName) {
     }
 }
 
-if (getCookie('view') == 'cars') {
+/*if (getCookie('view') == 'cars') {
     document.writeln('<style>.core{display:none !important;}.accessory{display:none !important}.cars{display:block !important;}</style>');
 } else if (getCookie('view') == 'accessory') {
     document.writeln('<style>.core{display:none !important;}.cars{display:none !important}.accessory{display:block !important;}</style>');
 } else {
     setCookie('view', 'core');
     document.writeln('<style>.cars{display:none !important}.accessory{display:none !important}.core{display:block !important;}</style>');
-}
+}*/
 
 $(document).ready(function() {
+
+		if (getCookie('view') == 'cars') {
+			 $('.cars').show();
+		} else if (getCookie('view') == 'accessory') {
+			 $('.accessory').show();
+		} else {
+			$('.core').show();
+			setCookie('view', 'core');
+		}
 
     $('.setCookie').mousedown(function() {
         setCookie('view', $(this).attr('data-view'));
     });
+		
+		// set reached step for diffrent functions
+		
+		if(getCookie('reachedStep')!= undefined){
+			thisView = getCookie('view');
+			thisStep = $('#formNav.'+thisView+' .active .num').text();
+			reachedStep = getCookie('reachedStep');
+			if(thisStep>reachedStep){
+				setCookie('reachedStep',thisStep);
+			}
+						
+			for (var i=0; i<reachedStep; i++){
+				$('#formNav.'+thisView+' li:eq('+i+')').removeClass('todo').addClass('done');
+			}
+		
+			//$('.done .num').html('<img src="img/haken.png" />');
+			$('.done .num').html('<i class="icon-ok icon-green"></i>');
+			$('.todo').click(function(event) {
+        event.preventDefault();
+      });
+		}
+		else {
+				setCookie('reachedStep',1);
+		}
+		
+		if(reachedStep >= 6){
+			$('.form-actions a.toNext').addClass('btn-small');
+			$('.form-actions a.toOverview').show();
+		}
+		
+		$('.form-actions a:visible').css('display','inline-block');
 
     // disable/enable next-btn
 
@@ -145,6 +185,9 @@ $(document).ready(function() {
             console.log(fieldVal);
             if (fieldVal != '' && fieldVal != '-' && fieldVal != 0) {
                 $(collapse).collapse('show');
+								$('html, body').animate({
+										 scrollTop: $("#carSelector").offset().top
+								 }, 500);
             } else {
                 $(collapse).collapse('hide');
             }
@@ -175,12 +218,12 @@ $(document).ready(function() {
     // enable/disable form-fields
 
     function carReset(thisSelector) {
-        $('.carSelector').not(thisSelector.parents('.carSelector')).removeClass('selected');
+        $('.carSelector').not(thisSelector.parents('.carSelector')).removeClass('selected').addClass('blurSelector');
         $('.carSelector').not(thisSelector.parents('.carSelector')).find('.control-group:gt(0) select').attr('disabled', 'disabled');
         $('.carSelector').not(thisSelector.parents('.carSelector')).find('option:selected').removeAttr('selected');
         $('.carSelector').not(thisSelector.parents('.carSelector')).find('input').val('');
 
-        thisSelector.parents('.carSelector').addClass('selected');
+        thisSelector.parents('.carSelector').removeClass('blurSelector').addClass('selected');
     };
 
     $('.carSelector select').change(function() {
@@ -212,12 +255,28 @@ $(document).ready(function() {
     });
 
     // show hide alternate Model
-
-    $('#FormModel').bind('change blur keyup mouseup', function(e) {
+		
+    $('#FormModel, #FormMake').bind('change', function(e) {
         fieldVal = $.trim($(this).val());
         if (fieldVal == 0) {
-            $('#alternateModelConrol').collapse('show')
+						 $(this).parents('.control-group').collapse('hide');
+						 $(this).parents('.control-group').next().collapse('show');
         }
+    });		
+		
+    $('#alternateMake, #alternateMakeModel').bind('mouseup keyup', function(e) {
+				if(checkFieldValue($(this))==true){
+            $(this).parents('.control-group').next('.control-group').find('select').removeAttr('disabled');
+        } else {
+            $(this).parents('.control-group').nextAll('.control-group').find('select').attr('disabled', 'disabled').find('option:selected').removeAttr('selected');
+        }
+    });
+
+    $('.carSelector .close').bind('click', function(event) {
+			event.preventDefault();
+		 $(this).parents('.control-group').collapse('hide').find('input').val('');
+		 $(this).parents('.control-group').prev().collapse('show').find('option:selected').removeAttr('selected');
+     $(this).parents('.control-group').nextAll('.control-group').find('select').attr('disabled', 'disabled').find('option:selected').removeAttr('selected');
     });
 
     // Car-Version-Select-Table
@@ -553,8 +612,10 @@ $(document).ready(function() {
     // Step 5 - Login Modal
     (function($) {
         function showLogin(event) {
+					if(getCookie('reachedStep')<6){
             event.preventDefault();
             $('#modalLogin').modal('show');
+					}
         };
 
         $('.js-prelogin').click(showLogin);
@@ -640,8 +701,6 @@ $(document).ready(function() {
     }
 
     imageMovers();
-
-    $('.done .num').html('<img src="img/haken.png" />');
 
 });
 

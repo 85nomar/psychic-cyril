@@ -347,8 +347,9 @@ $Layout_cb -> nav_cb();
 </form>
 
 <div class="form-actions">
-    <a href="step6.php" class="btn btn-primary pull-right core accessory js-prelogin">Weiter & Anmelden</a>
-    <a href="step6cb.php" class="btn btn-primary pull-right cars js-prelogin">Weiter & Anmelden</a>
+    <a href="step6.php" class="btn btn-primary toNext core accessory js-prelogin">Weiter & Anmelden</a>
+    <a href="step6cb.php" class="btn btn-primary toNext cars js-prelogin">Weiter & Anmelden</a>
+    <a href="step6.php" class="btn toOverview">Weiter zu &laquo;<?php echo $Layout_cb->formNav[5]["title"]; ?>&raquo;</a>
 </div>
 
 <div id="modalLogin" class="modal hide fade">
