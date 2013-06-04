@@ -13,7 +13,7 @@ $Layout_cb -> nav_cb();
         <div id="articlePreview" class="row-fluid">
             <div class="span12">
                 <img src="img/articlePreview_tmb.png">
-                <a href="#" class="btn"><i class="icon-share icon-blue"></i> Vorschau anzeigen</a>
+                <a href="#" class="btn"><i class="icon-share"></i> Vorschau anzeigen</a>
             </div>
         </div>
         <!-- <div class="row-fluid section">

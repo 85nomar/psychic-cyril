@@ -9,11 +9,11 @@ $Layout_cb -> nav_cb();
 <h2>In welcher Kategorie möchten Sie Ihr Produkt einstellen?</h2>
 
 <div id="carsCatSelector" class="cars accessory row-fluid" style="text-align:center;">
-	<a href="step1.php" class="span2 btn" data-view="cars"><img src="img/car.png" width="89" height="72" />Autos</a>	
-	<a href="step1.php" class="span2 btn" data-view="cars"><img src="img/bike.png" width="89" height="72" />Motoräder</a>
-	<a href="step1.php" class="span2 btn" data-view="cars"><img src="img/utility.png" width="89" height="72" />Nutzfahrzeuge</a>
-	<a href="step1.php" class="span2 btn" data-view="accessory"><img src="img/accessories.png" width="89" height="72" />Zubehör</a>
-	<a href="step1.php" class="span2 btn" data-view="cars">Andere Fahrzeuge</a>
+	<a href="step1.php" class="span2 btn" data-view="cars"><img src="img/car.png" width="89" height="72" />Autos<span class="cbMainCatMark"></span></a>	
+	<a href="step1.php" class="span2 btn" data-view="cars"><img src="img/bike.png" width="89" height="72" />Motoräder<span class="cbMainCatMark"></span></a>
+	<a href="step1.php" class="span2 btn" data-view="cars"><img src="img/utility.png" width="89" height="72" />Nutzfahrzeuge<span class="cbMainCatMark"></span></a>
+	<a href="step1.php" class="span2 btn" data-view="accessory"><img src="img/accessories.png" width="89" height="72" />Zubehör<span class="cbMainCatMark"></span></a>
+	<a href="step1.php" class="span2 btn" data-view="cars">Andere Fahrzeuge<span class="cbMainCatMark"></span></a>
 </div>
 
 <div class="core accessory row-fluid">
@@ -133,8 +133,8 @@ $Layout_cb -> nav_cb();
         <nav class="span2 navCat" id="navCatLvl1">
           <ul class="nav nav-list">
             <li class=""><a href="#">Autos<i class="icon-chevron-right"></i></a></li>
-            <li class=""><a href="#">Ersatzteilträger<i class="icon-chevron-right"></i></a></li>
             <li class=""><a href="#">Mietfarzeuge<i class="icon-chevron-right"></i></a></li>
+            <li class=""><a href="#" data-toggle="tooltip" data-placement="right" title="Fahrzeuge zum ausschlachten">Ersatzteilträger<i class="icon-info-sign"></i><i class="icon-chevron-right"></i></a></li>
           </ul>        
         </nav>
     </div>
@@ -180,7 +180,7 @@ $Layout_cb -> nav_cb();
 
 <div id="carSelector" class="cars row-fluid collapse collapse-body">
 	<h3>Wie möchten Sie Ihr Fahrzeug einstellen?</h3>
-	<div class="span4 well carSelector" >
+	<div class="span4 offset1 well carSelector" >
     	<h4>Mit Typenschein-Nummer</h4>
       
       <div class="control-group">
@@ -335,7 +335,7 @@ $Layout_cb -> nav_cb();
       
   </div>
   
-	<div class="span2">oder</div>
+	<div class="span1 seperator">oder</div>
   
 	<div class="span4 well carSelector">
     	<h4>Mit Marke / Model</h4>
@@ -476,105 +476,117 @@ $Layout_cb -> nav_cb();
           </select>
         </div>
       </div>
-      <div class="control-group">
+      <div class="control-group collapse collapse-body in">
         <label class="control-label">Marke</label>
         <div class="controls">    
           <select class="span12" name="FormMake" id="FormMake" tabindex="3" disabled="disabled">
-            <option value="-">Bitte wählen Sie...</option>
-            <option value="218">AIXAM</option>
-            <option value="10">ALFA ROMEO</option>
-            <option value="62">AMERICAN MOTORS</option>
-            <option value="235">ARTEGA</option>
-            <option value="73">ASTON MARTIN</option>
-            <option value="11">AUDI</option>
-            <option value="31">AUSTIN</option>
-            <option value="94">BENTLEY</option>
-            <option value="95">BERTONE</option>
-            <option value="13">BMW</option>
-            <option value="92">BMW-ALPINA</option>
-            <option value="85">BUGATTI</option>
-            <option value="23">BUICK</option>
-            <option value="24">CADILLAC</option>
-            <option value="74">CATERHAM</option>
-            <option value="25">CHEVROLET</option>
-            <option value="54">CHRYSLER</option>
-            <option value="14">CITROEN</option>
-            <option value="228">DACIA</option>
-            <option value="20">DAEWOO</option>
-            <option value="16">DAIHATSU</option>
-            <option value="99">DAIMLER</option>
-            <option value="68">DE TOMASO</option>
-            <option value="226">DODGE</option>
-            <option value="98">DONKERVOORT</option>
-            <option value="65">FERRARI</option>
-            <option value="17">FIAT</option>
-            <option value="237">FISKER</option>
-            <option value="21">FORD</option>
-            <option value="22">FORD (USA)</option>
-            <option value="28">HONDA</option>
-            <option value="109">HS</option>
-            <option value="225">HUMMER</option>
-            <option value="34">HYUNDAI</option>
-            <option value="230">INFINITI</option>
-            <option value="32">INNOCENTI</option>
-            <option value="53">ISUZU (GM)</option>
-            <option value="58">ISUZU (J)</option>
-            <option value="231">IVECO</option>
-            <option value="33">JAGUAR</option>
-            <option value="59">JEEP</option>
-            <option value="88">KIA</option>
-            <option value="232">KTM</option>
-            <option value="29">LADA</option>
-            <option value="66">LAMBORGHINI</option>
-            <option value="30">LANCIA</option>
-            <option value="187">LAND ROVER</option>
-            <option value="61">LEXUS</option>
-            <option value="223">LIGIER</option>
-            <option value="77">LOTUS</option>
-            <option value="55">MASERATI</option>
-            <option value="37">MAZDA</option>
-            <option value="236">McLAREN</option>
-            <option value="38">MERCEDES-BENZ</option>
-            <option value="18">MG</option>
-            <option value="217">MINELLI</option>
-            <option value="67">MINI</option>
-            <option value="39">MITSUBISHI</option>
-            <option value="84">MORGAN</option>
-            <option value="40">NISSAN</option>
-            <option value="26">OLDSMOBILE</option>
-            <option value="41">OPEL</option>
-            <option value="42">PEUGEOT</option>
-            <option value="27">PONTIAC</option>
-            <option value="43">PORSCHE</option>
-            <option value="57">PUCH</option>
-            <option value="220">QVALE</option>
-            <option value="102">RELIANT</option>
-            <option value="44">RENAULT</option>
-            <option value="80">ROLLS-ROYCE</option>
-            <option value="35">ROVER</option>
-            <option value="45">SAAB</option>
-            <option value="19">SEAT</option>
-            <option value="46">SKODA</option>
-            <option value="216">SMART</option>
-            <option value="115">SSANG YONG</option>
-            <option value="47">SUBARU</option>
-            <option value="48">SUZUKI</option>
-            <option value="49">TALBOT</option>
-            <option value="222">TATA</option>
-            <option value="234">TESLA</option>
-            <option value="233">THINK</option>
-            <option value="50">TOYOTA</option>
-            <option value="89">TVR</option>
-            <option value="82">VENTURI</option>
-            <option value="51">VOLVO</option>
-            <option value="52">VW</option>
-            <option value="219">WIESMANN</option>
-            <option value="103">ZAGATO</option>
-            <option value="-1">Sonstige</option>
+          	 <option value="-1">Bitte wählen Sie ...</option>
+             <option value="1">Aixam</option>
+             <option value="2">Alfa Romeo</option>
+             <option value="3">American Motors</option>
+             <option value="313">Artega</option>
+             <option value="4">Aston Martin</option>
+             <option value="5">Audi</option>
+             <option value="6">Austin</option>
+             <option value="7">Bentley</option>
+             <option value="8">Bertone</option>
+             <option value="9">BMW</option>
+             <option value="10">BMW-Alpina</option>
+             <option value="11">Bugatti</option>
+             <option value="12">Buick</option>
+             <option value="13">Cadillac</option>
+             <option value="14">Caterham</option>
+             <option value="15">Chevrolet</option>
+             <option value="16">Chrysler</option>
+             <option value="17">Citroen</option>
+             <option value="18">Dacia</option>
+             <option value="19">Daewoo</option>
+             <option value="20">Daihatsu</option>
+             <option value="21">Daimler</option>
+             <option value="22">De Tomaso</option>
+             <option value="335">Dfsk</option>
+             <option value="23">Dodge</option>
+             <option value="24">Donkervoort</option>
+             <option value="25">Ferrari</option>
+             <option value="26">Fiat</option>
+             <option value="324">Fisker</option>
+             <option value="27">Ford</option>
+             <option value="28">Ford (Usa)</option>
+             <option value="321">Giotti Victoria</option>
+             <option value="29">Honda</option>
+             <option value="30">HS</option>
+             <option value="31">Hummer</option>
+             <option value="32">Hyundai</option>
+             <option value="87">Infiniti</option>
+             <option value="33">Innocenti</option>
+             <option value="34">Isuzu</option>
+             <option value="35">Isuzu (J)</option>
+             <option value="88">Iveco</option>
+             <option value="36">Jaguar</option>
+             <option value="37">Jeep</option>
+             <option value="38">Kia</option>
+             <option value="299">KTM</option>
+             <option value="39">Lada</option>
+             <option value="40">Lamborghini</option>
+             <option value="41">Lancia</option>
+             <option value="42">Land Rover</option>
+             <option value="43">Lexus</option>
+             <option value="44">Ligier</option>
+             <option value="45">Lotus</option>
+             <option value="46">Maserati</option>
+             <option value="47">Mazda</option>
+             <option value="314">McLaren</option>
+             <option value="316">Mega</option>
+             <option value="48">Mercedes-Benz</option>
+             <option value="49">MG</option>
+             <option value="50">Minelli</option>
+             <option value="51">Mini</option>
+             <option value="52">Mitsubishi</option>
+             <option value="53">Morgan</option>
+             <option value="54">Nissan</option>
+             <option value="55">Oldsmobile</option>
+             <option value="56">Opel</option>
+             <option value="57">Peugeot</option>
+             <option value="149">Piaggio</option>
+             <option value="58">Pontiac</option>
+             <option value="59">Porsche</option>
+             <option value="60">Puch</option>
+             <option value="61">Qvale</option>
+             <option value="62">Reliant</option>
+             <option value="63">Renault</option>
+             <option value="315">Renault Trucks</option>
+             <option value="64">Rolls-Royce</option>
+             <option value="65">Rover</option>
+             <option value="66">Saab</option>
+             <option value="67">Seat</option>
+             <option value="68">Skoda</option>
+             <option value="69">Smart</option>
+             <option value="301">Sokon</option>
+             <option value="70">Ssang Yong</option>
+             <option value="71">Subaru</option>
+             <option value="72">Suzuki</option>
+             <option value="73">Talbot</option>
+             <option value="74">Tata</option>
+             <option value="312">Tesla</option>
+             <option value="311">Think</option>
+             <option value="75">Toyota</option>
+             <option value="76">TVR</option>
+             <option value="77">Venturi</option>
+             <option value="78">Volvo</option>
+             <option value="79">VW</option>
+             <option value="80">Wiesmann</option>
+             <option value="81">Zagato</option>
+             <option value="0">Sonstige</option>            
           </select>
         </div>
       </div>
-      <div class="control-group">
+      <div class="control-group collapse collapse-body">
+        <label class="control-label">andere Marke</label>
+        <div class="controls input-append span12">
+        	<input class="" type="text" name="alternateMake" id="alternateMake" /><span class="add-on"><a class="close" href="#">&times;</a></span>
+        </div>
+      </div>
+      <div class="control-group collapse collapse-body in">
         <label class="control-label">Modell</label>
         <div class="controls">    
           <select class="span12" name="FormModel" id="FormModel" tabindex="3" disabled="disabled">
@@ -590,10 +602,10 @@ $Layout_cb -> nav_cb();
           </select>
         </div>
       </div>
-      <div id="alternateModelConrol" class="control-group collapse collapse-body">
+      <div class="control-group collapse collapse-body">
         <label class="control-label">anderes Modell</label>
-        <div class="controls">
-        	<input class="span12" type="text" name="alternateModel" id="alternateModel" />
+        <div class="controls input-append span12">
+        	<input class="" type="text" name="alternateModel" id="alternateModel" /><span class="add-on"><a class="close" href="#">&times;</a></span>
         </div>
       </div>
       <div class="control-group">
@@ -806,9 +818,10 @@ $Layout_cb -> nav_cb();
 
 <div id="carAttributeSelector" class="cars row-fluid  collapse collapse-body">
 	<h3>Wie lauten die technischen Details des Fahrzeuges?</h3>
-  <div class="well">
+  <div id="altCarAttributes" class="well">
+  	<h4>Pflicht-Angaben</h4>
   		<div class="row-fluid">
-        <div class="control-group span3">
+        <div class="control-group span4">
           <label class="control-label">Aufbauart</label>
           <div class="controls">    
             <select class="span12" name="FormModel" id="FormModel" tabindex="3">
@@ -825,7 +838,7 @@ $Layout_cb -> nav_cb();
             </select>
           </div>
         </div>
-        <div class="control-group span3">
+        <div class="control-group span4">
           <label class="control-label">Antrieb</label>
           <div class="controls">    
             <select class="span12" name="FormModel" id="FormModel" tabindex="3">
@@ -836,7 +849,7 @@ $Layout_cb -> nav_cb();
             </select>
           </div>
         </div>
-        <div class="control-group span3">
+        <div class="control-group span4">
           <label class="control-label">Getriebeart</label>
           <div class="controls">    
             <select class="span12" name="FormModel" id="FormModel" tabindex="3">
@@ -846,7 +859,7 @@ $Layout_cb -> nav_cb();
             </select>
           </div>
         </div>
-        <div class="control-group span3">
+        <div class="control-group span4">
           <label class="control-label">Gänge</label>
           <div class="controls">    
             <select class="span12" name="FormModel" id="FormModel" tabindex="3">
@@ -863,48 +876,47 @@ $Layout_cb -> nav_cb();
             </select>
           </div>
         </div>
-      </div>
-  		<div class="row-fluid">
-        <div class="control-group span3">
+        <div class="control-group span4">
           <label class="control-label">Leistung PS</label>
           <div class="controls">
             <input class="span12" type="text" name="altHP" id="altHP" />
           </div>
         </div>
-        <div class="control-group span3">
-          <label class="control-label">Zylinder <span class="optionalField">(optional)</span></label>
-          <div class="controls">
-            <input class="span12" type="text" name="" id="" />
-          </div>
-        </div>
-        <div class="control-group span3">
-          <label class="control-label">Hubraum ccm <span class="optionalField">(optional)</span></label>
-          <div class="controls">
-            <input class="span12" type="text" name="" id="" />
-          </div>
-        </div>
-        <div class="control-group span3">
-          <label class="control-label">Leistung KW <span class="optionalField">(optional)</span></label>
-          <div class="controls">
-            <input class="span12" type="text" name="" id="" />
-          </div>
-        </div>
-       </div>
+      </div>
+  	<h4>Optionale Angaben</h4>
   		<div class="row-fluid">
-        <div class="control-group span3">
-          <label class="control-label">Typenscheinnummer <span class="optionalField">(optional)</span></label>
+        <div class="control-group span4">
+          <label class="control-label">Zylinder<!-- <span class="optionalField">(optional)</span>--></label>
           <div class="controls">
             <input class="span12" type="text" name="" id="" />
           </div>
         </div>
-        <div class="control-group span3">
-          <label class="control-label">Gewicht (kg) <span class="optionalField">(optional)</span></label>
+        <div class="control-group span4">
+          <label class="control-label">Hubraum ccm<!-- <span class="optionalField">(optional)</span>--></label>
           <div class="controls">
             <input class="span12" type="text" name="" id="" />
           </div>
         </div>
-        <div class="control-group span3">
-          <label class="control-label">Anhängerlast gebr. <span class="optionalField">(optional)</span></label>
+        <div class="control-group span4">
+          <label class="control-label">Leistung KW<!-- <span class="optionalField">(optional)</span>--></label>
+          <div class="controls">
+            <input class="span12" type="text" name="" id="" />
+          </div>
+        </div>
+        <div class="control-group span4">
+          <label class="control-label">Typenscheinnummer<!-- <span class="optionalField">(optional)</span>--></label>
+          <div class="controls">
+            <input class="span12" type="text" name="" id="" />
+          </div>
+        </div>
+        <div class="control-group span4">
+          <label class="control-label">Gewicht (kg)<!-- <span class="optionalField">(optional)</span>--></label>
+          <div class="controls">
+            <input class="span12" type="text" name="" id="" />
+          </div>
+        </div>
+        <div class="control-group span4">
+          <label class="control-label">Anhängerlast gebr.<!-- <span class="optionalField">(optional)</span>--></label>
           <div class="controls">
             <input class="span12" type="text" name="" id="" />
           </div>
@@ -914,8 +926,9 @@ $Layout_cb -> nav_cb();
 </div>
 
 <div class="form-actions">
-    <a href="step2.php" class="btn btn-primary pull-right core accessory">Weiter zu &laquo;<?php echo $Layout->formNav[1]["title"]; ?>&raquo;</a>
-    <a href="step2cb.php" class="btn btn-disabled pull-right cars">Weiter zu &laquo;<?php echo $Layout_cb->formNav[1]["title"]; ?>&raquo;</a>
+    <a href="step2.php" class="btn btn-primary toNext core accessory">Weiter zu &laquo;<?php echo $Layout->formNav[1]["title"]; ?>&raquo;</a>
+    <a href="step2cb.php" class="btn btn-disabled toNext cars">Weiter zu &laquo;<?php echo $Layout_cb->formNav[1]["title"]; ?>&raquo;</a>
+    <a href="step6.php" class="btn toOverview">Weiter zu &laquo;<?php echo $Layout_cb->formNav[5]["title"]; ?>&raquo;</a>
 </div>
 
 <div id="modalCarID" class="modal hide fade">

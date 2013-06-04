@@ -1,3 +1,8 @@
+.core, .cars, .accessory {
+	display:none;
+	}
+
+
     /**********************************************************************
  * Selling-Form
  **********************************************************************/
@@ -8,6 +13,18 @@
 
 h1, h2, h3, h4 {
     color: #333;
+}
+
+.icon-orange {
+  background-image: url("http://auto.ricardo.ch/Auto/Content/images/1/Sprites/ricardo_icons_orange.png");
+}
+
+.icon-green {
+  background-image: url("http://auto.ricardo.ch/Auto/Content/images/1/Sprites/ricardo_icons_green.png");
+}
+
+.icon-blue {
+  background-image: url("http://auto.ricardo.ch/Auto/Content/images/1/Sprites/ricardo_icons_blue.png");
 }
 
 /* +++++++++++++++++++++++++ Base-Styles +++++++++++++++++++++++++ */
@@ -192,8 +209,10 @@ h1, h2, h3, h4 {
 
 #formNav {
     margin: 5px 0;
+		text-align: right.
    /* padding-left: 20px;*/
 }
+
 .stepIndicator {
 	width:970px;
 }
@@ -239,7 +258,8 @@ h1, h2, h3, h4 {
 }
 .stepIndicator > li.todo > a {
     background-color: #e5e5e5;
-    color: #1946a0;
+    color: #999;
+		cursor: default;
 }
 .stepIndicator > li.todo > a:after {
     border-color: transparent #e5e5e5;
@@ -259,6 +279,14 @@ h1, h2, h3, h4 {
 .stepIndicator > li:last-child > a:after {
     background-color:white;
 		border-width: 0;
+}
+
+.nav-pills > .active > a, .nav-pills > .active > a:hover {
+    color: #FFFFFF !important;
+}
+
+.nav-pills > .active i {
+  background-image: url("http://auto.ricardo.ch/Auto/Content/images/1/Sprites/ricardo_icons_white.png");
 }
 
 /* +++++++++++++++++++++++++ Step1 +++++++++++++++++++++++++ */
@@ -320,6 +348,10 @@ h1, h2, h3, h4 {
     top: 7px;
 }
 
+.navCat li .icon-info-sign {
+    display: inline-block;
+}
+
 .navCat li.hasSub i, .navCat li.active i {
     display: block;
 }
@@ -350,10 +382,43 @@ h1, h2, h3, h4 {
 	top: 5px;
 }
 
+#carsCatSelector .selected .cbMainCatMark {
+	background-image:url('../img/cb_maincat_mark.png');
+	width:23px;
+	height:14px;
+	display:inline-block;
+	position:absolute;
+	left:50%;
+	margin-left:-11px;
+	top:113px;
+	z-index:99;
+	}
+
 /* .cars Car-Selector */
 
 #carSelector .well{
-	min-height:350px;
+	padding-bottom:10px;
+	min-height:355px;
+}
+
+#carSelector .well.blurSelector{
+	background-color: #fff;
+	border-color:#eee;
+	color:#bbb;
+}
+
+#carSelector .well.blurSelector h4, #carSelector .well.blurSelector select{
+	color:#bbb;
+}
+
+#carSelector .seperator{
+	font-weight: bold;
+	margin-top: 170px;
+	text-align: center;
+}
+
+#carSelector .seperator i{
+	margin-top:3px;
 }
 
 #carSelector .well.selected{
@@ -410,6 +475,15 @@ h1, h2, h3, h4 {
 	margin-right: 10px;
 	padding-right: 15px;
 } 
+
+#altCarAttributes {
+	padding-right: 0;
+	}
+
+#altCarAttributes .control-group {
+	width: 31.5%;
+	margin: 0 1.5% 0 0;
+	}
 
 /* +++++++++++++++++++++++++ Step2 (Core) +++++++++++++++++++++++++ */
 
@@ -913,8 +987,6 @@ input[type="radio"].toggle:checked + label {
 
 /* Step6 Overview and Preview */
 
-.form-actions 
-
 #articlePreview {
     margin-top: 0;
 }
@@ -1040,12 +1112,23 @@ label {
     width: 960px;
     margin-left: -480px;
 }
+
 .form-actions {
     background: none;
     border: none;
     padding: 20px 0;
     margin-top: 0;
+		text-align:right;
 }
+
+.form-actions a{
+  margin-left: 15px;
+}
+
+.form-actions a.toOverview{
+	display:none;
+}
+
 .breadcrumb {
     margin: 5px 0 0 0;
     padding: 0;
@@ -1316,10 +1399,6 @@ body > .mce-container.mce-panel.mce-floatpanel:not(.mce-menu-sub) > .mce-contain
 
 .de iframe, .fr iframe{
     height: 100px ;
-}
-
-.stepIndicator.nav.nav-pills li a {
-cursor: default;
 }
 
 #swissIcons{

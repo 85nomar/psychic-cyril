@@ -1268,6 +1268,7 @@ $Layout_cb -> nav_cb();
   
 </form>
 <div class="form-actions">
-    <a href="step2.php" class="btn btn-primary pull-right">Weiter zu &laquo;<?php echo $Layout_cb->formNav[2]["title"]; ?>&raquo;</a>
+    <a href="step2.php" class="btn btn-primary toNext">Weiter zu &laquo;<?php echo $Layout_cb->formNav[2]["title"]; ?>&raquo;</a>
+    <a href="step6.php" class="btn toOverview">Weiter zu &laquo;<?php echo $Layout_cb->formNav[5]["title"]; ?>&raquo;</a>
 </div>
 <?php $Layout -> end(); ?>

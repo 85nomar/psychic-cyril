@@ -208,8 +208,9 @@ $Layout_cb -> nav_cb();
 </form>
 
 <div class="form-actions">
-    <a href="step4.php" class="btn btn-primary pull-right core accessory">Weiter zu &laquo;<?php echo $Layout->formNav[3]["title"]; ?>&raquo;</a>
-    <a href="step5.php" class="btn btn-primary pull-right cars">Weiter zu &laquo;<?php echo $Layout_cb->formNav[4]["title"]; ?>&raquo;</a>
+    <a href="step4.php" class="btn btn-primary toNext core accessory">Weiter zu &laquo;<?php echo $Layout->formNav[3]["title"]; ?>&raquo;</a>
+    <a href="step5.php" class="btn btn-primary toNext cars">Weiter zu &laquo;<?php echo $Layout_cb->formNav[4]["title"]; ?>&raquo;</a>
+    <a href="step6.php" class="btn toOverview">Weiter zu &laquo;<?php echo $Layout_cb->formNav[5]["title"]; ?>&raquo;</a>
 </div>
 
 <div id="modalRicardoPay" class="modal hide fade">
