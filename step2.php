@@ -188,7 +188,8 @@ $Layout_cb -> nav_cb();
             </div>
         </div>
     </div>
-    <div class="accordion step2 core" id="accordion2">
+    <!--<div class="accordion step2 core accessory" id="accordion2">-->
+    <div class="accordion step2" id="accordion2">
         <div class="accordion-group">
             <div class="accordion-heading">
                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo"> Weitere Eigenschaften <small class="muted">(optional)</small><i class="icon-chevron-down"></i></a>
@@ -212,6 +213,24 @@ $Layout_cb -> nav_cb();
             </div>
         </div>
     </div>
+    
+  <div class="row-fluid cars">
+    <div class="span12 well">
+      <div class="control-group span6 offset1">
+        <label class="control-label">Garantie <span class="optionalField">(optional)</span></label>
+        <div class="controls">
+          <div class="span3">
+            <input type="radio" name="hasGuarantee">
+            Nein
+            <input type="radio" name="hasGuarantee">
+            Ja </div>
+          <div class="span9">
+            <textarea class="span12" rows="3" placeholder="Beschreiben Sie die Garantie hier."></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </form>
 <div class="form-actions">
     <a href="step3.php" class="btn btn-primary toNext core accessory">Weiter zu &laquo;<?php echo $Layout->formNav[2]["title"]; ?>&raquo;</a>

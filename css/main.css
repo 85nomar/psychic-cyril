@@ -27,6 +27,14 @@ h1, h2, h3, h4 {
   background-image: url("http://auto.ricardo.ch/Auto/Content/images/1/Sprites/ricardo_icons_blue.png");
 }
 
+.icon-chevron-up, .accordion-heading .accordion-toggle i {
+    background-position: -361px -48px;
+}
+
+.icon-chevron-down,.accordion-heading .accordion-toggle.collapsed i {
+    background-position: -384px -48px;
+}
+
 /* +++++++++++++++++++++++++ Base-Styles +++++++++++++++++++++++++ */
 
 .well {
@@ -35,6 +43,7 @@ h1, h2, h3, h4 {
 
 .control-group {
 	margin-bottom:0;
+	position:relative;
 	}	
 
 .optionWithCosts{
@@ -53,25 +62,34 @@ h1, h2, h3, h4 {
 }
 
 .optionList{
-	clear: both;
+	clear: both;	
 	column-count: 4;
 	column-gap: 10px;
-	-moz-column-width: 200px;
-	-webkit-column-width: 200px;
-	margin:0;
+	-moz-column-count: 4;
+	-moz-column-gap: 10px;
+	-webkit-column-count: 4;
+	-webkit-column-gap: 10px;
+	margin:0;	
 	}
 	
 .optionList li{
-	/*width:200px;*/
-	position:relative;
-	/*float:left;*/
 	break-inside: avoid-column;
   -webkit-column-break-inside: avoid;
 	list-style:none;
 	}
 
-/*.optionList li{
-	}*/
+.optionList li small{    
+	display: block;
+	margin: -4px 0;
+	}
+
+.optionList li i{
+	display:none;
+	}
+
+.optionList.editable li i{
+	display:block;
+	}
 	
 	
 .optionList i {
@@ -176,9 +194,19 @@ h1, h2, h3, h4 {
 	border-radius: 5px;
 }
 
+.collapse-control {
+	position:absolute;
+	top:0;
+	right:0;
+}
+
 .accordion-inner {
 	background-color:#fff;
 	border-radius: 0 0 5px 5px;
+}
+
+.hidden{
+	display:none;
 }
 
 .ricardopay-info-box {
@@ -655,22 +683,19 @@ h1, h2, h3, h4 {
 	clear: both;
 	column-count: 2;
 	column-gap: 10px;
-	/*column-width: 290px;*/
 	-moz-column-count: 2;
 	-moz-column-gap: 10px;
-	/*-moz-column-width: 290px;*/
 	-webkit-column-count: 2;
 	-webkit-column-gap: 10px;
-	/*-webkit-column-width: 290px;*/
 	margin:0;
 	}
 	
 #standardEquipement .optionList, #optionalEquipement .optionList {
-	width: 750px;
+	/*width: 750px;*/
 	}
  #standardFeatureAcc .optionList li, #optionalFeatureAcc .optionList li {
 	float: left;
-	width: 290px;
+	/*width: 290px;*/
 	}
 
 /* +++++++++++++++++++++++++ Step3 +++++++++++++++++++++++++ */
