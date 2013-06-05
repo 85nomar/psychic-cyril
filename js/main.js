@@ -31,6 +31,10 @@ function getCookie(cookieName) {
 }*/
 
 $(document).ready(function() {
+	
+	// init corret collapse classes
+	
+	$('.collapse').not('.in').parent().find('.accordion-heading a').addClass('collapsed');
 
 		if (getCookie('view') == 'cars') {
 			 $('.cars').show();
