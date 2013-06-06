@@ -93,6 +93,7 @@ $(document).ready(function() {
 
     $('.form-actions .btn').click(function(event) {
         if ($(this).hasClass('btn-disabled') == false) {
+					window.location = $(this).attr('href');
         } else {
             event.preventDefault();
             console.log('click not allowed');
