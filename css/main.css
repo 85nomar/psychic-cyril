@@ -205,7 +205,12 @@ h1, h2, h3, h4 {
 	border-radius: 0 0 5px 5px;
 }
 
-.hidden{
+.hidden, 
+input[class*="span"].hidden, 
+select[class*="span"].hidden, 
+textarea[class*="span"].hidden,
+div[class*="span"].hidden,
+section[class*="span"].hidden{
 	display:none;
 }
 
@@ -1414,9 +1419,21 @@ margin-left: 36px;
 }
 
 .productImages div.mainProductImageTitle{
-    margin-top:0px;
-    width: 115px;
+    background-color: #E0E0E0;
+    border: 3px solid #fff;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    margin-right: -30px;
+    margin-top: 10px;
+    padding: 5px 25px 5px  10px;
 }
+
+.productImages .productImage:first-child {
+	background-color: #e5e5e5;
+	border: 10px solid #FFFFFF;
+	margin: -10px 15px -5px -10px;
+	box-shadow:0 1px 5px rgba(0, 0, 0, 0.2);
+	}
 
 body > .mce-container.mce-panel.mce-floatpanel:not(.mce-menu-sub) > .mce-container-body.mce-stack-layout > .mce-menu-item:nth-child(2),body > .mce-container.mce-panel.mce-floatpanel:not(.mce-menu-sub)  > .mce-container-body.mce-stack-layout > .mce-menu-item:nth-child(3), body > .mce-container.mce-panel.mce-floatpanel:not(.mce-menu-sub) > .mce-container-body.mce-stack-layout > .mce-menu-item:nth-child(4)  {
     display: none;
