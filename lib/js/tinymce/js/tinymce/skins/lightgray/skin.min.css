@@ -2,6 +2,10 @@
 
 /*fixes*/
 
+.mce-i-underline {
+	margin-top:3px;
+}
+
 .langs #mce_24-body.mce-container-body{
 	width: 190px;
     position: relative;

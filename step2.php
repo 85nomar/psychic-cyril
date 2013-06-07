@@ -8,95 +8,135 @@ $Layout_cb -> nav_cb();
 
 <h2>Wie möchten Sie Ihren Artikel beschreiben?</h2>
 <form>
+    
+  <div class="row-fluid core accessory">
+    <div class="span12 well">
+    
+      <div class="span2 control-group">  
+        <label for="inputNumber" class="control-label"><strong>Stückzahl</strong></label>
+        <div class="controls">
+          <input class="span10 core accessory" type="number" id="inputNumber" placeholder="1">
+        </div>
+      </div>
+      
+      <div class="span3 control-group">        
+        <label for="inputProductCondition" class="control-label"><strong>Zustand des Produkts</strong></label>
+        <div class="controls">
+          <select class="span12" id="productCondition">
+            <option>Neu</option>
+            <option>Fabrikneu und ungeöffnet</option>
+            <option>Neuwertig</option>
+            <option selected>Gebraucht</option>
+            <option>Antik</option>
+            <option>Defekt</option>
+          </select>
+        </div>
+      </div>
+    
+    </div>    
+  </div>
+      
   <div class="row-fluid">
     <div class="span12 well">
       <label class="checkbox swissIcons">
         <input type="checkbox">
-        Ihr Produkt zweisprachig erfassen </label>
+        Ihr Produkt zweisprachig erfassen
+      </label>
       <div id="swissIcons"> <img src="img/de_schweiz_icon.png" /> <img src="img/plus.png" /> <img src="img/fr_schweiz_icon.png" /> <img src="img/gleich.png" /> <img src="img/ganze_schweiz_icon.png" /> </div>
     </div>
   </div>
+  
   <div class="row-fluid langs">
-    <div class="span12 well">
-      <div class="span12 defaultLang">
-      	
-        <div class="control-group core accessory">
-          <label for="inputTitle" class="control-label"><strong>Titel</strong></label>
-          <div class="conrols">
-            <input class="span7 charsCount" type="text" id="inputTitle" placeholder="Tragen Sie hier die Produktbezeichnung ein" maxlength="60">
-            <div class="charAmount">Verbleibende Zeichen <span class="charsLeft">60</span></div>
+    <div class="span12 well">      
+      <div class="row-fluid">
+      
+<!-- START DEFAULT LANG -->
+      
+        <div class="span12 defaultLang">
+          
+          <div class="control-group core accessory">
+            <label for="inputTitle" class="control-label"><strong>Titel</strong></label>
+            <div class="conrols">
+              <input class="span7 charsCount" type="text" id="inputTitle" placeholder="Tragen Sie hier die Produktbezeichnung ein" maxlength="60">
+            </div>
           </div>
+          
+          <div class="control-group cars">
+            <label for="inputTitle" class="control-label"><strong>Titel</strong></label>
+            <div class="controls input-prepend cars">
+              <span class="add-on">Golf 1.6 FSI Comfort</span>
+              <input class="charsCount" type="text" id="inputTitle" placeholder="..." maxlength="40">
+            </div>
+          </div>
+          
+          <div class="control-group">
+            <label for="inputSubtitle" class="control-label"><strong>Untertitel</strong> <span class="optionalField">(optional) <span class="markNew core accessory">NEU: Gratis!</span></span></label>
+            <div class="controls">
+              <input class="span7 charsCount" type="text" id="inputSubtitle" placeholder="Bewerben Sie ihr Produkt mit einem kurzen Satz" maxlength="40">
+            </div>
+          </div>
+          
+        </div>
+      
+<!-- START SECOND LANG -->
+      
+        <div class="span6 secondLang hidden">      
+          
+          <div class="control-group core accessory">
+            <label for="inputTitle" class="control-label"><strong>Titre de l'article</strong></label>
+            <div class="conrols">
+              <input class="span7 charsCount" type="text" id="inputTitle" placeholder="Entrez le nom du produit ici" maxlength="60">
+            </div>
+          </div>
+          
+          <div class="control-group cars">
+            <label for="inputTitle" class="control-label"><strong>Titre de l'article</strong></label>
+            <div class="controls input-prepend">
+              <span class="add-on">Golf 1.6 FSI Comfort</span>
+              <input class="charsCount" type="text" id="inputTitle" placeholder="..." maxlength="40">
+            </div>
+          </div>          
+          
+          <div class="control-group">
+            <label for="inputSubtitle" class="control-label"><strong>Sous-titre</strong> <span class="optionalField">(optional) <span class="markNew core accessory">NOUVEAU: gratuit!</span></span> </label>
+            <div class="controls">
+              <input class="span7 charsCount" type="text" id="inputSubtitle" placeholder="Appliquez votre produit avec une courte phrase" maxlength="40">
+            </div>
         </div>
         
-        <label for="inputTitle" class="cars"><strong>Titel</strong></label>
-        <div class="input-prepend cars">
-        	<span class="add-on">Golf 1.6 FSI Comfort</span>
-          <input class="charsCount" type="text" id="inputTitle" placeholder="..." maxlength="40">
-          <div class="charAmount">Verbleibende Zeichen <span class="charsLeft">40</span></div>
-        </div>
-        
-        <label for="inputSubtitle"><strong>Untertitel</strong> <span class="optionalField">NEU: Gratis! <span style="text-decoration:line-through;">CHF 0.90</span> (optional)</span> </label>
-        <input class="span7 charsCount" type="text" id="inputSubtitle" placeholder="Bewerben Sie ihr Produkt mit einem kurzen Satz" maxlength="40">
-        <div class="charAmount">Verbleibende Zeichen <span class="charsLeft">40</span></div>
       </div>
       
-      <div class="span6 secondLang hidden">      
-      	
-        <div class="control-group core accessory">
-          <label for="inputTitle" class="control-label"><strong>Titre de l'article</strong></label>
-          <div class="conrols">
-            <input class="span7 charsCount" type="text" id="inputTitle" placeholder="Entrez le nom du produit ici" maxlength="60">
-            <div class="charAmount">Verbleibende Zeichen <span class="charsLeft">60</span></div>
-          </div>
-        </div>
-        
-        <label for="inputTitle" class="cars"><strong>Titre de l'article</strong></label>
-        <div class="input-prepend cars"> <span class="add-on">Golf 1.6 FSI Comfort</span>
-          <input class="charsCount" type="text" id="inputTitle" placeholder="..." maxlength="40">
-          <div class="charAmount">Verbleibende Zeichen <span class="charsLeft">40</span></div>
-        </div>
-        
-        
-        <label for="inputSubtitle"><strong>Sous-titre</strong> <span class="optionalField">NOUVEAU: gratuit! <span style="text-decoration:line-through;">CHF 0.90</span> (optional)</span> </label>
-        <input class="span7 charsCount" type="text" id="inputSubtitle" placeholder="Appliquez votre produit avec une courte phrase" maxlength="40">
-        <div class="charAmount">Verbleibende Zeichen <span class="charsLeft">40</span></div>
       </div>
-      <div class="row-fluid core accessory">
-        <div class="row-fluid control-group">        
-          <label for="inputProductCondition" class="control-label"><strong>Zustand des Produkts</strong></label>
-          <div class="controls">
-            <select id="productCondition">
-              <option>Neu</option>
-              <option>Fabrikneu und ungeöffnet</option>
-              <option>Neuwertig</option>
-              <option selected>Gebraucht</option>
-              <option>Antik</option>
-              <option>Defekt</option>
-            </select>
-          </div>
-        </div>
-        
-        <div class="row-fluid control-group">  
-          <label for="inputNumber" class="control-label"><strong>Stückzahl</strong></label>
-          <div class="controls">
-          	<input class="span1 core accessory" type="number" id="inputNumber" placeholder="1">
-          </div>
-        </div>
-      </div>
+<!-- START DESCRIPTION-EDITORS -->
+      
       <div id="multieditors" class="row-fluid">
-        <div id="DualEditorDE" class="span12 defaultLang">
-          <label for="inputDescription"><strong>Wie möchten Sie Ihren Artikel beschreiben?</strong></label>
-          <textarea class="tinyman" rows="4" placeholder="Beschreiben Sie ihr Produkt hier"></textarea>
+        <div id="DualEditorDE" class="span12 defaultLang control-group">
+          <label for="inputDescription" class="control-label"><strong>Wie möchten Sie Ihren Artikel beschreiben?</strong></label>
+          <div class="controls">
+            <textarea class="tinyman" rows="4" placeholder="Beschreiben Sie ihr Produkt hier"></textarea>
+          </div>
         </div>
-        <div id="DualEditorFR" class="span6 secondLang hidden">
-          <label for="inputDescription"><strong>Wie möchten Sie Ihren Artikel beschreiben?</strong> </label>
-          <textarea class="tinyman" rows="4" placeholder="Beschreiben Sie ihr Produkt hier"></textarea>
+        <div id="DualEditorFR" class="span6 secondLang control-group hidden">
+          <label for="inputDescription" class="control-label"><strong>Wie möchten Sie Ihren Artikel beschreiben?</strong></label>
+          <div class="controls">
+          	<textarea class="tinyman" rows="4" placeholder="Beschreiben Sie ihr Produkt hier"></textarea>
+          </div>
         </div>
       </div>
-      <label for="inputPictures"><strong>Bilder hinzufügen</strong> <span class="optionalField">NEU: Galeriebild gratis! <span style="text-decoration:line-through;">CHF 0.30</span> (optional)</span></span> </label>
+      
+    </div>
+  </div>
+  
+  <div class="row-fluid langs">
+    <div class="span12 well">  
+    
+<!-- START PICTURE UPLOAD -->  
+
+      <label for="inputPictures"><strong>Bilder hinzufügen</strong> <span class="optionalField">(optional) <span class="markNew core accessory">NEU: Galeriebild gratis!</span></span> </label>
       <div class="row-fluid section productImages">
         <div class="span3">
-          <div class="pull-left mainProductImageTitle optionalField">Dieses Bild wird als Vorschaubild für Ihren Artikel auf Suchresultat-Seiten verwendet</div>
+          <div class="mainProductImageTitle optionalField">Dieses Bild wird als Vorschaubild für Ihren Artikel auf Suchresultat-Seiten verwendet</div>
+          <div class="multiHint">Sie können mehrere Bilder <strong>gleichzeitig</strong> hochladen. Halten Sie dazu bei der Bild-Auswahl die "<strong>Shift-Taste</strong>" gedrückt.</div>
         </div>
         <div class="span9">
           <div class="productImage img-polaroid mainProductImage">
@@ -152,7 +192,7 @@ $Layout_cb -> nav_cb();
 							});
 						</script>
             <div class=" row-fluid controls">
-              <label for="inputWarranty" class="control-label span2">Garantie</label>
+              <label for="inputWarranty" class="control-label span2"><strong>Garantie</strong></label>
               <div class="span10">
                 <input type="radio" name="hasGuarantee" value="no" checked="checked">
                 Nein
@@ -160,16 +200,24 @@ $Layout_cb -> nav_cb();
                 Ja </div>
             </div>
             <div class="row-fluid controls hidden" id="guaranteeText">
-            	<div class="defaultLang span12">
-              	<textarea class="span12" rows="3" placeholder="Beschreiben Sie die Garantie hier."></textarea>
-              </div>
-              <div class="secondLang span6 hidden">
-              	<textarea class="span12" rows="3" placeholder="Describe your Guarantee here in french"></textarea>
+            	<div class="span10 offset2">
+                <div class="defaultLang span12 control-group">
+                	<label for="" class="control-label">Garantie-Text <span class="secondLang hidden">in deutsch</span></label>
+                	<div class="controls">
+                  	<textarea class="span12" rows="3" placeholder="Beschreiben Sie die Garantie hier."></textarea>
+                  </div>
+                </div>
+                <div class="secondLang span6 control-group hidden">
+                	<label for="" class="control-label">Garantie-Text in französisch</label>
+                	<div class="controls">
+                    <textarea class="span12" rows="3" placeholder="Describe your Guarantee here in french"></textarea>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
           <div class="control-group row-fluid">
-            <label class="control-label span2" for="inputUPCnumber">Persönliche Referenznummer</label>
+            <label class="control-label span2" for="inputUPCnumber"><strong>Persönliche Referenznummer</strong></label>
             <div class="controls span10">
               <input class="span4" type="text" id="inputUPCnumber" placeholder="z.B für ihr eigenes Shop-System">
             </div>
@@ -179,6 +227,6 @@ $Layout_cb -> nav_cb();
     </div>
   </div>
 </form>
-<div class="form-actions"> <a href="step3.php" class="btn btn-primary toNext core accessory">Weiter zu &laquo;<?php echo $Layout->formNav[2]["title"]; ?>&raquo;</a> <a href="step3.php" class="btn btn-primary toNext cars">Weiter zu &laquo;<?php echo $Layout_cb->formNav[3]["title"]; ?>&raquo;</a> <a href="step6.php" class="btn toOverview">Weiter zu &laquo;<?php echo $Layout_cb->formNav[5]["title"]; ?>&raquo;</a> </div>
+<div class="form-actions"> <a href="step3.php" class="btn btn-primary toNext core accessory">Weiter</a> <a href="step3.php" class="btn btn-primary toNext cars">Weiter</a> <a href="step6.php" class="btn toOverview">Zurück zur <?php echo $Layout_cb->formNav[5]["title"]; ?></a> </div>
 <div id="urlSaver"></div>
 <?php $Layout -> end(); ?>
