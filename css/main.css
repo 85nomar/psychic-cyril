@@ -2,14 +2,37 @@
 	display:none;
 	}
 
+.charsCount{
+	padding-right:50px !important;
+	}
+input.helper{
+	color:#fff;
+	border: medium none;
+	border-radius: 4px 4px 4px 4px;
+	font-size: 12px;
+	margin: -9px 0 0 -46px;
+	padding: 0 10px;
+	text-align: center;
+	width: 20px;
+}
+.helper.success{
+	background-color:#a6b825;
+}
+.helper.warning{
+	background-color:#fc9013;
+}
+.helper.alert{
+	background-color:#900;
+}
 
-    /**********************************************************************
+
+/**********************************************************************
  * Selling-Form
  **********************************************************************/
 /* color orange: #f29106 */
 /* color blue: #213c90 */
 /* color btn-blue: #1946A0 */
-/* clor green: #A5B937 */
+/* color green: #A5B937 */
 
 h1, h2, h3, h4 {
     color: #333;
@@ -55,6 +78,10 @@ h1, h2, h3, h4 {
 .optionalField{
 	font-size:11px;
 	color:#757575;
+	}
+	
+.markNew{
+	color:#a6b825;
 	}
 	
 .tooltip-inner {
@@ -520,6 +547,9 @@ section[class*="span"].hidden{
 
 /* +++++++++++++++++++++++++ Step2 (Core) +++++++++++++++++++++++++ */
 
+.secondLangAd {
+	}
+
 #savedForLater {
     margin-bottom: 30px;
 }
@@ -606,6 +636,9 @@ section[class*="span"].hidden{
 .addProductImageLink img {
     display: block;
     margin: 0 auto;
+}
+#guaranteeText{
+	padding-bottom:20px;
 }
 .separatorFloated {
     margin: 0 5px;
@@ -1299,31 +1332,31 @@ footer {
     background-color: red; 
     position: static;
 }
-#vv_submenu.fr{
+#vv_submenu.secondLang{
 
 left: 819px !important;
 top: 437px !important;
 }
 
-.span6.de #vv_submenu.de{
+.span6.defaultLang #vv_submenu.defaultLang{
 
 left: 358px !important;
 top: 437px !important;
 }
 
-.span12.de #vv_submenu.de{
+.span12.defaultLang #vv_submenu.defaultLang{
 
 left: 706px !important;
 top: 403px !important;
 }
 
 
-.de.well{
+.defaultLang.well{
     height: 800px;
     margin:auto;
 }
 
-.de.well, .fr.well{
+.defaultLang.well, .secondLang.well{
     margin-left: 0px;
 }
 
@@ -1349,15 +1382,15 @@ margin: 1px 5px;
     .langs .span1{
         width: 50px !important;
     }
-    .de, .fr {
+    /*.defaultLang, .secondLang {
         float:left;
         margin-bottom: 30px;
-    }
-    .de .mce-menubar{
+    }*/
+    .defaultLang .mce-menubar{
         display: none;
     }
 
-    .de #arrow, .fr #arrow{
+    .defaultLang #arrow, .secondLang #arrow{
     position: absolute;
     top: 0px;
     right: 5px;
@@ -1376,9 +1409,9 @@ margin: 1px 5px;
     right: 0;
     top: 0;
     }
-    #multieditors{
+   /* #multieditors{
         min-height: 300px;
-    }
+    }*/
 .float{
     float: left;
 }
@@ -1395,13 +1428,13 @@ margin: 1px 5px;
 
 .fr-row{visibility: hidden !important}
 
-.fr:none(.mce-container){display: none !important;}
+.secondLang:none(.mce-container){display: none !important;}
 
 label[for=inputPictures]{
     clear: both;}
-.de #arrow{
+/*.defaultLang #arrow{
     display: none;
-}
+}*/
 
 .checkbox.swissIcons {
 max-width: 220px;
@@ -1434,12 +1467,16 @@ margin-left: 36px;
 	margin: -10px 15px -5px -10px;
 	box-shadow:0 1px 5px rgba(0, 0, 0, 0.2);
 	}
+	
+.multiHint{
+	margin-top:50px;
+	}
 
 body > .mce-container.mce-panel.mce-floatpanel:not(.mce-menu-sub) > .mce-container-body.mce-stack-layout > .mce-menu-item:nth-child(2),body > .mce-container.mce-panel.mce-floatpanel:not(.mce-menu-sub)  > .mce-container-body.mce-stack-layout > .mce-menu-item:nth-child(3), body > .mce-container.mce-panel.mce-floatpanel:not(.mce-menu-sub) > .mce-container-body.mce-stack-layout > .mce-menu-item:nth-child(4)  {
     display: none;
 }
 
-.de iframe, .fr iframe{
+.defaultLang iframe, .secondLang iframe{
     height: 100px ;
 }
 
@@ -1495,7 +1532,7 @@ margin-left: 350px;
     cursor:move;
 }
 
-input.charsCount{
+/*input.charsCount{
     margin-bottom: 0px !important;
 }
 
@@ -1506,7 +1543,7 @@ div.charAmount{
 
 span.charsLeft{
     font-weight: bold;
-}
+}*/
 
 .done img{
     margin-top: -13px;

@@ -20,6 +20,49 @@ function getCookie(cookieName) {
         }
     }
 }
+		
+function switchDoubleLang(){
+		$('.secondLang').toggleClass('hidden');
+		$('.defaultLang').toggleClass('span12').toggleClass('span6');
+		$('.defaultLang #arrow').toggleClass('hidden');
+		if(getCookie('putLang')!='double'){
+			setCookie('putLang','double');
+		}
+		else {
+			setCookie('putLang','',-1);					
+		}
+}
+
+function countField(target){
+	
+	maxChar = $(target).attr('maxlength');
+	
+	$(target).addClass('charsCount');
+	$(target).after('<input type="text" class="helper success" value="'+maxChar+'">');
+	
+	$(target).bind('keyup',function(){
+		
+		fieldHelper = $(this).parent().find('.helper');
+		fieldLength = $(this).val().length;
+		console.log(fieldLength);
+		fieldLengthValue = maxChar - fieldLength;
+		console.log(fieldLengthValue);
+		
+		switch (true) {
+			case (fieldLengthValue<10):
+				fieldHelper.removeClass('success').removeClass('warning').addClass('alert');
+				break;
+			case (fieldLengthValue<25):
+				fieldHelper.removeClass('success').removeClass('alert').addClass('warning');
+				break;
+			default:
+				fieldHelper.removeClass('warning').removeClass('alert').addClass('success');
+				break;
+		}
+		fieldHelper.val(fieldLengthValue);
+	});
+	
+}
 
 /*if (getCookie('view') == 'cars') {
     document.writeln('<style>.core{display:none !important;}.accessory{display:none !important}.cars{display:block !important;}</style>');
@@ -31,6 +74,8 @@ function getCookie(cookieName) {
 }*/
 
 $(document).ready(function() {
+	
+	countField('.charsCount');
 	
 	// init corret collapse classes
 	
