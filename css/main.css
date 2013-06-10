@@ -1332,22 +1332,20 @@ footer {
     background-color: red; 
     position: static;
 }
-#vv_submenu.secondLang{
+#vv_submenu.fr{
+left: 339px !important;
+top: 101px !important;
 
-left: 819px !important;
-top: 437px !important;
 }
 
-.span6.defaultLang #vv_submenu.defaultLang{
-
-left: 358px !important;
-top: 437px !important;
+.span6.defaultLang #vv_submenu.de{
+left: 340px !important;
+top: 98px !important;
 }
 
-.span12.defaultLang #vv_submenu.defaultLang{
-
-left: 706px !important;
-top: 403px !important;
+.span12.defaultLang #vv_submenu.de{
+left: 686px !important;
+top: 63px !important;
 }
 
 
