@@ -8,15 +8,15 @@ $Layout_cb -> nav_cb();
 
 <h2>In welcher Kategorie möchten Sie Ihr Produkt einstellen?</h2>
 
-<div id="carsCatSelector" class="cars accessory row-fluid" style="text-align:center;">
+<section id="carsCatSelector" class="cars accessory row-fluid" style="text-align:center;">
 	<a href="step1.php" class="span2 btn" data-view="cars"><img src="img/car.png" width="89" height="72" />Autos<span class="cbMainCatMark"></span></a>	
 	<a href="step1.php" class="span2 btn" data-view="cars"><img src="img/bike.png" width="89" height="72" />Motoräder<span class="cbMainCatMark"></span></a>
 	<a href="step1.php" class="span2 btn" data-view="cars"><img src="img/utility.png" width="89" height="72" />Nutzfahrzeuge<span class="cbMainCatMark"></span></a>
 	<a href="step1.php" class="span2 btn" data-view="accessory"><img src="img/accessories.png" width="89" height="72" />Zubehör<span class="cbMainCatMark"></span></a>
 	<a href="step1.php" class="span2 btn" data-view="cars">Andere Fahrzeuge<span class="cbMainCatMark"></span></a>
-</div>
+</section>
 
-<div class="core accessory row-fluid">
+<section class="core accessory row-fluid">
     <form class="form-search span12">
         <fieldset id="categoryFinder" class="well section">
             <div class="input-append">
@@ -47,9 +47,9 @@ $Layout_cb -> nav_cb();
 			
     });
   </script>
-</div>
+</section>
 
-<div class="row-fluid catSelect core">
+<section class="row-fluid catSelect core">
     <div class="controls controls-row span12 well">
         <nav class="span2 navCat" id="navCatLvl1">
           <ul class="nav nav-list">
@@ -126,9 +126,9 @@ $Layout_cb -> nav_cb();
           </ul>        
         </nav>
     </div>
-</div>
+</section>
 
-<div class="row-fluid catSelect cars collapse collapse-body" id="carTypeSelector">
+<section class="row-fluid catSelect cars collapse collapse-body" id="carTypeSelector">
     <div class="controls controls-row span12 well">
         <nav class="span2 navCat" id="navCatLvl1">
           <ul class="nav nav-list">
@@ -138,9 +138,9 @@ $Layout_cb -> nav_cb();
           </ul>        
         </nav>
     </div>
-</div>
+</section>
 
-<div class="row-fluid catSelect accessory">
+<section class="row-fluid catSelect accessory">
     <div class="controls controls-row span12 well">
         <nav class="span2 navCat" id="navCatLvl1">
           <ul class="nav nav-list">
@@ -176,11 +176,12 @@ $Layout_cb -> nav_cb();
           </ul>
         </nav>
     </div>
-</div>
+</section>
 
-<div id="carSelector" class="cars row-fluid collapse collapse-body">
+<section id="carSelector" class="cars row-fluid collapse collapse-body">
 	<h3>Wie möchten Sie Ihr Fahrzeug einstellen?</h3>
-	<div class="span4 offset1 well carSelector" >
+  <div class="alert hidden">Wir haben Ihr Fahrzeug nicht in unserer Datenbank gefunden. Bitte wählen Sie Ihr Fahrzeug mit dem "<strong>Marke/Model</strong>"-Formular.</div>
+	<div id="selectCarByID" class="span4 offset1 well carSelector" >
     	<h4>Mit Typenschein-Nummer</h4>
       
       <div class="control-group">
@@ -337,7 +338,7 @@ $Layout_cb -> nav_cb();
   
 	<div class="span1 seperator">oder</div>
   
-	<div class="span4 well carSelector">
+	<div id="selectCarByForm" class="span4 well carSelector">
     	<h4>Mit Marke / Model</h4>
       <div class="control-group">
         <label class="control-label">Zulassungsdatum</label>
@@ -598,6 +599,7 @@ $Layout_cb -> nav_cb();
             <option value="207">Probe</option>
             <option value="208">Taurus</option>
             <option value="209">Windstar</option>
+            <option value="1765">Golf V</option>
             <option value="0">Sonstige</option>
           </select>
         </div>
@@ -628,203 +630,208 @@ $Layout_cb -> nav_cb();
         </div>
       </div>
   </div>
-</div>
+</section>
 
-<div id="carVerionSelector" class="cars row-fluid collapse collapse-body">
-	<h3>Welche Fahrzeug-Version möchten Sie Verkaufen?</h3>
-  <div class="well">
-    <table id="CertificationNrTable" class="table table-striped">
-      <thead>
-        <tr>
-          <th>Version</th>
-          <th>Aufbauart</th>
-          <th>Leistung PS</th>
-          <th>Türen</th>
-          <th>Sitze</th>
-          <th>Getriebeart</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="versionBasic">
-          <td><i class="icon-select"></i>Golf 1.6 Trend</td>
-          <td>Limousine</td>
-          <td>102</td>
-          <td>3</td>
-          <td>5</td>
-          <td>Schaltgetriebe</td>
-        </tr>
-        <tr class="versionDetails">
-          <td colspan="6">
-            <dl>
-              <dt>Instandsetzung</dt>
-              <dd>04.2008</dd>
-              <dt>Treibstoff</dt>
-              <dd>Benzin bleifrei</dd>
-              <dt>Typenscheinnummer</dt>
-              <dd>1VD242</dd>
-            </dl>     
-          </td>
-        </tr>
-        <tr class="versionBasic">
-          <td><i class="icon-select"></i>Golf 1.6 Trend</td>
-          <td>Limousine</td>
-          <td>102</td>
-          <td>5</td>
-          <td>5</td>
-          <td>Schaltgetriebe</td>
-        </tr>
-        <tr class="versionDetails">
-          <td colspan="6">
-            <dl>
-              <dt>Instandsetzung</dt>
-              <dd>04.2008</dd>
-              <dt>Treibstoff</dt>
-              <dd>Benzin bleifrei</dd>
-              <dt>Typenscheinnummer</dt>
-              <dd>1VD242</dd>
-            </dl>     
-          </td>
-        </tr>
-        <tr class="versionBasic">
-          <td><i class="icon-select"></i>Golf 1.6 Comfort</td>
-          <td>Limousine</td>
-          <td>102</td>
-          <td>3</td>
-          <td>5</td>
-          <td>Schaltgetriebe</td>
-        </tr>
-        <tr class="versionDetails">
-          <td colspan="6">
-            <dl>
-              <dt>Instandsetzung</dt>
-              <dd>04.2008</dd>
-              <dt>Treibstoff</dt>
-              <dd>Benzin bleifrei</dd>
-              <dt>Typenscheinnummer</dt>
-              <dd>1VD242</dd>
-            </dl>     
-          </td>
-        </tr>
-        </tr>
-        <tr class="versionBasic">
-          <td><i class="icon-select"></i>Golf 1.6 Comfort</td>
-          <td>Limousine</td>
-          <td>102</td>
-          <td>5</td>
-          <td>5</td>
-          <td>Schaltgetriebe</td>
-        </tr>
-        <tr class="versionDetails">
-          <td colspan="6">
-            <dl>
-              <dt>Instandsetzung</dt>
-              <dd>04.2008</dd>
-              <dt>Treibstoff</dt>
-              <dd>Benzin bleifrei</dd>
-              <dt>Typenscheinnummer</dt>
-              <dd>1VD242</dd>
-            </dl>     
-          </td>
-        </tr>
-        </tr>
-        <tr class="versionBasic">
-          <td><i class="icon-select"></i>Golf 1.6 Sport</td>
-          <td>Limousine</td>
-          <td>102</td>
-          <td>3</td>
-          <td>5</td>
-          <td>Schaltgetriebe</td>
-        </tr>
-        <tr class="versionDetails">
-          <td colspan="6">
-            <dl>
-              <dt>Instandsetzung</dt>
-              <dd>04.2008</dd>
-              <dt>Treibstoff</dt>
-              <dd>Benzin bleifrei</dd>
-              <dt>Typenscheinnummer</dt>
-              <dd>1VD242</dd>
-            </dl>     
-          </td>
-        </tr>
-        </tr>
-        <tr class="versionBasic">
-          <td><i class="icon-select"></i>Golf 1.6 Sport</td>
-          <td>Limousine</td>
-          <td>102</td>
-          <td>5</td>
-          <td>5</td>
-          <td>Schaltgetriebe</td>
-        </tr>
-        <tr class="versionDetails">
-          <td colspan="6">
-            <dl>
-              <dt>Instandsetzung</dt>
-              <dd>04.2008</dd>
-              <dt>Treibstoff</dt>
-              <dd>Benzin bleifrei</dd>
-              <dt>Typenscheinnummer</dt>
-              <dd>1VD242</dd>
-            </dl>     
-          </td>
-        </tr>
-        </tr>
-        <tr class="versionBasic">
-          <td><i class="icon-select"></i>Golf 1.6 Goal</td>
-          <td>Limousine</td>
-          <td>102</td>
-          <td>3</td>
-          <td>5</td>
-          <td>Schaltgetriebe</td>
-        </tr>
-        <tr class="versionDetails">
-          <td colspan="6">
-            <dl>
-              <dt>Instandsetzung</dt>
-              <dd>04.2008</dd>
-              <dt>Treibstoff</dt>
-              <dd>Benzin bleifrei</dd>
-              <dt>Typenscheinnummer</dt>
-              <dd>1VD242</dd>
-            </dl>     
-          </td>
-        </tr>
-        </tr>
-        <tr class="versionBasic">
-          <td><i class="icon-select"></i>Golf 1.6 Goal</td>
-          <td>Limousine</td>
-          <td>102</td>
-          <td>5</td>
-          <td>5</td>
-          <td>Schaltgetriebe</td>
-        </tr>
-        <tr class="versionDetails">
-          <td colspan="6">
-            <dl>
-              <dt>Instandsetzung</dt>
-              <dd>04.2008</dd>
-              <dt>Treibstoff</dt>
-              <dd>Benzin bleifrei</dd>
-              <dt>Typenscheinnummer</dt>
-              <dd>1VD242</dd>
-            </dl>     
-          </td>
-        </tr>
-        </tr>
-      </tbody>
-    </table>
+<section class="row-fluid">
+  <div id="carVerionSelector" class="collapse collapse-body">
+    <h3>Welche Fahrzeug-Version möchten Sie Verkaufen?</h3>
+    <div class="well">
+      <div class="row-fluid">
+        <table id="CertificationNrTable" class="table table-striped">
+          <thead>
+            <tr>
+              <th>Version</th>
+              <th>Aufbauart</th>
+              <th>Leistung PS</th>
+              <th>Türen</th>
+              <th>Sitze</th>
+              <th>Getriebeart</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="versionBasic">
+              <td><i class="icon-select"></i>Golf 1.6 Trend</td>
+              <td>Limousine</td>
+              <td>102</td>
+              <td>3</td>
+              <td>5</td>
+              <td>Schaltgetriebe</td>
+            </tr>
+            <tr class="versionDetails">
+              <td colspan="6">
+                <dl>
+                  <dt>Instandsetzung</dt>
+                  <dd>04.2008</dd>
+                  <dt>Treibstoff</dt>
+                  <dd>Benzin bleifrei</dd>
+                  <dt>Typenscheinnummer</dt>
+                  <dd>1VD242</dd>
+                </dl>     
+              </td>
+            </tr>
+            <tr class="versionBasic">
+              <td><i class="icon-select"></i>Golf 1.6 Trend</td>
+              <td>Limousine</td>
+              <td>102</td>
+              <td>5</td>
+              <td>5</td>
+              <td>Schaltgetriebe</td>
+            </tr>
+            <tr class="versionDetails">
+              <td colspan="6">
+                <dl>
+                  <dt>Instandsetzung</dt>
+                  <dd>04.2008</dd>
+                  <dt>Treibstoff</dt>
+                  <dd>Benzin bleifrei</dd>
+                  <dt>Typenscheinnummer</dt>
+                  <dd>1VD242</dd>
+                </dl>     
+              </td>
+            </tr>
+            <tr class="versionBasic">
+              <td><i class="icon-select"></i>Golf 1.6 Comfort</td>
+              <td>Limousine</td>
+              <td>102</td>
+              <td>3</td>
+              <td>5</td>
+              <td>Schaltgetriebe</td>
+            </tr>
+            <tr class="versionDetails">
+              <td colspan="6">
+                <dl>
+                  <dt>Instandsetzung</dt>
+                  <dd>04.2008</dd>
+                  <dt>Treibstoff</dt>
+                  <dd>Benzin bleifrei</dd>
+                  <dt>Typenscheinnummer</dt>
+                  <dd>1VD242</dd>
+                </dl>     
+              </td>
+            </tr>
+            <tr class="versionBasic">
+              <td><i class="icon-select"></i>Golf 1.6 Comfort</td>
+              <td>Limousine</td>
+              <td>102</td>
+              <td>5</td>
+              <td>5</td>
+              <td>Schaltgetriebe</td>
+            </tr>
+            <tr class="versionDetails">
+              <td colspan="6">
+                <dl>
+                  <dt>Instandsetzung</dt>
+                  <dd>04.2008</dd>
+                  <dt>Treibstoff</dt>
+                  <dd>Benzin bleifrei</dd>
+                  <dt>Typenscheinnummer</dt>
+                  <dd>1VD242</dd>
+                </dl>     
+              </td>
+            </tr>
+            <tr class="versionBasic">
+              <td><i class="icon-select"></i>Golf 1.6 Sport</td>
+              <td>Limousine</td>
+              <td>102</td>
+              <td>3</td>
+              <td>5</td>
+              <td>Schaltgetriebe</td>
+            </tr>
+            <tr class="versionDetails">
+              <td colspan="6">
+                <dl>
+                  <dt>Instandsetzung</dt>
+                  <dd>04.2008</dd>
+                  <dt>Treibstoff</dt>
+                  <dd>Benzin bleifrei</dd>
+                  <dt>Typenscheinnummer</dt>
+                  <dd>1VD242</dd>
+                </dl>     
+              </td>
+            </tr>
+            <tr class="versionBasic">
+              <td><i class="icon-select"></i>Golf 1.6 Sport</td>
+              <td>Limousine</td>
+              <td>102</td>
+              <td>5</td>
+              <td>5</td>
+              <td>Schaltgetriebe</td>
+            </tr>
+            <tr class="versionDetails">
+              <td colspan="6">
+                <dl>
+                  <dt>Instandsetzung</dt>
+                  <dd>04.2008</dd>
+                  <dt>Treibstoff</dt>
+                  <dd>Benzin bleifrei</dd>
+                  <dt>Typenscheinnummer</dt>
+                  <dd>1VD242</dd>
+                </dl>     
+              </td>
+            </tr>
+            <tr class="versionBasic">
+              <td><i class="icon-select"></i>Golf 1.6 Goal</td>
+              <td>Limousine</td>
+              <td>102</td>
+              <td>3</td>
+              <td>5</td>
+              <td>Schaltgetriebe</td>
+            </tr>
+            <tr class="versionDetails">
+              <td colspan="6">
+                <dl>
+                  <dt>Instandsetzung</dt>
+                  <dd>04.2008</dd>
+                  <dt>Treibstoff</dt>
+                  <dd>Benzin bleifrei</dd>
+                  <dt>Typenscheinnummer</dt>
+                  <dd>1VD242</dd>
+                </dl>     
+              </td>
+            </tr>
+            <tr class="versionBasic">
+              <td><i class="icon-select"></i>Golf 1.6 Goal</td>
+              <td>Limousine</td>
+              <td>102</td>
+              <td>5</td>
+              <td>5</td>
+              <td>Schaltgetriebe</td>
+            </tr>
+            <tr class="versionDetails">
+              <td colspan="6">
+                <dl>
+                  <dt>Instandsetzung</dt>
+                  <dd>04.2008</dd>
+                  <dt>Treibstoff</dt>
+                  <dd>Benzin bleifrei</dd>
+                  <dt>Typenscheinnummer</dt>
+                  <dd>1VD242</dd>
+                </dl>     
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="row-fluid"><p class="pull-right">Ihr Fahrzeug ist nicht dabei? <a id="alternateCar" class="btn btn-small" href="#">anderes Fahrzeug wählen</a></p></div>
+    </div>
   </div>
-</div>
+</section>
 
-<div id="carAttributeSelector" class="cars row-fluid  collapse collapse-body">
+<section id="carAttributeSelector" class="row-fluid  collapse collapse-body">
 	<h3>Wie lauten die technischen Details des Fahrzeuges?</h3>
   <div id="altCarAttributes" class="well">
   	<h4>Pflicht-Angaben</h4>
   		<div class="row-fluid">
-        <div class="control-group span4">
+        <div class="control-group span3 hidden">
+          <label class="control-label">Version</label>
+          <div class="controls">
+            <input class="span12" type="text" name="altVersion" id="altVersion" />
+          </div>
+        </div>
+        <div class="control-group span3">
           <label class="control-label">Aufbauart</label>
           <div class="controls">    
-            <select class="span12" name="FormModel" id="FormModel" tabindex="3">
+            <select class="span12" name="altBodyType" id="altBodyType" tabindex="3">
               <option selected="selected" value="-1">Bitte wählen Sie...</option>
               <option value="1">Limousine</option>
               <option value="2">Kombi</option>
@@ -838,10 +845,10 @@ $Layout_cb -> nav_cb();
             </select>
           </div>
         </div>
-        <div class="control-group span4">
+        <div class="control-group span3">
           <label class="control-label">Antrieb</label>
           <div class="controls">    
-            <select class="span12" name="FormModel" id="FormModel" tabindex="3">
+            <select class="span12" name="altDrive" id="altDrive" tabindex="3">
               <option selected="selected" value="-1">Bitte wählen Sie...</option>
               <option value="1">Vorderradantrieb</option>
               <option value="2">Hinterradantrieb</option>
@@ -849,20 +856,20 @@ $Layout_cb -> nav_cb();
             </select>
           </div>
         </div>
-        <div class="control-group span4">
+        <div class="control-group span3">
           <label class="control-label">Getriebeart</label>
           <div class="controls">    
-            <select class="span12" name="FormModel" id="FormModel" tabindex="3">
+            <select class="span12" name="altGearType" id="altGearType" tabindex="3">
               <option selected="selected" value="-1">Bitte wählen Sie...</option>
               <option value="1">Schaltgetriebe</option>
               <option value="3">Automat</option>
             </select>
           </div>
         </div>
-        <div class="control-group span4">
+        <div class="control-group span3">
           <label class="control-label">Gänge</label>
           <div class="controls">    
-            <select class="span12" name="FormModel" id="FormModel" tabindex="3">
+            <select class="span12" name="altGearNumber" id="altGearNumber" tabindex="3">
               <option selected="selected" value="-1">Bitte wählen Sie...</option>
               <option value="1">1</option>
               <option value="2">2</option>
@@ -876,46 +883,64 @@ $Layout_cb -> nav_cb();
             </select>
           </div>
         </div>
-        <div class="control-group span4">
+        <div class="control-group span3">
           <label class="control-label">Leistung PS</label>
           <div class="controls">
             <input class="span12" type="text" name="altHP" id="altHP" />
           </div>
         </div>
+        <div class="control-group span3">
+          <label class="control-label">Sitze</label>
+          <div class="controls">
+            <input class="span12" type="text" name="altSeat" id="altSeat" />
+          </div>
+        </div>
+        <div class="control-group span3">
+          <label class="control-label">Türen</label>
+          <div class="controls">
+            <input class="span12" type="text" name="altDoor" id="altDoor" />
+          </div>
+        </div>
       </div>
   	<h4>Optionale Angaben</h4>
   		<div class="row-fluid">
-        <div class="control-group span4">
+        <div class="control-group span3">
+          <label class="control-label">Chassis-Nummer<!-- <span class="optionalField">(optional)</span>--></label>
+          <div class="controls">
+            <input class="span12" type="text" name="altChassis" id="" />
+          </div>
+        </div>
+        <div class="control-group span3">
           <label class="control-label">Zylinder<!-- <span class="optionalField">(optional)</span>--></label>
           <div class="controls">
-            <input class="span12" type="text" name="" id="" />
+            <input class="span12" type="text" name="altCylinders" id="" />
           </div>
         </div>
-        <div class="control-group span4">
+        <div class="control-group span3">
           <label class="control-label">Hubraum ccm<!-- <span class="optionalField">(optional)</span>--></label>
           <div class="controls">
-            <input class="span12" type="text" name="" id="" />
+            <input class="span12" type="text" name="altCcm" id="" />
           </div>
         </div>
-        <div class="control-group span4">
+        <div class="control-group span3">
           <label class="control-label">Leistung KW<!-- <span class="optionalField">(optional)</span>--></label>
           <div class="controls">
-            <input class="span12" type="text" name="" id="" />
+            <input class="span12" type="text" name="altKw" id="" />
           </div>
         </div>
-        <div class="control-group span4">
+        <div class="control-group span3">
           <label class="control-label">Typenscheinnummer<!-- <span class="optionalField">(optional)</span>--></label>
           <div class="controls">
-            <input class="span12" type="text" name="" id="" />
+            <input class="span12" type="text" name="altTxtCertification" id="altTxtCertification" />
           </div>
         </div>
-        <div class="control-group span4">
+        <div class="control-group span3">
           <label class="control-label">Gewicht (kg)<!-- <span class="optionalField">(optional)</span>--></label>
           <div class="controls">
             <input class="span12" type="text" name="" id="" />
           </div>
         </div>
-        <div class="control-group span4">
+        <div class="control-group span3">
           <label class="control-label">Anhängerlast gebr.<!-- <span class="optionalField">(optional)</span>--></label>
           <div class="controls">
             <input class="span12" type="text" name="" id="" />
@@ -923,13 +948,13 @@ $Layout_cb -> nav_cb();
         </div>
       </div>   
   </div>
-</div>
+</section>
 
-<div class="form-actions">
+<section class="form-actions">
     <a href="step2.php" class="btn btn-primary toNext core accessory">Weiter zu &laquo;<?php echo $Layout->formNav[1]["title"]; ?>&raquo;</a>
     <a href="step2cb.php" class="btn btn-disabled toNext cars">Weiter zu &laquo;<?php echo $Layout_cb->formNav[1]["title"]; ?>&raquo;</a>
     <a href="step6.php" class="btn toOverview">Weiter zu &laquo;<?php echo $Layout_cb->formNav[5]["title"]; ?>&raquo;</a>
-</div>
+</section>
 
 <div id="modalCarID" class="modal hide fade">
     <div class="modal-header">

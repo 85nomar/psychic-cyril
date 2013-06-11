@@ -44,9 +44,9 @@ function countField(target){
 		
 		fieldHelper = $(this).parent().find('.helper');
 		fieldLength = $(this).val().length;
-		console.log(fieldLength);
+		//console.log(fieldLength);
 		fieldLengthValue = maxChar - fieldLength;
-		console.log(fieldLengthValue);
+		//console.log(fieldLengthValue);
 		
 		switch (true) {
 			case (fieldLengthValue<10):
@@ -141,7 +141,7 @@ $(document).ready(function() {
 					window.location = $(this).attr('href');
         } else {
             event.preventDefault();
-            console.log('click not allowed');
+            //console.log('click not allowed');
         }
     });
 
@@ -228,31 +228,91 @@ $(document).ready(function() {
     if (getCookie('view') == 'cars' && getCookie('catg') != undefined) {
         $('#carTypeSelector').height('auto');
     }
+		
+		$('#carVerionSelector, #carAttributeSelector').collapse({toggle: false});
 
     function checkFieldCollapse(target, collapse) {
-        $(target).change(function() {
-            fieldVal = $.trim($(this).val());
-            console.log(fieldVal);
+            fieldVal = $.trim(target.val());
             if (fieldVal != '' && fieldVal != '-' && fieldVal != 0) {
                 $(collapse).collapse('show');
 								$('html, body').animate({
 										 scrollTop: $("#carSelector").offset().top
 								 }, 500);
+								console.log('"checkFieldCollapse":empty value');
             } else {
                 $(collapse).collapse('hide');
-            }
-        });
+								console.log('"checkFieldCollapse":value set');
+            }			
+			console.log('function "checkFieldCollapse" fired');
     }
 
     function checkFieldValue(target) {
         fieldVal = $.trim(target.val());
         if (fieldVal != '' && fieldVal != '-' && fieldVal != 0) {
-            valCheck = true;
-        } else {
-            valCheck = false;
+          valCheck = true;
+				} else {
+          valCheck = false;
         }
         return valCheck;
+			
+			console.log('function "checkFieldValue" fired');
     }
+		
+		function copyField(target,source){
+			sourceValue = $(source).val();
+			if($(source).prop('tagName')=='SELECT'){				
+				$(target).find('option[value="'+sourceValue+'"]').attr('selected', 'selected');
+				console.log('function "copyField" set select-field')
+			}
+			else if ($(source).prop('tagName')=='INPUT'){
+				$(target).val($(source).val());
+				console.log('function "copyField" set input-field');
+			}
+			else {
+				//console.log('unsuported type of form-element for function "copyField"');
+			}
+			
+			//console.log('function "copyField" fired');
+		}		
+		
+		function setField(target,value){
+			if($(target).prop('tagName')=='SELECT'){
+				$(target).find('option[value="'+value+'"]').attr('selected', 'selected');
+			}
+			else if ($(target).prop('tagName')=='INPUT'){
+				$(target).val(value);
+			}
+			else {
+				//console.log('unsuported type of form-element for function "copyField"');
+			}
+			
+			//console.log('function "setField" fired');
+		}
+		
+		lockReset = false;
+		
+    function resetCarSelector(thisSelector) {
+			
+			console.log('"resetCarSelector" fired');
+					
+			resetSelector  = thisSelector;
+			activeSelector = $('.carSelector').not(thisSelector);
+						
+			if(activeSelector.hasClass('selected') == false && lockReset == false){	
+						
+				activeSelector.removeClass('blurSelector').addClass('selected');
+				
+				resetSelector.removeClass('selected').addClass('blurSelector');
+				resetSelector.find('.control-group:gt(0) select').attr('disabled', 'disabled');
+				resetSelector.find('option:selected').removeAttr('selected');
+				resetSelector.find('input').val('');
+				
+				$('#carVerionSelector').collapse('hide');
+				$('#carAttributeSelector').collapse('hide');
+			
+			}
+			
+    };
 
     // show .cars Car-Type-Selector
 
@@ -262,22 +322,29 @@ $(document).ready(function() {
 
     // show .cars Car-Version-Selector
 
-    checkFieldCollapse('#IDRegistrYear', '#carVerionSelector');
-    checkFieldCollapse('#FormFuel', '#carAttributeSelector');
+		$('#IDRegistrYear').change(function(){
+			if($('#TxtCertification').val()==123456){				 
+					$('#carSelector').find('.alert').removeClass('hidden');
+					copyField('#FormRegistrMonth','#IDRegistrMonth');
+					copyField('#FormRegistrYear','#IDRegistrYear');					
+					$('#FormMake').removeAttr('disabled').focus();
+				  resetCarSelector($('#selectCarByID'));
+			}
+			else{
+				checkFieldCollapse($(this), '#carVerionSelector');
+			}
+		});
+		
+		$('#FormFuel').change(function(){		
+    	checkFieldCollapse($(this), '#carAttributeSelector');
+		});
+		
 
     // enable/disable form-fields
 
-    function carReset(thisSelector) {
-        $('.carSelector').not(thisSelector.parents('.carSelector')).removeClass('selected').addClass('blurSelector');
-        $('.carSelector').not(thisSelector.parents('.carSelector')).find('.control-group:gt(0) select').attr('disabled', 'disabled');
-        $('.carSelector').not(thisSelector.parents('.carSelector')).find('option:selected').removeAttr('selected');
-        $('.carSelector').not(thisSelector.parents('.carSelector')).find('input').val('');
-
-        thisSelector.parents('.carSelector').removeClass('blurSelector').addClass('selected');
-    };
-
-    $('.carSelector select').change(function() {
-        carReset($(this));
+    $('.carSelector select').not('#IDRegistrYear').change(function() {
+				//console.log('call carReset by change select-fields');
+        resetCarSelector($('.carSelector').not($(this).parents('.carSelector')));
     });
 
     $('.controls select:last-child, .controls input:last-child').each(function() {
@@ -296,7 +363,8 @@ $(document).ready(function() {
     });
 
     $('#TxtCertification').bind('change blur keyup mouseup', function() {
-        carReset($(this));
+				//console.log('call carReset by change TxtCertification');
+        resetCarSelector($('.carSelector').not($(this).parents('.carSelector')));
         if ($(this).val().length == 6) {
             $(this).parents('.control-group').next('.control-group').find('select').removeAttr('disabled');
         } else {
@@ -314,7 +382,7 @@ $(document).ready(function() {
         }
     });		
 		
-    $('#alternateMake, #alternateMakeModel').bind('mouseup keyup', function(e) {
+    $('#alternateMake, #alternateModel').bind('mouseup keyup', function(e) {
 				if(checkFieldValue($(this))==true){
             $(this).parents('.control-group').next('.control-group').find('select').removeAttr('disabled');
         } else {
@@ -340,6 +408,38 @@ $(document).ready(function() {
         $(this).next().show();
 
         enableNextButton();
+    });
+		
+		function copyCar(){
+			copyField('#FormRegistrMonth','#IDRegistrMonth');
+			copyField('#FormRegistrYear','#IDRegistrYear');
+			copyField('#altTxtCertification','#TxtCertification');
+			
+			setField('#FormMake',79);
+			setField('#FormModel',1765);
+			setField('#FormFuel',1);
+			setField('#altBodyType',1);
+			setField('#altDrive',1);
+			setField('#altGearType',1);
+			setField('#altGearNumber',5);
+			setField('#altSeat',5);
+			
+			//console.log('function "copyCar" fired');
+		}
+		
+		$('#alternateCar').click(function(event) {
+			event.preventDefault();
+			setCookie('alternateCar',true);
+			copyCar();
+			
+			$('#selectCarByForm').find('select').removeAttr('disabled');
+			//console.log('call carReset by alternat car button');
+			resetCarSelector($('#selectCarByID'));
+			
+			$('#altVersion').parents('.control-group').removeClass('hidden');
+			
+			$('#carVerionSelector').collapse('hide');
+			$('#carAttributeSelector').collapse('show');
     });
 
     // Enable Next-Button by set HP for alternative Cars
