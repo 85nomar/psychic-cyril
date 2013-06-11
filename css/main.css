@@ -499,6 +499,11 @@ section[class*="span"].hidden{
 
 /* .cars Version-Selector */
 
+#carVerionSelector table {
+	margin-bottom: 15px;
+	border-bottom: 1px solid #ddd;
+} 
+
 #carVerionSelector .oddRow td {
 	background-color:#FFF;
 } 
@@ -541,7 +546,7 @@ section[class*="span"].hidden{
 	}
 
 #altCarAttributes .control-group {
-	width: 31.5%;
+	/*width: 31.5%;*/
 	margin: 0 1.5% 0 0;
 	}
 
