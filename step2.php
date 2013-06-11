@@ -22,11 +22,11 @@ $Layout_cb -> nav_cb();
       <div class="span3 control-group defaultLang">        
         <label for="inputProductCondition" class="control-label"><strong>Zustand des Produkts</strong></label>
         <div class="controls">
-          <select class="span12 required" id="productCondition" >
-            <option selected>Neu</option>
+          <select class="span12" id="productCondition" >
+            <option>Neu</option>
             <option>Fabrikneu und ungeöffnet</option>
             <option>Neuwertig</option>
-            <option>Gebraucht</option>
+            <option selected>Gebraucht</option>
             <option>Antik</option>
             <option>Defekt</option>
           </select>
@@ -57,7 +57,7 @@ $Layout_cb -> nav_cb();
           <div class="control-group core accessory">
             <label for="inputTitle" class="control-label"><strong>Titel</strong></label>
             <div class="conrols">
-              <input class="span7 charsCount required onlyNumber" type="text" id="inputTitle" placeholder="Tragen Sie hier die Produktbezeichnung ein" maxlength="60" >
+              <input class="span7 charsCount required" type="text" id="inputTitle" placeholder="Tragen Sie hier die Produktbezeichnung ein" maxlength="60" >
             </div>
           </div>
           
