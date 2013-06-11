@@ -1626,3 +1626,8 @@ img.specialHover{
 #adHomepage.cars .blowUp .carousel-inner{
     max-height: 180px;
 }
+
+.validationCase1{
+	border: 1px solid red !important;
+	box-shadow: 0 0 5px #b94a48 !important;
+}

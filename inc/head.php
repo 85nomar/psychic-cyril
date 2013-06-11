@@ -21,6 +21,7 @@
         <script src="lib/js/fileupload/jquery.iframe-transport.js"></script>
         <script src="lib/js/fileupload/jquery.fileupload.js"></script>
         <script src="js/ricardoImageUpload.js"></script>
+        <!-- tinyMCE Plugin -->
         <script src="lib/js/tinymce/js/tinymce/tinymce.min.js"></script>
         <script type="text/javascript">
         tinymce.init({
@@ -29,7 +30,6 @@
             plugins: "code,link,image,textcolor",
             toolbar: "undo redo | bold italic underline | styleselect | forecolor | alignleft aligncenter | bullist numlist outdent indent | image | code | styleselect",
             menu: "none"
-
          });
 
         tinymce.init({

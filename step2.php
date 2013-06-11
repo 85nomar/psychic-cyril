@@ -12,21 +12,21 @@ $Layout_cb -> nav_cb();
   <div class="row-fluid core accessory">
     <div class="span12 well">
     
-      <div class="span2 control-group">  
+      <div class="span2 control-group defaultLang">  
         <label for="inputNumber" class="control-label"><strong>Stückzahl</strong></label>
         <div class="controls">
           <input class="span10 core accessory" type="number" id="inputNumber" placeholder="1">
         </div>
       </div>
       
-      <div class="span3 control-group">        
+      <div class="span3 control-group defaultLang">        
         <label for="inputProductCondition" class="control-label"><strong>Zustand des Produkts</strong></label>
         <div class="controls">
-          <select class="span12" id="productCondition">
-            <option>Neu</option>
+          <select class="span12 required" id="productCondition" >
+            <option selected>Neu</option>
             <option>Fabrikneu und ungeöffnet</option>
             <option>Neuwertig</option>
-            <option selected>Gebraucht</option>
+            <option>Gebraucht</option>
             <option>Antik</option>
             <option>Defekt</option>
           </select>
@@ -57,7 +57,7 @@ $Layout_cb -> nav_cb();
           <div class="control-group core accessory">
             <label for="inputTitle" class="control-label"><strong>Titel</strong></label>
             <div class="conrols">
-              <input class="span7 charsCount" type="text" id="inputTitle" placeholder="Tragen Sie hier die Produktbezeichnung ein" maxlength="60">
+              <input class="span7 charsCount required onlyNumber" type="text" id="inputTitle" placeholder="Tragen Sie hier die Produktbezeichnung ein" maxlength="60" >
             </div>
           </div>
           
@@ -72,10 +72,9 @@ $Layout_cb -> nav_cb();
           <div class="control-group">
             <label for="inputSubtitle" class="control-label"><strong>Untertitel</strong> <span class="optionalField">(optional) <span class="markNew core accessory">NEU: Gratis!</span></span></label>
             <div class="controls">
-              <input class="span7 charsCount" type="text" id="inputSubtitle" placeholder="Bewerben Sie ihr Produkt mit einem kurzen Satz" maxlength="40">
+              <input class="span7 charsCount required" type="text" id="inputSubtitle" placeholder="Bewerben Sie ihr Produkt mit einem kurzen Satz" maxlength="40">
             </div>
           </div>
-          
         </div>
       
 <!-- START SECOND LANG -->
@@ -85,7 +84,7 @@ $Layout_cb -> nav_cb();
           <div class="control-group core accessory">
             <label for="inputTitle" class="control-label"><strong>Titre de l'article</strong></label>
             <div class="conrols">
-              <input class="span7 charsCount" type="text" id="inputTitle" placeholder="Entrez le nom du produit ici" maxlength="60">
+              <input class="span7 charsCount required" type="text" id="inputTitle" placeholder="Entrez le nom du produit ici" maxlength="60">
             </div>
           </div>
           
@@ -100,7 +99,7 @@ $Layout_cb -> nav_cb();
           <div class="control-group">
             <label for="inputSubtitle" class="control-label"><strong>Sous-titre</strong> <span class="optionalField">(optional) <span class="markNew core accessory">NOUVEAU: gratuit!</span></span> </label>
             <div class="controls">
-              <input class="span7 charsCount" type="text" id="inputSubtitle" placeholder="Appliquez votre produit avec une courte phrase" maxlength="40">
+              <input class="span7 charsCount required" type="text" id="inputSubtitle" placeholder="Appliquez votre produit avec une courte phrase" maxlength="40">
             </div>
         </div>
         
@@ -227,6 +226,6 @@ $Layout_cb -> nav_cb();
     </div>
   </div>
 </form>
-<div class="form-actions"> <a href="step3.php" class="btn btn-primary toNext core accessory">Weiter</a> <a href="step3.php" class="btn btn-primary toNext cars">Weiter</a> <a href="step6.php" class="btn toOverview">Zurück zur <?php echo $Layout_cb->formNav[5]["title"]; ?></a> </div>
+<div class="form-actions"> <a href="step3.php" class="submit btn btn-primary toNext core accessory">Weiter</a> <a href="step3.php" class="btn btn-primary toNext cars">Weiter</a> <a href="step6.php" class="btn toOverview">Zurück zur <?php echo $Layout_cb->formNav[5]["title"]; ?></a> </div>
 <div id="urlSaver"></div>
 <?php $Layout -> end(); ?>

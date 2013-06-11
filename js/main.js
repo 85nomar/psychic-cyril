@@ -21,7 +21,7 @@ function getCookie(cookieName) {
     }
 }
 		
-function switchDoubleLang(){
+/*function switchDoubleLang(){
 		$('.secondLang').toggleClass('hidden');
 		$('.defaultLang').toggleClass('span12').toggleClass('span6');
 		$('.defaultLang #arrow').toggleClass('hidden');
@@ -29,9 +29,62 @@ function switchDoubleLang(){
 			setCookie('putLang','double');
 		}
 		else {
-			setCookie('putLang','',-1);					
+			setCookie('putLang','');					
 		}
+}*/
+
+function switchDoubleLang2(){
+    if ($('#multieditors').length == 1){
+        cookieVal = getCookie('putLang');
+        console.log('this'+cookieVal);
+
+        var cases = {   singleLang : function(param){
+                            if (param === 'true'){$('.swissIcons input').prop("checked", false);}else{}
+                            
+                            $('.defaultLang, #DualEditorDE').addClass('span12').removeClass('span6');
+                            $('.secondLang, #DualEditorFR').addClass('hidden');
+                            setCookie('putLang', '');
+                        },
+                        doubleLang : function(param){
+                            if (param === 'true'){$('.checkbox input').prop("checked", true);}else{}
+                            
+                            $('.defaultLang, #DualEditorDE').removeClass('span12').addClass('span6');
+                            $('.secondLang, #DualEditorFR').removeClass('hidden');
+                            setCookie('putLang', 'double');
+                            // do not remove this!!!!
+                            validationCases('.secondLang');
+                        },
+        }
+
+        if (cookieVal === 'double'){
+            cases.doubleLang('true');
+        }else{
+            cases.singleLang('true');
+        }
+        
+        $('#swissIcons').on('click', function(){
+            var checked = $('.swissIcons input').prop("checked");
+            if (checked == true){
+                cases.singleLang('true');
+                setCookie('putLang', '');
+            }else{
+                cases.doubleLang('true');
+                setCookie('putLang', 'double');
+            }
+        });
+
+        $('.checkbox input').on('click', function(){
+            var editorDeSize = $('#DualEditorDE');
+            if (editorDeSize.is('.span12')){
+                cases.doubleLang('false');
+            }else{
+                cases.singleLang('false');
+            }
+        });
+    
+    }
 }
+
 
 function countField(target){
 	
@@ -853,8 +906,6 @@ $(document).ready(function() {
     imageMovers();
 
 });
-
-$(window).load(function() {
     function dragAndDrop(e) {
         // Some element definitions
         var elements = {
@@ -1021,8 +1072,145 @@ $(window).load(function() {
         }
     }
 
+     function validationCases(lenguageClass){
+                // Case 1
+                // get every required inputfield with the class 
+                // "input.required-de / input.required-fr"
+                // and check if the value is empty
+                $(lenguageClass+' input.required').on('focusout',function(){
+                    // some required variables
+                    var inputVal = $.trim($(this).val());
+                    var input = $(this);
+                    //console.log(inputVal);
+                    if (inputVal == null || inputVal == undefined || inputVal == ''){
+                    // set inputval to default in Case of whitespaces
+                        input.val(inputVal);
+                        input.removeClass('solved');
+                        input.addClass('validationCase1');
+                        input.click(function(){
+                            input.addClass('solved');
+                            input.removeClass('validationCase1')
+                        });
+                    }
+                
+                });
+                // Case 2
+                // get every required inputfield with the class 
+                // "input.onlyNumber-de / input.onlyNumber-fr"
+                // and check if the value is a number
+                $(lenguageClass+' input.onlyNumber').on('focusout',function(){
+                    // some required variables
+                    var inputVal = $.trim($(this).val());
+                    var input = $(this);
+                    // console.log(inputVal)
+                    if (isNaN(inputVal)){
+                        input.val(''); input.attr('placeholder', 'Dieses Feld muss eine Zahl sein');
+                        input.removeClass('solved');
+                        input.addClass('validationCase1');
+
+                        input.click(function(){
+                            input.addClass('solved');
+                            input.removeClass('validationCase1')
+                        });
+                    }
+                
+                });
+                // Case 3
+                // get every required inputfield with the class 
+                // "input.onlyText-de / input.onlyText-fr"
+                // and check if the value is empty
+                $(lenguageClass+' input.onlyText').on('focusout',function(){
+                    // some required variables
+                    var inputVal = $.trim($(this).val());
+                    var input = $(this);
+                    // console.log(inputVal)
+                    if (!isNaN(inputVal)){
+
+                        input.val(''); input.attr('placeholder', 'Dieses Feld muss Text sein')
+                        input.addClass('validationCase1');
+                        input.click(function(){
+                            input.removeClass('validationCase1')
+                        });
+                    }
+                
+                });
+
+                // get every required selectfield and check if it's number
+                $(lenguageClass+' select.required').on('focusout',function(){
+                    // some required variables
+                    var selectVal = $(this).find('option:selected').val();
+                    var selectFirstVal = $(this).find('option:first').val();
+                    var select = $(this);
+                    console.log(selectVal);
+                    console.log(selectFirstVal);
+                    if (selectVal == selectFirstVal){
+                    // set inputval to default in Case of whitespaces
+                        select.removeClass('solved');
+                        select.addClass('validationCase1');
+                        select.click(function(){
+                            select.removeClass('validationCase1')
+                            select.addClass('solved');
+                        });
+                    }
+                
+                });
+
+                        $('.required').on('focusout',function(){
+                            var requiredSingleLangCount = $('.defaultLang .required').length;
+                            var solvedSingleLangCount = $('.defaultLang .solved').length;
+                            var requiredDoubleLangCount = $('.secondLang .required').length;
+                            var solvedDoubleLangCount = $('.secondLang .solved').length;
+                            var LangCookieVal = getCookie('putLang');
+
+                            console.log('singleReq : '+requiredSingleLangCount+ ' +  singleReq :' +requiredDoubleLangCount+' = '+ (requiredSingleLangCount + requiredDoubleLangCount) );
+                            console.log('singleSolved :'+solvedSingleLangCount+ ' +  doubleSolved :' +solvedDoubleLangCount+' = '+ (solvedSingleLangCount + solvedDoubleLangCount) );
+
+                            if (LangCookieVal === 'double'){
+                                    if ((requiredSingleLangCount + requiredDoubleLangCount) === (solvedSingleLangCount + solvedDoubleLangCount)){
+                                        $('a.submit').removeAttr('disabled');
+                                    }else{
+                                        $('a.submit').attr('disabled','disabled');
+                                    }
+                            }else{
+                                    if (requiredSingleLangCount === solvedSingleLangCount){
+                                        $('a.submit').removeAttr('disabled');
+                                    }else{
+                                        $('a.submit').attr('disabled','disabled');
+                                    }
+                            }
+                        });
+                    
+}
+         
+
+    function validation(){
+    // primary classes in case of Single lenguage
+    //"""""""""""""""""""""""""""""""""""""""""""
+    // required => check if input field is empty
+    // rquired onlyNumber => check if value of inputfield is a number
+    // required onlyText => check if value of inputfield is a text
+            
+
+            $('.required').click(function(){
+                    $(this).addClass('solved')
+                });
+            $('a.submit').attr('disabled', 'disabled')
+        
+            validationCases('.defaultLang');
+            // cookie based fr inputs validation
+            if(getCookie('putLang')==='double'){
+                validationCases('.secondLang');
+            }else{
+                $('.secondLang input, .secondLang select').removeClass('validationCase1')}
+
+        // check whole Site if there are validation cases
+    }
+$(window).load(function() {
+
+    switchDoubleLang2();
     maxChars();
     dragAndDrop();
     setPaymentCookie();
+    validation();
 
 }); 
