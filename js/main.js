@@ -90,8 +90,7 @@ function countField(target){
 	
 	maxChar = $(target).attr('maxlength');
 	
-	$(target).addClass('charsCount');
-	$(target).after('<input type="text" class="helper success" value="'+maxChar+'">');
+	$(target).after('<span class="badge helper">'+maxChar+'</span>');
 	
 	$(target).bind('keyup',function(){
 		
@@ -112,7 +111,7 @@ function countField(target){
 				fieldHelper.removeClass('warning').removeClass('alert').addClass('success');
 				break;
 		}
-		fieldHelper.val(fieldLengthValue);
+		fieldHelper.text(fieldLengthValue);
 	});
 	
 }
@@ -132,7 +131,7 @@ $(document).ready(function() {
 	
 	// init corret collapse classes
 	
-	$('.collapse').not('.in').parent().find('.accordion-heading a').addClass('collapsed');
+	$('.collapse').not('.in').parent().find('.accordion-heading a, .collapse-heading a').addClass('collapsed');
 
 		if (getCookie('view') == 'cars') {
 			 $('.cars').show();
@@ -489,8 +488,6 @@ $(document).ready(function() {
 			//console.log('call carReset by alternat car button');
 			resetCarSelector($('#selectCarByID'));
 			
-			$('#altVersion').parents('.control-group').removeClass('hidden');
-			
 			$('#carVerionSelector').collapse('hide');
 			$('#carAttributeSelector').collapse('show');
     });
@@ -505,6 +502,37 @@ $(document).ready(function() {
         }
     });
 
+    // +++++++++++++++++++++++++ Step2 (C&B) +++++++++++++++++++++++++		
+		
+		function customCheckList(target){
+			$(target).find('.optionList').addClass('editable');
+			$(target).find('.optionList input:checked').parent().addClass('selected');
+			$(target).find('.optionList label, .optionList i').each(function(){
+				$(this).click(function(){
+					$(this).parent().toggleClass('selected').find('input').attr('checked','checked');
+				});
+			});
+		}		
+		
+		customCheckList('#additionalEquipement, #optionalEquipement');
+		$('#standardEquipement .btn').click(function(event){
+			event.preventDefault();
+			customCheckList($(this).closest('.row-fluid'));
+		});
+		
+    $('.collapse-control a').click(function(event){
+			event.preventDefault();
+			$(this).parent().find('a').toggleClass('hidden');
+		});
+		$('.collapse-control a.showall').click(function(){
+			$(this).parents('.collapse-control').parent().find('.collapse').not('.in').collapse('show');
+			//$(this).parents('.collapse-control').next().find('.collapse').not('.in').addClass('in');
+		});
+		$('.collapse-control a.hideall').click(function(){
+			$(this).parents('.collapse-control').parent().find('.collapse').collapse('hide');
+			//$(this).parents('.collapse-control').next().find('.collapse').removeClass('in');
+		});
+		
     // +++++++++++++++++++++++++ Step2 (Core) +++++++++++++++++++++++++
 
     // initialize upload img section

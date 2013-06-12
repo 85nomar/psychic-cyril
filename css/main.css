@@ -3,26 +3,23 @@
 	}
 
 .charsCount{
-	padding-right:50px !important;
 	}
-input.helper{
+.badge.helper{
+	position:absolute;
 	color:#fff;
-	border: medium none;
-	border-radius: 4px 4px 4px 4px;
-	font-size: 12px;
-	margin: -9px 0 0 -46px;
-	padding: 0 10px;
-	text-align: center;
+	font-size: 11px;
+	margin: -22px 0 0 -38px;
 	width: 20px;
+	text-align:center;
 }
-.helper.success{
-	background-color:#a6b825;
+.badge.helper.success{
+	/*background-color:#a6b825;*/
 }
-.helper.warning{
-	background-color:#fc9013;
+.badge.helper.warning{
+	/*background-color:#fc9013;*/
 }
-.helper.alert{
-	background-color:#900;
+.badge.helper.alert{
+	/*background-color:#900;*/
 }
 
 
@@ -50,12 +47,16 @@ h1, h2, h3, h4 {
   background-image: url("http://auto.ricardo.ch/Auto/Content/images/1/Sprites/ricardo_icons_blue.png");
 }
 
-.icon-chevron-up, .accordion-heading .accordion-toggle i {
-    background-position: -361px -48px;
+.accordion-heading a > i, .collapse-heading a > i {
+    background-position: -361px -48px; 
+		margin: -7px 0 0;
+    position: absolute;
+    right: 10px;
+    top: 50%;
 }
 
-.icon-chevron-down,.accordion-heading .accordion-toggle.collapsed i {
-    background-position: -384px -48px;
+.accordion-heading .collapsed > i, .collapse-heading .collapsed > i {
+    background-position: -384px -48px;   
 }
 
 /* +++++++++++++++++++++++++ Base-Styles +++++++++++++++++++++++++ */
@@ -203,33 +204,56 @@ h1, h2, h3, h4 {
   margin-left: 20px;
 }
 
-.gradient, .accordion-heading, .collapse-heading {
+.accordion-group, .collapse-group {
+	border: 1px solid #e5e5e5;
+	border-radius: 4px 4px 4px 4px;
+	margin-bottom:20px;
+	}
+
+.accordion-heading, .collapse-heading {
+	position:relative;
   text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.25);
   text-decoration: none !important;
   background-color: #f5f5f5;
+	background-repeat: repeat-x;
+	border-radius: 4px 4px 0 0;
+	-moz-border-radius: 4px 4px 0 0;
+	-webkit-border-radius: 4px 4px 0 0;
+	
+	
+ /* background-color: #f5f5f5;
   background-image: -moz-linear-gradient(top, #f5f5f5, #e6e6e6);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f5f5f5), to(#e6e6e6));
   background-image: -webkit-linear-gradient(top, #f5f5f5, #e6e6e6);
   background-image: -o-linear-gradient(top, #f5f5f5, #e6e6e6);
   background-image: linear-gradient(to bottom, #f5f5f5, #e6e6e6);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', endColorstr='#ffe6e6e6', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', endColorstr='#ffe6e6e6', GradientType=0);*/
 }
 
-.collapse-heading {
-	padding: 5px 15px;
-	border-radius: 5px;
+.accordion-heading > a, .collapse-heading > a {
+	display:block;
+	padding:5px 35px 5px 15px;
 }
 
-.collapse-control {
-	position:absolute;
+.accordion-control, .collapse-control {
+	/*position:absolute;
 	top:0;
-	right:0;
+	right:0;*/
+	/*text-align:right;*/
+	padding-left:15px;
+	margin-bottom:5px;
 }
 
-.accordion-inner {
+.accordion-inner, .collapse-inner {
 	background-color:#fff;
 	border-radius: 0 0 5px 5px;
+	padding:15px;
+}
+
+.accordion-inner .accordion-inner, .collapse-inner .collapse-inner {
+	/*background-color:#f5f5f5;
+	border-top:1px solid #ddd;*/
 }
 
 .hidden, 
@@ -733,14 +757,19 @@ section[class*="span"].hidden{
 	margin:0;
 	}
 	
-#standardEquipement .optionList, #optionalEquipement .optionList {
-	/*width: 750px;*/
+#standardEquipement, #optionalEquipement {
+	margin-bottom:10px;
 	}
- #standardFeatureAcc .optionList li, #optionalFeatureAcc .optionList li {
+	
+#standardEquipement .collapse-group, #optionalEquipement .collapse-group {
+	margin-bottom:5px;
+	}
+ #standardFeature .optionList li, #optionalFeature .optionList li {
 	float: left;
-	/*width: 290px;*/
+	position: relative;
+	width: 100%;
 	}
-
+	
 /* +++++++++++++++++++++++++ Step3 +++++++++++++++++++++++++ */
 
 /* - Listing-Type */
