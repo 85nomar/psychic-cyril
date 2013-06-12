@@ -21,17 +21,17 @@ function getCookie(cookieName) {
     }
 }
 		
-/*function switchDoubleLang(){
+function switchDoubleLang(){
 		$('.secondLang').toggleClass('hidden');
 		$('.defaultLang').toggleClass('span12').toggleClass('span6');
 		$('.defaultLang #arrow').toggleClass('hidden');
-		if(getCookie('putLang')!='double'){
+		/*if(getCookie('putLang')!='double'){
 			setCookie('putLang','double');
 		}
 		else {
 			setCookie('putLang','');					
-		}
-}*/
+		}*/
+}
 
 function switchDoubleLang2(){
     if ($('#multieditors').length == 1){
@@ -539,6 +539,11 @@ $(document).ready(function() {
     ricardoImageUpload.init();
 
     // +++++++++++++++++++++++++ Step3 +++++++++++++++++++++++++
+		
+		if($('#listingPaymentConditions4Cars').size()==1 && getCookie('putLang')=='double' ){
+			switchDoubleLang();
+		}
+		else
 
     //Payment-Conditions-Selection
 

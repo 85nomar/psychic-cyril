@@ -137,7 +137,7 @@ $Layout_cb -> nav_cb();
                 <span class="help-inline">reaktivieren <span class="optionalField">(optional)</span> <i class="icon-info-sign" data-toggle="tooltip" data-placement="right" title="Falls Ihr Artikel in der von Ihnen gewählten Dauer nicht verkauft werden sollte, wird der Artikel automatisch wieder reaktiviert.  Dabei entstehen wiederholt Einstellgebühren."></i></span>
             </div>
         </fieldset>
-        <fieldset class="well" id="listingPaymentConditions">
+        <fieldset class="well core accessorys" id="listingPaymentConditions">
             <div class="row-fluid">
                 <!--<aside class="span3 ricardopay-info-box">
                     <p><img title="ricardopay – einfach sicher" style="margin: 0" alt="ricardopay – einfach sicher" src="img/ricardo-pay.png">
@@ -202,6 +202,38 @@ $Layout_cb -> nav_cb();
                     </div>
                 </div>
             </div>
+        </fieldset>
+        
+        <fieldset class="well cars" id="listingPaymentConditions4Cars">
+            <div class="row-fluid">
+      
+        <!-- START DEFAULT LANG -->
+              
+                <div class="defaultLang span12">
+                  
+                  <div class="control-group">
+                    <label class="control-label" for="inputTitle"><strong>Zahlungs- und Lieferkonditionen</strong></label>
+                    <div class="conrols">
+                      <textarea class="span12"></textarea>
+                    </div>
+                  </div>
+                  
+                </div>
+              
+        <!-- START SECOND LANG -->
+              
+                <div class="span6 secondLang hidden">      
+                  
+                  <div class="control-group">
+                    <label class="control-label" for="inputTitle"><strong>Conditions de paiement et de livraison</strong></label>
+                    <div class="conrols">
+                      <textarea class="span12"></textarea>
+                    </div>
+                  </div>
+                
+                </div>
+              
+              </div>
         </fieldset>
 
     </section>

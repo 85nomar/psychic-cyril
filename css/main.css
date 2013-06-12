@@ -666,7 +666,7 @@ section[class*="span"].hidden{
     display: block;
     margin: 0 auto;
 }
-#guaranteeText{
+.guaranteeText{
 	padding-bottom:20px;
 }
 .separatorFloated {

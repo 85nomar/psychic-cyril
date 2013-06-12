@@ -182,10 +182,10 @@ $Layout_cb -> nav_cb();
 							$(document).ready(function(e) {
 								$('#guaranteeControl input').click(function(){
 									if($('input[name=hasGuarantee]:checked', 'form').val()=='yes'){
-										$('#guaranteeText').fadeIn();
+										$('.guaranteeText').fadeIn();
 									}
 									else {
-										$('#guaranteeText').fadeOut();
+										$('.guaranteeText').fadeOut();
 									}
 								});
 							});
@@ -198,7 +198,9 @@ $Layout_cb -> nav_cb();
                 <input type="radio" name="hasGuarantee" value="yes">
                 Ja </div>
             </div>
-            <div class="row-fluid controls hidden" id="guaranteeText">
+            
+            <div class="core accessory">
+            <div class="row-fluid controls hidden guaranteeText" id="">
             	<div class="span10 offset2">
                 <div class="defaultLang span12 control-group">
                 	<label for="" class="control-label">Garantie-Text <span class="secondLang hidden">in deutsch</span></label>
@@ -214,7 +216,23 @@ $Layout_cb -> nav_cb();
                 </div>
               </div>
             </div>
+            </div>
+            
+            <div class="cars">
+            <div class="row-fluid controls hidden guaranteeText" id="">
+            	<div class="span10 offset2">            
+                <div class="row-fluid control-group">
+                	<div class="controls span2">
+                  	<input type="text" maxlength="2" class="span12" />
+                  </div>
+                	<label for="" class="control-label span9">Garantie in Monaten</label>
+                </div>
+              </div>
+            </div>
+            </div>
+            
           </div>
+          
           <div class="control-group row-fluid">
             <label class="control-label span2" for="inputUPCnumber"><strong>Persönliche Referenznummer</strong></label>
             <div class="controls span10">
