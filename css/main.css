@@ -716,7 +716,7 @@ section[class*="span"].hidden{
     margin: 20px 0;
 }
 #additional-payment-notes {
-    margin-top: -20px;
+   /* margin-top: -20px;*/
 }
 .btn-rounded {
     width: 27px;
@@ -832,7 +832,7 @@ input[type="radio"].toggle:checked + label {
 						}
 
 #listingPaymentConditions .option-group {
-    height: 195px;
+    /*height: 195px;
     border-radius: 5px;
     border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -842,6 +842,31 @@ input[type="radio"].toggle:checked + label {
     line-height: 20px;
     padding: 4px 12px;
     text-align: center;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+    background-color: #eee;*/
+}
+#listingPaymentConditions .selection-group.active {    
+	border-color: #BCD229;
+}
+
+#listingPaymentConditions input {
+	position:absolute;
+	visibility:hidden;
+	}
+	
+#listingPaymentConditions h4 {
+    text-align: center;
+    font-family: 'MetaOTBook', Verdana, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+		font-weight:bold;
+}
+#listingPaymentConditions .selection-group {
+    height: 195px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    padding: 4px 12px;
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
     background-color: #eee;
 }
@@ -857,6 +882,9 @@ input[type="radio"].toggle:checked + label {
     margin-bottom: 5px;
     /*width: 100%;*/
     position: relative;
+		display:block;
+    height: 40px; 
+    text-align: left;
 }
 #listingPaymentConditions .btn.selected {
     color: #fff;
@@ -883,6 +911,10 @@ input[type="radio"].toggle:checked + label {
 #listingPaymentConditions .likeDescription textarea {
 	/*margin:0 -13px;*/
 	width:171px;
+}
+
+#additional-payment-notes .control-group {
+   margin-top: 20px;
 }
 
 /* Step 6 Fees*/
@@ -1583,8 +1615,6 @@ span.charsLeft{
 
 .option-group .btn{
     /*width: 180px !important;*/
-    height: 130px; 
-    text-align: left;
 
 
 }
@@ -1609,7 +1639,7 @@ margin-left: -13px;
 }
 
 .span6.option-group{
-    width: 404px;
+    /*width: 404px;*/
 }
 
 .option label[for='silver']{

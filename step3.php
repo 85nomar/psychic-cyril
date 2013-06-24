@@ -137,72 +137,84 @@ $Layout_cb -> nav_cb();
                 <span class="help-inline">reaktivieren <span class="optionalField">(optional)</span> <i class="icon-info-sign" data-toggle="tooltip" data-placement="right" title="Falls Ihr Artikel in der von Ihnen gewählten Dauer nicht verkauft werden sollte, wird der Artikel automatisch wieder reaktiviert.  Dabei entstehen wiederholt Einstellgebühren."></i></span>
             </div>
         </fieldset>
-        <fieldset class="well core accessorys" id="listingPaymentConditions">
-            <div class="row-fluid">
-                <!--<aside class="span3 ricardopay-info-box">
-                    <p><img title="ricardopay – einfach sicher" style="margin: 0" alt="ricardopay – einfach sicher" src="img/ricardo-pay.png">
-                    </p>
-                    <p>
-                        <a href="#" id="ricardopayInfo">Wie funktioniert ricardopay?</a>
-                    </p>
-                </aside>-->
-                <div class="span12">
-
-                    <label for="paymentConditions">Zu welchem Zeitpunkt möchten Sie, dass der Kunde bezahlt?</label>
-                    <div class="row-fluid">
-                        <div class="span6 option-group">
-                            <h4>Zahlung im Voraus</h4>
-                            <div class="span12">
-                                <div class="btn span6" style="float:left"> 
-                                    <i class="icon-select"></i>
-                                    <img title="ricardopay – einfach sicher" style="margin: 0" alt="ricardopay – einfach sicher" src="img/ricardo-pay.png"><br />
-                                    <small>Käuferschutz bis CHF 500.-</small>
-                                    <br />
-                                    <ul class="ricardoPayList">
-                                        <li><small class="smaller">Per Rechnung</small></li>
-                                        <li><small class="smaller">Per ricardo-Guthaben</small></li>
-                                        <li><small class="smaller">Per Kreditkarte:</small></li>
-                                    </ul>
-                                    <img src="img/creditcards.png" />
-                                </div>
-                                <div class="btn span6" style="float:right">
-                                    <i class="icon-select"></i>
-                                    Bank / Post
-                                    <br />
-                                    <small>(2-3 Tage)</small>
-                                </div>
+        <style>
+        legend {
+					border-bottom:none;
+					font-size: 12px;
+					line-height: 18px;
+					}
+        </style>
+        <section class="row-fluid">
+        	<div class="well">
+            <fieldset class="core accessorys" id="listingPaymentConditions">
+              <legend for="paymentConditions">Zu welchem Zeitpunkt möchten Sie, dass der Kunde bezahlt?</legend>
+              <div class="row-fluid">
+                  <div class="span6 selection-group">
+                      <h4>Zahlung im Voraus</h4>
+                      <div class="row-fluid">
+                          <div class="span6 option-group">
+                            <div class="btn">
+                              <i class="icon-select"></i>
+                              <input type="checkbox">
+                              <img title="ricardopay – einfach sicher" style="margin: 0" alt="ricardopay – einfach sicher" src="img/ricardo-pay.png"><br />
+                              <small>Käuferschutz bis CHF 500.-</small>
                             </div>
-                        </div>
-                        <div class="span3 option-group">
-                            <h4>Zahlung bei Abholung</h4>
-                            <div class="span12">
-                                <div class="btn span12">
-                                    <i class="icon-select"></i>
-                                    Barzahlung
-                                </div>
+                            <ul class="ricardoPayList">
+                                <li><small class="smaller">Per Rechnung</small></li>
+                                <li><small class="smaller">Per ricardo-Guthaben</small></li>
+                                <li><small class="smaller">Per Kreditkarte:</small></li>
+                            </ul>
+                            <img src="img/creditcards.png" />
+                          </div>
+                          <div class="span6 option-group">
+                            <div class="btn">
+                              <i class="icon-select"></i>
+                              <input type="checkbox">
+                              Bank / Post
+                              <br />
+                              <small>(2-3 Tage)</small>
                             </div>
-                        </div>
-                        <div class="span3 option-group">
-                            <h4>Sonstige</h4>
-                            <div class="span12 likeDescription">
-                                <div class="btn span12">
-                                    Gemäss Beschreibung
-                                    <textarea></textarea>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row-fluid section">
-                        <div class="span12">
-                            <a id="add-additional-payment-notes" data-toggle="collapse" data-target="#additional-payment-notes" class="btn btn-link">Zusätzliche Bemerkungen zu den Zahlungsmitteln</a><small class="muted">(optional)</small>
-                        </div>
-                    </div>
-                    <div class="row-fluid collapse" id="additional-payment-notes">
-                        <textarea class="span6" rows="3" placeholder="Erwähnen Sie hier z.B, wenn Sie zusätzliche Gebühren für Postüberweisungen erheben"></textarea>
-                    </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="span3 selection-group">
+                      <h4>Zahlung bei Abholung</h4>
+                      <div class="row-fluid option-group">
+                          <div class="btn">
+                              <i class="icon-select"></i>
+                              <input type="checkbox">
+                              Barzahlung
+                          </div>
+                      </div>
+                  </div>
+                  <div class="span3 selection-group">
+                      <h4>Sonstige</h4>
+                      <div class="row-fluid option-group likeDescription">
+                          <div class="btn">
+                              <i class="icon-select"></i>
+                              <input type="checkbox">
+                              Gemäss Beschreibung
+                          </div>
+                      </div>
+                  </div>
                 </div>
-            </div>
-        </fieldset>
+              <div class="row-fluid collapse" id="additional-payment-notes">
+              	<div class="control-group span12 defaultLang">
+                	<label class="control-label">Beschreibungstext</label>
+                  <div class="controls">
+                  	<textarea class="span12" rows="3" placeholder="Erwähnen Sie hier z.B, wenn Sie zusätzliche Gebühren für Postüberweisungen erheben"></textarea>
+                  </div>
+                </div>
+              	<div class="control-group span6 secondLang hidden">
+                	<label class="control-label">Description in french</label>
+                  <div class="controls">
+                  	<textarea class="span12" rows="3" placeholder="Vive la révolution!"></textarea>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </section>
         
         <fieldset class="well cars" id="listingPaymentConditions4Cars">
             <div class="row-fluid">

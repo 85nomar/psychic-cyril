@@ -545,26 +545,39 @@ $(document).ready(function() {
 		}
 		else
 
-    //Payment-Conditions-Selection
-
-    $('#listingPaymentConditions .btn').click(function(event) {
-        event.preventDefault();
-    }).mousedown(function(event) {
-        $('.option-group').not($(this).parents('.option-group')).removeClass('active').find('.btn').removeClass('selected');
-        $(this).toggleClass('selected');
-    }).mouseup(function(event) {
-        if ($(this).parent().find('.selected').size() > 0) {
-            $(this).parents('.option-group').addClass('active');
-        } else {
-            $(this).parents('.option-group').removeClass('active');
-        }
-    });
-
-    $('.option-group:last .btn').mousedown(function(event) {
-        $(this).parents('.option-group').find('.btn').removeClass('selected');
-        $(this).addClass('selected');
-    });
-
+    //Payment-Conditions-Selection		
+		
+		$('.collapse:not(.in)').collapse('hide');
+		
+		$('#listingPaymentConditions').find('.selection-group input:checked').parent().addClass('selected').parents('selection-group').addClass('active');
+		$('#listingPaymentConditions').find('.selection-group .btn').each(function(){
+			$(this).click(function(){
+				// unselect each other
+				$('.selection-group').not($(this).parents('.selection-group')).removeClass('active').find('.btn').removeClass('selected').find('input').removeAttr('checked','');
+				if($(this).hasClass('selected')==false){
+					// select this
+					$(this).addClass('selected').parents('.selection-group').addClass('active').find('input').attr('checked','checked');
+				}
+				else {
+					// unselect this
+					if($(this).addClass('selected').parents('.selection-group').find('.btn.selected').size()>1){
+						$(this).removeClass('selected').find('input').attr('checked','');
+					}
+				}
+			});
+		});
+			
+		$('#listingPaymentConditions .btn').click(function(){
+			console.log($('#listingPaymentConditions .likeDescription').find('.btn').hasClass('selected'))
+			if($('#listingPaymentConditions .likeDescription').find('.btn').hasClass('selected') == true){
+				$('#additional-payment-notes').collapse('show');
+			}
+			else{
+				$('#additional-payment-notes.in').collapse('hide');
+				$('#additional-payment-notes textarea').val('');
+			}
+		});
+		
     $('#ricardopayInfo').click(function(event) {
         event.preventDefault();
         $('#modalRicardoPay').modal('show');
